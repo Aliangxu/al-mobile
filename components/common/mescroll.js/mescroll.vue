@@ -1,0 +1,62 @@
+<template>
+  <div ref="mescroll" class="mescroll">
+    <div>
+      <slot></slot>
+    </div>
+  </div>
+</template>
+
+<script>
+// 引入mescroll.min.js和mescroll.min.css
+import MeScroll from 'mescroll.js'
+import 'mescroll.js/mescroll.min.css'
+
+export default {
+  name: 'MeScrollVue',
+  data: function () {
+    return {
+      mescroll: null,
+      lastScrollTop: 0, // 路由切换时滚动条的位置
+      lastBounce: null // 路由切换时是否禁止ios回弹
+    }
+  },
+  props: {
+    up: Object,
+    down: Object
+  },
+  mounted: function () {
+    this.mescroll = new MeScroll(this.$refs.mescroll, {
+      up: this.up,
+      down: this.down
+    })
+    this.$emit('init', this.mescroll) // init回调mescroll对象
+  },
+  methods: {
+    beforeRouteEnter () {
+      if (this.mescroll) {
+        // 滚动到之前列表的位置
+        if (this.lastScrollTop) {
+          this.mescroll.setScrollTop(this.lastScrollTop)
+          setTimeout(() => { // 需延时,因为setScrollTop内部会触发onScroll,可能会渐显回到顶部按钮
+            this.mescroll.setTopBtnFadeDuration(0) // 设置回到顶部按钮显示时无渐显动画
+          }, 16)
+        }
+        // 恢复到之前设置的isBounce状态
+        if (this.lastBounce != null) this.mescroll.setBounce(this.lastBounce)
+      }
+    },
+    beforeRouteLeave () {
+      if (this.mescroll) {
+        this.lastScrollTop = this.mescroll.getScrollTop() // 记录当前滚动条的位置
+        this.mescroll.hideTopBtn(0) // 隐藏回到顶部按钮,无渐隐动画
+        this.lastBounce = this.mescroll.optUp.isBounce // 记录当前是否禁止ios回弹
+        this.mescroll.setBounce(true) // 允许bounce
+      }
+    }
+  }
+}
+</script>
+
+<style>
+html,body{height:100%}body{-webkit-overflow-scrolling:touch}.mescroll{width:100%;height:100%;overflow-y:auto}.mescroll-hardware{-webkit-transform:translateZ(0);-webkit-transform-style:preserve-3d;-webkit-backface-visibility:hidden;-webkit-perspective:1000}.mescroll-downwarp{position:relative;width:100%;height:0;overflow:hidden;text-align:center}.mescroll-downwarp-reset{-webkit-transition:height 300ms;transition:height 300ms}.mescroll-downwarp .downwarp-content{position:absolute;left:0;bottom:0;width:100%;min-height:30px;padding:10px 0}.mescroll-upwarp{min-height:30px;padding:15px 0;text-align:center;visibility:hidden}.mescroll-downwarp .downwarp-tip,.mescroll-upwarp .upwarp-tip,.mescroll-upwarp .upwarp-nodata{display:inline-block;font-size:12px;color:gray;vertical-align:middle}.mescroll-downwarp .downwarp-tip,.mescroll-upwarp .upwarp-tip{margin-left:8px}.mescroll-downwarp .downwarp-progress,.mescroll-upwarp .upwarp-progress{display:inline-block;width:16px;height:16px;border-radius:50%;border:1px solid gray;border-bottom-color:transparent;vertical-align:middle}.mescroll-rotate{-webkit-animation:mescrollRotate .6s linear infinite;animation:mescrollRotate .6s linear infinite}@-webkit-keyframes mescrollRotate{0%{-webkit-transform:rotate(0deg)}100%{-webkit-transform:rotate(360deg)}}@keyframes mescrollRotate{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}.mescroll-empty{width:100%;padding-top:20px;text-align:center}.mescroll-empty .empty-icon{width:45%}.mescroll-empty .empty-tip{margin-top:6px;font-size:14px;color:gray}.mescroll-empty .empty-btn{max-width:50%;margin:20px auto;padding:10px;border:1px solid #65aadd;border-radius:6px;background-color:white;color:#65aadd}.mescroll-empty .empty-btn:active{opacity:.75}.mescroll-totop{z-index:9990;position:fixed;right:10px;bottom:30px;width:36px;height:36px;border-radius:50%;opacity:0}.mescroll-lazy-in,.mescroll-fade-in{-webkit-animation:mescrollFadeIn .5s linear forwards;animation:mescrollFadeIn .5s linear forwards}@-webkit-keyframes mescrollFadeIn{0%{opacity:0}100%{opacity:1}}@keyframes mescrollFadeIn{0%{opacity:0}100%{opacity:1}}.mescroll-fade-out{pointer-events:none;-webkit-animation:mescrollFadeOut .5s linear forwards;animation:mescrollFadeOut .5s linear forwards}@-webkit-keyframes mescrollFadeOut{0%{opacity:1}100%{opacity:0}}@keyframes mescrollFadeOut{0%{opacity:1}100%{opacity:0}}.mescroll-bar::-webkit-scrollbar-track{background-color:transparent}.mescroll-bar::-webkit-scrollbar{width:6px}.mescroll-bar::-webkit-scrollbar-thumb{border-radius:6px;background-color:#ccc}.mescroll-bar::-webkit-scrollbar-thumb:hover{background-color:#aaa}
+</style>
