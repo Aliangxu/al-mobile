@@ -50,13 +50,13 @@ async function vueWarpper() {
   let distDir = '', fileName = ''
   if (isDev) {
     distDir = DEV_OUTPUT_DIR
-    fileName = 'mand-mobile-dev.css'
+    fileName = 'al-mobile-dev.css'
   } else if (isProduction) {
-    fileName = process.env.BUILD_TYPE !== 'variables' ? 'mand-mobile.css' : 'mand-mobile.variable.css'
+    fileName = process.env.BUILD_TYPE !== 'variables' ? 'al-mobile.css' : 'al-mobile.variable.css'
     distDir = LIB_DIR
   } else if (isTest) {
     distDir = TEST_OUTPUT_DIR
-    fileName = 'mand-mobile-test.css'
+    fileName = 'al-mobile-test.css'
   }
 
   const {
@@ -94,8 +94,8 @@ function conditionHelper(condition, plugins) {
 
 const basicAlias = {
   resolve: ['.js', '.json', '/index.js', '.css', '.vue', '.svg'], // @TODO '/index.js' hack
-  'mand-mobile/components': resolve('components'),
-  'mand-mobile/lib': resolve('lib'),
+  'al-mobile/components': resolve('components'),
+  'al-mobile/lib': resolve('lib'),
   '@examples/assets/images/bank-zs.svg': resolve('examples/assets/images/bank-zs.svg'),
   '@examples/assets/images/tip-package.svg': resolve('examples/assets/images/tip-package.svg')
 }
@@ -106,12 +106,12 @@ const rollupPluginFactory = async () =>  {
   // resolve
   ...(conditionHelper(!isDev, [
     aliasPlugin(Object.assign(basicAlias, {
-      'mand-mobile': resolve('lib/mand-mobile.esm.js'),
+      'al-mobile': resolve('lib/al-mobile.esm.js'),
     })),
   ])),
   ...(conditionHelper(isDev, [
     aliasPlugin(Object.assign(basicAlias, {
-      'mand-mobile': resolve('components'),
+      'al-mobile': resolve('components'),
     })),
   ])),
   nodeResolvePlugin({

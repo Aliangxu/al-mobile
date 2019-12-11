@@ -1,4 +1,4 @@
-import {Dialog} from 'mand-mobile'
+import {Dialog} from 'al-mobile'
 import sinon from 'sinon'
 import {mount} from '@vue/test-utils'
 
@@ -19,7 +19,7 @@ describe('Dialog - Operation', () => {
         btns: [{text: '123'}],
       },
     })
-    wrapper.find('.md-dialog-btn').trigger('click')
+    wrapper.find('.n22-dialog-btn').trigger('click')
   })
 
   it('generate a confirm dialog', () => {
@@ -35,7 +35,7 @@ describe('Dialog - Operation', () => {
   it('generate a succeed dialog', () => {
     vm = Dialog.succeed({})
     expect(vm.icon).toBe('success-color')
-    vm.$el.querySelector('.md-dialog-btn').click()
+    vm.$el.querySelector('.n22-dialog-btn').click()
   })
 
   it('generate a failed dialog', done => {

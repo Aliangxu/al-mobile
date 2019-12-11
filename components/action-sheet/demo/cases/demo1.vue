@@ -1,10 +1,11 @@
 <template>
-  <div class="md-example-child md-example-child-action-sheet">
-    <md-button @click="$_showActionSheet">唤起动作面板</md-button>
+  <div class="n22-example-child n22-example-child-action-sheet">
+    <n22-button @click="$_showActionSheet">唤起动作面板</n22-button>
   </div>
 </template>
 
-<script>import {ActionSheet, Button, Dialog} from 'mand-mobile'
+<script>
+import {ActionSheet, Button, Dialog} from 'al-mobile'
 
 export default {
   name: 'action-sheet-demo',
@@ -56,4 +57,5 @@ export default {
     },
   },
 }
-</script>
+
+</script>

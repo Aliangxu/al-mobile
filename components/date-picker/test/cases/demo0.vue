@@ -1,16 +1,17 @@
 <template>
-  <div class="md-example-child md-example-child-date-picker md-example-child-date-picker-0">
-    <md-date-picker
+  <div class="n22-example-child n22-example-child-date-picker n22-example-child-date-picker-0">
+    <n22-date-picker
       ref="datePicker"
       :min-date="minDate"
       :max-date="maxDate"
       :default-date="currentDate"
       is-view
-    ></md-date-picker>
+    ></n22-date-picker>
   </div>
 </template>
 
-<script>import {DatePicker} from 'mand-mobile'
+<script>
+import {DatePicker} from 'al-mobile'
 
 export default {
   name: 'date-picker-demo',
@@ -25,4 +26,5 @@ export default {
     }
   },
 }
-</script>
+
+</script>

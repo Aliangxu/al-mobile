@@ -1,18 +1,18 @@
 <template>
   <div
-    class="md-popup-title-bar"
+    class="n22-popup-title-bar"
     :class="{large: !!describe}"
     @touchmove="$_preventScroll"
   >
     <!-- Cancel -->
     <div
-      class="title-bar-left md-popup-cancel"
+      class="title-bar-left n22-popup-cancel"
       v-if="cancelText"
       v-html="cancelText"
       @click="$emit('cancel')"
     ></div>
     <div
-      class="title-bar-left md-popup-cancel"
+      class="title-bar-left n22-popup-cancel"
       v-else-if="$slots.cancel"
       @click="$emit('cancel')"
     >
@@ -44,13 +44,13 @@
 
     <!-- Ok -->
     <div
-      class="title-bar-right md-popup-confirm"
+      class="title-bar-right n22-popup-confirm"
       v-if="okText"
       v-html="okText"
       @click="$emit('confirm')"
     ></div>
     <div
-      class="title-bar-right md-popup-confirm"
+      class="title-bar-right n22-popup-confirm"
       v-else-if="$slots.confirm"
       @click="$emit('confirm')"
     >
@@ -98,7 +98,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.md-popup-title-bar
+.n22-popup-title-bar
   position relative
   width 100%
   height popup-title-bar-height

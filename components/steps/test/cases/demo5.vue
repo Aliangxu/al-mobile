@@ -1,14 +1,15 @@
 <template>
-  <div class="md-example-child md-example-child-steps md-example-child-steps-5">
-    <md-steps
+  <div class="n22-example-child n22-example-child-steps n22-example-child-steps-5">
+    <n22-steps
       :steps="steps"
       :current="currentStep"
     >
-    </md-steps>
+    </n22-steps>
   </div>
 </template>
 
-<script>import {Steps} from 'mand-mobile'
+<script>
+import {Steps} from 'al-mobile'
 
 export default {
   name: 'steps-demo',
@@ -35,12 +36,13 @@ export default {
     }
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
-.md-example-child-steps-5
+.n22-example-child-steps-5
   height 140px
-  .md-steps .icon.current::before
+  .n22-steps .icon.current::before
     content ''
     color color-primary-tap
     border-bottom 10px solid

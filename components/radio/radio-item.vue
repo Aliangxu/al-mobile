@@ -311,7 +311,7 @@ export default {
             if(i===0){
               rval.push(val)
             }else{
-              this.itemObject[`fieldValueDes${i}`]&&rval.push(this.itemObject[`fieldValueDes${i}`])
+              this.itemObject&&this.itemObject[`fieldValueDes${i}`]&&rval.push(this.itemObject[`fieldValueDes${i}`])
             }
           }
         }

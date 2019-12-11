@@ -4,6 +4,7 @@
             v-for="(item,ind) in num"
             :key="ind"
             class="star_item"
+            :style="starsStyle(ind)"
             :class="{'on':(ind+1)<=cur}"
             @mouseover="enter((ind+1))"
             @mouseleave="out()"
@@ -31,6 +32,20 @@ export default {
       flag: false
     };
   },
+  computed: {
+    starsStyle(){
+      return (ind)=>{
+        let sty = {
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+        }
+        if(this.onImage&&this.offImage){
+          sty.backgroundImage = (ind+1)<=this.cur?`url(${this.onImage})`:`url(${this.offImage})`
+        }
+        return sty;
+      }
+    }
+  },
   props: {
     starNum: {
       type: Number,
@@ -39,6 +54,12 @@ export default {
     value: {
       type: Number,
       default: 0
+    },
+    onImage: {
+      default: ""
+    },
+    offImage: {
+      default: ""
     },
     idx: {
       type: Number,
@@ -81,7 +102,7 @@ export default {
 .stars div {
   width: 26px;
   height: 25px;
-  background: url("../../assets/images/common/star24_off.png") no-repeat center;
+  background: url("../_style/images/star24_off.png") no-repeat center;
   background-size: 19px;
   /* padding: 7px; */
   float: left;
@@ -89,7 +110,7 @@ export default {
 .stars .on {
   width: 26px;
   height: 25px;
-  background: url("../../assets/images/common/star24_on.png") no-repeat center;
+  background: url("../_style/images/star24_on.png") no-repeat center;
   background-size: 19px;
   /* padding: 7px; */
 }
@@ -100,6 +121,8 @@ export default {
 .rating_container {
   position: relative;
   top: 20px;
+  width: 200px;
+  height: 40px;
   // @include wh(200px, 40px);
   .star_overflow {
       overflow: hidden;

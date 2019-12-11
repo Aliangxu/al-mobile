@@ -1,5 +1,5 @@
 <template>
-  <div class="md-date-picker" :class="[type]">
+  <div class="n22-date-picker" :class="[type]">
     <n22-picker
       ref="picker"
       v-model="isPickerShow"
@@ -567,7 +567,7 @@ export default {
 </script>
 
 <style lang="stylus">
-.md-date-picker
+.n22-date-picker
   .column-item
     font-size date-picker-font-size !important
     overflow visible !important

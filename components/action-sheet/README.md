@@ -7,7 +7,7 @@ title: ActionSheet 动作面板
 ### 引入
 
 ```javascript
-import { ActionSheet } from '@/compoments'
+import { ActionSheet } from 'al-mobile'
 
 Vue.component(ActionSheet.name, ActionSheet)
 

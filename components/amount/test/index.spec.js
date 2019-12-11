@@ -1,4 +1,4 @@
-import {Amount} from 'mand-mobile'
+import {Amount} from 'al-mobile'
 import {shallowMount} from '@vue/test-utils'
 
 describe('Amount - Operation', () => {

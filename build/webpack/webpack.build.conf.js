@@ -14,13 +14,13 @@ const env = config.build.env
 
 const webpackConfig = merge(baseWebpackConfig, {
   entry: {
-    'mand-mobile': './components/index.js',
+    'al-mobile': './components/index.js',
   },
   devtool: config.build.productionSourceMap ? '#source-map' : false,
   output: {
     path: config.build.assetsRoot,
     filename: utils.assetsPath('[name].var.js'),
-    library: 'mand-mobile',
+    library: 'al-mobile',
     libraryTarget: 'umd',
     umdNamedDefine: true
   },

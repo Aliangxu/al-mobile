@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NoticeBar - Demo Basic 1`] = `
-<div class="md-example-child md-example-child-notice-bar md-example-child-notice-bar-0">
-  <div class="md-notice-bar default">
-    <div class="md-notice-bar-left md-notice-bar-empty">
+<div class="n22-example-child n22-example-child-notice-bar n22-example-child-notice-bar-0">
+  <div class="n22-notice-bar default">
+    <div class="n22-notice-bar-left n22-notice-bar-empty">
       <!---->
     </div>
-    <div class="md-notice-bar-content">
+    <div class="n22-notice-bar-content">
       <div>为了确保您的资金安全，请设置支付密码</div>
     </div>
-    <div class="md-notice-bar-right">
+    <div class="n22-notice-bar-right">
       <!---->
     </div>
   </div>
@@ -17,15 +17,15 @@ exports[`NoticeBar - Demo Basic 1`] = `
 `;
 
 exports[`NoticeBar - Demo Customize 1`] = `
-<div class="md-example-child md-example-child-notice-bar md-example-child-notice-bar-7">
-  <div class="md-notice-bar default">
-    <div class="md-notice-bar-left"><i class="md-icon icon-font md-notice-demo-icon md-notice-demo-icon-left md-icon-security security md" style="color:;"></i></div>
-    <div class="md-notice-bar-content">
+<div class="n22-example-child n22-example-child-notice-bar n22-example-child-notice-bar-7">
+  <div class="n22-notice-bar default">
+    <div class="n22-notice-bar-left"><i class="n22-icon icon-font n22-notice-demo-icon n22-notice-demo-icon-left n22-icon-security security md" style="color:;"></i></div>
+    <div class="n22-notice-bar-content">
       <div>
         为了确保您的资金安全，请设置支付密码
       </div>
     </div>
-    <div class="md-notice-bar-right">
+    <div class="n22-notice-bar-right">
       <!---->
     </div>
   </div>
@@ -33,29 +33,33 @@ exports[`NoticeBar - Demo Customize 1`] = `
 `;
 
 exports[`NoticeBar - Demo Multi-line display 1`] = `
-<div class="md-example-child md-example-child-notice-bar md-example-child-notice-bar-5">
-  <div class="md-notice-bar default">
-    <div class="md-notice-bar-left"><i class="md-icon icon-font md-notice-icon md-icon-security security md" style="color:;"></i></div>
-    <div class="md-notice-bar-content md-notice-bar-multi-content">
+<div class="n22-example-child n22-example-child-notice-bar n22-example-child-notice-bar-5">
+  <div class="n22-notice-bar default">
+    <div class="n22-notice-bar-left">
+      <svg-icon icon-class="security" class="n22-notice-svg n22-notice-icon"></svg-icon>
+    </div>
+    <div class="n22-notice-bar-content n22-notice-bar-multi-content">
       <div>
         为了确保您的资金安全，请设置支付密码。为了确保您的资金安全，请设置支付密码。为了确保您的资金安全，请设置支付密码。
       </div>
     </div>
-    <div class="md-notice-bar-right"><i class="md-icon icon-font md-notice-icon md-notice-icon-right md-icon-arrow-right arrow-right md" style="color:;"></i></div>
+    <div class="n22-notice-bar-right">
+      <svg-icon icon-class="arrow-right" class="n22-notice-svg md-notice-icon md-notice-icon-right"></svg-icon>
+    </div>
   </div>
 </div>
 `;
 
 exports[`NoticeBar - Demo Round 1`] = `
-<div class="md-example-child md-example-child-notice-bar md-example-child-notice-bar-3">
-  <div class="md-notice-bar md-notice-bar-round default">
-    <div class="md-notice-bar-left md-notice-bar-empty">
+<div class="n22-example-child n22-example-child-notice-bar n22-example-child-notice-bar-3">
+  <div class="n22-notice-bar n22-notice-bar-round default">
+    <div class="n22-notice-bar-left n22-notice-bar-empty">
       <!---->
     </div>
-    <div class="md-notice-bar-content">
+    <div class="n22-notice-bar-content">
       <div>为了确保您的资金安全，请设置支付密码</div>
     </div>
-    <div class="md-notice-bar-right">
+    <div class="n22-notice-bar-right">
       <!---->
     </div>
   </div>
@@ -63,29 +67,33 @@ exports[`NoticeBar - Demo Round 1`] = `
 `;
 
 exports[`NoticeBar - Demo Scroll play 1`] = `
-<div class="md-example-child md-example-child-notice-bar md-example-child-notice-bar-6">
-  <div class="md-notice-bar default">
-    <div class="md-notice-bar-left"><i class="md-icon icon-font md-notice-icon md-icon-volumn volumn md" style="color:;"></i></div>
-    <div class="md-notice-bar-content">
+<div class="n22-example-child n22-example-child-notice-bar n22-example-child-notice-bar-6">
+  <div class="n22-notice-bar default">
+    <div class="n22-notice-bar-left">
+      <svg-icon icon-class="volumn" class="n22-notice-svg n22-notice-icon"></svg-icon>
+    </div>
+    <div class="n22-notice-bar-content">
       <div>
         为了确保您的资金安全，请设置支付密码为了确保您的资金安全，请设置支付密码为了确保您的资金安全，请设置支付密码
       </div>
     </div>
-    <div class="md-notice-bar-right"><i class="md-icon icon-font md-notice-icon md-notice-icon-right md-icon-close close md" style="color:;"></i></div>
+    <div class="n22-notice-bar-right">
+      <svg-icon icon-class="close" class="n22-notice-svg md-notice-icon md-notice-icon-right"></svg-icon>
+    </div>
   </div>
 </div>
 `;
 
 exports[`NoticeBar - Demo Setting dwell time 1`] = `
-<div class="md-example-child md-example-child-notice-bar md-example-child-notice-bar-2">
-  <div class="md-notice-bar default">
-    <div class="md-notice-bar-left md-notice-bar-empty">
+<div class="n22-example-child n22-example-child-notice-bar n22-example-child-notice-bar-2">
+  <div class="n22-notice-bar default">
+    <div class="n22-notice-bar-left n22-notice-bar-empty">
       <!---->
     </div>
-    <div class="md-notice-bar-content">
+    <div class="n22-notice-bar-content">
       <div>为了确保您的资金安全，请设置支付密码</div>
     </div>
-    <div class="md-notice-bar-right">
+    <div class="n22-notice-bar-right">
       <!---->
     </div>
   </div>
@@ -93,38 +101,50 @@ exports[`NoticeBar - Demo Setting dwell time 1`] = `
 `;
 
 exports[`NoticeBar - Demo Theme 1`] = `
-<div class="md-example-child md-example-child-notice-bar md-example-child-notice-bar-4">
-  <div class="md-notice-bar warning">
-    <div class="md-notice-bar-left"><i class="md-icon icon-font md-notice-icon md-icon-warn warn md" style="color:;"></i></div>
-    <div class="md-notice-bar-content">
+<div class="n22-example-child n22-example-child-notice-bar n22-example-child-notice-bar-4">
+  <div class="n22-notice-bar warning">
+    <div class="n22-notice-bar-left">
+      <svg-icon icon-class="warn" class="n22-notice-svg n22-notice-icon"></svg-icon>
+    </div>
+    <div class="n22-notice-bar-content">
       <div>
         该银行3:00-12:00系统维护，请更换其他银行卡
       </div>
     </div>
-    <div class="md-notice-bar-right"><i class="md-icon icon-font md-notice-icon md-notice-icon-right md-icon-close close md" style="color:;"></i></div>
+    <div class="n22-notice-bar-right">
+      <svg-icon icon-class="close" class="n22-notice-svg md-notice-icon md-notice-icon-right"></svg-icon>
+    </div>
   </div>
-  <div class="md-notice-bar activity" style="margin-top:10px;">
-    <div class="md-notice-bar-left"><i class="md-icon icon-font md-notice-icon md-icon-coupon coupon md" style="color:;"></i></div>
-    <div class="md-notice-bar-content">
+  <div class="n22-notice-bar activity" style="margin-top:10px;">
+    <div class="n22-notice-bar-left">
+      <svg-icon icon-class="coupon" class="n22-notice-svg n22-notice-icon"></svg-icon>
+    </div>
+    <div class="n22-notice-bar-content">
       <div>
         福利来啦，7日免息券发放中！
       </div>
     </div>
-    <div class="md-notice-bar-right"><i class="md-icon icon-font md-notice-icon md-notice-icon-right md-icon-arrow-right arrow-right md" style="color:;"></i></div>
+    <div class="n22-notice-bar-right">
+      <svg-icon icon-class="arrow-right" class="n22-notice-svg md-notice-icon md-notice-icon-right"></svg-icon>
+    </div>
   </div>
 </div>
 `;
 
 exports[`NoticeBar - Demo With icon 1`] = `
-<div class="md-example-child md-example-child-notice-bar md-example-child-notice-bar-1">
-  <div class="md-notice-bar default">
-    <div class="md-notice-bar-left"><i class="md-icon icon-font md-notice-icon md-icon-security security md" style="color:;"></i></div>
-    <div class="md-notice-bar-content">
+<div class="n22-example-child n22-example-child-notice-bar n22-example-child-notice-bar-1">
+  <div class="n22-notice-bar default">
+    <div class="n22-notice-bar-left">
+      <svg-icon icon-class="security" class="n22-notice-svg n22-notice-icon"></svg-icon>
+    </div>
+    <div class="n22-notice-bar-content">
       <div>
         为了确保您的资金安全，请设置支付密码
       </div>
     </div>
-    <div class="md-notice-bar-right"><i class="md-icon icon-font md-notice-icon md-notice-icon-right md-icon-close close md" style="color:;"></i></div>
+    <div class="n22-notice-bar-right">
+      <svg-icon icon-class="close" class="n22-notice-svg md-notice-icon md-notice-icon-right"></svg-icon>
+    </div>
   </div>
 </div>
 `;

@@ -11,7 +11,7 @@ describe('ActionSheet', () => {
     const wrapper = mount(Demo1)
     wrapper.vm.$_showActionSheet()
     setTimeout(() => {
-      expect(document.body.querySelector('.md-action-sheet').outerHTML).toMatchSnapshot()
+      expect(document.body.querySelector('.n22-action-sheet').outerHTML).toMatchSnapshot()
       done()
     }, 300)
   })

@@ -1,6 +1,6 @@
 <template>
-  <div class="md-example-child md-example-child-codebox md-example-child-codebox-0">
-    <md-codebox
+  <div class="n22-example-child n22-example-child-codebox n22-example-child-codebox-0">
+    <n22-codebox
       v-model="code"
       :maxlength="4"
       autofocus
@@ -8,7 +8,8 @@
   </div>
 </template>
 
-<script>import {Codebox} from 'mand-mobile'
+<script>
+import {Codebox} from 'al-mobile'
 
 export default {
   name: 'codebox-demo',
@@ -21,4 +22,5 @@ export default {
     }
   },
 }
-</script>
+
+</script>

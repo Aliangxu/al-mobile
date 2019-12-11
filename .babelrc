@@ -19,7 +19,7 @@
       ],
       "plugins": [
         ["import", {
-          "libraryName": "mand-mobile",
+          "libraryName": "al-mobile",
           "libraryDirectory": "components"
         }]
       ]

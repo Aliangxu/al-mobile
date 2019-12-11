@@ -20,7 +20,7 @@
 </template>
 
 <script>export default {
-  name: 'md-number-key',
+  name: 'n22-number-key',
 
   props: {
     value: {

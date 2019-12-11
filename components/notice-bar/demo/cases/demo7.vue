@@ -1,13 +1,14 @@
 <template>
-  <div class="md-example-child md-example-child-notice-bar md-example-child-notice-bar-7">
-    <md-notice-bar>
-      <md-icon slot="left" class="md-notice-demo-icon md-notice-demo-icon-left" name="security"></md-icon>
+  <div class="n22-example-child n22-example-child-notice-bar n22-example-child-notice-bar-7">
+    <n22-notice-bar>
+      <n22-icon slot="left" class="n22-notice-demo-icon n22-notice-demo-icon-left" name="security"></n22-icon>
       为了确保您的资金安全，请设置支付密码
-    </md-notice-bar>
+    </n22-notice-bar>
   </div>
 </template>
 
-<script>import {NoticeBar, Icon} from 'mand-mobile'
+<script>
+import {NoticeBar, Icon} from 'al-mobile'
 
 export default {
   name: 'notice-bar-demo',
@@ -20,4 +21,5 @@ export default {
     [Icon.name]: Icon,
   },
 }
-</script>
+
+</script>

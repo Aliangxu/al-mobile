@@ -1,4 +1,4 @@
-import {NoticeBar} from 'mand-mobile'
+import {NoticeBar} from 'al-mobile'
 import {mount} from '@vue/test-utils'
 
 describe('NoticeBar - Operation', () => {

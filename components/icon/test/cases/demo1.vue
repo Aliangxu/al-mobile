@@ -1,21 +1,22 @@
 <template>
-  <div class="md-example-child md-example-child-icon md-example-child-icon-1">
-    <div class="md-example-item-s">
-      <md-icon name="spinner" size="lg" style="-webkit-filter:invert(1)"></md-icon>
+  <div class="n22-example-child n22-example-child-icon n22-example-child-icon-1">
+    <div class="n22-example-item-s">
+      <n22-icon name="spinner" size="lg" style="-webkit-filter:invert(1)"></n22-icon>
       <p>spinner</p>
     </div>
-    <div class="md-example-item-s">
-      <md-icon name="success-color" size="lg" svg></md-icon>
+    <div class="n22-example-item-s">
+      <n22-icon name="success-color" size="lg" svg></n22-icon>
       <p>success-color</p>
     </div>
-    <div class="md-example-item-s">
-      <md-icon name="warn-color" size="lg" svg></md-icon>
+    <div class="n22-example-item-s">
+      <n22-icon name="warn-color" size="lg" svg></n22-icon>
       <p>warn-color</p>
     </div>
   </div>
 </template>
 
-<script>import {Icon} from 'mand-mobile'
+<script>
+import {Icon} from 'al-mobile'
 
 export default {
   name: 'icon-demo',
@@ -23,4 +24,5 @@ export default {
     [Icon.name]: Icon,
   },
 }
-</script>
+
+</script>

@@ -1,4 +1,4 @@
-import {ActionSheet} from 'mand-mobile'
+import {ActionSheet} from 'al-mobile'
 import sinon from 'sinon'
 import {mount} from '@vue/test-utils'
 
@@ -34,7 +34,7 @@ describe('ActionSheet - Operation', () => {
     wrapper = mount(ActionSheet, {
       sync: false,
     })
-    expect(wrapper.findAll('.md-action-sheet-item').length).toBe(0)
+    expect(wrapper.findAll('.n22-action-sheet-item').length).toBe(0)
   })
 
   test('show/hide/selected events', done => {
@@ -49,7 +49,7 @@ describe('ActionSheet - Operation', () => {
     setTimeout(() => {
       expect(eventSpy.calledWith('show')).toBe(true)
       wrapper
-        .findAll('.md-action-sheet-item')
+        .findAll('.n22-action-sheet-item')
         .at(0)
         .trigger('click')
       expect(eventSpy.calledWith('selected')).toBe(true)
@@ -73,7 +73,7 @@ describe('ActionSheet - Operation', () => {
     const eventSpy = sinon.spy(wrapper.vm, '$emit')
 
     setTimeout(() => {
-      wrapper.find('.md-action-sheet-cancel').trigger('click')
+      wrapper.find('.n22-action-sheet-cancel').trigger('click')
       expect(eventSpy.calledWith('cancel')).toBe(true)
       done()
     }, 300)
@@ -91,7 +91,7 @@ describe('ActionSheet - Operation', () => {
     const eventSpy = sinon.spy(wrapper.vm, '$emit')
 
     setTimeout(() => {
-      const disabledOption = wrapper.findAll('.md-action-sheet-item').at(2)
+      const disabledOption = wrapper.findAll('.n22-action-sheet-item').at(2)
       expect(disabledOption.classes('disabled')).toBe(true)
       disabledOption.trigger('click')
       expect(eventSpy.calledWith('selected')).toBe(false)
@@ -106,7 +106,7 @@ describe('ActionSheet - Operation', () => {
     })
 
     setTimeout(() => {
-      expect(document.body.querySelectorAll('.md-action-sheet').length > 0).toBe(true)
+      expect(document.body.querySelectorAll('.n22-action-sheet').length > 0).toBe(true)
       ActionSheet.closeAll()
       done()
     }, 300)
@@ -119,7 +119,7 @@ describe('ActionSheet - Operation', () => {
     })
 
     setTimeout(() => {
-      expect(document.body.querySelectorAll('.md-action-sheet').length > 0).toBe(true)
+      expect(document.body.querySelectorAll('.n22-action-sheet').length > 0).toBe(true)
       ActionSheet.destroyAll()
       done()
     }, 300)

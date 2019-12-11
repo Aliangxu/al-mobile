@@ -1,14 +1,15 @@
 <template>
-  <div class="md-example-child md-example-child-number-keyboard md-example-child-number-keyboard-1">
-    <md-number-keyboard
+  <div class="n22-example-child n22-example-child-number-keyboard n22-example-child-number-keyboard-1">
+    <n22-number-keyboard
       value
       ok-text="支付"
       type="simple"
-    ></md-number-keyboard>
+    ></n22-number-keyboard>
   </div>
 </template>
 
-<script>import {NumberKeyboard} from 'mand-mobile'
+<script>
+import {NumberKeyboard} from 'al-mobile'
 
 export default {
   name: 'number-keyboard-demo',
@@ -16,8 +17,9 @@ export default {
     [NumberKeyboard.name]: NumberKeyboard,
   },
 }
-</script>
 
+</script>
+n22-
 <style lang="stylus" scoped>
 .md-example-display
   position fixed

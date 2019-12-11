@@ -1,7 +1,7 @@
 <template>
-  <div class="md-example-child md-example-child-cashier">
-    <md-button @click="isCashierhow = !isCashierhow">{{ isCashierhow ? '收起收银台' : '唤起收银台' }}</md-button>
-    <md-cashier
+  <div class="n22-example-child n22-example-child-cashier">
+    <n22-button @click="isCashierhow = !isCashierhow">{{ isCashierhow ? '收起收银台' : '唤起收银台' }}</n22-button>
+    <n22-cashier
       ref="cashier"
       v-model="isCashierhow"
       :channels="cashierChannels"
@@ -13,14 +13,14 @@
       @cancel="onCashierCancel"
     >
       <div slot-scope="{ scene }" slot="header">
-        <md-notice-bar
+        <n22-notice-bar
           v-if="scene === 'choose'"
           mode="closable"
           icon="warn"
           type="warning"
         >
           该银行3:00-12:00系统维护，请更换其他银行卡
-        </md-notice-bar>
+        </n22-notice-bar>
       </div>
       <div slot-scope="{ scene }" slot="footer">
         <div v-if="scene === 'choose' && !isCashierInitialed" class="cashier-loading">
@@ -28,17 +28,17 @@
         </div>
       </div>
       <div slot="payButton" style="display:flex;">
-        <md-icon name="checked"></md-icon>发起支付
+        <n22-icon name="checked"></n22-icon>发起支付
       </div>
       <div slot="scene" class="custom-scene">
         Custom Scene
       </div>
-    </md-cashier>
+    </n22-cashier>
 	</div>
 </template>
 
 <script>
-import {Button, Icon, Cashier, Toast, NoticeBar, ActivityIndicator} from 'mand-mobile'
+import {Button, Icon, Cashier, Toast, NoticeBar, ActivityIndicator} from 'al-mobile'
 
 export default {
   name: 'cashier-demo',
@@ -186,8 +186,8 @@ export default {
 </script>
 
 <style lang="stylus">
-.md-example-child-cashier
-  .md-field
+.n22-example-child-cashier
+  .n22-field
     margin-bottom 30px
   .custom-scene
     min-height 300px

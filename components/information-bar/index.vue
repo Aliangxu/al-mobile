@@ -30,6 +30,7 @@
 </template>
 
 <script>
+import "../common/swiper/dist/css/swiper.css";
 import { swiper, swiperSlide } from "../common/swiper/swiper-vue";
 import { ui } from "../_util";
 export default {

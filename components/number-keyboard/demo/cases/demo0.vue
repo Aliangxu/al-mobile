@@ -1,32 +1,33 @@
 <template>
-  <div class="md-example-child md-example-child-number-keyboard md-example-child-number-keyboard-0">
-    <md-button @click="toggleKeyboard(0)">{{ isKeyBoardShow[0] ? '收起键盘' : '唤起键盘，有小数点' }}</md-button>
-    <md-number-keyboard
+  <div class="n22-example-child n22-example-child-number-keyboard n22-example-child-number-keyboard-0">
+    <n22-button @click="toggleKeyboard(0)">{{ isKeyBoardShow[0] ? '收起键盘' : '唤起键盘，有小数点' }}</n22-button>
+    <n22-number-keyboard
       v-model="isKeyBoardShow[0]"
       @enter="onNumberEnter"
       @delete="onNumberDelete"
-    ></md-number-keyboard>
+    ></n22-number-keyboard>
 
-    <md-button @click="toggleKeyboard(1)">{{ isKeyBoardShow[1] ? '收起键盘' : '唤起键盘，无小数点' }}</md-button>
-    <md-number-keyboard
+    <n22-button @click="toggleKeyboard(1)">{{ isKeyBoardShow[1] ? '收起键盘' : '唤起键盘，无小数点' }}</n22-button>
+    <n22-number-keyboard
       v-model="isKeyBoardShow[1]"
       hide-dot
       @enter="onNumberEnter"
       @delete="onNumberDelete"
-    ></md-number-keyboard>
+    ></n22-number-keyboard>
 
-    <md-button @click="toggleKeyboard(2)">{{ isKeyBoardShow[2] ? '收起键盘' : '唤起键盘，替换键值' }}</md-button>
-    <md-number-keyboard
+    <n22-button @click="toggleKeyboard(2)">{{ isKeyBoardShow[2] ? '收起键盘' : '唤起键盘，替换键值' }}</n22-button>
+    <n22-number-keyboard
       v-model="isKeyBoardShow[2]"
       :text-render="keyFormatter"
       @enter="onNumberEnter"
       @delete="onNumberDelete"
-    ></md-number-keyboard>
-    <div class="md-example-display" v-show="isKeyBoardShow" v-text="number"></div>
+    ></n22-number-keyboard>
+    <div class="n22-example-display" v-show="isKeyBoardShow" v-text="number"></div>
   </div>
 </template>
 
-<script>import {NumberKeyboard, Button} from 'mand-mobile'
+<script>
+import {NumberKeyboard, Button} from 'al-mobile'
 
 export default {
   name: 'number-keyboard-demo',
@@ -64,13 +65,14 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
-.md-example-child-number-keyboard-0
-  .md-button
+.n22-example-child-number-keyboard-0
+  .n22-button
     margin-bottom 10px
-  .md-example-display
+  .n22-example-display
     position fixed
     top 30%
     left 50%

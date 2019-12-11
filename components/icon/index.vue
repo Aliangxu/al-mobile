@@ -1,8 +1,8 @@
 <template>
   <svg
     v-if="svg || isInnerSvg"
-    class="md-icon icon-svg"
-    :class="[`md-icon-${name}`, size]"
+    class="n22-icon icon-svg"
+    :class="[`n22-icon-${name}`, size]"
     :style="{fill: color}"
     @click="$emit('click', $event)"
   >
@@ -10,18 +10,19 @@
   </svg>
   <i
     v-else-if="name"
-    class="md-icon icon-font"
-    :class="[`md-icon-${name}`, name, size]"
+    class="n22-icon icon-font"
+    :class="[`n22-icon-${name}`, name, size]"
     :style="{color}"
     @click="$emit('click', $event)"
   ></i>
 </template>
 
-<script>import loadSprite from './load-spirte'
+<script>
+import loadSprite from './load-spirte'
 import defaultSvg from './default-svg-list'
 
 export default {
-  name: 'md-icon',
+  name: 'n22-icon',
 
   props: {
     name: {
@@ -52,10 +53,11 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
-.md-icon
+.n22-icon
   background-size contain
   fill currentColor
   -webkit-backface-visibility hidden
@@ -109,113 +111,113 @@ export default {
       vertical-height(icon-size-lg)
 
 // name
-.md-icon-rectangle:before
+.n22-icon-rectangle:before
   content "\e900"
-.md-icon-invisible:before
+.n22-icon-invisible:before
   content "\e601"
-.md-icon-visible:before
+.n22-icon-visible:before
   content "\e602"
-.md-icon-right:before
+.n22-icon-right:before
   content "\e905"
-.md-icon-wrong:before
+.n22-icon-wrong:before
   content "\e906"
-.md-icon-info:before
+.n22-icon-info:before
   content "\e605"
-.md-icon-service:before
+.n22-icon-service:before
   content "\e606"
-.md-icon-edit:before
+.n22-icon-edit:before
   content "\e607"
-.md-icon-refresh:before
+.n22-icon-refresh:before
   content "\e901"
-.md-icon-question:before
+.n22-icon-question:before
   content "\e608"
-.md-icon-setting:before
+.n22-icon-setting:before
   content "\e609"
-.md-icon-wait:before
+.n22-icon-wait:before
   content "\e902"
-.md-icon-check:before
+.n22-icon-check:before
   content "\e904"
-.md-icon-check-disabled:before
+.n22-icon-check-disabled:before
   content "\e903"
-.md-icon-checked:before, .md-icon-success:before
+.n22-icon-checked:before, .n22-icon-success:before
   content "\e908"
-.md-icon-clear:before, .md-icon-fail:before
+.n22-icon-clear:before, .n22-icon-fail:before
   content "\e60e"
-.md-icon-info-solid:before
+.n22-icon-info-solid:before
   content "\e907"
-.md-icon-warn:before
+.n22-icon-warn:before
   content "\e60b"
-.md-icon-security:before
+.n22-icon-security:before
   content "\e60f"
-.md-icon-rmb:before
+.n22-icon-rmb:before
   content "\e610"
-.md-icon-scan:before
+.n22-icon-scan:before
   content "\e611"
-.md-icon-share:before
+.n22-icon-share:before
   content "\e612"
-.md-icon-back:before
+.n22-icon-back:before
   content "\e613"
-.md-icon-card-bag:before
+.n22-icon-card-bag:before
   content "\e614"
-.md-icon-message:before
+.n22-icon-message:before
   content "\e615"
-.md-icon-order:before
+.n22-icon-order:before
   content "\e616"
-.md-icon-balance:before
+.n22-icon-balance:before
   content "\e617"
-.md-icon-coupon:before
+.n22-icon-coupon:before
   content "\e618"
-.md-icon-sort:before
+.n22-icon-sort:before
   content "\e619"
-.md-icon-address-book:before
+.n22-icon-address-book:before
   content "\e61a"
-.md-icon-mobile-phone:before
+.n22-icon-mobile-phone:before
   content "\e61b"
-.md-icon-home:before
+.n22-icon-home:before
   content "\e61c"
-.md-icon-discovery:before
+.n22-icon-discovery:before
   content "\e61d"
-.md-icon-calendar:before
+.n22-icon-calendar:before
   content "\e61e"
-.md-icon-user:before
+.n22-icon-user:before
   content "\e61f"
-.md-icon-time:before
+.n22-icon-time:before
   content "\e620"
-.md-icon-search:before
+.n22-icon-search:before
   content "\e621"
-.md-icon-switch:before
+.n22-icon-switch:before
   content "\e622"
-.md-icon-camera:before
+.n22-icon-camera:before
   content "\e623"
-.md-icon-clock:before
+.n22-icon-clock:before
   content "\e624"
-.md-icon-profession:before
+.n22-icon-profession:before
   content "\e625"
-.md-icon-delete:before
+.n22-icon-delete:before
   content "\e626"
-.md-icon-id-card:before
+.n22-icon-id-card:before
   content "\e627"
-.md-icon-filter:before
+.n22-icon-filter:before
   content "\e628"
-.md-icon-location:before
+.n22-icon-location:before
   content "\e629"
-.md-icon-authentication:before
+.n22-icon-authentication:before
   content "\e62a"
-.md-icon-motor-vehicle:before
+.n22-icon-motor-vehicle:before
   content "\e62b"
-.md-icon-phone:before
+.n22-icon-phone:before
   content "\e62c"
-.md-icon-volumn:before
+.n22-icon-volumn:before
   content "\e62d"
-.md-icon-arrow-left:before
+.n22-icon-arrow-left:before
   content "\e603"
-.md-icon-arrow-right:before
+.n22-icon-arrow-right:before
   content "\e630"
-.md-icon-arrow-up:before
+.n22-icon-arrow-up:before
   content "\e633"
-.md-icon-arrow-down:before
+.n22-icon-arrow-down:before
   content "\e634"
-.md-icon-close:before
+.n22-icon-close:before
   content "\e604"
 
 @font-face

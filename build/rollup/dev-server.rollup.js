@@ -23,7 +23,7 @@ const inputOptionsFactory = async ()  => ({
 })
 
 const outputCommonjsOptions = {
-  file: path.resolve(DEV_OUTPUT_DIR, 'mand-mobile-dev.js'),
+  file: path.resolve(DEV_OUTPUT_DIR, 'al-mobile-dev.js'),
   format: 'umd',
 }
 

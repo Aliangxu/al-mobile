@@ -1,30 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ActionSheet Basic 1`] = `
-<div class="md-example-child md-example-child-action-sheet">
-  <div class="md-action-sheet">
-    <div class="md-popup with-mask bottom" style="display:none;">
-      <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
-      <div name="md-slide-up" class="md-popup-box md-slide-up" style="display:none;">
-        <div class="md-action-sheet-content">
-          <header class="md-action-sheet-header">操作说明的标题</header>
-          <ul class="md-action-sheet-list">
-            <li class="md-action-sheet-item">
-              <div class="md-action-sheet-item-wrapper">
-                <div class="md-action-sheet-item-section">选项1</div>
+<div class="n22-example-child n22-example-child-action-sheet">
+  <div class="n22-action-sheet">
+    <div class="n22-popup with-mask bottom" style="display:none;">
+      <div name="n22-mask-fade" class="n22-popup-mask" style="display:none;"></div>
+      <div name="n22-slide-up" class="n22-popup-box n22-slide-up" style="display:none;">
+        <div class="n22-action-sheet-content">
+          <header class="n22-action-sheet-header">操作说明的标题</header>
+          <ul class="n22-action-sheet-list">
+            <li class="n22-action-sheet-item">
+              <div class="n22-action-sheet-item-wrapper">
+                <div class="n22-action-sheet-item-section">选项1</div>
               </div>
             </li>
-            <li class="active md-action-sheet-item">
-              <div class="md-action-sheet-item-wrapper">
-                <div class="md-action-sheet-item-section">选项2</div>
+            <li class="n22-action-sheet-item">
+              <div class="n22-action-sheet-item-wrapper">
+                <div class="n22-action-sheet-item-section">选项2</div>
               </div>
             </li>
-            <li class="disabled md-action-sheet-item">
-              <div class="md-action-sheet-item-wrapper">
-                <div class="md-action-sheet-item-section">选项3</div>
+            <li class="disabled n22-action-sheet-item">
+              <div class="n22-action-sheet-item-wrapper">
+                <div class="n22-action-sheet-item-section">选项3</div>
               </div>
             </li>
-            <li class="md-action-sheet-cancel">取消</li>
+          </ul>
+        </div>
+        <div class="n22-action-sheet-content" style="margin-top:2%;">
+          <ul>
+            <div class="n22-action-sheet-cancel">取消</div>
           </ul>
         </div>
       </div>
@@ -34,29 +38,33 @@ exports[`ActionSheet Basic 1`] = `
 `;
 
 exports[`ActionSheet Singleton pattern 1`] = `
-<div class="md-action-sheet">
-  <div class="md-popup with-mask bottom" style="">
-    <div class="md-popup-mask" style=""></div>
-    <div class="md-popup-box md-slide-up" style="">
-      <div class="md-action-sheet-content">
-        <header class="md-action-sheet-header">操作说明的标题</header>
-        <ul class="md-action-sheet-list">
-          <li class="md-action-sheet-item">
-            <div class="md-action-sheet-item-wrapper">
-              <div class="md-action-sheet-item-section">选项1</div>
+<div class="n22-action-sheet">
+  <div class="n22-popup with-mask bottom" style="">
+    <div class="n22-popup-mask" style=""></div>
+    <div class="n22-popup-box n22-slide-up" style="">
+      <div class="n22-action-sheet-content">
+        <header class="n22-action-sheet-header">操作说明的标题</header>
+        <ul class="n22-action-sheet-list">
+          <li class="n22-action-sheet-item">
+            <div class="n22-action-sheet-item-wrapper">
+              <div class="n22-action-sheet-item-section">选项1</div>
             </div>
           </li>
-          <li class="active md-action-sheet-item">
-            <div class="md-action-sheet-item-wrapper">
-              <div class="md-action-sheet-item-section">选项2</div>
+          <li class="n22-action-sheet-item">
+            <div class="n22-action-sheet-item-wrapper">
+              <div class="n22-action-sheet-item-section">选项2</div>
             </div>
           </li>
-          <li class="disabled md-action-sheet-item">
-            <div class="md-action-sheet-item-wrapper">
-              <div class="md-action-sheet-item-section">选项3</div>
+          <li class="disabled n22-action-sheet-item">
+            <div class="n22-action-sheet-item-wrapper">
+              <div class="n22-action-sheet-item-section">选项3</div>
             </div>
           </li>
-          <li class="md-action-sheet-cancel">取消</li>
+        </ul>
+      </div>
+      <div class="n22-action-sheet-content" style="margin-top: 2%;">
+        <ul>
+          <div class="n22-action-sheet-cancel">取消</div>
         </ul>
       </div>
     </div>

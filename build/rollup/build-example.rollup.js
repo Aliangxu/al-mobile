@@ -21,7 +21,7 @@ const inputOptions = async () =>  ({
 })
 
 const outputCommonjsOptions = {
-  file: path.resolve(EXAMPLE_OUTPUT_DIR, 'mand-mobile-example.js'),
+  file: path.resolve(EXAMPLE_OUTPUT_DIR, 'al-mobile-example.js'),
   format: 'umd',
 }
 

@@ -1,8 +1,9 @@
 <template>
-  <div class="md-example-child md-example-child-dialog md-example-child-dialog-1"></div>
+  <div class="n22-example-child n22-example-child-dialog n22-example-child-dialog-1"></div>
 </template>
 
-<script>import {Dialog} from 'mand-mobile'
+<script>
+import {Dialog} from 'al-mobile'
 
 export default {
   name: 'dialog-demo',
@@ -45,4 +46,5 @@ export default {
     },
   },
 }
-</script>
+
+</script>

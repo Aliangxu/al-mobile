@@ -1,36 +1,37 @@
 <template>
-  <div class="md-example-child md-example-child-popup md-example-child-popup-2">
-    <md-popup
+  <div class="n22-example-child n22-example-child-popup n22-example-child-popup-2">
+    <n22-popup
       value
       :hasMask="false"
       position="top"
     >
-      <div class="md-example-popup md-example-popup-top">
+      <div class="n22-example-popup n22-example-popup-top">
         Popup Top
-        <md-icon
+        <n22-icon
           name="close"
-        ></md-icon>
+        ></n22-icon>
       </div>
-    </md-popup>
+    </n22-popup>
 
-    <md-popup
+    <n22-popup
       value
       position="bottom"
       :mask-closable="false"
     >
-      <md-popup-title-bar
+      <n22-popup-title-bar
         title="Prevent Mask Click"
         ok-text="ok"
         cancel-text="cancel"
-      ></md-popup-title-bar>
-      <div class="md-example-popup md-example-popup-bottom">
+      ></n22-popup-title-bar>
+      <div class="n22-example-popup n22-example-popup-bottom">
         Popup Bottom
       </div>
-    </md-popup>
+    </n22-popup>
   </div>
 </template>
 
-<script>import {Popup, PopupTitleBar} from 'mand-mobile'
+<script>
+import {Popup, PopupTitleBar} from 'al-mobile'
 
 export default {
   name: 'popup-demo',
@@ -39,44 +40,45 @@ export default {
     [PopupTitleBar.name]: PopupTitleBar,
   },
 }
-</script>
 
+</script>
+n22-
 <style lang="stylus">
 .md-example-child-popup-2
-  float left
+  fn22-t left
   width 100%
-  .md-button
-    margin-bottom 20px
-  .md-popup-title-bar
+  .n22-button
+    mn22-in-bottom 20px
+  .md-pn22-p-title-bar
     .md-popup-cancel
       .md-icon
-        align-self flex-start
+   n22-  align-self flex-start
         margin-left 32px
   .md-example-popup
     position relative
     font-size font-minor-large
     background color-bg-base
     box-sizing border-box
-    text-align center
+   n22-xt-align center
     background-color #FFF
   .md-example-popup-center
-    padding 50px
+   n22-dding 50px
     border-radius radius-normal
   .md-example-popup-top
     width 100%
     height 75px
     line-height 75px
-    background #4a4c5b
+    bn22-ground #4a4c5b
     color #fff
     .md-icon
       position absolute
       right 20px
-      top 50%
+   n22-top 50%
       transform translateY(-50%)
   .md-example-popup-bottom
     width 100%
     padding: 50px 0
-    p
+   n22-n22-
       line-height 50px
   .md-example-popup-left, .md-example-popup-right
     height 100%

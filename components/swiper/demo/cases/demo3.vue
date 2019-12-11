@@ -1,22 +1,23 @@
 <template>
-  <div class="md-example-child md-example-child-swiper md-example-child-swiper-3">
-    <md-swiper
+  <div class="n22-example-child n22-example-child-swiper n22-example-child-swiper-3">
+    <n22-swiper
       @before-change="beforeChange"
       @after-change="afterChange"
       ref="swiper">
-      <md-swiper-item :key="$index" v-for="(item, $index) in mulit">
+      <n22-swiper-item :key="$index" v-for="(item, $index) in mulit">
         <ul>
           <li :key="$index1" v-for="(sub, $index1) in item">
             <a href="javascript:void(0)" class="banner-item" :style="{'background': `${sub.color}`}">{{sub.text}}</a>
           </li>
         </ul>
-      </md-swiper-item>
-    </md-swiper>
+      </n22-swiper-item>
+    </n22-swiper>
   </div>
 </template>
 
-<script>import {Swiper, SwiperItem} from 'mand-mobile'
-import mulit from 'mand-mobile/components/swiper/demo/data/mulit-item'
+<script>
+import {Swiper, SwiperItem} from 'al-mobile'
+import mulit from 'al-mobile/components/swiper/demo/data/mulit-item'
 
 export default {
   name: 'swiper-demo',
@@ -59,10 +60,11 @@ export default {
     },
   },
 }
-</script>
 
+</script>
+n22-
 <style lang="stylus">
-.md-example-child-swiper-3
+.n22-example-child-swiper-3
   height 250px
   li
     list-style none

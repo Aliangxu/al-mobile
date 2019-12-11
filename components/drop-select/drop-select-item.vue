@@ -5,7 +5,6 @@
       :type="inputType"
       :name="name"
       v-model="selectValue"
-      v-validate="vvalidateModal"
       :data-vv-as="dataVvAs"
     >
     <slot name="drop-select-field-item">
@@ -79,6 +78,8 @@
         :default-date="defaultDate"
         :min-date="minDate"
         :max-date="maxDate"
+        :notSelectIdf="notSelectIdf"
+        @onNotSelectFun="onNotSelectFun"
         @onPickerConfirm="onPickerConfirm"
         @onDatePickerChange="onDatePickerChange"
         @onDatePickerConfirm="onDatePickerConfirm"
@@ -219,6 +220,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    notSelectIdf: {
+      type: String,
+      default: "",
+    },
   },
   computed: {
     //...mapState(["common"])//引入vuex state样例>>>可通过this.common.userInfo获取vuex-state数据
@@ -265,7 +270,7 @@ export default {
   methods: {
     isInputError() {
       // return this.vvalidateModal && this.name && this.errors.first(this.name);
-      return this.$slots.error || this.error !== '' || (this.getIsValidator&&this.vvalidateModal&&this.name&&this.errors.first(this.name))
+      return this.$slots.error || this.error !== '' || (this.getIsValidator&&this.vvalidateModal&&this.name&&this.errors&&this.errors.first(this.name))
     },
     isPickerShowClick() {
       if(this.disabled)return;
@@ -282,6 +287,7 @@ export default {
           type: this.type,
           selectValue: this.selectValue,
           title: this.pickerTitle,
+          notSelectIdf: this.notSelectIdf,
           pickerData: this.pickerData,
           defaultDate: this.defaultDate,
           minDate: this.minDate,
@@ -298,9 +304,16 @@ export default {
           },
           onAddressPickerConfirm: (columnsValue, value,options) => {
             _this.onAddressPickerConfirm(columnsValue, value, options);
-          }
+          },
+          onNotSelectFun: (value) => {
+            console.log("%c value", "color:green;", value);
+            _this.onNotSelectFun(value);
+          },
         });
       }
+    },
+    onNotSelectFun(val){
+      this.$emit("onNotSelectFun", val);
     },
     onPickerConfirm(index, v) {
       console.log("%c index", "color:green;", index);
@@ -446,12 +459,12 @@ export default {
     },
   },
   mounted() {
-    console.log('%c DropSelect--mounted','color:green;',this.value);
+    console.log('%c DropSelectItem--mounted','color:green;',this.value);
     this.value?(this.onPickerConfirmZD(this.value, 0)):this.assignDefault();
   },
   watch: {
     value(newval, oldval) {
-      // console.log("%c DropSelect-触发选择的value值", "color:green;", newval);
+      // console.log("%c DropSelectItem-触发选择的value值", "color:green;", newval);
       newval?(newval != oldval && this.onPickerConfirmZD(newval,oldval, 0,true)):this.assignDefault(newval,2);
     },
     options: {

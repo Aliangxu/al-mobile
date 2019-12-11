@@ -6,6 +6,9 @@ import router from './router'
 import VueClipboard from 'vue-clipboard2'
 import VueTooltip from 'v-tooltip'
 import { setScale } from './assets/js/util'
+import 'al-mobile/components/_style/global.styl'
+//svg
+import 'al-mobile/components/icons'
 
 if (process.env.NODE_ENV === 'production') {
   const hostname = location.hostname

@@ -1,10 +1,11 @@
 <template>
-  <div class="md-example-child md-example-child-action-bar md-example-child-1">
-    <md-action-bar :actions="data"></md-action-bar>
+  <div class="n22-example-child n22-example-child-action-bar n22-example-child-1">
+    <n22-action-bar :actions="data"></n22-action-bar>
   </div>
 </template>
 
-<script>import {ActionBar, Toast} from 'mand-mobile'
+<script>
+import {ActionBar, Toast} from 'al-mobile'
 
 export default {
   name: 'action-bar-demo',
@@ -36,4 +37,5 @@ export default {
     },
   },
 }
-</script>
+
+</script>

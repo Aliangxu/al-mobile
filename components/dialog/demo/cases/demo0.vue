@@ -1,48 +1,48 @@
 <template>
-  <div class="md-example-child md-example-child-dialog md-example-child-dialog-0">
-    <md-button @click="basicDialog.open = true">基本</md-button>
-    <md-button @click="iconDialog.open = true">带图标</md-button>
-    <md-button @click="warnDialog.open = true">警示操作</md-button>
-    <md-button @click="asyncDialog.open = true">异步操作</md-button>
-    <md-button @click="actDialog.open = true">多操作</md-button>
-    <md-button @click="slotDialog.open = true">插槽</md-button>
+  <div class="n22-example-child n22-example-child-dialog n22-example-child-dialog-0">
+    <n22-button @click="basicDialog.open = true">基本</n22-button>
+    <n22-button @click="iconDialog.open = true">带图标</n22-button>
+    <n22-button @click="warnDialog.open = true">警示操作</n22-button>
+    <n22-button @click="asyncDialog.open = true">异步操作</n22-button>
+    <n22-button @click="actDialog.open = true">多操作</n22-button>
+    <n22-button @click="slotDialog.open = true">插槽</n22-button>
 
-    <md-dialog
+    <n22-dialog
       title="窗口标题"
       :closable="true"
       v-model="basicDialog.open"
       :btns="basicDialog.btns"
     >
       人生的刺，就在这里，留恋着不肯快走的，偏是你所不留恋的东西。
-    </md-dialog>
+    </n22-dialog>
 
-    <md-dialog
+    <n22-dialog
       icon="location"
       :closable="true"
       v-model="iconDialog.open"
       :btns="iconDialog.btns"
     >
       围在城里的人想逃出来，城外的人想冲进去，对婚姻也罢，职业也罢，人生的愿望大都如此。
-    </md-dialog>
+    </n22-dialog>
 
-    <md-dialog
+    <n22-dialog
       title="警示操作"
       :closable="false"
       v-model="warnDialog.open"
       :btns="warnDialog.btns"
     >
       或是因为习惯了孤独，我们渴望被爱；又或是害怕爱而不得，我们最后仍然选择孤独。
-    </md-dialog>
+    </n22-dialog>
 
-    <md-dialog
+    <n22-dialog
       :closable="false"
       v-model="asyncDialog.open"
       :btns="asyncDialog.btns"
     >
       每个人都有属于自己的一片森林，也许我们 从来不曾去过，但它一直在那里，总会在那里。迷失的人迷失了，相逢的人会再相逢。
-    </md-dialog>
+    </n22-dialog>
 
-    <md-dialog
+    <n22-dialog
       title="窗口标题"
       :closable="false"
       layout="column"
@@ -50,9 +50,9 @@
       :btns="actDialog.btns"
     >
       据说每个人需要一面镜子，可以常常自照，知道自己是个什么东西。不过，能自知的人根本不用照镜子；不自知的东西，照了镜子也没有用。
-    </md-dialog>
+    </n22-dialog>
 
-    <md-dialog
+    <n22-dialog
       title="家"
       :closable="false"
       v-model="slotDialog.open"
@@ -62,11 +62,12 @@
         <img src="http://img-hxy021.didistatic.com/static/strategymis/insurancePlatform_spu/uploads/27fb7f097ca218d743f816836bc7ea4a" alt="">
       </div>
       虽然其中有一些争吵、不愉快、曲折，但重要的是一家人整整齐齐。
-    </md-dialog>
+    </n22-dialog>
   </div>
 </template>
 
-<script>import {Dialog, Button, Toast} from 'mand-mobile'
+<script>
+import {Dialog, Button, Toast} from 'al-mobile'
 
 export default {
   name: 'dialog-demo',
@@ -186,7 +187,8 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus" scoped>
 .dialog-banner

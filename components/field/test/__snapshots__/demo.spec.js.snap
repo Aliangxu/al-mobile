@@ -1,69 +1,84 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Field Basic 1`] = `
-<div class="md-example-child md-example-child-field md-example-child-field-0">
-  <fieldset class="md-field">
-    <header class="md-field-header">
-      <div class="md-field-heading">
-        <legend class="md-field-title">区域标题</legend>
-        <p class="md-field-brief">区域描述性文本，可根据具体场景配置</p>
+<div class="n22-example-child n22-example-child-field n22-example-child-field-0">
+  <fieldset class="n22-field">
+    <header class="n22-field-header n22-field-header-bottom">
+      <div class="n22-field-heading">
+        <legend class="n22-field-title">区域标题</legend>
+        <p class="n22-field-brief">区域描述性文本，可根据具体场景配置</p>
       </div>
-      <div class="md-field-action">
+      <div class="n22-field-action">
         <div class="action-container">
-          操作 <i class="md-icon icon-font md-icon-rectangle rectangle md" style="color:;"></i></div>
+          操作 <i class="n22-icon icon-font n22-icon-rectangle rectangle md" style="color:;"></i></div>
       </div>
     </header>
-    <div class="md-field-content">
-      <div class="md-field-item is-solid">
-        <div class="md-field-item-content"><label class="md-field-item-title">标题区域</label>
+    <div class="n22-field-content">
+      <div class="n22-field-item is-solid is-browser">
+        <div class="n22-field-item-content n22-field-item-content-line">
+          <!----> <label class="n22-field-item-title"><span>标题区域</span>
+            <!---->
+            <!----></label>
           <!---->
-          <div class="md-field-item-control">
-            <div class="md-field-item-placeholder">提示文本</div>
+          <div class="n22-field-item-control">
+            <!---->
           </div>
           <!---->
         </div>
         <!---->
       </div>
-      <div class="md-field-item is-solid">
-        <div class="md-field-item-content"><label class="md-field-item-title">标题区域</label>
+      <div class="n22-field-item is-solid is-browser">
+        <div class="n22-field-item-content n22-field-item-content-line">
+          <!----> <label class="n22-field-item-title"><span>标题区域</span>
+            <!---->
+            <!----></label>
           <!---->
-          <div class="md-field-item-control">内容文本</div>
-          <div class="md-field-item-right">次要信息
+          <div class="n22-field-item-control">内容文本</div>
+          <div class="n22-field-item-right">次要信息
             <!---->
           </div>
         </div>
         <!---->
       </div>
-      <div class="md-field-item is-solid">
-        <div class="md-field-item-content"><label class="md-field-item-title">附加内容</label>
+      <div class="n22-field-item is-solid is-browser">
+        <div class="n22-field-item-content n22-field-item-content-line">
+          <!----> <label class="n22-field-item-title"><span>附加内容</span>
+            <!---->
+            <!----></label>
           <!---->
-          <div class="md-field-item-control">正文内容</div>
+          <div class="n22-field-item-control">正文内容</div>
           <!---->
         </div>
-        <div class="md-field-item-children">
+        <div class="n22-field-item-children" style="text-align:right;">
           <p>这是子内容区域</p>
         </div>
       </div>
-      <div class="md-field-item is-solid">
-        <div class="md-field-item-content"><label class="md-field-item-title">动作条目</label>
+      <div class="n22-field-item is-solid is-browser">
+        <div class="n22-field-item-content n22-field-item-content-line">
+          <!----> <label class="n22-field-item-title"><span>动作条目</span>
+            <!---->
+            <!----></label>
           <!---->
-          <div class="md-field-item-control">
+          <div class="n22-field-item-control">
             <!---->
           </div>
-          <div class="md-field-item-right"> <i class="md-icon icon-font md-icon-arrow-right arrow-right md" style="color:;"></i></div>
+          <div class="n22-field-item-right"> <span class="svg_icon"><svg-icon icon-class="right_arrow"></svg-icon></span> </div>
         </div>
         <!---->
       </div>
-      <div class="md-field-item is-solid is-disabled">
-        <div class="md-field-item-content"><label class="md-field-item-title">禁用条目</label>
+      <div class="n22-field-item is-solid is-disabled is-browser">
+        <div class="n22-field-item-content n22-field-item-content-line">
+          <!----> <label class="n22-field-item-title"><span>禁用条目</span>
+            <!---->
+            <!----></label>
           <!---->
-          <div class="md-field-item-control">内容禁用状态</div>
-          <div class="md-field-item-right"> <i class="md-icon icon-font md-icon-arrow-right arrow-right md" style="color:;"></i></div>
+          <div class="n22-field-item-control">内容禁用状态</div>
+          <div class="n22-field-item-right"> <span class="svg_icon"><svg-icon icon-class="right_arrow"></svg-icon></span> </div>
         </div>
         <!---->
       </div>
     </div>
-    <footer class="md-field-footer">
+    <footer class="n22-field-footer">
       <p>区域页脚区域内容插槽</p>
     </footer>
   </fieldset>

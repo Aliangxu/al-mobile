@@ -1,23 +1,24 @@
 <template>
-  <div class="md-example-child md-example-child-swiper md-example-child-swiper-1">
-    <md-swiper
+  <div class="n22-example-child n22-example-child-swiper n22-example-child-swiper-1">
+    <n22-swiper
       @before-change="beforeChange"
       @after-change="afterChange"
       :default-index="1"
       :dragable="false"
       :autoplay="5000"
       transition="slideY">
-      <md-swiper-item :key="$index" v-for="(item, $index) in simple">
+      <n22-swiper-item :key="$index" v-for="(item, $index) in simple">
         <a href="javascript:void(0)"
           class="banner-item"
           :style="{'background': `${item.color}`}">{{item.text}}</a>
-      </md-swiper-item>
-    </md-swiper>
+      </n22-swiper-item>
+    </n22-swiper>
   </div>
 </template>
 
-<script>import {Swiper, SwiperItem} from 'mand-mobile'
-import simple from 'mand-mobile/components/swiper/demo/data/simple'
+<script>
+import {Swiper, SwiperItem} from 'al-mobile'
+import simple from 'al-mobile/components/swiper/demo/data/simple'
 
 export default {
   name: 'swiper-demo',
@@ -53,10 +54,11 @@ export default {
     },
   },
 }
-</script>
 
+</script>
+n22-
 <style lang="stylus">
-.md-example-child-swiper-1
+.n22-example-child-swiper-1
   height 250px
   .banner-item
     float left

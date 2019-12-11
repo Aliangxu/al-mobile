@@ -48,11 +48,11 @@ function generateSource (lang = 'zh-CN') {
 }
 
 module.exports = {
-  title: 'Mand Mobile',
+  title: 'Al Mobile',
   subtitle: '面向金融场景的Vue移动端UI组件库',
   subtitleEnUs: 'A mobile UI toolkit, based on Vue.js 2, designed for financial scenarios',
-  logo: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-logo-black.svg',
-  favicon: '//static.galileo.xiaojukeji.com/static/tms/other/mand-mobile-logo.png',
+  logo: 'https://avatars2.githubusercontent.com/u/23047590?s=200&v=4',
+  favicon: 'https://avatars2.githubusercontent.com/u/23047590?s=200&v=4',
   source: [{
     name: 'zh-CN',
     text: '中文',
@@ -64,14 +64,19 @@ module.exports = {
       menu: [
         {
           name: 'introduce',
-          text: 'Mand Mobile',
+          text: 'Al Mobile',
           markdown: resolve('site/docs/introduce.md'),
-          demo: [resolve('site/theme/default/components/GitContributors.vue')]
+          // demo: [resolve('site/theme/default/components/GitContributors.vue')]
         },
         {
           name: 'started',
           text: '快速上手',
           markdown: resolve('site/docs/started.md'),
+        },
+        {
+          name: 'autoAdd',
+          text: '自动化新增',
+          markdown: resolve('site/docs/AUTOCREATE.md'),
         },
         {
           name: 'development',
@@ -83,27 +88,27 @@ module.exports = {
           text: '更新日志',
           markdown: resolve('CHANGELOG.md'),
         },
-        {
-          name: 'theme',
-          text: '主题定制',
-          markdown: resolve('site/docs/theme.md'),
-        },
-        {
-          name: 'faq',
-          text: '常见问题',
-          link: 'https://github.com/didi/mand-mobile/wiki/FAQ---%E4%B8%AD%E6%96%87',
-        },
+        // {
+        //   name: 'theme',
+        //   text: '主题定制',
+        //   markdown: resolve('site/docs/theme.md'),
+        // },
+        // {
+        //   name: 'faq',
+        //   text: '常见问题',
+        //   link: 'https://github.com/didi/mand-mobile/wiki/FAQ---%E4%B8%AD%E6%96%87',
+        // },
         // {
         //   name: 'preview',
         //   text: '组件概览',
         //   template: resolve('site/theme/default/Preview.vue'),
         //   markdown: resolve('README.md'),
         // },
-        {
-          name: 'migration',
-          text: '从1.x迁移',
-          markdown: resolve('site/docs/migration.md'),
-        },
+        // {
+        //   name: 'migration',
+        //   text: '从1.x迁移',
+        //   markdown: resolve('site/docs/migration.md'),
+        // },
         {
           name: 'components',
           text: 'Components',
@@ -157,18 +162,19 @@ module.exports = {
         }],
       }]
     },
-    {
-      name: 'palette',
-      text: '调色板',
-      src: 'https://mand-mobile.github.io/palette',
-      // dot: true
-    },
-    {
-      name: 'mand-mobile-rn',
-      text: 'Mand Mobile RN',
-      src: 'https://didi.github.io/mand-mobile-rn',
-      dot: true
-    }]
+    // {
+    //   name: 'palette',
+    //   text: '调色板',
+    //   src: 'https://mand-mobile.github.io/palette',
+    //   // dot: true
+    // },
+    // {
+    //   name: 'mand-mobile-rn',
+    //   text: 'Mand Mobile RN',
+    //   src: 'https://didi.github.io/mand-mobile-rn',
+    //   dot: true
+    // }
+  ]
   }, {
     name: 'en-US',
     text: 'English',
@@ -180,9 +186,9 @@ module.exports = {
       menu: [
         {
           name: 'introduce',
-          text: 'Mand Mobile',
+          text: 'Al Mobile',
           markdown: resolve('site/docs/introduce.en-US.md'),
-          demo: [resolve('site/theme/default/components/GitContributors.vue')]
+          // demo: [resolve('site/theme/default/components/GitContributors.vue')]
         },
         {
           name: 'started',
@@ -199,27 +205,27 @@ module.exports = {
           text: 'Change Log',
           markdown: resolve('CHANGELOG.en-US.md'),
         },
-        {
-          name: 'theme',
-          text: 'Custom Theme',
-          markdown: resolve('site/docs/theme.en-US.md'),
-        },
-        {
-          name: 'faq',
-          text: 'FAQ',
-          link: 'https://github.com/didi/mand-mobile/wiki/FAQ',
-        },
+        // {
+        //   name: 'theme',
+        //   text: 'Custom Theme',
+        //   markdown: resolve('site/docs/theme.en-US.md'),
+        // },
+        // {
+        //   name: 'faq',
+        //   text: 'FAQ',
+        //   link: 'https://github.com/didi/mand-mobile/wiki/FAQ',
+        // },
         // {
         //   name: 'preview',
         //   text: 'Component Preview',
         //   template: resolve('site/theme/default/Preview.vue'),
         //   markdown: resolve('README.md'),
         // },
-        {
-          name: 'migration',
-          text: 'Migration from 1.x',
-          markdown: resolve('site/docs/migration.en-US.md'),
-        },
+        // {
+        //   name: 'migration',
+        //   text: 'Migration from 1.x',
+        //   markdown: resolve('site/docs/migration.en-US.md'),
+        // },
         {
           name: 'components',
           text: 'Components',
@@ -273,17 +279,18 @@ module.exports = {
         }],
       }]
     },
-    {
-      name: 'palette',
-      text: 'Palette',
-      src: 'https://mand-mobile.github.io/palette',
-    },
-    {
-      name: 'mand-mobile-rn',
-      text: 'Mand Mobile RN',
-      src: 'https://didi.github.io/mand-mobile-rn',
-      dot: true
-    }]
+    // {
+    //   name: 'palette',
+    //   text: 'Palette',
+    //   src: 'https://mand-mobile.github.io/palette',
+    // },
+    // {
+    //   name: 'mand-mobile-rn',
+    //   text: 'Mand Mobile RN',
+    //   src: 'https://didi.github.io/mand-mobile-rn',
+    //   dot: true
+    // }
+  ]
   }],
   components: generateSource(),
   markdownBoundary: {
@@ -300,10 +307,10 @@ module.exports = {
             text: 'Mand Mobile',
             src: 'https://github.com/didi/mand-mobile',
           },
-          {
-            text: 'Mand Mobile RN',
-            src: 'https://github.com/didi/mand-mobile-rn',
-          },
+          // {
+          //   text: 'Mand Mobile RN',
+          //   src: 'https://github.com/didi/mand-mobile-rn',
+          // },
           {
             text: '脚手架模板',
             src: 'https://github.com/mand-mobile/mand-mobile-template',
@@ -329,10 +336,10 @@ module.exports = {
             text: '码云',
             src: 'https://gitee.com/mand-mobile/mand-mobile'
           },
-          {
-            text: '官方交流群',
-            src: 'https://shang.qq.com/wpa/qunwpa?idkey=97670d381924f2d46c53960715577502285952dd12f67e5dc9727f554955a254'
-          }
+          // {
+          //   text: '官方交流群',
+          //   src: 'https://shang.qq.com/wpa/qunwpa?idkey=97670d381924f2d46c53960715577502285952dd12f67e5dc9727f554955a254'
+          // }
         ],
       },
       {
@@ -340,55 +347,55 @@ module.exports = {
         link: [
           {
             text: '贡献指南',
-            src: 'https://github.com/didi/mand-mobile/blob/master/CONTRIBUTING.md',
+            src: 'https://github.com/Aliangxu/al-mobile.git/blob/master/CONTRIBUTING.md',
           },
           {
             text: '问题反馈',
-            src: 'https://github.com/didi/mand-mobile/issues',
+            src: 'https://github.com/Aliangxu/al-mobile.git/issues',
           },
           {
             text: '更新日志',
-            src: 'https://github.com/didi/mand-mobile/blob/master/CHANGELOG.md',
+            src: 'https://github.com/Aliangxu/al-mobile.git/blob/master/CHANGELOG.md',
           },
           {
             text: '常见问题',
-            src: 'https://github.com/didi/mand-mobile/wiki/FAQ',
+            src: 'https://github.com/Aliangxu/al-mobile.git/wiki/FAQ',
           },
           {
             text: '加入我们',
-            src: 'http://job.didichuxing.com/',
+            src: 'https://github.com/Aliangxu/al-mobile.git',
           }
         ]
       },
-      {
-        title: '更多产品 <a href="http://opensource.didiglobal.com" style="position:relative;top:3px;margin-left:5px;"><img height="16" src="//manhattan.didistatic.com/static/manhattan/mand/docs/didi-logo-white.png"/>',
-        link: [
-          {
-            text: 'Chameleon <span>- 跨端解决方案</span>',
-            src: 'https://CML.JS.org',
-          },
-          {
-            text: 'Cube UI <span>- Vue.js组件库</span>',
-            src: 'https://didi.github.io/cube-ui',
-          },
-          {
-            text: 'Pile.js <span>- React组件库</span>',
-            src: 'https://github.com/didi/pile.js',
-          },
-          {
-            text: 'MPX <span>- 增强型小程序框架</span>',
-            src: 'https://github.com/didi/mpx/',
-          },
-          {
-            text: 'DoraemonKit <span>- iOS开发助手</span>',
-            src: 'https://github.com/didi/doraemonKit/',
-          },
-          {
-            text: 'VirtualAPK <span>- Android插件化框架</span>',
-            src: 'https://didi.github.io/virtual-apk.html',
-          }
-        ],
-      },
+      // {
+      //   title: '更多产品 <a href="http://opensource.didiglobal.com" style="position:relative;top:3px;margin-left:5px;"><img height="16" src="//manhattan.didistatic.com/static/manhattan/mand/docs/didi-logo-white.png"/>',
+      //   link: [
+      //     {
+      //       text: 'Chameleon <span>- 跨端解决方案</span>',
+      //       src: 'https://CML.JS.org',
+      //     },
+      //     {
+      //       text: 'Cube UI <span>- Vue.js组件库</span>',
+      //       src: 'https://didi.github.io/cube-ui',
+      //     },
+      //     {
+      //       text: 'Pile.js <span>- React组件库</span>',
+      //       src: 'https://github.com/didi/pile.js',
+      //     },
+      //     {
+      //       text: 'MPX <span>- 增强型小程序框架</span>',
+      //       src: 'https://github.com/didi/mpx/',
+      //     },
+      //     {
+      //       text: 'DoraemonKit <span>- iOS开发助手</span>',
+      //       src: 'https://github.com/didi/doraemonKit/',
+      //     },
+      //     {
+      //       text: 'VirtualAPK <span>- Android插件化框架</span>',
+      //       src: 'https://didi.github.io/virtual-apk.html',
+      //     }
+      //   ],
+      // },
     ],
     'en-US': [
       {
@@ -398,10 +405,10 @@ module.exports = {
             text: 'Mand Mobile',
             src: 'https://github.com/didi/mand-mobile',
           },
-          {
-            text: 'Mand Mobile RN',
-            src: 'https://github.com/didi/mand-mobile-rn',
-          },
+          // {
+          //   text: 'Mand Mobile RN',
+          //   src: 'https://github.com/didi/mand-mobile-rn',
+          // },
           {
             text: 'Template',
             src: 'https://github.com/mand-mobile/mand-mobile-template',
@@ -438,58 +445,58 @@ module.exports = {
         link: [
           {
             text: 'Contribute Guide',
-            src: 'https://github.com/didi/mand-mobile/blob/master/CONTRIBUTING.md',
+            src: 'https://github.com/Aliangxu/al-mobile.git/blob/master/CONTRIBUTING.md',
           },
           {
             text: 'Issues',
-            src: 'https://github.com/didi/mand-mobile/issues',
+            src: 'https://github.com/Aliangxu/al-mobile.git/issues',
           },
           {
             text: 'Change Log',
-            src: 'https://github.com/didi/mand-mobile/blob/master/CHANGELOG.md',
+            src: 'https://github.com/Aliangxu/al-mobile.git/blob/master/CHANGELOG.md',
           },
           {
             text: 'FAQ',
-            src: 'https://github.com/didi/mand-mobile/wiki/FAQ',
+            src: 'https://github.com/Aliangxu/al-mobile.git/wiki/FAQ',
           },
           {
             text: 'Join Us',
-            src: 'http://job.didichuxing.com/',
+            src: 'https://github.com/Aliangxu/al-mobile.git',
           }
         ]
       },
-      {
-        title: 'More Products <a href="http://opensource.didiglobal.com" style="position:relative;top:3px;margin-left:5px;"><img height="16" src="//manhattan.didistatic.com/static/manhattan/mand/docs/didi-logo-white.png"/>',
-        link: [
-          {
-            text: 'Chameleon <span>- Cross-end Framework</span>',
-            src: 'https://CML.JS.org',
-          },
-          {
-            text: 'Cube UI <span>- Vue.js UI Lib</span>',
-            src: 'https://didi.github.io/cube-ui',
-          },
-          {
-            text: 'Pile.js <span>- React Components</span>',
-            src: 'https://github.com/didi/pile.js',
-          },
-          {
-            text: 'MPX <span>- Enhanced Miniprogram Framework</span>',
-            src: 'https://github.com/didi/mpx/',
-          },
-          {
-            text: 'VirtualAPK <span>- Android Plugin Framework</span>',
-            src: 'https://didi.github.io/virtual-apk.html',
-          },
-          {
-            text: 'DoraemonKit <span>- iOS Development Assistant</span>',
-            src: 'https://github.com/didi/doraemonKit/',
-          }
-        ],
-      },
+      // {
+      //   title: 'More Products <a href="http://opensource.didiglobal.com" style="position:relative;top:3px;margin-left:5px;"><img height="16" src="//manhattan.didistatic.com/static/manhattan/mand/docs/didi-logo-white.png"/>',
+      //   link: [
+      //     {
+      //       text: 'Chameleon <span>- Cross-end Framework</span>',
+      //       src: 'https://CML.JS.org',
+      //     },
+      //     {
+      //       text: 'Cube UI <span>- Vue.js UI Lib</span>',
+      //       src: 'https://didi.github.io/cube-ui',
+      //     },
+      //     {
+      //       text: 'Pile.js <span>- React Components</span>',
+      //       src: 'https://github.com/didi/pile.js',
+      //     },
+      //     {
+      //       text: 'MPX <span>- Enhanced Miniprogram Framework</span>',
+      //       src: 'https://github.com/didi/mpx/',
+      //     },
+      //     {
+      //       text: 'VirtualAPK <span>- Android Plugin Framework</span>',
+      //       src: 'https://didi.github.io/virtual-apk.html',
+      //     },
+      //     {
+      //       text: 'DoraemonKit <span>- iOS Development Assistant</span>',
+      //       src: 'https://github.com/didi/doraemonKit/',
+      //     }
+      //   ],
+      // },
     ]
   },
-  copyRight: '2012-2019 Didi Chuxing. All Rights Reserved',
-  routePrefix: '/mand-mobile',
+  copyRight: '2012-2019 AL',
+  routePrefix: '/al-mobile',
   // staticPrefix: '//manhattan.didistatic.com/static/manhattan/mand-mobile',
 }

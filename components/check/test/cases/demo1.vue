@@ -1,16 +1,17 @@
 <template>
-  <div class="md-example-child md-example-child-check md-example-child-check-1">
-    <md-check-group v-model="favorites">
-      <md-check name="watermelon" label="西瓜" />
-      <md-check name="apple" label="苹果" />
-      <md-check name="banana" label="香蕉" />
-      <md-check name="orange" label="橙子" />
-      <md-check name="tomato" label="西红柿" disabled />
-    </md-check-group>
+  <div class="n22-example-child n22-example-child-check n22-example-child-check-1">
+    <n22-check-group v-model="favorites">
+      <n22-check name="watermelon" label="西瓜" />
+      <n22-check name="apple" label="苹果" />
+      <n22-check name="banana" label="香蕉" />
+      <n22-check name="orange" label="橙子" />
+      <n22-check name="tomato" label="西红柿" disabled />
+    </n22-check-group>
 	</div>
 </template>
 
-<script>import {Check, CheckGroup} from 'mand-mobile'
+<script>
+import {Check, CheckGroup} from 'al-mobile'
 
 export default {
   name: 'check-demo',
@@ -25,4 +26,5 @@ export default {
     }
   },
 }
-</script>
+
+</script>

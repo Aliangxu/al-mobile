@@ -7,7 +7,7 @@ title: Agree 勾选按钮
 ### 引入
 
 ```javascript
-import { Agree } from '@/components'
+import { Agree } from 'al-mobile'
 
 Vue.component(Agree.name, Agree)
 ```

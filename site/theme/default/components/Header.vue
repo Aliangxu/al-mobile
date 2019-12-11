@@ -2,7 +2,7 @@
   <div class="mfe-blog-theme-default-header" :class="{active: isActive}">
     <div class="default-header-container">
       <div class="default-header-aside">
-        <a class="default-header-logo" href="/mand-mobile">
+        <a class="default-header-logo" href="/al-mobile">
           <img class="logo-img" :src="logo" alt="logo">
           <p>
             <span class="name" v-html="title"></span>
@@ -20,7 +20,7 @@
       <div class="default-header-content">
         <mfe-search :lang="lang" :menu="menu"></mfe-search>
         <div class="default-header-github default-header-operater">
-          <a href="https://github.com/didi/mand-mobile/tree/master" target="_blank"></a>
+          <a href="https://github.com/Aliangxu/al-mobile.git" target="_blank"></a>
         </div>
         <div class="default-header-lang default-header-operater">
           <router-link
@@ -69,7 +69,7 @@
 </template>
 
 <script>
-import mandMobileInfo from 'mand-mobile/package.json'
+import alMobileInfo from 'al-mobile/package.json'
 import MfeTable from './Table'
 import MfeSearch from './Search'
 import { localStore } from '../assets/js/util'
@@ -103,7 +103,7 @@ export default {
       versionTableShow: false,
       versionData: [{
         text: 'v1.x',
-        path: 'https://mand-mobile.github.io'
+        path: ''
       }],
       langSwitchPath: ''
     }
@@ -121,7 +121,7 @@ export default {
       return this.lang === 'zh-CN' ? 'en-US' : 'zh-CN'
     },
     version() {
-      return mandMobileInfo ? mandMobileInfo.version : ''
+      return alMobileInfo ? alMobileInfo.version : ''
     }
   },
 

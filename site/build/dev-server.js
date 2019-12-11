@@ -4,6 +4,7 @@ const config = require('../config')
 const {info} = require('./bin/utils')
 
 if (!process.env.NODE_ENV) {
+  // process.traceDeprecation = true
   process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV)
 }
 

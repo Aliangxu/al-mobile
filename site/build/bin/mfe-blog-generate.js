@@ -80,7 +80,7 @@ function generateDocVue(templatePath, outputPath) {
 }
 
 function generateConfig(config) {
-  const reg = new RegExp(resolve(''), 'ig')
+  const reg = new RegExp(resolve('')+'/', 'ig')
   fs.writeFileSync( `${config.output}/config.js`, `window.mbConfig=${JSON.stringify(config)}`.replace(reg, ''))
 }
 

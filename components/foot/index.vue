@@ -2,7 +2,7 @@
  * @Author: aliang 
  * @Date: 2018-11-21 18:15:41 
  * @Last Modified by: aliang
- * @Last Modified time: 2019-10-25 21:28:17
+ * @Last Modified time: 2019-11-06 15:06:46
  * @description：底部导航
  */
 
@@ -38,7 +38,7 @@
 
 <script>
 // import { mapState } from "vuex";
-import Tabbar from "../tab-bar";
+import TabBar from "../tab-bar";
 
 export default {
   name: "al-foot",
@@ -90,7 +90,7 @@ export default {
     },
   },
   components: {
-    [Tabbar.name]: Tabbar
+    [TabBar.name]: TabBar
   },
   created() {},
   mounted() {

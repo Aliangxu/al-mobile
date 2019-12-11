@@ -1,7 +1,7 @@
 /* eslint comma-dangle: ["error", "always-multiline"] */
 
 // 组件引入
-import { warn } from './_util'
+import { transformCamelCase, warn } from './_util'
 import AllHead from './all-head'
 import Content from './content'
 // import HomeHead from './home-head'
@@ -14,7 +14,7 @@ import Calendar from './calendar'
 import NoticeBar from './notice-bar'
 import InformationBar from './information-bar'
 import Radio from './radio'
-import RadioItem from './radio/indexItem.vue'
+import RadioItem from './radio-item'
 import RadioList from './radio-list'
 import Amount from './amount'
 import ListTabs from './list-tabs'
@@ -23,11 +23,12 @@ import Steps from './steps'
 import InputItem from './input-item'
 import Field from './field'
 import FieldItem from './field-item'
+import Icon from './icon'
 import Popup from './popup'
-import PopupTitleBar from './popup/title-bar'
+import PopupTitleBar from './popup-title-bar'
 import Picker from './picker'
 import DatePicker from './date-picker'
-import DropSelect from './drop-select/DropSelect'
+import DropSelectItem from './drop-select-item'
 import Dialog from './dialog'
 import Cashier from './cashier'
 import Ruler from './ruler'
@@ -36,7 +37,7 @@ import ActionBar from './action-bar'
 import Button from './button'
 import Swiper from './swiper/swiper'
 import Switch from './switch'
-import SwitchItem from './switch/indexItem'
+import SwitchItem from './switch-item'
 import ImageReader from './image-reader'
 import ImageViewer from './image-viewer'
 // import CASign from './casign/n22-sign'
@@ -47,12 +48,12 @@ import CheckList from './check-list'
 import Agree from './agree'
 import Progress from './progress'
 import ScrollTable from './scroll-table/scrollTable'
-import Work from './work/work.vue'
+import Work from './work'
 import Toast from './toast'
 import ActivityIndicator from './activity-indicator'
 import NumberKeyboard from './number-keyboard'
 import Textarea from './textarea'
-import Tabbar from './tab-bar'
+import TabBar from './tab-bar'
 
 
 // import Audio from './audio'
@@ -95,11 +96,12 @@ export const components = {
     InputItem,
     Field,
     FieldItem,
+    Icon,
     Popup,
     PopupTitleBar,
     Picker,
     DatePicker,
-    DropSelect,
+    DropSelectItem,
     Dialog,
     Cashier,
     Ruler,
@@ -123,7 +125,7 @@ export const components = {
     Toast,
     ActivityIndicator,
     Textarea,
-    Tabbar,
+    TabBar,
 
 
     // Audio,
@@ -141,7 +143,10 @@ const install = function (Vue) {
     const componentsNames = Object.keys(components)
     componentsNames.forEach(name => {
         const component = components[name]
-        component.name && Vue.component(component.name, component)
+        if (component.name) {
+          Vue.component(component.name, component) // kebab-case
+          Vue.component(transformCamelCase(`-${component.name}`), component) // PascalCase
+        }
     })
 
     // 全局服务注入
@@ -179,11 +184,12 @@ export {
     InputItem,
     Field,
     FieldItem,
+    Icon,
     Popup,
     PopupTitleBar,
     Picker,
     DatePicker,
-    DropSelect,
+    DropSelectItem,
     Dialog,
     Cashier,
     Ruler,
@@ -207,7 +213,7 @@ export {
     Toast,
     ActivityIndicator,
     Textarea,
-    Tabbar,
+    TabBar,
 
 
     // Audio,

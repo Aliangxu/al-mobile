@@ -1,9 +1,10 @@
 <template>
-  <div class="md-example-child md-example-child-action-sheet">
+  <div class="n22-example-child n22-example-child-action-sheet">
   </div>
 </template>
 
-<script>import {ActionSheet} from 'mand-mobile'
+<script>
+import {ActionSheet} from 'al-mobile'
 
 export default {
   name: 'action-sheet-demo',
@@ -33,4 +34,5 @@ export default {
     },
   },
 }
-</script>
+
+</script>

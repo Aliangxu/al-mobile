@@ -1,4 +1,4 @@
-import {Cashier} from 'mand-mobile'
+import {Cashier} from 'al-mobile'
 import sinon from 'sinon'
 import {mount} from '@vue/test-utils'
 
@@ -64,8 +64,8 @@ describe('Cashier - Operation', () => {
       expect(wrapper.vm.$refs.channel.isChannelShow).toBeTruthy()
 
       const eventSpy = sinon.spy(wrapper.vm.$refs.channel, '$emit')
-      const channelItems = wrapper.findAll('.md-cashier-channel-item')
-      const confirmBtn = wrapper.find('.md-cashier-pay-button')
+      const channelItems = wrapper.findAll('.n22-cashier-channel-item')
+      const confirmBtn = wrapper.find('.n22-cashier-pay-button')
       expect(channelItems.length).toEqual(channels.length)
 
       channelItems.at(1).trigger('click') // invalid click
@@ -96,8 +96,8 @@ describe('Cashier - Operation', () => {
     })
 
     wrapper.vm.$nextTick(() => {
-      expect(!!wrapper.find('.md-cashier-captcha')).toBeTruthy()
-      const cancel = wrapper.find('.md-popup-cancel')
+      expect(!!wrapper.find('.n22-cashier-captcha')).toBeTruthy()
+      const cancel = wrapper.find('.n22-popup-cancel')
       cancel.trigger('click')
       done()
     })
@@ -115,10 +115,10 @@ describe('Cashier - Operation', () => {
       text: '123',
     })
     wrapper.vm.$nextTick(() => {
-      expect(!!wrapper.find('.md-cashier-loading')).toBeTruthy()
+      expect(!!wrapper.find('.n22-cashier-loading')).toBeTruthy()
       expect(
         wrapper
-          .find('.md-cashier-block-text')
+          .find('.n22-cashier-block-text')
           .text()
           .trim(),
       ).toEqual('123')
@@ -138,10 +138,10 @@ describe('Cashier - Operation', () => {
       text: '123',
     })
     wrapper.vm.$nextTick(() => {
-      expect(!!wrapper.find('.md-cashier-success')).toBeTruthy()
+      expect(!!wrapper.find('.n22-cashier-success')).toBeTruthy()
       expect(
         wrapper
-          .find('.md-cashier-block-text')
+          .find('.n22-cashier-block-text')
           .text()
           .trim(),
       ).toEqual('123')
@@ -161,10 +161,10 @@ describe('Cashier - Operation', () => {
       text: '123',
     })
     wrapper.vm.$nextTick(() => {
-      expect(!!wrapper.find('.md-cashier-fail')).toBeTruthy()
+      expect(!!wrapper.find('.n22-cashier-fail')).toBeTruthy()
       expect(
         wrapper
-          .find('.md-cashier-block-text')
+          .find('.n22-cashier-block-text')
           .text()
           .trim(),
       ).toEqual('123')

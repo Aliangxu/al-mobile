@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Picker - Demo Cascade 1`] = `
-<div class="md-example-child md-example-child-picker md-example-child-picker-1">
-  <div class="md-picker">
+<div class="n22-example-child n22-example-child-picker n22-example-child-picker-1">
+  <div class="n22-picker">
     <div class="md-picker-column" style="height: 245px;">
       <div class="md-picker-column-container">
         <div class="md-picker-column-masker top" style="height: 100px;"></div>
@@ -61,11 +61,11 @@ exports[`Picker - Demo Cascade 1`] = `
 `;
 
 exports[`Picker - Demo Display in Popup 1`] = `
-<div class="md-example-child md-example-child-picker md-example-child-picker-2">
-  <div class="md-picker with-popup">
-    <div class="md-popup inner-popup with-mask bottom" style="">
-      <div class="md-popup-mask" style="" name="md-mask-fade"></div>
-      <div class="md-popup-box md-slide-up" style="" name="md-slide-up">
+<div class="n22-example-child n22-example-child-picker n22-example-child-picker-2">
+  <div class="n22-picker with-popup">
+    <div class="n22-popup inner-popup with-mask bottom" style="">
+      <div class="n22-popup-mask" style="" name="n22-mask-fade"></div>
+      <div class="n22-popup-box n22-slide-up" style="" name="n22-slide-up">
         <div class="md-popup-title-bar">
           <div class="title-bar-left md-popup-cancel">取消</div>
           <div class="title-bar-title">
@@ -112,8 +112,8 @@ exports[`Picker - Demo Display in Popup 1`] = `
 `;
 
 exports[`Picker - Demo Single column 1`] = `
-<div class="md-example-child md-example-child-picker md-example-child-picker-0">
-  <div class="md-picker">
+<div class="n22-example-child n22-example-child-picker n22-example-child-picker-0">
+  <div class="n22-picker">
     <div class="md-picker-column" style="height: 245px;">
       <div class="md-picker-column-container">
         <div class="md-picker-column-masker top" style="height: 100px;"></div>

@@ -7,6 +7,7 @@ const pxtorem = require('postcss-pxtorem')
 const baseWebpackConfig = require('./webpack.base.conf')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
+const WebpackBar = require('webpackbar');
 
 const pxtoremConfig = pxtorem({ rootValue: 100, minPixelValue: 2, propWhiteList: [] })
 // add hot-reload related code to entry chunks
@@ -21,6 +22,9 @@ module.exports = merge(baseWebpackConfig, {
   // cheap-module-eval-source-map is faster for development
   devtool: '#cheap-module-eval-source-map',
   plugins: [
+    new WebpackBar({
+      name: 'al-mobile-site'
+    }),
     new webpack.DefinePlugin({
       'process.env': config.dev.env,
     }),

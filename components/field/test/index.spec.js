@@ -1,4 +1,4 @@
-import {FieldItem} from 'mand-mobile'
+import {FieldItem} from 'al-mobile'
 import sinon from 'sinon'
 import {shallowMount} from '@vue/test-utils'
 
@@ -20,7 +20,7 @@ describe('Field - Operation', () => {
     })
     const eventSpy = sinon.spy(wrapper.vm, '$emit')
 
-    wrapper.find('.md-field-item').trigger('click')
+    wrapper.find('.n22-field-item').trigger('click')
     expect(eventSpy.calledWith('click')).toBe(true)
     expect(clicked).toBe(true)
   })

@@ -122,7 +122,8 @@
   </div>
 </template>
 
-<script>import {Popup, Button} from 'mand-mobile'
+<script>
+import {Popup, Button} from 'al-mobile'
 
 export default {
   name: 'transition-demo',
@@ -145,7 +146,8 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
 .md-example-child-transition-1

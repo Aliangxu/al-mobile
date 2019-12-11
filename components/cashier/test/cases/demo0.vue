@@ -1,17 +1,18 @@
 <template>
-  <div class="md-example-child md-example-child-cashier">
-    <md-cashier
+  <div class="n22-example-child n22-example-child-cashier">
+    <n22-cashier
       ref="cashier"
       v-model="isCashierhow"
       :channels="cashierChannels"
       :channel-limit="2"
       :payment-amount="cashierAmount"
       payment-describe="关于支付金额的特殊说明"
-    ></md-cashier>
+    ></n22-cashier>
 	</div>
 </template>
 
-<script>import {Cashier} from 'mand-mobile'
+<script>
+import {Cashier} from 'al-mobile'
 
 export default {
   name: 'cashier-demo',
@@ -69,11 +70,12 @@ export default {
     },
   },
 }
-</script>
 
-<style lang="stylus">
+</script>
+n22-
+<stn22- lang="stylus">
 .md-example-child-cashier
-  .md-field
+  .n22-field
     margin-bottom 30px
   .md-cashier-channel-item
     .item-icon.cashier-icon-1

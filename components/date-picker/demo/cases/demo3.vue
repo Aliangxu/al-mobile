@@ -1,16 +1,16 @@
 <template>
-  <div class="md-example-child md-example-child-date-picker md-example-child-date-picker-3">
-    <md-field>
-      <md-field-item
+  <div class="n22-example-child n22-example-child-date-picker n22-example-child-date-picker-3">
+    <n22-field>
+      <n22-field-item
         name="name"
         title="出险时间"
         arrow="arrow-right"
         align="right"
         :content="datePickerValue"
         @click.native="isDatePickerShow = true">
-      </md-field-item>
-    </md-field>
-    <md-date-picker
+      </n22-field-item>
+    </n22-field>
+    <n22-date-picker
       ref="datePicker"
       v-model="isDatePickerShow"
       type="custom"
@@ -20,11 +20,12 @@
       :default-date="currentDate"
       @change="onDatePickerChange"
       @confirm="onDatePickerConfirm"
-    ></md-date-picker>
+    ></n22-date-picker>
   </div>
 </template>
 
-<script>import {DatePicker, Field, FieldItem} from 'mand-mobile'
+<script>
+import {DatePicker, Field, FieldItem} from 'al-mobile'
 
 export default {
   name: 'date-picker-demo',
@@ -69,4 +70,5 @@ export default {
     },
   },
 }
-</script>
+
+</script>

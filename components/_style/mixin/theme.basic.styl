@@ -1,8 +1,14 @@
+support-for-ie = false
+/*
+ * GLOBAL COLOR
+ */
+
 /// Brand Color
 color-primary           = #2F86F6 // 品牌色
 
 /// Text Color
 color-text-base         = #111A34 // 重要信息，如一级标题
+color-text-linehighlight= #4090fb // 线条高亮颜色
 color-text-base-inverse = #FFF
 color-text-body         = #41485D // 普通信息，如正文主要内容
 color-text-minor        = #666f83 // 次要信息，如利益点、摘要
@@ -23,51 +29,73 @@ color-bg-disabled       = #E2E4EA // 禁用元素背景
 color-bg-tap            = #F9FAFB // 条目点击态
 color-mask              = rgba(37, 38, 45, .7) // 弹窗蒙层
 
-/// Text Size
-font-heading-large  = 60px
-font-heading-medium = 52px
-font-heading-normal = 44px
-font-caption-large  = 36px
-font-caption-normal = 32px
-font-body-large     = 28px
-font-body-normal    = 26px
-font-minor-large    = 24px
-font-minor-normal   = 20px
+// svg 
+color-svg-left-arrow    = #707070 // 左侧箭头
+color-svg-question-mark = #707070 // 问号
+
+/*
+ * GLOBAL SIZE
+ */
+
+// text size
+font-heading-large  = 30px
+font-heading-medium = 26px
+font-heading-normal = 22px
+font-normal         = 16px
+font-caption-large  = 14px
+font-caption-normal = 14px
+font-body-large     = 14px
+font-body-normal    = 13px
+font-minor-large    = 12px
+font-minor-normal   = 10px
 
 font-weight-light    = 300
 font-weight-normal   = 400
 font-weight-medium   = 500
 font-weight-semibold = 600
 
-/// Radius Size
+// radius size
 radius-normal = 4px
 radius-circle = 50%
 
-/// Border Size
+// border size
 border-width-base = 2px
 
-/// Spacing size
-h-gap-xs = 8px
-h-gap-sm = 12px
-h-gap-md = 20px
-h-gap-lg = 32px
-h-gap-sl = 40px
+// gap size
+h-gap-xs = 4px
+h-gap-sm = 6px
+h-gap-md = 10px
+h-gap-lg = 16px
+h-gap-sl = 20px
 
-v-gap-xs = 8px
-v-gap-sm = 12px
-v-gap-md = 20px
-v-gap-lg = 32px
-v-gap-sl = 40px
+v-gap-xs = 4px
+v-gap-sm = 6px
+v-gap-md = 10px
+v-gap-lg = 16px
+v-gap-sl = 20px
 
-/// Transition
+/*
+ * GLOBAL OTHER
+ */
+
+// animate
 ease-in-out-quint = cubic-bezier(.86, 0, .07, 1)
 
-/// Opacity
+// opacity
 opacity-disabled = .3 // opacity of disabled button, switch, agree
 
-/// Font Family
+// font family
 font-family-normal = "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif
 font-family-number = DINPro-Medium, DIN Alternate, "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif
 
 /// Configration
 support-for-ie = false
+
+
+/*↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓header↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
+headIndex = 1000
+ioshead = 20px
+headTop = 44px//统一head头部高度
+headBottomTop = 46px//统一第二head头部高度（类似于一些下拉菜单等等）
+
+/*↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑header↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑*/

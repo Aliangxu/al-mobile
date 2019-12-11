@@ -1,5 +1,5 @@
 <template>
-  <div class="md-example-child md-example-child-reader md-example-child-reader-1">
+  <div class="n22-example-child n22-example-child-reader n22-example-child-reader-1">
     <ul class="image-reader-list">
       <li
         class="image-reader-item"
@@ -11,7 +11,7 @@
           'backgroundRepeat': 'no-repeat',
           'backgroundSize': 'cover'
         }">
-        <md-tag
+        <n22-tag
           class="image-reader-item-del"
           size="small"
           shape="quarter"
@@ -20,26 +20,27 @@
           font-color="#fff"
           @click.native="onDeleteImage('reader1', index)"
         >
-          <md-icon name="close"></md-icon>
-        </md-tag>
+          <n22-icon name="close"></n22-icon>
+        </n22-tag>
       </li>
       <li class="image-reader-item add">
-        <md-image-reader
+        <n22-image-reader
           name="reader1"
           @select="onReaderSelect"
           @complete="onReaderComplete"
           @error="onReaderError"
           is-multiple
-        ></md-image-reader>
-        <md-icon name="camera" size="md" color="#CCC"></md-icon>
+        ></n22-image-reader>
+        <n22-icon name="camera" size="md" color="#CCC"></n22-icon>
         <p>添加图片</p>
       </li>
     </ul>
   </div>
 </template>
 
-<script>import {Icon, ImageReader, Tag, Toast} from 'mand-mobile'
-import imageProcessor from 'mand-mobile/components/image-reader/image-processor'
+<script>
+import {Icon, ImageReader, Tag, Toast} from 'al-mobile'
+import imageProcessor from 'al-mobile/components/image-reader/image-processor'
 
 export default {
   name: 'image-reader-demo',
@@ -93,8 +94,9 @@ export default {
     },
   },
 }
-</script>
 
+</script>
+n22-
 <style lang="stylus" scoped>
 .md-example-child-reader
   .image-reader-list
@@ -114,7 +116,7 @@ export default {
       border-radius 4px
       background-size cover
       &:nth-of-type(4n)
-        margin-right 0
+        mn22-in-right 0
       &.add
         .md-icon
           position absolute
@@ -135,7 +137,7 @@ export default {
         position absolute
         top 0
         right 0
-        z-index 3
+        zn22-dex 3
         opacity .8
         .md-icon-close
           font-size 24px

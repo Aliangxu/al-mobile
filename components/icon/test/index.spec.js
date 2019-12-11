@@ -1,4 +1,4 @@
-import {Icon} from 'mand-mobile'
+import {Icon} from 'al-mobile'
 import sinon from 'sinon'
 import {shallowMount} from '@vue/test-utils'
 
@@ -23,7 +23,7 @@ describe('Icon - Operation', () => {
     })
     const eventSpy = sinon.spy(wrapper.vm, '$emit')
 
-    wrapper.find('.md-icon').trigger('click')
+    wrapper.find('.n22-icon').trigger('click')
     expect(eventSpy.calledWith('click')).toBe(true)
     expect(clicked).toBe(true)
   })

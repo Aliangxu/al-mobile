@@ -7,24 +7,13 @@ title: head 布局头部
 ### 引入
 
 ```javascript
-import { Allhead } from '@/components'
+import { Allhead } from 'al-mobile'
 
 Vue.component(Allhead.name, Allhead)
 ```
 
 ### 代码演示
-<!-- DEMO-使用底部插槽 -->
-<al-all-head @click-left="back" :opacityStyle="opacityStyle">
-    <div slot="head_bottom">
-        <n22-tab-bar
-            ref="listMenu"
-            :items="tabs"
-            v-model="curIndex"
-            @changeTab="changeTab"
-        >
-        </n22-tab-bar>
-    </div>
-</al-all-head>
+<!-- DEMO -->
 
 ### API
 

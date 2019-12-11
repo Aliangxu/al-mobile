@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Steps - Demo Add custom styles through by class named "current" 1`] = `
-<div class="md-example-child md-example-child-steps md-example-child-steps-5">
+<div class="n22-example-child n22-example-child-steps n22-example-child-steps-5">
   <div class="md-steps md-steps-horizontal">
     <div class="step-wrapper reached">
       <div class="icon-wrapper">
@@ -18,7 +18,9 @@ exports[`Steps - Demo Add custom styles through by class named "current" 1`] = `
     </div>
     <div class="bar horizontal-bar"><i class="bar-inner" style="transform: translate3d(0%, 0, 0); transition: all 0.3s linear;"></i></div>
     <div class="step-wrapper current">
-      <div class="icon-wrapper"><i class="md-icon icon-font md-icon-success success md"></i></div>
+      <div class="icon-wrapper">
+        <svg-icon icon-class="success" class="svg_class"></svg-icon>
+      </div>
       <div class="text-wrapper">
         <div class="name">
           开通
@@ -62,10 +64,12 @@ exports[`Steps - Demo Add custom styles through by class named "current" 1`] = `
 `;
 
 exports[`Steps - Demo Basic 1`] = `
-<div class="md-example-child md-example-child-steps md-example-child-steps-0">
+<div class="n22-example-child n22-example-child-steps n22-example-child-steps-0">
   <div class="md-steps md-steps-horizontal">
     <div class="step-wrapper current">
-      <div class="icon-wrapper"><i class="md-icon icon-font md-icon-success success md"></i></div>
+      <div class="icon-wrapper">
+        <svg-icon icon-class="success" class="svg_class"></svg-icon>
+      </div>
       <div class="text-wrapper">
         <div class="name">
           登录/注册
@@ -109,7 +113,7 @@ exports[`Steps - Demo Basic 1`] = `
 `;
 
 exports[`Steps - Demo Complete all steps 1`] = `
-<div class="md-example-child md-example-child-steps md-example-child-steps-6">
+<div class="n22-example-child n22-example-child-steps n22-example-child-steps-6">
   <div class="md-steps md-steps-horizontal">
     <div class="step-wrapper reached">
       <div class="icon-wrapper">
@@ -154,7 +158,9 @@ exports[`Steps - Demo Complete all steps 1`] = `
     </div>
     <div class="bar horizontal-bar"><i class="bar-inner" style="transform: translate3d(0%, 0, 0); transition: all 0.3s linear;"></i></div>
     <div class="step-wrapper current">
-      <div class="icon-wrapper"><i class="md-icon icon-font md-icon-success success md"></i></div>
+      <div class="icon-wrapper">
+        <svg-icon icon-class="success" class="svg_class"></svg-icon>
+      </div>
       <div class="text-wrapper">
         <div class="name">
           成功
@@ -170,14 +176,15 @@ exports[`Steps - Demo Complete all steps 1`] = `
 `;
 
 exports[`Steps - Demo Custom content 1`] = `
-<div class="md-example-child md-example-child-steps md-example-child-steps-8">
+<div class="n22-example-child n22-example-child-steps n22-example-child-steps-8">
   <div class="md-steps md-steps-vertical no-current">
     <div class="step-wrapper reached current">
-      <div class="icon-wrapper"><i class="md-icon icon-font md-icon-checked checked md"></i></div>
+      <div class="icon-wrapper"><i class="n22-icon icon-font n22-icon-checked checked md"></i></div>
       <div class="text-wrapper">
         <div class="custom-content">
           <p class="name active">还款申请已提交</p>
-          <p class="amount"><span class="md-amount numerical">600.50</span>元
+          <p class="amount"><span><span class="n22-amount numerical">600.50</span>
+            <!----></span>元
           </p>
           <p class="desc">银行处理中，预计<span>30分钟</span>内到账，请留意短信信息。如有疑问，请联系客服。</p>
         </div>
@@ -215,11 +222,12 @@ exports[`Steps - Demo Custom content 1`] = `
     </div>
     <div class="bar vertical-bar" style="height: 40px;"><i class="bar-inner" style="transform: translate3d(0, 0%, 0); transition: all 0.3s linear;"></i></div>
     <div class="step-wrapper current">
-      <div class="icon-wrapper"><i class="md-icon icon-font md-icon-checked checked md"></i></div>
+      <div class="icon-wrapper"><i class="n22-icon icon-font n22-icon-checked checked md"></i></div>
       <div class="text-wrapper">
         <div class="custom-content">
           <p class="name active">还款成功</p>
-          <p class="amount"><span class="md-amount numerical">600.50</span>元
+          <p class="amount"><span><span class="n22-amount numerical">600.50</span>
+            <!----></span>元
           </p>
         </div>
       </div>
@@ -232,7 +240,7 @@ exports[`Steps - Demo Custom content 1`] = `
 `;
 
 exports[`Steps - Demo Custom step icon 1`] = `
-<div class="md-example-child md-example-child-steps md-example-child-steps-2">
+<div class="n22-example-child n22-example-child-steps n22-example-child-steps-2">
   <div class="md-steps md-steps-horizontal">
     <div class="step-wrapper reached">
       <div class="icon-wrapper">
@@ -247,7 +255,7 @@ exports[`Steps - Demo Custom step icon 1`] = `
     </div>
     <div class="bar horizontal-bar"><i class="bar-inner" style="transform: translate3d(0%, 0, 0); transition: all 0.3s linear;"></i></div>
     <div class="step-wrapper reached">
-      <div class="icon-wrapper"><i class="md-icon icon-font md-icon-checked checked md"></i></div>
+      <div class="icon-wrapper"><i class="n22-icon icon-font n22-icon-checked checked md"></i></div>
       <div class="text-wrapper">
         <div class="name">
           开通
@@ -257,7 +265,7 @@ exports[`Steps - Demo Custom step icon 1`] = `
     </div>
     <div class="bar horizontal-bar"><i class="bar-inner" style="transform: translate3d(0%, 0, 0); transition: all 0.3s linear;"></i></div>
     <div class="step-wrapper current">
-      <div class="icon-wrapper"><i class="md-icon icon-font md-icon-location location md"></i></div>
+      <div class="icon-wrapper"><i class="n22-icon icon-font n22-icon-location location md"></i></div>
       <div class="text-wrapper">
         <div class="name">
           验证
@@ -287,7 +295,7 @@ exports[`Steps - Demo Custom step icon 1`] = `
 `;
 
 exports[`Steps - Demo Non-integer progress 1`] = `
-<div class="md-example-child md-example-child-steps md-example-child-steps-1">
+<div class="n22-example-child n22-example-child-steps n22-example-child-steps-1">
   <div class="md-steps md-steps-horizontal no-current">
     <div class="step-wrapper reached">
       <div class="icon-wrapper">
@@ -352,7 +360,7 @@ exports[`Steps - Demo Non-integer progress 1`] = `
 `;
 
 exports[`Steps - Demo Specify the current step 1`] = `
-<div class="md-example-child md-example-child-steps md-example-child-steps-3">
+<div class="n22-example-child n22-example-child-steps n22-example-child-steps-3">
   <div class="md-steps md-steps-horizontal">
     <div class="step-wrapper reached">
       <div class="icon-wrapper">
@@ -383,7 +391,9 @@ exports[`Steps - Demo Specify the current step 1`] = `
     </div>
     <div class="bar horizontal-bar"><i class="bar-inner" style="transform: translate3d(0%, 0, 0); transition: all 0.3s linear;"></i></div>
     <div class="step-wrapper current">
-      <div class="icon-wrapper"><i class="md-icon icon-font md-icon-success success md"></i></div>
+      <div class="icon-wrapper">
+        <svg-icon icon-class="success" class="svg_class"></svg-icon>
+      </div>
       <div class="text-wrapper">
         <div class="name">
           验证
@@ -413,7 +423,7 @@ exports[`Steps - Demo Specify the current step 1`] = `
 `;
 
 exports[`Steps - Demo Transition of rogress changes 1`] = `
-<div class="md-example-child md-example-child-steps md-example-child-steps-4">
+<div class="n22-example-child n22-example-child-steps n22-example-child-steps-4">
   <div class="md-steps md-steps-horizontal no-current">
     <div class="step-wrapper reached">
       <div class="icon-wrapper">
@@ -478,7 +488,7 @@ exports[`Steps - Demo Transition of rogress changes 1`] = `
 `;
 
 exports[`Steps - Demo Vertical display 1`] = `
-<div class="md-example-child md-example-child-steps md-example-child-steps-7">
+<div class="n22-example-child n22-example-child-steps n22-example-child-steps-7">
   <div class="md-steps md-steps-vertical vertical-adaptive">
     <div class="step-wrapper reached">
       <div class="icon-wrapper">
@@ -497,7 +507,9 @@ exports[`Steps - Demo Vertical display 1`] = `
     </div>
     <div class="bar vertical-bar"><i class="bar-inner" style="transform: translate3d(0, 0%, 0); transition: all 0.3s linear;"></i></div>
     <div class="step-wrapper current">
-      <div class="icon-wrapper"><i class="md-icon icon-font md-icon-success success md"></i></div>
+      <div class="icon-wrapper">
+        <svg-icon icon-class="success" class="svg_class"></svg-icon>
+      </div>
       <div class="text-wrapper">
         <div class="name">
           开通

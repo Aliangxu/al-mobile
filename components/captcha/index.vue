@@ -1,13 +1,13 @@
 <template>
-  <div class="md-captcha" v-show="isView || value || visible">
+  <div class="n22-captcha" v-show="isView || value || visible">
     <template v-if="isView">
-      <div class="md-captcha-content">
-        <h2 class="md-captcha-title" v-if="title" v-text="title"></h2>
-        <div class="md-captcha-message">
+      <div class="n22-captcha-content">
+        <h2 class="n22-captcha-title" v-if="title" v-text="title"></h2>
+        <div class="n22-captcha-message">
           <slot></slot>
         </div>
       </div>
-      <md-codebox
+      <n22-codebox
         ref="codebox"
         v-model="code"
         :maxlength="maxlength"
@@ -19,18 +19,18 @@
         :justify="true"
         :autofocus="false"
       >
-        <footer class="md-captcha-footer">
-          <div class="md-captcha-error" v-if="errorMsg" v-text="errorMsg"></div>
-          <div class="md-captcha-brief" v-else v-text="brief"></div>
+        <footer class="n22-captcha-footer">
+          <div class="n22-captcha-error" v-if="errorMsg" v-text="errorMsg"></div>
+          <div class="n22-captcha-brief" v-else v-text="brief"></div>
           <button
-            class="md-captcha-btn"
+            class="n22-captcha-btn"
             v-if="count"
             v-text="countBtnText"
             :disabled="this.isCounting"
             @click="$_onResend"
           ></button>
         </footer>
-      </md-codebox>
+      </n22-codebox>
     </template>
     <template v-else>
       <n22-dialog
@@ -42,13 +42,13 @@
         @show="$_onShow"
         @hide="$_onHide"
       >
-        <div class="md-captcha-content">
-          <h2 class="md-captcha-title" v-if="title" v-text="title"></h2>
-          <div class="md-captcha-message">
+        <div class="n22-captcha-content">
+          <h2 class="n22-captcha-title" v-if="title" v-text="title"></h2>
+          <div class="n22-captcha-message">
             <slot></slot>
           </div>
         </div>
-        <md-codebox
+        <n22-codebox
           ref="codebox"
           v-model="code"
           :maxlength="maxlength"
@@ -59,18 +59,18 @@
           :autofocus="false"
           @submit="$_onSubmit"
         >
-          <footer class="md-captcha-footer">
-            <div class="md-captcha-error" v-if="errorMsg" v-text="errorMsg"></div>
-            <div class="md-captcha-brief" v-else v-text="brief"></div>
+          <footer class="n22-captcha-footer">
+            <div class="n22-captcha-error" v-if="errorMsg" v-text="errorMsg"></div>
+            <div class="n22-captcha-brief" v-else v-text="brief"></div>
             <button
-              class="md-captcha-btn"
+              class="n22-captcha-btn"
               v-if="count"
               v-text="countBtnText"
               :disabled="this.isCounting"
               @click="$_onResend"
             ></button>
           </footer>
-        </md-codebox>
+        </n22-codebox>
       </n22-dialog>
     </template>
   </div>
@@ -246,33 +246,33 @@ export default {
 </script>
 
 <style lang="stylus">
-.md-captcha
-  .md-dialog
-    .md-popup
+.n22-captcha
+  .n22-dialog
+    .n22-popup
       z-index captcha-zindex
       position: fixed;
-    .md-dialog-body
+    .n22-dialog-body
       padding 30px 30px 15px 30px
-    .md-dialog-content
+    .n22-dialog-content
       margin-bottom number-keyboard-height
-  .md-codebox
+  .n22-codebox
     margin-bottom 28px
 
-.md-captcha-content
+.n22-captcha-content
   font-size captcha-font-size
   color captcha-color
   text-align center
   line-height 1.2
   margin-bottom 50px
 
-.md-captcha-title
+.n22-captcha-title
   color captcha-title-color
   font-size captcha-title-font-size
   font-weight normal
   line-height 1.15
   margin 0 0 16px 0
 
-.md-captcha-footer
+.n22-captcha-footer
   margin 28px 0
   display flex
   font-size captcha-footer-font-size
@@ -280,14 +280,14 @@ export default {
   align-items center
   overflow hidden
 
-.md-captcha-error, .md-captcha-brief
+.n22-captcha-error, .n22-captcha-brief
   flex 1 1 0%
-.md-captcha-error
+.n22-captcha-error
   color captcha-error-color
-.md-captcha-brief
+.n22-captcha-brief
   color captcha-brief-color
 
-.md-captcha-btn
+.n22-captcha-btn
   display inline-block
   color captcha-btn-color
   font-size captcha-footer-font-size

@@ -1,5 +1,5 @@
 const TEST_TYPE = process.env.TEST_TYPE || 'components'
-// const TEST_BUNDLE = TEST_TYPE === 'bundle' ? 'lib/mand-mobile.umd' : ''
+// const TEST_BUNDLE = TEST_TYPE === 'bundle' ? 'lib/al-mobile.umd' : ''
 
 module.exports = {
   setupFiles: ['jest-canvas-mock', '<rootDir>/test/jest.init.js'],
@@ -28,10 +28,10 @@ module.exports = {
   ],
   moduleNameMapper: {
     '@examples(.*)': '<rootDir>/examples/$1',
-    'mand-mobile/lib(.*)': `<rootDir>/${TEST_TYPE}$1`,
-    'mand-mobile/components/picker/demo/data(.*)': '<rootDir>/components/picker/demo/data/$1',
-    'mand-mobile/components/tab-picker/demo/data(.*)': '<rootDir>/components/tab-picker/demo/data/$1',
-    'mand-mobile/components(.*)': `<rootDir>/${TEST_TYPE}$1`
+    'al-mobile/lib(.*)': `<rootDir>/${TEST_TYPE}$1`,
+    'al-mobile/components/picker/demo/data(.*)': '<rootDir>/components/picker/demo/data/$1',
+    'al-mobile/components/tab-picker/demo/data(.*)': '<rootDir>/components/tab-picker/demo/data/$1',
+    'al-mobile/components(.*)': `<rootDir>/${TEST_TYPE}$1`
   },
   snapshotSerializers: [
     'jest-serializer-vue'

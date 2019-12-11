@@ -1,5 +1,5 @@
 <template>
-  <div class="md-example-child md-example-child-amount">
+  <div class="n22-example-child n22-example-child-amount">
     <p>
       <span class="describe">Original</span>
       <n22-amount :value="1234.125" :precision="3"></n22-amount>
@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import {Amount} from '../../'
+import {Amount} from 'al-mobile'
 
 export default {
   name: 'amount-demo',
@@ -28,7 +28,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.md-example-child-amount
+.n22-example-child-amount
   text-align center
   color #666
   p

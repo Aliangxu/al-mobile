@@ -28,7 +28,7 @@ function ouputBundle(bundle) {
   switch (process.env.BUILD_TYPE) {
     case 'esm':
       return bundle.write({
-        file: path.resolve(LIB_DIR, 'mand-mobile.esm.js'),
+        file: path.resolve(LIB_DIR, 'al-mobile.esm.js'),
         format: 'es',
       }).then(() => {
         resultLog('success', 'Build **ES BUNDLE** Complete!')
@@ -36,9 +36,9 @@ function ouputBundle(bundle) {
     case 'umd':
     case 'variables':
       return bundle.write({
-        file: path.resolve(LIB_DIR, 'mand-mobile.umd.js'),
+        file: path.resolve(LIB_DIR, 'al-mobile.umd.js'),
         format: 'umd',
-        name: 'mand-mobile',
+        name: 'al-mobile',
       }).then(() => {
         resultLog('success', 'Build **UMD BUNDLE** Complete!')
       })

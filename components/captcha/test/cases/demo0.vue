@@ -1,6 +1,6 @@
 <template>
-  <div class="md-example-child md-example-child-captcha">
-    <md-captcha
+  <div class="n22-example-child n22-example-child-captcha">
+    <n22-captcha
       ref="captcha"
       v-model="show"
       :title="title"
@@ -10,11 +10,12 @@
       :appendTo="appendTo"
     >
       {{content}}
-    </md-captcha>
+    </n22-captcha>
 	</div>
 </template>
 
-<script>import {Captcha} from 'mand-mobile'
+<script>
+import {Captcha} from 'al-mobile'
 
 export default {
   name: 'captcha-demo',
@@ -34,10 +35,11 @@ export default {
     }
   },
 }
-</script>
 
+</script>
+n22-
 <style lang="stylus">
-.md-example-child-captcha
+.mdn22-ample-child-captcha
   padding 20px
   .md-field
     margin-bottom 40px

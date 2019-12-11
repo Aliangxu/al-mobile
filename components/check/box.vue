@@ -1,6 +1,6 @@
 <template>
   <div
-    class="md-check-box"
+    class="n22-check-box"
     :class="{
       'is-disabled': disabled,
       'is-checked': isChecked
@@ -8,14 +8,14 @@
     @click="$_onClick"
   >
     <slot>{{label}}</slot>
-    <md-tag
+    <n22-tag
       v-if="isChecked"
       size="tiny"
       shape="quarter"
       type="fill"
     >
-      <md-icon name="right"></md-icon>
-    </md-tag>
+      <n22-icon name="right"></n22-icon>
+    </n22-tag>
   </div>
 </template>
 
@@ -23,7 +23,7 @@
 import Tag from '../tag'
 import Icon from '../icon'
 export default {
-  name: 'md-check-box',
+  name: 'n22-check-box',
 
   components: {
     [Tag.name]: Tag,
@@ -83,7 +83,7 @@ export default {
 </script>
 
 <style lang="stylus">
-.md-check-box
+.n22-check-box
   position relative
   display inline-block
   text-align center
@@ -107,7 +107,7 @@ export default {
     color checkbox-disabled-color
     border-color checkbox-disabled-color
 
-  .md-tag
+  .n22-tag
     position absolute
     top 0
     right 0

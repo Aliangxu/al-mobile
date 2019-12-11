@@ -1,8 +1,8 @@
 <<template>
-  <div class="md-example captcha">
-    <section class="md-example-section" v-for="(demo, index) in demos" :key="index">
-      <div class="md-example-title" v-html="demo.title || '基础'"></div>
-      <div class="md-example-content">
+  <div class="n22-example captcha">
+    <section class="n22-example-section" v-for="(demo, index) in demos" :key="index">
+      <div class="n22-example-title" v-html="demo.title || '基础'"></div>
+      <div class="n22-example-content">
         <component :is="demo"></component>
       </div>
     </section>
@@ -18,10 +18,10 @@ export default {...createDemoModule('captcha', [Demo0, Demo1])}
 </script>
 
 <style lang="stylus">
-.md-example.captcha
-  .md-example-child
+.n22-example.captcha
+  .n22-example-child
     padding 0
-  .md-example-section
+  .n22-example-section
     float left
     width 100%
     margin-bottom 10px
@@ -30,12 +30,12 @@ export default {...createDemoModule('captcha', [Demo0, Demo1])}
       color #111A34
       font-size font-heading-normal
       font-weight normal
-    .md-example-box
+    .n22-example-box
       position relative
       float left
       width 100%
       hairline(top)
-      .md-example-box-content
+      .n22-example-box-content
         float left
         width 100%
         padding 60px h-gap-lg

@@ -34,11 +34,11 @@
       </div>
       <div class="n22-field-item-right" :class="dealFieldItemWidth?'pf-solid':''" v-if="arrow || addon || $slots.right">
         <slot name="right">{{ addon }}</slot>
-        <span class="svg_icon" v-if="arrow">
+        <!-- <span class="svg_icon" v-if="arrow">
           <svg-icon icon-class="right_arrow"></svg-icon>
-        </span>
+        </span> -->
+        <n22-icon v-if="arrow" :name="arrow === true ? '' : arrow" size="md" />
         <slot name="right-children"></slot>
-        <!-- <n22-icon v-if="arrow" :name="arrow === true ? 'arrow-right' : arrow" size="md" /> -->
       </div>
     </div>
     <div class="n22-field-item-children" :style="{'text-align':fieldItemChildrenAlign}" v-if="$slots.children">
@@ -48,14 +48,14 @@
 </template>
 
 <script>
-// import Icon from '../icon'
+import Icon from '../icon'
 import {isIOS, isAndroid} from '../_util'
 
 export default {
   name: "n22-field-item",
 
   components: {
-    // [Icon.name]: Icon,
+    [Icon.name]: Icon,
   },
 
   inject: {

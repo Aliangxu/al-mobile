@@ -1,18 +1,19 @@
 <template>
-  <div class="md-example-child md-example-child-number-keyboard md-example-child-number-keyboard-1">
-    <md-button @click="isKeyBoardShow = !isKeyBoardShow">{{ isKeyBoardShow ? '收起键盘' : '唤起键盘' }}</md-button>
-    <md-number-keyboard
+  <div class="n22-example-child n22-example-child-number-keyboard n22-example-child-number-keyboard-1">
+    <n22-button @click="isKeyBoardShow = !isKeyBoardShow">{{ isKeyBoardShow ? '收起键盘' : '唤起键盘' }}</n22-button>
+    <n22-number-keyboard
       v-model="isKeyBoardShow"
       ok-text="支付"
       disorder
       @enter="onNumberEnter"
       @delete="onNumberDelete"
-    ></md-number-keyboard>
-    <div class="md-example-display" v-show="isKeyBoardShow" v-text="number"></div>
+    ></n22-number-keyboard>
+    <div class="n22-example-display" v-show="isKeyBoardShow" v-text="number"></div>
   </div>
 </template>
 
-<script>import {NumberKeyboard, Button} from 'mand-mobile'
+<script>
+import {NumberKeyboard, Button} from 'al-mobile'
 
 export default {
   name: 'number-keyboard-demo',
@@ -42,10 +43,11 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus" scoped>
-.md-example-display
+.n22-example-display
   position fixed
   top 30%
   left 50%

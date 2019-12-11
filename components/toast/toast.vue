@@ -11,11 +11,11 @@
         <slot></slot>
       </div>
       <div class="n22-toast-content" v-else>
-        <!-- <n22-icon v-if="icon" :name="icon" size="lg" :svg="iconSvg"/> -->
+        <n22-icon v-if="icon" :name="icon" size="lg" :svg="iconSvg"/>
 
-        <div v-if="icon" class="svg_class">
+        <!-- <div v-if="icon" class="svg_class">
           <svg-icon :icon-class="icon"></svg-icon>
-        </div>
+        </div> -->
         <template v-if="content">
           <div
             :class="content.length<50?'':'n22-toast-text'"
@@ -33,14 +33,14 @@
 
 <script>
 import Popup from "../popup";
-// import Icon from '../icon'
+import Icon from '../icon'
 
 export default {
   name: "n22-toast",
 
   components: {
-    [Popup.name]: Popup
-    // [Icon.name]: Icon,
+    [Popup.name]: Popup,
+    [Icon.name]: Icon,
   },
 
   computed: {

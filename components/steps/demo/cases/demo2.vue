@@ -1,24 +1,25 @@
 <template>
-  <div class="md-example-child md-example-child-steps md-example-child-steps-2">
-    <md-steps
+  <div class="n22-example-child n22-example-child-steps n22-example-child-steps-2">
+    <n22-steps
       :steps="steps"
       :current="2"
     >
       <template slot="reached" slot-scope="props">
         <!-- props.index -->
-        <md-icon name="checked" v-if="props.index === 1"></md-icon>
+        <n22-icon name="checked" v-if="props.index === 1"></n22-icon>
         <div class="step-node-default" v-else>
           <div class="step-node-default-icon" style="width: 6px;height: 6px;border-radius: 50%;"></div>
         </div>
       </template>
       <template slot="current" slot-scope="props">
-        <md-icon name="location"></md-icon>
+        <n22-icon name="location"></n22-icon>
       </template>
-    </md-steps>
+    </n22-steps>
   </div>
 </template>
 
-<script>import {Steps, Icon} from 'mand-mobile'
+<script>
+import {Steps, Icon} from 'al-mobile'
 
 export default {
   name: 'steps-demo',
@@ -50,4 +51,5 @@ export default {
     }
   },
 }
-</script>
+
+</script>

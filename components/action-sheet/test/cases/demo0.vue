@@ -1,17 +1,18 @@
 <template>
-  <div class="md-example-child md-example-child-action-sheet">
-    <md-action-sheet
+  <div class="n22-example-child n22-example-child-action-sheet">
+    <n22-action-sheet
       v-model="value"
       :title="title"
       :default-index="defaultIndex"
       :invalid-index="invalidIndex"
       :cancel-text="cancelText"
       :options="options"
-    ></md-action-sheet>
+    ></n22-action-sheet>
   </div>
 </template>
 
-<script>import {ActionSheet, Button} from 'mand-mobile'
+<script>
+import {ActionSheet, Button} from 'al-mobile'
 
 export default {
   name: 'action-sheet-demo',
@@ -43,4 +44,5 @@ export default {
     }
   },
 }
-</script>
+
+</script>

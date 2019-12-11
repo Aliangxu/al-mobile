@@ -7,14 +7,13 @@ title: Button 按钮
 ### 引入
 
 ```javascript
-import { Button } from '@/components'
+import { Button } from 'al-mobile'
 
 Vue.component(Button.name, Button)
 ```
 
 ### 代码演示
 <!-- DEMO -->
-<n22-button type="link" inactive>去看看</n22-button>
 
 ### API
 

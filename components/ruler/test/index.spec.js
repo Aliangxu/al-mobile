@@ -1,4 +1,4 @@
-import {Ruler} from 'mand-mobile'
+import {Ruler} from 'al-mobile'
 import {mount} from '@vue/test-utils'
 import triggerTouch from '../../popup/test/touch-trigger'
 
@@ -12,7 +12,7 @@ describe('Ruler', () => {
   it('create a ruler', () => {
     wrapper = mount(Ruler)
 
-    expect(wrapper.classes()).toContain('md-ruler')
+    expect(wrapper.classes()).toContain('n22-ruler')
   })
 
   it('touch the ruler bigger', () => {

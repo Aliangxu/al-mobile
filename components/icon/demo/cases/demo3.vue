@@ -1,25 +1,26 @@
 <template>
-  <div class="md-example-child md-example-child-icon md-example-child-icon-3">
-    <div class="md-example-item-s">
-      <md-icon name="security" color="gray"></md-icon>
+  <div class="n22-example-child n22-example-child-icon n22-example-child-icon-3">
+    <div class="n22-example-item-s">
+      <n22-icon name="security" color="gray"></n22-icon>
       <p>gray</p>
     </div>
-    <div class="md-example-item-s">
-      <md-icon name="security" color="orange"></md-icon>
+    <div class="n22-example-item-s">
+      <n22-icon name="security" color="orange"></n22-icon>
       <p>orange</p>
     </div>
-    <div class="md-example-item-s">
-      <md-icon name="security" color="blue"></md-icon>
+    <div class="n22-example-item-s">
+      <n22-icon name="security" color="blue"></n22-icon>
       <p>blue</p>
     </div>
-    <div class="md-example-item-s">
-      <md-icon name="security" color="purple"></md-icon>
+    <div class="n22-example-item-s">
+      <n22-icon name="security" color="purple"></n22-icon>
       <p>purple</p>
     </div>
   </div>
 </template>
 
-<script>import {Icon} from 'mand-mobile'
+<script>
+import {Icon} from 'al-mobile'
 
 export default {
   name: 'icon-demo',
@@ -32,4 +33,5 @@ export default {
     [Icon.name]: Icon,
   },
 }
-</script>
+
+</script>

@@ -1,6 +1,6 @@
 <template>
-  <div class="md-example-child md-example-child-progress">
-    <md-progress
+  <div class="n22-example-child n22-example-child-progress">
+    <n22-progress
       :value="0.8"
       :width="10"
       :size="100"
@@ -15,8 +15,8 @@
           <stop offset="100%" stop-color="#FFC541D6"/>
         </linearGradient>
       </defs>
-    </md-progress>
-    <md-progress
+    </n22-progress>
+    <n22-progress
       :value="0.8"
       :width="10"
       :size="100"
@@ -25,17 +25,18 @@
       transition
     >
       <span class="progress-value">
-        <md-amount
+        <n22-amount
           :value="80"
           :precision="0"
           transition
-        ></md-amount>%
+        ></n22-amount>%
       </span>
-    </md-progress>
+    </n22-progress>
   </div>
 </template>
 
-<script>import {Amount, Progress} from 'mand-mobile'
+<script>
+import {Amount, Progress} from 'al-mobile'
 
 export default {
   name: 'progress-demo',
@@ -48,13 +49,14 @@ export default {
     [Progress.name]: Progress,
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
-.md-example-child-progress
+.n22-example-child-progress
   display flex
   justify-content center
-  .md-progress
+  .n22-progress
     margin 0 10px
   .progress-value
     font-size 24px

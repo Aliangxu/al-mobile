@@ -1,32 +1,32 @@
 <template>
-  <div class="md-example-child md-example-child-cashier">
-    <md-field
+  <div class="n22-example-child n22-example-child-cashier">
+    <n22-field
       title="支付结果"
     >
-      <md-radio-list
+      <n22-radio-list
         v-model="cashierResult"
         :options="cashierResults"
       />
-    </md-field>
-    <md-field
+    </n22-field>
+    <n22-field
       title="支付配置"
     >
-      <md-input-item
+      <n22-input-item
         title="支付金额"
         align="right"
         type="money"
         v-model="cashierAmount"
       >
-      </md-input-item>
-      <md-field-item
+      </n22-input-item>
+      <n22-field-item
         title="发送验证码"
         align="right"
       >
-        <md-switch v-model="isCashierCaptcha"></md-switch>
-      </md-field-item>
-    </md-field>
-    <md-button @click="isCashierhow = !isCashierhow">{{ isCashierhow ? '收起收银台' : '唤起收银台' }}</md-button>
-    <md-cashier
+        <n22-switch v-model="isCashierCaptcha"></n22-switch>
+      </n22-field-item>
+    </n22-field>
+    <n22-button @click="isCashierhow = !isCashierhow">{{ isCashierhow ? '收起收银台' : '唤起收银台' }}</n22-button>
+    <n22-cashier
       ref="cashier"
       v-model="isCashierhow"
       :channels="cashierChannels"
@@ -36,11 +36,12 @@
       @select="onCashierSelect"
       @pay="onCashierPay"
       @cancel="onCashierCancel"
-    ></md-cashier>
+    ></n22-cashier>
 	</div>
 </template>
 
-<script>import {Button, RadioList, Field, FieldItem, InputItem, Switch, Cashier, Toast} from 'mand-mobile'
+<script>
+import {Button, RadioList, Field, FieldItem, InputItem, Switch, Cashier, Toast} from 'al-mobile'
 
 export default {
   name: 'cashier-demo',
@@ -182,13 +183,14 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
-.md-example-child-cashier
-  .md-field
+.n22-example-child-cashier
+  .n22-field
     margin-bottom 30px
-  .md-cashier-channel-item
+  .n22-cashier-channel-item
     .item-icon.cashier-icon-1
       background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAABHklEQVR4Ae2WgUYEURSGh70oQIB6gh6gHmBsqhfqHdq2hAJTUYAACMCytqQISUDAVpsEsWi09TX/XFcxYeJ0E/vzMf4z7uc6cJMQWi6l1egU5AUYkfszXZp8TVFmBfwyWbhZU0UcXKrbdWMJ5ZLwNaIwl5CY1BPen8HgAtoT1dn6pJ/dnRoKn64p01mpztQpj1eGwsNlyuTPsDX92W/P+A70j6FQ3BxR5nI3dP4bNDPeochmYZTD+xvsz8HBvP8evWhmLvScb1Cm3/Mo6sLcXLg5BcMHQhgO1BkL+8fUjP6NLLw9MRB+R0h19h+F4x3WYSystVe/rx/zJ0+MXtxHVNstxBO6ZqKw2tiLINxJQrzULenKxjvVWV3W3GLwfAD9KR4TBA12SgAAAABJRU5ErkJggg==') center no-repeat
       background-size 26px

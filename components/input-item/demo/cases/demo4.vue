@@ -1,14 +1,14 @@
 <template>
-  <div class="md-example-child md-example-child-input-item-4">
-    <md-field>
-      <md-input-item
+  <div class="n22-example-child n22-example-child-input-item-4">
+    <n22-field>
+      <n22-input-item
         ref="input9"
         title="清空按钮"
         placeholder="normal text"
         clearable
-      ></md-input-item>
+      ></n22-input-item>
 
-      <md-input-item
+      <n22-input-item
         ref="input10"
         title="金融键盘"
         placeholder="financial number keyboard"
@@ -16,30 +16,31 @@
         clearable
         @focus="onFakeInputFocus"
         @blur="onFakeInputBlur"
-      ></md-input-item>
+      ></n22-input-item>
 
-      <md-input-item
+      <n22-input-item
         ref="input11"
         title="自定义键盘"
         placeholder="custom number keyboard"
         is-virtual-keyboard
         virtual-keyboard-vm="myNumberKeyBoard"
         clearable
-      ></md-input-item>
-      <md-number-keyboard type="simple" ref="myNumberKeyBoard"></md-number-keyboard>
+      ></n22-input-item>
+      <n22-number-keyboard type="simple" ref="myNumberKeyBoard"></n22-number-keyboard>
 
-      <md-input-item
+      <n22-input-item
         ref="input11"
         placeholder="left/right slots"
       >
-        <md-icon name="bank-zs" slot="left" svg></md-icon>
-        <md-icon name="info" slot="right" @click.native="onClick"></md-icon>
-      </md-input-item>
-    </md-field>
+        <n22-icon name="bank-zs" slot="left" svg></n22-icon>
+        <n22-icon name="info" slot="right" @click.native="onClick"></n22-icon>
+      </n22-input-item>
+    </n22-field>
   </div>
 </template>
 
-<script>import {InputItem, NumberKeyboard, Field, Icon, Toast} from 'mand-mobile'
+<script>
+import {InputItem, NumberKeyboard, Field, Icon, Toast} from 'al-mobile'
 import '@examples/assets/images/bank-zs.svg'
 
 export default {
@@ -81,7 +82,7 @@ export default {
       //   const inputEl = inputer.$el
       //   const keyboardEl = document
       //     .querySelector(`#${inputer.name}-number-keyboard`)
-      //     .querySelector('.md-number-keyboard-container')
+      //     .querySelector('.n22-number-keyboard-container')
       //   const offset =
       //     keyboardEl.clientHeight +
       //     inputEl.clientHeight -
@@ -106,10 +107,11 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
-.md-example-child-input-item-2
-  .md-number-keyboard .md-popup-box
+.n22-example-child-input-item-2
+  .n22-number-keyboard .n22-popup-box
     max-width 720px
 </style>

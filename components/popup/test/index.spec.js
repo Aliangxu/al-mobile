@@ -1,4 +1,4 @@
-import {Popup} from 'mand-mobile'
+import {Popup} from 'al-mobile'
 import sinon from 'sinon'
 import {shallowMount} from '@vue/test-utils'
 import triggerTouch from './touch-trigger'
@@ -21,7 +21,7 @@ describe('Popup - Operation', () => {
     setTimeout(() => {
       expect(eventSpy.calledWith('beforeShow')).toBe(true)
 
-      const mask = wrapper.find('.md-popup-mask')
+      const mask = wrapper.find('.n22-popup-mask')
       mask.trigger('click')
       expect(eventSpy.calledWith('maskClick')).toBe(true)
       expect(eventSpy.calledWith('input')).toBe(true)
@@ -39,7 +39,7 @@ describe('Popup - Operation', () => {
       },
     })
 
-    const popupBox = wrapper.find('.md-popup-box')
+    const popupBox = wrapper.find('.n22-popup-box')
     setTimeout(() => {
       document.body.style.height = '10000px'
       triggerTouch(popupBox.element, 'touchstart', 0, 0)

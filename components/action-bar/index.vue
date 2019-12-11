@@ -95,7 +95,7 @@ export default {
 
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
 .n22-action-bar
   position fixed
   z-index action-bar-zindex

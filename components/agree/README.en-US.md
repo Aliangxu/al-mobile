@@ -7,7 +7,7 @@ For toggling states
 ### Import
 
 ```javascript
-import { Agree } from '@/components'
+import { Agree } from 'al-mobile'
 
 Vue.component(Agree.name, Agree)
 ```

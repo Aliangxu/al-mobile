@@ -2,11 +2,13 @@
 
 exports[`Cashier - Demo Baisc-captcha 1`] = `
 <div class="md-cashier">
-  <div class="md-popup with-mask bottom" style="">
-    <div class="md-popup-mask" style="" name="md-mask-fade"></div>
-    <div class="md-popup-box md-slide-up" style="" name="md-slide-up">
+  <div class="n22-popup with-mask bottom" style="">
+    <div class="n22-popup-mask" style="" name="n22-mask-fade"></div>
+    <div class="n22-popup-box n22-slide-up" style="" name="n22-slide-up">
       <div class="md-popup-title-bar">
-        <div class="title-bar-left md-popup-cancel"><i class="md-icon icon-font md-icon-close close lg"></i></div>
+        <div class="title-bar-left md-popup-cancel">
+          <md-icon name="close" size="lg"></md-icon>
+        </div>
         <div class="title-bar-title">
           <p class="title">支付</p>
           <!---->
@@ -29,21 +31,22 @@ exports[`Cashier - Demo Baisc-captcha 1`] = `
               </footer>
               <form action="" style="display: none;"><input type="text" maxlength="4" class="md-codebox-input"></form>
               <div class="md-number-keyboard md-codebox-keyboard in-view">
+                <!---->
                 <div class="md-number-keyboard-container simple">
                   <div class="keyboard-number">
                     <ul class="keyboard-number-list">
-                      <li class="keyboard-number-item">1</li>
-                      <li class="keyboard-number-item">2</li>
-                      <li class="keyboard-number-item">3</li>
-                      <li class="keyboard-number-item">4</li>
-                      <li class="keyboard-number-item">5</li>
-                      <li class="keyboard-number-item">6</li>
-                      <li class="keyboard-number-item">7</li>
-                      <li class="keyboard-number-item">8</li>
-                      <li class="keyboard-number-item">9</li>
+                      <li class="keyboard-number-item"><span>1</span></li>
+                      <li class="keyboard-number-item"><span>2</span></li>
+                      <li class="keyboard-number-item"><span>3</span></li>
+                      <li class="keyboard-number-item"><span>4</span></li>
+                      <li class="keyboard-number-item"><span>5</span></li>
+                      <li class="keyboard-number-item"><span>6</span></li>
+                      <li class="keyboard-number-item"><span>7</span></li>
+                      <li class="keyboard-number-item"><span>8</span></li>
+                      <li class="keyboard-number-item"><span>9</span></li>
                       <li class="keyboard-number-item no-bg"></li>
-                      <li class="keyboard-number-item">0</li>
-                      <li class="keyboard-number-item no-bg delete"></li>
+                      <li class="keyboard-number-item"><span>0</span></li>
+                      <li class="keyboard-number-item no-bg delete"><span></span></li>
                     </ul>
                   </div>
                   <!---->
@@ -59,13 +62,15 @@ exports[`Cashier - Demo Baisc-captcha 1`] = `
 `;
 
 exports[`Cashier - Demo Baisc-channel 1`] = `
-<div class="md-example-child md-example-child-cashier">
+<div class="n22-example-child n22-example-child-cashier">
   <div class="md-cashier">
-    <div class="md-popup with-mask bottom" style="display:none;">
-      <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
-      <div name="md-slide-up" class="md-popup-box md-slide-up" style="display:none;">
+    <div class="n22-popup with-mask bottom" style="display:none;">
+      <div name="n22-mask-fade" class="n22-popup-mask" style="display:none;"></div>
+      <div name="n22-slide-up" class="n22-popup-box n22-slide-up" style="display:none;">
         <div class="md-popup-title-bar">
-          <div class="title-bar-left md-popup-cancel"><i class="md-icon icon-font md-icon-close close lg" style="color:;"></i></div>
+          <div class="title-bar-left md-popup-cancel">
+            <md-icon name="close" size="lg"></md-icon>
+          </div>
           <div class="title-bar-title">
             <p class="title">支付</p>
             <!---->
@@ -83,22 +88,26 @@ exports[`Cashier - Demo Baisc-channel 1`] = `
               <div class="choose-channel">
                 <div class="choose-channel-list">
                   <div class="md-cashier-channel-item default">
-                    <div class="item-icon cashier-icon-1"><i class="md-icon icon-font md-icon-cashier-icon-1 cashier-icon-1 lg" style="color:;"></i></div>
+                    <div class="item-icon cashier-icon-1">
+                      <svg-icon icon-class="cashier-icon-1"></svg-icon>
+                    </div>
                     <div class="item-label">
                       <p class="title"><span>招商银行(0056)</span>
                         <!---->
                       </p>
                       <!---->
                     </div>
-                    <div class="item-check-icon"><i class="md-icon icon-font md-icon-checked checked md" style="color:;"></i></div>
+                    <div class="item-check-icon">
+                      <svg-icon icon-class="checked"></svg-icon>
+                    </div>
                   </div>
                 </div>
                 <div class="choose-channel-more">更多支付方式</div>
               </div>
-              <div class="md-cashier-block-btn"><button type="button" class="md-button md-cashier-pay-button primary active block">
-                  <div class="md-button-inner">
+              <div class="md-cashier-block-btn"><button type="button" class="n22-button md-cashier-pay-button primary active block">
+                  <div class="n22-button-inner">
                     <!---->
-                    <p class="md-button-content">确定支付</p>
+                    <p class="n22-button-content">确定支付</p>
                   </div>
                 </button></div>
             </div>
@@ -112,11 +121,13 @@ exports[`Cashier - Demo Baisc-channel 1`] = `
 
 exports[`Cashier - Demo Baisc-fail 1`] = `
 <div class="md-cashier">
-  <div class="md-popup with-mask bottom" style="">
-    <div class="md-popup-mask" style="" name="md-mask-fade"></div>
-    <div class="md-popup-box md-slide-up" style="" name="md-slide-up">
+  <div class="n22-popup with-mask bottom" style="">
+    <div class="n22-popup-mask" style="" name="n22-mask-fade"></div>
+    <div class="n22-popup-box n22-slide-up" style="" name="n22-slide-up">
       <div class="md-popup-title-bar">
-        <div class="title-bar-left md-popup-cancel"><i class="md-icon icon-font md-icon-close close lg"></i></div>
+        <div class="title-bar-left md-popup-cancel">
+          <md-icon name="close" size="lg"></md-icon>
+        </div>
         <div class="title-bar-title">
           <p class="title">支付</p>
           <!---->
@@ -125,11 +136,11 @@ exports[`Cashier - Demo Baisc-fail 1`] = `
       </div>
       <div class="md-cashier-container">
         <div class="md-cashier-block md-cashier-fail">
-          <div class="md-cashier-block-icon"><svg class="md-icon icon-svg md-icon-warn-color md">
-              <use xlink:href="#warn-color"></use>
-            </svg></div>
+          <div class="md-cashier-block-icon">
+            <md-icon name="warn-color"></md-icon>
+          </div>
           <div class="md-cashier-block-text">支付失败，请稍后重试</div>
-          <div class="md-cashier-block-btn"><button type="button" class="md-button primary active block">好的</button></div>
+          <div class="md-cashier-block-btn"><button type="button" class="n22-button primary active block">好的</button></div>
         </div>
       </div>
     </div>
@@ -139,11 +150,13 @@ exports[`Cashier - Demo Baisc-fail 1`] = `
 
 exports[`Cashier - Demo Baisc-success 1`] = `
 <div class="md-cashier">
-  <div class="md-popup with-mask bottom" style="">
-    <div class="md-popup-mask" style="" name="md-mask-fade"></div>
-    <div class="md-popup-box md-slide-up" style="" name="md-slide-up">
+  <div class="n22-popup with-mask bottom" style="">
+    <div class="n22-popup-mask" style="" name="n22-mask-fade"></div>
+    <div class="n22-popup-box n22-slide-up" style="" name="n22-slide-up">
       <div class="md-popup-title-bar">
-        <div class="title-bar-left md-popup-cancel"><i class="md-icon icon-font md-icon-close close lg"></i></div>
+        <div class="title-bar-left md-popup-cancel">
+          <md-icon name="close" size="lg"></md-icon>
+        </div>
         <div class="title-bar-title">
           <p class="title">支付</p>
           <!---->
@@ -172,7 +185,7 @@ exports[`Cashier - Demo Baisc-success 1`] = `
             </div>
           </div>
           <div class="md-cashier-block-text">支付成功</div>
-          <div class="md-cashier-block-btn"><button type="button" class="md-button primary active block">好的</button></div>
+          <div class="md-cashier-block-btn"><button type="button" class="n22-button primary active block">好的</button></div>
         </div>
       </div>
     </div>
@@ -181,13 +194,15 @@ exports[`Cashier - Demo Baisc-success 1`] = `
 `;
 
 exports[`Cashier - Demo Using slots and other configurations 1`] = `
-<div class="md-example-child md-example-child-cashier">
+<div class="n22-example-child n22-example-child-cashier">
   <div class="md-cashier">
-    <div class="md-popup with-mask bottom" style="display:none;">
-      <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
-      <div name="md-slide-up" class="md-popup-box md-slide-up" style="display:none;">
+    <div class="n22-popup with-mask bottom" style="display:none;">
+      <div name="n22-mask-fade" class="n22-popup-mask" style="display:none;"></div>
+      <div name="n22-slide-up" class="n22-popup-box n22-slide-up" style="display:none;">
         <div class="md-popup-title-bar">
-          <div class="title-bar-left md-popup-cancel"><i class="md-icon icon-font md-icon-close close lg" style="color:;"></i></div>
+          <div class="title-bar-left md-popup-cancel">
+            <md-icon name="close" size="lg"></md-icon>
+          </div>
           <div class="title-bar-title">
             <p class="title">支付</p>
             <!---->
@@ -196,14 +211,18 @@ exports[`Cashier - Demo Using slots and other configurations 1`] = `
         </div>
         <div class="md-cashier-container">
           <div>
-            <div class="md-notice-bar warning">
-              <div class="md-notice-bar-left"><i class="md-icon icon-font md-notice-icon md-icon-warn warn md" style="color:;"></i></div>
-              <div class="md-notice-bar-content">
+            <div class="n22-notice-bar warning">
+              <div class="n22-notice-bar-left">
+                <svg-icon icon-class="warn" class="n22-notice-svg n22-notice-icon"></svg-icon>
+              </div>
+              <div class="n22-notice-bar-content">
                 <div>
                   该银行3:00-12:00系统维护，请更换其他银行卡
                 </div>
               </div>
-              <div class="md-notice-bar-right"><i class="md-icon icon-font md-notice-icon md-notice-icon-right md-icon-close close md" style="color:;"></i></div>
+              <div class="n22-notice-bar-right">
+                <svg-icon icon-class="close" class="n22-notice-svg md-notice-icon md-notice-icon-right"></svg-icon>
+              </div>
             </div>
           </div>
           <div class="md-cashier-block md-cashier-choose">
@@ -216,20 +235,24 @@ exports[`Cashier - Demo Using slots and other configurations 1`] = `
               <div class="choose-channel">
                 <div class="choose-channel-list">
                   <div class="md-cashier-channel-item default">
-                    <div class="item-icon cashier-icon-1"><i class="md-icon icon-font md-icon-cashier-icon-1 cashier-icon-1 lg" style="color:;"></i></div>
+                    <div class="item-icon cashier-icon-1">
+                      <svg-icon icon-class="cashier-icon-1"></svg-icon>
+                    </div>
                     <div class="item-label">
                       <p class="title"><span>XX银行(1234)</span> <span class="title-active">更换</span></p>
                       <p class="desc">当前银行维护中</p>
                     </div>
-                    <div class="item-check-icon"><i class="md-icon icon-font md-icon-check-disabled check-disabled md" style="color:;"></i></div>
+                    <div class="item-check-icon">
+                      <svg-icon icon-class="check"></svg-icon>
+                    </div>
                   </div>
                 </div>
                 <!---->
               </div>
-              <div class="md-cashier-block-btn"><button type="button" class="md-button md-cashier-pay-button primary active block">
-                  <div class="md-button-inner">
+              <div class="md-cashier-block-btn"><button type="button" class="n22-button md-cashier-pay-button primary active block">
+                  <div class="n22-button-inner">
                     <!---->
-                    <p class="md-button-content">确定支付</p>
+                    <p class="n22-button-content">确定支付</p>
                   </div>
                 </button></div>
             </div>

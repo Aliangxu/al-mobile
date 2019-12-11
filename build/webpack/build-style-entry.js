@@ -34,7 +34,7 @@ function checkComponentHasStyle(componentName) {
 function search(tree, checkList) {
   tree && Object.keys(tree).forEach(key => {
     search(tree[key], checkList)
-    const component = key.split(`${SEP}mand-mobile${SEP}lib${SEP}`)[1].replace(`${SEP}index.js`, '').replace(`mixins${SEP}`, '')
+    const component = key.split(`${SEP}al-mobile${SEP}lib${SEP}`)[1].replace(`${SEP}index.js`, '').replace(`mixins${SEP}`, '')
     if (checkList.indexOf(component) === -1) {
       checkList.push(component)
     }
@@ -47,7 +47,7 @@ function analyzeDependencies(componentName, libDir) {
   search(dependencyTree({
     directory: libDir,
     filename: path.resolve(libDir, componentName, 'index.js'),
-    filter: path => path.indexOf(`mand-mobile${SEP}lib${SEP}`) !== -1
+    filter: path => path.indexOf(`al-mobile${SEP}lib${SEP}`) !== -1
   }), checkList)
   return checkList.filter(component => checkComponentHasStyle(component))
 }

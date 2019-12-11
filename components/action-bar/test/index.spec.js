@@ -1,4 +1,4 @@
-import {ActionBar} from 'mand-mobile'
+import {ActionBar} from 'al-mobile'
 import sinon from 'sinon'
 import {mount} from '@vue/test-utils'
 
@@ -20,7 +20,7 @@ describe('ActionBar - Operation', () => {
     })
 
     const eventSpy = sinon.spy(wrapper.vm, '$emit')
-    wrapper.find('.md-action-bar-button').trigger('click')
+    wrapper.find('.n22-action-bar-button').trigger('click')
     expect(eventSpy.calledWith('click')).toBe(true)
     expect(isClicked).toBe(true)
     done()
@@ -34,7 +34,7 @@ describe('ActionBar - Operation', () => {
     })
 
     const eventSpy = sinon.spy(wrapper.vm, '$emit')
-    wrapper.find('.md-action-bar-button').trigger('click')
+    wrapper.find('.n22-action-bar-button').trigger('click')
     expect(eventSpy.calledWith('click')).toBe(false)
     done()
   })

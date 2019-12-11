@@ -7,7 +7,7 @@ title: ActivityIndicator 活动指示器
 ### 引入
 
 ```javascript
-import { ActivityIndicator } from 'mand-mobile'
+import { ActivityIndicator } from 'al-mobile'
 
 Vue.component(ActivityIndicator.name, ActivityIndicator)
 ```

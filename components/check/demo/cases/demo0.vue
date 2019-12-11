@@ -1,11 +1,12 @@
 <template>
-  <div class="md-example-child md-example-child-check md-example-child-check-0">
-    <md-check v-model="checked" label="复选项" />
-    <md-check label="禁用" disabled />
+  <div class="n22-example-child n22-example-child-check n22-example-child-check-0">
+    <n22-check v-model="checked" label="复选项" />
+    <n22-check label="禁用" disabled />
 	</div>
 </template>
 
-<script>import {Check} from 'mand-mobile'
+<script>
+import {Check} from 'al-mobile'
 
 export default {
   name: 'check-demo',
@@ -22,4 +23,5 @@ export default {
     }
   },
 }
-</script>
+
+</script>

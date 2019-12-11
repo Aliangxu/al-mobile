@@ -7,7 +7,7 @@ title: ActionBar 操作栏
 ### 引入
 
 ```javascript
-import { ActionBar } from '@/components'
+import { ActionBar } from 'al-mobile'
 
 Vue.component(ActionBar.name, ActionBar)
 ```

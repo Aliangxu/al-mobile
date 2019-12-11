@@ -1,5 +1,5 @@
 <template>
-  <div class="md-example-child md-example-child-image-reader">
+  <div class="n22-example-child n22-example-child-image-reader">
     <div>
       <ul>
         <template v-for="(item, index) in imgs">
@@ -11,16 +11,17 @@
         </template>
       </ul>
     </div>
-    <md-image-viewer
+    <n22-image-viewer
       v-model="isViewerShow"
       :list="imgs"
       :has-dots="true"
       :initial-index="viewerIndex">
-    </md-image-viewer>
+    </n22-image-viewer>
   </div>
 </template>
 
-<script>import {ImageViewer} from 'mand-mobile'
+<script>
+import {ImageViewer} from 'al-mobile'
 
 export default {
   name: 'image-viewer-demo',
@@ -51,8 +52,9 @@ export default {
     },
   },
 }
-</script>
 
+</script>
+n22-
 <style lang="stylus" scoped>
 .md-example-child-image-reader
   float left

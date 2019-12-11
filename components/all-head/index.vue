@@ -255,7 +255,7 @@ export default {
 };
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
 .al-head-title-c {
 //   display:inline-block;
   width: 200px;
@@ -273,6 +273,10 @@ export default {
 // @include placeholderStyle("#search_query", padding-left, 80px);
 // @include placeholderStyle("#search_query", font-size, 14px);
 // @include placeholderStyle("#search_query", line-height, 30px);
+placeholderStyle("#search_query", color, #f0f0f0)
+placeholderStyle("#search_query", padding-left, 80px)
+placeholderStyle("#search_query", font-size, 14px)
+placeholderStyle("#search_query", line-height, 30px)
 .search_query {
   width: 286px;
   // margin-top: 8px;
@@ -287,14 +291,15 @@ export default {
   border-radius: 3px;
   font-size: 14px;
   // margin-right: 10px;
-  // transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease;
   // @include transition(background 0.2s ease);
+  transitionAll(background 0.2s ease);
   // background: #fff url(../../assets/images/home/search.png) 103px 5px no-repeat;
   // background-size: 20px;
   vertical-align: middle !important;
 }
 .search_query_icon {
-  background: #fff url(../../assets/images/home/search.png) 83px 5px no-repeat;
+  background: #fff url(../_style/images/search.png) 83px 5px no-repeat;
   background-size: 20px;
 }
 // @include placeholderStyle("#search_query:focus",  padding-left, 3px);
@@ -304,12 +309,12 @@ export default {
   // background-size: 20px;
 }
 .n22-nav-bar {
-  height: $headTop;
+  height: headTop;
   position: relative;
   user-select: none;
   text-align: center;
   line-height: 44px;
-  // background-color: $theme-color;
+  background-color: color-primary;
 }
 .back_icon {
   vertical-align: -8px;
@@ -378,7 +383,7 @@ export default {
 }
 
 .al_head {
-  // height: $headTop;
+  height: headTop;
 }
 // .van-nav-bar {
 //   height: $headTop;

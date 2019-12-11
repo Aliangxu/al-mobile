@@ -19,6 +19,7 @@ const generate = function ({
   type,
   selectValue,
   title,
+  notSelectIdf,
   pickerData,
   defaultDate,
   minDate,
@@ -32,6 +33,7 @@ const generate = function ({
       type,
       selectValue,
       title,
+      notSelectIdf,
       pickerData,
       defaultDate,
       minDate,
@@ -72,6 +74,7 @@ DropSelectShow.show = ({
   type,
   selectValue,
   title,
+  notSelectIdf,
   pickerData,
   defaultDate,
   minDate,
@@ -80,12 +83,14 @@ DropSelectShow.show = ({
   onDatePickerChange = noop,
   onDatePickerConfirm = noop,
   onAddressPickerConfirm = noop,
+  onNotSelectFun = noop,
 }) => {
   const vm = generate({
     appendTo,
     type,
     selectValue,
     title,
+    notSelectIdf,
     pickerData,
     defaultDate,
     minDate,
@@ -118,6 +123,13 @@ DropSelectShow.show = ({
         handler: /* istanbul ignore next */ (columnsValue,value,options) => {
           if (onAddressPickerConfirm(columnsValue,value,options) !== false) {
             vm.close()
+          }
+        },
+      },
+      "onNotSelectFun": {
+        handler: /* istanbul ignore next */ (columnsValue,value,options) => {
+          if (onNotSelectFun(columnsValue, value, options) !== false) {
+            // vm.close()
           }
         },
       },

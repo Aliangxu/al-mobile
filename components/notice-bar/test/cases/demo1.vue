@@ -1,15 +1,16 @@
 <template>
-  <div class="md-example-child md-example-child-notice-bar md-example-child-notice-bar-1">
-    <md-notice-bar
+  <div class="n22-example-child n22-example-child-notice-bar n22-example-child-notice-bar-1">
+    <n22-notice-bar
       mode="closable"
       icon="security"
     >
       为了确保您的资金安全，请设置支付密码
-    </md-notice-bar>
+    </n22-notice-bar>
   </div>
 </template>
 
-<script>import {NoticeBar} from 'mand-mobile'
+<script>
+import {NoticeBar} from 'al-mobile'
 
 export default {
   name: 'notice-bar-demo',
@@ -17,4 +18,5 @@ export default {
     [NoticeBar.name]: NoticeBar,
   },
 }
-</script>
+
+</script>

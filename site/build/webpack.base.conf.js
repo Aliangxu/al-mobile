@@ -55,23 +55,32 @@ module.exports = {
       {
         test: /\.(png|jpe?g|gif)(\?.*)?$/,
         loader: 'url-loader',
+        exclude: [resolve('../components/_style/icons')], //1、添加这句
         options: {
           limit: 10000,
           name: utils.assetsPath('img/[name].[hash:7].[ext]')
         }
       },
-      {
+      // {
+      //   test: /\.svg$/,
+      //   loader: 'svg-sprite-loader',
+      //   include: [resolve('../examples/assets/images')]
+      // },
+      { //2、把地下这个对象添加进去
         test: /\.svg$/,
         loader: 'svg-sprite-loader',
-        include: [resolve('../examples/assets/images')]
-      }
+        include: [resolve('../components/_style/icons'), resolve('../examples/assets/images')],
+        options: {
+          symbolId: '[name]'
+        }
+      },
     ]
   },
   plugins: [
     new HtmlWebpackPlugin(Object.assign({}, htmlPluginOption, {
       filename: 'index.html',
-      // publicPath: '/mand-mobile/',
-      publicPath: '/mand-mobile/',
+      // publicPath: '/al-mobile/',
+      publicPath: '/al-mobile/',
     })),
     new HtmlWebpackPlugin(Object.assign({}, htmlPluginOption, {
       filename: 'index.gitee.html',

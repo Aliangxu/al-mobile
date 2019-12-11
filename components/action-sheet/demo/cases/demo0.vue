@@ -1,7 +1,7 @@
 <template>
-  <div class="md-example-child md-example-child-action-sheet">
-    <md-button @click="$_showActionSheet">唤起动作面板</md-button>
-    <md-action-sheet
+  <div class="n22-example-child n22-example-child-action-sheet">
+    <n22-button @click="$_showActionSheet">唤起动作面板</n22-button>
+    <n22-action-sheet
       v-model="value"
       :title="title"
       :default-index="defaultIndex"
@@ -10,11 +10,12 @@
       :options="options"
       @selected="$_selected"
       @cancel="$_cancel"
-    ></md-action-sheet>
+    ></n22-action-sheet>
   </div>
 </template>
 
-<script>import {ActionSheet, Button, Dialog} from 'mand-mobile'
+<script>
+import {ActionSheet, Button, Dialog} from 'al-mobile'
 
 export default {
   name: 'action-sheet-demo',
@@ -64,4 +65,5 @@ export default {
     },
   },
 }
-</script>
+
+</script>

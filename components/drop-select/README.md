@@ -7,14 +7,14 @@ title: DropSelect下拉滑动选择组件
 ### 引入
 
 ```javascript
-import { DropSelect } from '@/compoments'
+import { DropSelectItem } from '@/compoments'
 
-Vue.component(DropSelect.name, DropSelect)
+Vue.component(DropSelectItem.name, DropSelectItem)
 ```
 
 ### API
 
-#### DropSelect Props
+#### DropSelectItem Props
 |属性 | 说明 | 类型 | 默认值|备注|
 |----|-----|------|------|------|
 | append-to | 组件的挂载节点 | HTMLElement | `document.body`| 必填,eg:this.$el |

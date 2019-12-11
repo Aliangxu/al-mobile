@@ -14,7 +14,7 @@
   - [ ] 版本发布: `npm publish`
 - 站点
   - [ ] 构建示例: `npm run build:example`
-  - [ ] 更新依赖: `cd site && npm install mand-mobile`
+  - [ ] 更新依赖: `cd site && npm install al-mobile`
   - [ ] 构建站点: `npm run build:site`
   - [ ] 合并至`master`分支并推送
 - 收尾

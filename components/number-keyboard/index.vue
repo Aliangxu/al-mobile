@@ -1,10 +1,10 @@
 <template>
-  <div class="md-number-keyboard" :class="{'in-view': isView}">
+  <div class="n22-number-keyboard" :class="{'in-view': isView}">
     <template v-if="isView">
-      <div class="md-number-keyboard-slot" v-if="$slots.default">
+      <div class="n22-number-keyboard-slot" v-if="$slots.default">
         <slot></slot>
       </div>
-      <md-number-keyboard-container
+      <n22-number-keyboard-container
         ref="keyborad"
         :type="type"
         :disorder="disorder"
@@ -16,10 +16,10 @@
         @delete="$_onDelete"
         @confirm="$_onConfirm"
         @hide="isKeyboardShow = false"
-      ></md-number-keyboard-container>
+      ></n22-number-keyboard-container>
     </template>
     <template v-else>
-      <md-popup
+      <n22-popup
         ref="popup"
         v-model="isKeyboardShow"
         position="bottom"
@@ -27,10 +27,10 @@
         @hide="$emit('hide')"
         :has-mask="false"
       >
-        <div class="md-number-keyboard-slot" v-if="$slots.default">
+        <div class="n22-number-keyboard-slot" v-if="$slots.default">
           <slot></slot>
         </div>
-        <md-number-keyboard-container
+        <n22-number-keyboard-container
           ref="keyborad"
           :type="type"
           :disorder="disorder"
@@ -43,8 +43,8 @@
           @confirm="$_onConfirm"
           @hide="isKeyboardShow = false"
           @touchmove.native.prevent
-        ></md-number-keyboard-container>
-      </md-popup>
+        ></n22-number-keyboard-container>
+      </n22-popup>
     </template>
   </div>
 </template>
@@ -54,7 +54,7 @@ import Popup from '../popup'
 import Keyborad from './board'
 
 export default {
-  name: 'md-number-keyboard',
+  name: 'n22-number-keyboard',
 
   components: {
     [Popup.name]: Popup,
@@ -139,10 +139,10 @@ export default {
 </script>
 
 <style lang="stylus">
-.md-number-keyboard
-  .md-popup
+.n22-number-keyboard
+  .n22-popup
     z-index number-keyboard-zindex
-  .md-popup-box
+  .n22-popup-box
     padding-top 1px
     background-color color-bg-base
     padding-bottom constant(safe-area-inset-bottom)

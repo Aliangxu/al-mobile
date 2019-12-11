@@ -1,17 +1,18 @@
 <template>
-  <div class="md-example-child md-example-child-check md-example-child-check-4">
-    <md-field title="复选列表">
-      <md-check-list
+  <div class="n22-example-child n22-example-child-check n22-example-child-check-4">
+    <n22-field title="复选列表">
+      <n22-check-list
         v-model="favorites"
         icon="right"
         icon-inverse=""
         :options="fruits"
       />
-    </md-field>
+    </n22-field>
 	</div>
 </template>
 
-<script>import {Field, CheckList} from 'mand-mobile'
+<script>
+import {Field, CheckList} from 'al-mobile'
 
 export default {
   name: 'check-demo',
@@ -36,9 +37,10 @@ export default {
     }
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus" scoped>
-.md-example-child
+.n22-example-child
   font-size 28px
 </style>

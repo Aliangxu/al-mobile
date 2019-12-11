@@ -72,7 +72,7 @@ import ScrollView from '../scroll-view'
 import {extend} from '../_util'
 
 //外部组件
-import Fuse from "fuse.js";
+// import Fuse from "fuse.js";
 
 export default {
   name: 'n22-tab-picker',
@@ -205,7 +205,7 @@ export default {
     /* search */
     if (this.isSearch&&this.searchData&&this.searchData.options&&this.searchData.options.length>0) {
       //  console.log('%c tab-picker-created-this.searchData','color:green;',this.searchData);
-      this.initFuse(this.searchData.options);
+      // this.initFuse(this.searchData.options);
       this.currentTab = this.searchData.name // select the tab corresponding to this pane
     }
   },
@@ -352,7 +352,7 @@ export default {
     text-align center
     border: 1px solid #e3e3e3;
     .n22-tab-picker-search-input
-      background: #fff url(../../assets/images/home/search.png) 10px 5px no-repeat;
+      background: #fff url(../_style/images/search.png) 10px 5px no-repeat;
       background-size: 20px;
       width: 300px;
       height: 30px;

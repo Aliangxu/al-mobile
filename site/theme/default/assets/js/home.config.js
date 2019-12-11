@@ -20,31 +20,34 @@ const qrcodeTableView = {
 export default {
   'zh-CN': [
     {
-      title: 'Mand Mobile <i>2</i>',
+      title: 'Al Mobile <i>1</i>',
       describe: '面向金融场景的Vue移动端UI组件库，丰富、灵活、实用，快速搭建优质的金融类产品，让复杂的金融场景变简单。',
       buttons: [{
         type: 'link',
         text: '开始使用',
         src: '/docs',
         theme: 'start'
-      }, {
-        type: 'handler',
-        text: '扫码体验',
-        click (ref) {
-          this.$refs[ref][0].qrcodeTableShow = true
-        },
-        theme: 'demo',
-        slots: qrcodeTableView
-      }, {
-        // htmls: '<a class="github-button" href="https://github.com/didi/mand-mobile" data-size="large" data-show-count="true" aria-label="Star didi/mand-mobile on GitHub">Star</a>'
-        type: 'other',
-        slots: MfeGitStar
-      }],
+      }, 
+      // {
+      //   type: 'handler',
+      //   text: '扫码体验',
+      //   click (ref) {
+      //     this.$refs[ref][0].qrcodeTableShow = true
+      //   },
+      //   theme: 'demo',
+      //   slots: qrcodeTableView
+      // },
+      // {
+      //   // htmls: '<a class="github-button" href="https://github.com/didi/mand-mobile" data-size="large" data-show-count="true" aria-label="Star didi/mand-mobile on GitHub">Star</a>'
+      //   type: 'other',
+      //   slots: MfeGitStar
+      // }
+      ],
       animations: {
         bg: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-0.svg',
         content: MfeAnimation0
       },
-      others: '<a href="https://didi.github.io/mand-mobile-rn" style="margin-top:32px;">Mand Mobile of React Native <i class="icon-arrow-right-small"></i></a>'
+      others: '<a href="https://test" style="margin-top:32px;">test<i class="icon-arrow-right-small"></i></a>'
     },
     {
       title: '用户体验',
@@ -100,26 +103,29 @@ export default {
   ],
   'en-US': [
     {
-      title: 'Mand Mobile <i>2</i>',
+      title: 'Al Mobile <i>1</i>',
       describe: 'A mobile UI toolkit, based on Vue.js 2, designed for financial scenarios. Rich, flexible, practical, quickly build high-quality financial products, making complex financial scenarios easier.',
       buttons: [{
         type: 'link',
         text: 'Get Started',
         src: '/docs',
         theme: 'start'
-      }, {
-        type: 'handler',
-        text: 'Scan QR Code',
-        click (ref) {
-          this.$refs[ref][0].qrcodeTableShow = true
-        },
-        theme: 'demo',
-        slots: qrcodeTableView
-      }, {
-        // htmls: '<a class="github-button" href="https://github.com/didi/mand-mobile" data-size="large" data-show-count="true" aria-label="Star didi/mand-mobile on GitHub">Star</a>'
-        type: 'other',
-        slots: MfeGitStar
-      }],
+      }, 
+      // {
+      //   type: 'handler',
+      //   text: 'Scan QR Code',
+      //   click (ref) {
+      //     this.$refs[ref][0].qrcodeTableShow = true
+      //   },
+      //   theme: 'demo',
+      //   slots: qrcodeTableView
+      // }, 
+      // {
+      //   // htmls: '<a class="github-button" href="https://github.com/didi/mand-mobile" data-size="large" data-show-count="true" aria-label="Star didi/mand-mobile on GitHub">Star</a>'
+      //   type: 'other',
+      //   slots: MfeGitStar
+      // }
+      ],
       animations: {
         bg: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-0.svg',
         // content: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-0.png'

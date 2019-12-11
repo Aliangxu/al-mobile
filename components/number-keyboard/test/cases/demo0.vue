@@ -1,22 +1,23 @@
 <template>
-  <div class="md-example-child md-example-child-number-keyboard md-example-child-number-keyboard-0">
-    <md-number-keyboard
+  <div class="n22-example-child n22-example-child-number-keyboard n22-example-child-number-keyboard-0">
+    <n22-number-keyboard
       value
-    ></md-number-keyboard>
+    ></n22-number-keyboard>
 
-    <md-number-keyboard
+    <n22-number-keyboard
       value
       hide-dot
-    ></md-number-keyboard>
+    ></n22-number-keyboard>
 
-    <md-number-keyboard
+    <n22-number-keyboard
       value
       :text-render="keyFormatter"
-    ></md-number-keyboard>
+    ></n22-number-keyboard>
   </div>
 </template>
 
-<script>import {NumberKeyboard} from 'mand-mobile'
+<script>
+import {NumberKeyboard} from 'al-mobile'
 
 export default {
   name: 'number-keyboard-demo',
@@ -31,11 +32,12 @@ export default {
     },
   },
 }
-</script>
 
-<style lang="stylus">
+</script>
+n22-
+<stn22- lang="stylus">
 .md-example-child-number-keyboard-0
-  .md-button
+  .n22-button
     margin-bottom 10px
   .md-example-display
     position fixed

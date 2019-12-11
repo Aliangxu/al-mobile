@@ -1,27 +1,27 @@
 <template>
-  <div class="md-example-child md-example-child-picker md-example-child-picker-2">
-    <md-field>
-      <md-field-item
+  <div class="n22-example-child n22-example-child-picker n22-example-child-picker-2">
+    <n22-field>
+      <n22-field-item
         title="起保年份"
         arrow="arrow-right"
         :addon="pickerValue0"
         @click="isPickerShow0 = true">
-      </md-field-item>
-      <md-field-item
+      </n22-field-item>
+      <n22-field-item
         title="省市区/县"
         arrow="arrow-right"
         :addon="pickerValue1"
         @click="isPickerShow1 = true">
-      </md-field-item>
-    </md-field>
-    <md-picker
+      </n22-field-item>
+    </n22-field>
+    <n22-picker
       ref="picker0"
       v-model="isPickerShow0"
       :data="pickerData0"
       @confirm="onPickerConfirm(0)"
       title="选择年份"
-    ></md-picker>
-    <md-picker
+    ></n22-picker>
+    <n22-picker
       ref="picker1"
       v-model="isPickerShow1"
       :data="pickerData1"
@@ -29,13 +29,14 @@
       is-cascade
       title="选择省市区/县"
       @confirm="onPickerConfirm(1)"
-    ></md-picker>
+    ></n22-picker>
   </div>
 </template>
 
-<script>import {Picker, Field, FieldItem} from 'mand-mobile'
-import simple from 'mand-mobile/components/picker/demo/data/simple'
-import district from 'mand-mobile/components/picker/demo/data/district'
+<script>
+import {Picker, Field, FieldItem} from 'al-mobile'
+import simple from 'al-mobile/components/picker/demo/data/simple'
+import district from 'al-mobile/components/picker/demo/data/district'
 
 export default {
   name: 'picker-demo',
@@ -71,4 +72,5 @@ export default {
     },
   },
 }
-</script>
+
+</script>

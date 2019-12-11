@@ -1,68 +1,69 @@
 <template>
-  <div class="md-example-child md-example-child-popup md-example-child-popup-0">
-    <md-button @click="showPopUp('center')">屏幕中弹出</md-button>
-    <md-popup v-model="isPopupShow.center">
-      <div class="md-example-popup md-example-popup-center">
+  <div class="n22-example-child n22-example-child-popup n22-example-child-popup-0">
+    <n22-button @click="showPopUp('center')">屏幕中弹出</n22-button>
+    <n22-popup v-model="isPopupShow.center">
+      <div class="n22-example-popup n22-example-popup-center">
         Popup Center
       </div>
-    </md-popup>
+    </n22-popup>
 
-    <md-button @click="showPopUp('bottom')">底部弹出</md-button>
-    <md-popup
+    <n22-button @click="showPopUp('bottom')">底部弹出</n22-button>
+    <n22-popup
       v-model="isPopupShow.bottom"
       position="bottom"
     >
-      <md-popup-title-bar
+      <n22-popup-title-bar
         title="Popup Title"
         describe="Popup Description"
         ok-text="ok"
         cancel-text="cancel"
         @confirm="hidePopUp('bottom')"
         @cancel="hidePopUp('bottom')"
-      ></md-popup-title-bar>
-      <div class="md-example-popup md-example-popup-bottom">
+      ></n22-popup-title-bar>
+      <div class="n22-example-popup n22-example-popup-bottom">
         Popup Bottom
       </div>
-    </md-popup>
+    </n22-popup>
 
-    <md-button @click="showPopUp('top')">顶部弹出</md-button>
-    <md-popup
+    <n22-button @click="showPopUp('top')">顶部弹出</n22-button>
+    <n22-popup
       v-model="isPopupShow.top"
       :hasMask="false"
       position="top"
     >
-      <div class="md-example-popup md-example-popup-top">
+      <div class="n22-example-popup n22-example-popup-top">
         Popup Top
-        <md-icon
+        <n22-icon
           name="close"
           @click.native="hidePopUp('top')"
-        ></md-icon>
+        ></n22-icon>
       </div>
-    </md-popup>
+    </n22-popup>
 
-    <md-button @click="showPopUp('left')">左侧弹出</md-button>
-    <md-popup
+    <n22-button @click="showPopUp('left')">左侧弹出</n22-button>
+    <n22-popup
       v-model="isPopupShow.left"
       position="left"
     >
-      <div class="md-example-popup md-example-popup-left">
+      <div class="n22-example-popup n22-example-popup-left">
         Popup Left
       </div>
-    </md-popup>
+    </n22-popup>
 
-    <md-button @click="showPopUp('right')">右侧弹出</md-button>
-    <md-popup
+    <n22-button @click="showPopUp('right')">右侧弹出</n22-button>
+    <n22-popup
       v-model="isPopupShow.right"
       position="right"
     >
-      <div class="md-example-popup md-example-popup-right">
+      <div class="n22-example-popup n22-example-popup-right">
         Popup Right
       </div>
-    </md-popup>
+    </n22-popup>
   </div>
 </template>
 
-<script>import {Popup, PopupTitleBar, Button, Icon} from 'mand-mobile'
+<script>
+import {Popup, PopupTitleBar, Button, Icon} from 'al-mobile'
 
 export default {
   name: 'popup-demo',
@@ -90,15 +91,16 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
-.md-example-child-popup-0
+.n22-example-child-popup-0
   float left
   width 100%
-  .md-button
+  .n22-button
     margin-bottom 20px
-  .md-example-popup
+  .n22-example-popup
     position relative
     font-size 28px
     font-family DINPro
@@ -106,26 +108,26 @@ export default {
     box-sizing border-box
     text-align center
     background-color #FFF
-  .md-example-popup-center
+  .n22-example-popup-center
     padding 50px
     border-radius radius-normal
-  .md-example-popup-top
+  .n22-example-popup-top
     width 100%
     height 75px
     line-height 75px
     background #4a4c5b
     color #fff
-    .md-icon
+    .n22-icon
       position absolute
       right 20px
       top 50%
       transform translateY(-50%)
-  .md-example-popup-bottom
+  .n22-example-popup-bottom
     width 100%
     padding 100px 0
     p
       line-height 50px
-  .md-example-popup-left, .md-example-popup-right
+  .n22-example-popup-left, .n22-example-popup-right
     height 100%
     padding 0 150px
     display flex

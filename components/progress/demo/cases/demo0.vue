@@ -1,30 +1,31 @@
 <template>
-  <div class="md-example-child md-example-child-progress">
-    <md-progress
+  <div class="n22-example-child n22-example-child-progress">
+    <n22-progress
       :size="100"
       :value="0.2"
       :width="5"
     >
       <span class="progress-value">20%</span>
-    </md-progress>
-    <md-progress
+    </n22-progress>
+    <n22-progress
       :size="100"
       :value="0.5"
       :width="5"
     >
       <span class="progress-value">50%</span>
-    </md-progress>
-    <md-progress
+    </n22-progress>
+    <n22-progress
       :size="100"
       :value="1"
       :width="5"
     >
       <span class="progress-value">100%</span>
-    </md-progress>
+    </n22-progress>
   </div>
 </template>
 
-<script>import {Progress} from 'mand-mobile'
+<script>
+import {Progress} from 'al-mobile'
 
 export default {
   name: 'progress-demo',
@@ -32,13 +33,14 @@ export default {
     [Progress.name]: Progress,
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
-.md-example-child-progress
+.n22-example-child-progress
   display flex
   justify-content center
-  .md-progress
+  .n22-progress
     margin 0 10px
   .progress-value
     font-size 24px

@@ -1,54 +1,54 @@
 <template>
-  <div class="md-example-child md-example-child-captcha">
-    <md-field title="文案">
-      <md-input-item
+  <div class="n22-example-child n22-example-child-captcha">
+    <n22-field title="文案">
+      <n22-input-item
         title="标题"
         v-model="title"
-      ></md-input-item>
-      <md-input-item
+      ></n22-input-item>
+      <n22-input-item
         title="插槽内容"
         v-model="content"
-      ></md-input-item>
-      <md-input-item
+      ></n22-input-item>
+      <n22-input-item
         title="短信验证码"
         value="1234"
         readonly
-      ></md-input-item>
-    </md-field>
+      ></n22-input-item>
+    </n22-field>
 
-    <md-field title="配置">
+    <n22-field title="配置">
 
-      <md-field-item
+      <n22-field-item
         title="限制验证码长度"
         customized
         align="right">
-        <md-switch v-model="limit"></md-switch>
-      </md-field-item>
+        <n22-switch v-model="limit"></n22-switch>
+      </n22-field-item>
 
-      <md-input-item
+      <n22-input-item
         title="验证码长度"
         type="tel"
         v-model="maxlength"
-      ></md-input-item>
+      ></n22-input-item>
 
-      <md-field-item
+      <n22-field-item
         title="采用掩码"
         customized
         align="right">
-        <md-switch v-model="mask"></md-switch>
-      </md-field-item>
+        <n22-switch v-model="mask"></n22-switch>
+      </n22-field-item>
 
-      <md-field-item
+      <n22-field-item
         title="使用系统键盘"
         customized
         align="right">
-        <md-switch v-model="system"></md-switch>
-      </md-field-item>
+        <n22-switch v-model="system"></n22-switch>
+      </n22-field-item>
 
-    </md-field>
-    <md-button @click="next">确定</md-button>
+    </n22-field>
+    <n22-button @click="next">确定</n22-button>
 
-    <md-captcha
+    <n22-captcha
       ref="captcha"
       v-model="show"
       :title="title"
@@ -62,11 +62,12 @@
       @send="onSend"
     >
       {{content}}
-    </md-captcha>
+    </n22-captcha>
 	</div>
 </template>
 
-<script>import {Button, Toast, Captcha, InputItem, Field, FieldItem, Switch} from 'mand-mobile'
+<script>
+import {Button, Toast, Captcha, InputItem, Field, FieldItem, Switch} from 'al-mobile'
 
 export default {
   name: 'captcha-demo',
@@ -121,11 +122,12 @@ export default {
     onHide() {},
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
-.md-example-child-captcha
+.n22-example-child-captcha
   padding 20px
-  .md-field
+  .n22-field
     margin-bottom 40px
 </style>

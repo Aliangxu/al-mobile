@@ -1,6 +1,6 @@
 <template>
-  <div class="md-example-child md-example-child-cashier">
-    <md-cashier
+  <div class="n22-example-child n22-example-child-cashier">
+    <n22-cashier
       ref="cashier"
       v-model="isCashierhow"
       :channels="cashierChannels"
@@ -8,20 +8,21 @@
       payment-describe="关于支付金额的特殊说明"
     >
       <div slot-scope="{ scene }" slot="header">
-        <md-notice-bar
+        <n22-notice-bar
           v-if="scene === 'choose'"
           mode="closable"
           icon="warn"
           type="warning"
         >
           该银行3:00-12:00系统维护，请更换其他银行卡
-        </md-notice-bar>
+        </n22-notice-bar>
       </div>
-    </md-cashier>
+    </n22-cashier>
 	</div>
 </template>
 
-<script>import {Button, Cashier, NoticeBar} from 'mand-mobile'
+<script>
+import {Button, Cashier, NoticeBar} from 'al-mobile'
 
 export default {
   name: 'cashier-demo',
@@ -54,11 +55,12 @@ export default {
     },
   },
 }
-</script>
 
-<style lang="stylus">
+</script>
+n22-
+<stn22- lang="stylus">
 .md-example-child-cashier
-  .md-field
+  .n22-field
     margin-bottom 30px
   .md-cashier-channel-item
     .item-icon.cashier-icon-1

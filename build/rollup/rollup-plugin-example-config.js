@@ -33,7 +33,7 @@ const EXAMPLE_OUTPUT_DIR = resolve('docs/examples')
 
 async function vueWarpper() {
   const distDir = EXAMPLE_OUTPUT_DIR
-  const fileName = 'mand-mobile-example.css'
+  const fileName = 'al-mobile-example.css'
   const {
     options,
     plugins,
@@ -73,9 +73,9 @@ const rollupPluginFactory = async () =>  {
   return [  // resolve
   aliasPlugin({
     resolve: ['.js', '.json', '/index.js', '.css', '.vue', '.svg'], // @TODO '/index.js' hack
-    'mand-mobile/components': resolve('components'),
-    'mand-mobile/lib': resolve('lib'),
-    'mand-mobile': resolve('components'),
+    'al-mobile/components': resolve('components'),
+    'al-mobile/lib': resolve('lib'),
+    'al-mobile': resolve('components'),
     '@examples/assets/images/bank-zs.svg': resolve('examples/assets/images/bank-zs.svg'),
     '@examples/assets/images/tip-package.svg': resolve('examples/assets/images/tip-package.svg')
   }),
@@ -119,8 +119,8 @@ const rollupPluginFactory = async () =>  {
   }),
   fillHtmlPlugin({
     template: resolve('examples/index.html'),
-    // publicPath: '/mand-mobile/examples/',
-    publicPath: '/mand-mobile/examples/',
+    // publicPath: '/al-mobile/examples/',
+    publicPath: '/al-mobile/examples/',
     destFile: path.resolve(EXAMPLE_OUTPUT_DIR, 'index.html')
   }),
   // cli

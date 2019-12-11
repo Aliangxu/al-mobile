@@ -1,13 +1,13 @@
 <template>
-  <div class="md-example-child md-example-child-input-item-3">
-    <md-field title="转出金额(元)">
+  <div class="n22-example-child n22-example-child-input-item-3">
+    <n22-field title="转出金额(元)">
       <div
         class="field-operator"
         slot="action"
       >
-        <md-icon name="info"></md-icon>
+        <n22-icon name="info"></n22-icon>
       </div>
-      <md-input-item
+      <n22-input-item
         type="money"
         v-model="value"
         brief="理财提示文案，字符超出10个自动变小"
@@ -17,12 +17,13 @@
         is-highlight
       >
         <div class="input-operator" slot="right">全部取出</div>
-      </md-input-item>
-    </md-field>
+      </n22-input-item>
+    </n22-field>
   </div>
 </template>
 
-<script>import {InputItem, Field, Icon} from 'mand-mobile'
+<script>
+import {InputItem, Field, Icon} from 'al-mobile'
 
 export default {
   name: 'input-item-demo',
@@ -42,13 +43,14 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
-.md-example-child-input-item-3
-  .md-field
+.n22-example-child-input-item-3
+  .n22-field
     padding-bottom 20px
-    .md-field-title
+    .n22-field-title
       .value
         display flex
         align-items center
@@ -56,7 +58,7 @@ export default {
         .field-operator
           display flex
           align-items center
-    .md-field-item-content::before
+    .n22-field-item-content::before
       background-color #C5CAD5
     .input-operator
       font-size 28px

@@ -7,7 +7,7 @@ Support scenario-relevent operations
 ### Import
 
 ```javascript
-import { ActionSheet } from '@/compoments'
+import { ActionSheet } from 'al-mobile'
 
 Vue.component(ActionSheet.name, ActionSheet)
 

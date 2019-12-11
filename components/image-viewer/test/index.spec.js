@@ -1,4 +1,4 @@
-import {ImageViewer} from 'mand-mobile'
+import {ImageViewer} from 'al-mobile'
 import {mount} from '@vue/test-utils'
 
 describe('ImageViewer - Method', () => {
@@ -11,7 +11,7 @@ describe('ImageViewer - Method', () => {
   it('create a simple image-viewer', () => {
     wrapper = mount(ImageViewer)
 
-    expect(wrapper.classes('md-image-viewer')).toBe(true)
+    expect(wrapper.classes('n22-image-viewer')).toBe(true)
     expect(wrapper.vm.value).toBe(false)
     expect(wrapper.vm.initialIndex).toBe(0)
     expect(wrapper.vm.hasDots).toBe(true)
@@ -25,7 +25,7 @@ describe('ImageViewer - Method', () => {
 
   it('imageViewer method viewerClick', () => {
     wrapper = mount(ImageViewer)
-    wrapper.find('.md-image-viewer').trigger('click')
+    wrapper.find('.n22-image-viewer').trigger('click')
     expect(wrapper.vm.isViewerShow).toBe(false)
   })
 

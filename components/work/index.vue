@@ -1,6 +1,7 @@
 <template>
   <div class="n22-picker">
     <n22-popup
+      :class="[isAppendTo ? 'n22-popup-is-append-to' : '',]"
       v-model="isPickerShow"
       position="bottom"
       :mask-closable="maskClosable"
@@ -106,21 +107,9 @@ export default {
       type: Boolean,
       default: false
     },
-    isstyle: Boolean,
-    option: String,
     value: {
       type: Boolean,
       default: false
-    },
-    showname: String,
-    paramsdata: {
-      type: Object,
-      default: () => {
-        return {
-          oneLevel: "2",
-          twoLevel: "4"
-        };
-      }
     },
     data: {
       type: Array,
@@ -135,6 +124,13 @@ export default {
       default: 3
     },
     selectValue: [String,Number,Array,Object],
+    isAppendTo: {
+      type: Boolean,
+    },
+    notSelectIdf: {
+      type: String,
+      default: "",
+    }
   },
   data() {
     return {
@@ -204,8 +200,8 @@ export default {
     }
   },
   mounted() {
-    console.log("%c work-mounted", "color:#00CD00", this.data);
-    console.log("%c work-mounted", "color:#00CD00", this.selectValue);
+    // console.log("%c work-mounted", "color:#00CD00", this.data);
+    // console.log("%c work-mounted", "color:#00CD00", this.selectValue);
     this.$_initPicker();
   },
   created() {
@@ -332,27 +328,8 @@ export default {
       this.arrItemAll.push(arrItemAll);
     },
     echoSelect(zy, mndex, index) {
-      // let codeKey = "";
-      // switch (index + 1) {
-      //   case 0:
-      //     codeKey = "big";
-      //     break;
-      //   case 1:
-      //     codeKey = "small";
-      //     break;
-      //   case 2:
-      //     codeKey = "work";
-      //     break;
-      //   default:
-      //     break;
-      // }
-      if (zy.AccidentRiskLevel && zy.AccidentRiskLevel === "拒保") {
-        Toast({
-          content: "拒保职业",
-          icon: "tip",
-          position: "center",
-          duration: 3000
-        });
+      if (zy.AccidentRiskLevel && zy.AccidentRiskLevel === this.notSelectIdf) {
+        this.$emit("notSelectFun",zy);
         this.activeis = true;
         return;
       }
@@ -448,7 +425,7 @@ export default {
 }
 
 .ctc_div_markcenct {
-  width: 375px;
+  // width: 375px;
   // margin-top: 10px;
 }
 
@@ -494,6 +471,7 @@ export default {
 .ctc_div_queryitemall {
   // width: 359px;
   height: 463px;
+  width: 100%;
   overflow: scroll;
 }
 
@@ -510,7 +488,7 @@ export default {
   background-color: #fff;
   position: absolute;
   margin-left: 50px;
-  width: 325px;
+  // width: 325px;
   z-index: 21;
 }
 
@@ -521,7 +499,7 @@ export default {
   background-color: #fff;
   position: absolute;
   margin-left: 100px;
-  width: 275px;
+  // width: 275px;
   z-index: 22;
 }
 
@@ -573,6 +551,9 @@ export default {
   float: left;
   font-size: 14px;
   padding: 10px 0;
+
+  width: 100%;
+  border-bottom: 1px solid #f2f2f2;
 }
 
 .marRightitem {
@@ -580,16 +561,19 @@ export default {
 }
 
 .ctc_div_item {
-  display: inline-block;
-  width: 335px;
+  // display: inline-block;
+  // width: 335px;
+  width: 100%;
+
   /*height: 0.86rem;*/
   /*margin: 0 auto;*/
-  border-bottom: 1px solid #f2f2f2;
+  // border-bottom: 1px solid #f2f2f2;
   margin-left: 12px;
 }
 
 .is-select-class {
   // color: $theme-color;
+  color color-primary
 }
 .not-select-class {
   color: #555555;

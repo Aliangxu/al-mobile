@@ -1,12 +1,13 @@
 <template>
-  <div class="md-example-child md-example-child-action-bar md-example-child-3">
-    <md-action-bar :actions="data" @click="onBtnClick">
+  <div class="n22-example-child n22-example-child-action-bar n22-example-child-3">
+    <n22-action-bar :actions="data" @click="onBtnClick">
       <span class="price">&yen;128.00<small>起</small></span>
-    </md-action-bar>
+    </n22-action-bar>
   </div>
 </template>
 
-<script>import {ActionBar, Dialog} from 'mand-mobile'
+<script>
+import {ActionBar, Dialog} from 'al-mobile'
 
 export default {
   name: 'action-bar-demo',
@@ -30,7 +31,8 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus" scoped>
 .price

@@ -92,11 +92,11 @@ Check multiple checks. Combine with `Check` or `CheckBox`.
 
 ```html
 <template>
-  <md-check-list :options="data">
+  <n22-check-list :options="data">
     <template slot-scope="{ option }">
       <div class="custom-title" v-text="option.text"></div>
       <div class="custom-brief">{{ option.text }} custom description</div>
     </template>
-  </md-check-list>
+  </n22-check-list>
 </template>
 ```

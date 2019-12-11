@@ -1,0 +1,18 @@
+<template>
+  <div class="n22-example-child n22-example-child-tag n22-example-child-tag-3">
+    <tag size="large" shape="square" fill-color="rgba(0,0,0,0)" type="fill" font-weight="bolder" font-color="#333">￥3600</tag>
+    <tag size="small" shape="square" fill-color="rgba(0,0,0,0)" type="fill" font-weight="bolder" font-color="#333">￥300</tag>
+  </div>
+</template>
+
+<script>
+import {Tag} from 'al-mobile'
+
+export default {
+  name: 'tag-demo',
+  components: {
+    Tag,
+  },
+}
+
+</script>

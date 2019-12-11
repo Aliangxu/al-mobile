@@ -28,10 +28,13 @@
     v-else-if="type=='work'"
     ref="picker0"
     :title="pickerTitle"
+    :isAppendTo="isAppendTo"
     :data="pickerDataShow"
     :selectValue="selectValue"
     describe="请选择您的职业"
     v-model="isPickerShow"
+    :notSelectIdf="notSelectIdf"
+    @notSelectFun="onNotSelectFun"
     @confirm="onPickerConfirm(0)"
     @hide="$_onHide"
   ></n22-work>
@@ -55,7 +58,7 @@
 import Picker from "../picker";
 import DatePicker from "../date-picker";
 import TabPicker from "../tab-picker";
-import Work from "../work/work.vue";
+import Work from "../work";
 // import { TabPicker } from "mand-mobile";
 export default {
   name: "n22-drop-select-show", //使用xx-xx-xx命名方式具体看操作文档
@@ -118,7 +121,11 @@ export default {
         /* istanbul ignore next */
         return {};
       }
-    }
+    },
+    notSelectIdf: {
+      type: String,
+      default: "",
+    },
   },
   computed: {
     //...mapState(["common"])//引入vuex state样例>>>可通过this.common.userInfo获取vuex-state数据
@@ -238,6 +245,13 @@ export default {
     },
     $_onHide() {
       this.$emit("hide");
+    },
+    onNotSelectFun(value){
+      if (!this.isAppendTo) {
+        this.$emit("onNotSelectFun",value);
+      } else {
+        this.btns.onNotSelectFun.handler.call(this,value);
+      }
     },
     onPickerConfirm(index, value) {
       console.log(

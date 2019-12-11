@@ -1,13 +1,14 @@
 <template>
-  <div class="md-example-child md-example-child-amount">
-    <md-amount
+  <div class="n22-example-child n22-example-child-amount">
+    <n22-amount
       :value="1234"
       has-separator
-    ></md-amount>
+    ></n22-amount>
 	</div>
 </template>
 
-<script>import {Amount} from 'mand-mobile'
+<script>
+import {Amount} from 'al-mobile'
 
 export default {
   name: 'amount-demo',
@@ -15,10 +16,11 @@ export default {
     [Amount.name]: Amount,
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus" scoped>
-.md-example-child-amount
+.n22-example-child-amount
   text-align center
   color #666
 </style>

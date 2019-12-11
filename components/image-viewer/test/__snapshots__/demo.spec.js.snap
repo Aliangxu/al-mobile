@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ImageViewer - Demo Basic 1`] = `
-<div class="md-example-child md-example-child-image-reader">
+<div class="n22-example-child n22-example-child-image-reader">
   <div>
     <ul>
       <li>
@@ -18,8 +18,11 @@ exports[`ImageViewer - Demo Basic 1`] = `
       </li>
     </ul>
   </div>
-  <div class="md-image-viewer" style="display:none;">
+  <div class="n22-image-viewer" style="display:none;">
     <div class="viewer-container">
+      <div class="one-img">
+        <!---->
+      </div>
       <!---->
       <div class="viewer-index">1/4</div>
     </div>

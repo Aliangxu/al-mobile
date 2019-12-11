@@ -1,4 +1,4 @@
-import {NumberKeyboard} from 'mand-mobile'
+import {NumberKeyboard} from 'al-mobile'
 import sinon from 'sinon'
 import {mount} from '@vue/test-utils'
 

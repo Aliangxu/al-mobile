@@ -1,63 +1,63 @@
 <template>
-  <div class="md-number-keyboard-container" :class="type">
+  <div class="n22-number-keyboard-container" :class="type">
     <div class="keyboard-number">
       <ul class="keyboard-number-list">
-        <md-number-key
+        <n22-number-key
           class="keyboard-number-item"
           v-for="n in 9"
           :key="n-1"
           :value="keyNumberList[n-1]"
           @press="$_onNumberKeyClick"
-        ></md-number-key>
+        ></n22-number-key>
         <template v-if="type === 'professional'">
-          <md-number-key
+          <n22-number-key
             class="keyboard-number-item"
             v-if="!hideDot"
             :value="dotText"
             @press="$_onNumberKeyClick"
-          ></md-number-key>
-          <md-number-key
+          ></n22-number-key>
+          <n22-number-key
             class="keyboard-number-item"
             :class="{'large-item': hideDot}"
             :value="keyNumberList[9]"
             @press="$_onNumberKeyClick"
-          ></md-number-key>
+          ></n22-number-key>
           <li class="keyboard-number-item" v-if="isView"></li>
-          <md-number-key
+          <n22-number-key
             v-else
             class="keyboard-number-item slidedown"
             no-touch
             no-prevent
             @press="$_onSlideDoneClick"
-          ></md-number-key>
+          ></n22-number-key>
         </template>
         <template v-else>
           <li class="keyboard-number-item no-bg"></li>
-          <md-number-key
+          <n22-number-key
             class="keyboard-number-item"
             :value="keyNumberList[9]"
             @press="$_onNumberKeyClick"
-          ></md-number-key>
-          <md-number-key
+          ></n22-number-key>
+          <n22-number-key
             class="keyboard-number-item no-bg delete"
             @press="$_onDeleteClick"
-          ></md-number-key>
+          ></n22-number-key>
         </template>
       </ul>
     </div>
     <div class="keyboard-operate" v-if="type === 'professional'">
       <ul class="keyboard-operate-list">
-        <md-number-key
+        <n22-number-key
           class="keyboard-operate-item delete"
           @press="$_onDeleteClick"
-        ></md-number-key>
-        <md-number-key
+        ></n22-number-key>
+        <n22-number-key
           class="keyboard-operate-item confirm"
           :value="okText"
           no-touch
           no-prevent
           @press="$_onConfirmeClick"
-        ></md-number-key>
+        ></n22-number-key>
       </ul>
     </div>
   </div>
@@ -68,7 +68,7 @@ import {noop} from '../_util'
 import Key from './key'
 
 export default {
-  name: 'md-number-keyboard-container',
+  name: 'n22-number-keyboard-container',
 
   components: {
     [Key.name]: Key,
@@ -148,7 +148,7 @@ export default {
 </script>
 
 <style lang="stylus">
-.md-number-keyboard-container
+.n22-number-keyboard-container
   position relative
   -webkit-user-select none
   -webkit-tap-highlight-color transparent

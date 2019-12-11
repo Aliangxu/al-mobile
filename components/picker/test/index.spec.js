@@ -1,5 +1,5 @@
-import {Picker} from 'mand-mobile'
-import PickerColumn from 'mand-mobile/components/picker/picker-column'
+import {Picker} from 'al-mobile'
+import PickerColumn from 'al-mobile/components/picker/picker-column'
 import triggerTouch from '../../popup/test/touch-trigger'
 import simple from '../demo/data/simple'
 import district from '../demo/data/district'
@@ -31,7 +31,7 @@ describe('Picker - Operation', () => {
       expect(wrapper.vm.isPickerShow).toBe(true)
       expect(!!wrapper.vm.column).toBe(true)
       expect(wrapper.findAll('.column-item').length).toBe(16)
-      const cancelmBtn = wrapper.find('.md-popup-cancel')
+      const cancelmBtn = wrapper.find('.n22-popup-cancel')
       cancelmBtn.trigger('click')
       wrapper.vm.value = false
       expect(eventStub.calledWith('cancel')).toBe(true)
@@ -58,7 +58,7 @@ describe('Picker - Operation', () => {
       expect(wrapper.vm.getColumnIndexs()[0]).toBe(2)
       expect(wrapper.vm.getColumnValue(0).text).toBe('2017')
 
-      const hook = wrapper.findAll('.md-picker-column-hook').at(0)
+      const hook = wrapper.findAll('.n22-picker-column-hook').at(0)
 
       triggerTouch(hook.element, 'touchstart', 0, 0)
       triggerTouch(hook.element, 'touchmove', 0, 108)

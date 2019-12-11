@@ -53,7 +53,7 @@
 </template>
 
 <script>
-import { FieldItem } from "@/components";
+import FieldItem from "../field-item";
 export default {
   name: "n22-switch-item",
   components: {

@@ -1,4 +1,4 @@
-import { Swiper, SwiperItem } from 'mand-mobile'
+import { Swiper, SwiperItem } from 'al-mobile'
 import triggerTouch from '../../popup/test/touch-trigger'
 import sinon from 'sinon'
 import { mount } from '@vue/test-utils'
@@ -13,7 +13,7 @@ describe('Swiper', () => {
   test('create a simple swiper', done => {
     wrapper = mount(Swiper)
 
-    expect(wrapper.classes('md-swiper')).toBe(true)
+    expect(wrapper.classes('n22-swiper')).toBe(true)
     
     expect(wrapper.vm.autoplay).toBe(3000)
     expect(wrapper.vm.transition).toBe('slide')
@@ -55,7 +55,7 @@ describe('Swiper', () => {
         'default': [SwiperItem, SwiperItem, SwiperItem]
       }
     })
-    expect(wrapper.findAll('.md-swiper-item').at(0).element.style.height).toBe('auto')
+    expect(wrapper.findAll('.n22-swiper-item').at(0).element.style.height).toBe('auto')
   })
 
   test('create a vertical swiper item', () => {
@@ -67,7 +67,7 @@ describe('Swiper', () => {
         'default': SwiperItem
       }
     })
-    expect(wrapper.findAll('.md-swiper-item').at(0).element.style.width).toBe('auto')
+    expect(wrapper.findAll('.n22-swiper-item').at(0).element.style.width).toBe('auto')
   })
 
   test('swiper method play', done => {

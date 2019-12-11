@@ -1,11 +1,11 @@
 {
   "name": "al-mobile",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "description": "A Vue.js 2.0 Mobile UI Toolkit",
   "homepage": "https://github.com/Aliangxu/al-mobile.git",
-  "main": "lib/mand-mobile.umd.js",
-  "style": "lib/mand-mobile.css",
-  "module": "lib/mand-mobile.esm.js",
+  "main": "lib/al-mobile.umd.js",
+  "style": "lib/al-mobile.css",
+  "module": "lib/al-mobile.esm.js",
   "unpkg": "lib/index.js",
   "typings": "types/index.d.ts",
   "repository": {
@@ -48,6 +48,7 @@
     "build:webpack:mand-mobile": "cross-env NODE_ENV=production node build/webpack/build-mand-mobile",
     "build:webpack:components": "cross-env NODE_ENV=production gulp build --gulpfile gulpfile.js && node build/webpack/build-style-entry",
     "codecov": "codecov",
+    "testInit": "jest --updateSnapshot",
     "test": "jest --no-cache --runInBand --verbose --silent",
     "test:lib": "TEST_TYPE=lib jest --no-cache --runInBand --verbose --silent",
     "test:lib-vw": "TEST_TYPE=lib-vw jest --no-cache --runInBand --verbose --silent"
@@ -201,16 +202,16 @@
     "sinon-chai": "^2.8.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
-    "svg-sprite-loader": "^0.3.1",
+    "svg-sprite-loader": "^4.1.6",
     "url-loader": "^0.5.8",
     "vconsole": "^3.2.0",
-    "vue": "^2.4.2",
+    "vue": "^2.6.10",
     "vue-jest": "2.x",
     "vue-loader": "^13.0.4",
     "vue-router": "^3.0.1",
     "vue-server-renderer": "^2.5.17",
     "vue-style-loader": "^3.0.1",
-    "vue-template-compiler": "^2.4.2",
+    "vue-template-compiler": "^2.6.10",
     "vueify": "^9.4.1",
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^3.3.2",
@@ -224,5 +225,6 @@
   "browserslist": [
     "iOS >= 8",
     "Android > 4.0"
-  ]
+  ],
+  "dependencies": {}
 }

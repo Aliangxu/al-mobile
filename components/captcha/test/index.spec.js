@@ -1,4 +1,4 @@
-import {Captcha} from 'mand-mobile'
+import {Captcha} from 'al-mobile'
 import sinon from 'sinon'
 import {mount} from '@vue/test-utils'
 
@@ -19,7 +19,7 @@ describe('Captcha - Operation', () => {
       sync: false,
     })
 
-    expect(wrapper.classes('md-captcha')).toBe(true)
+    expect(wrapper.classes('n22-captcha')).toBe(true)
   })
 
   it('create a captcha and not append to body', () => {
@@ -39,7 +39,7 @@ describe('Captcha - Operation', () => {
       },
     })
 
-    expect(wrapper.contains('.md-dialog')).toBe(false)
+    expect(wrapper.contains('.n22-dialog')).toBe(false)
   })
 
   it('should clean code after shown again', () => {
@@ -72,7 +72,7 @@ describe('Captcha - Operation', () => {
     })
     setTimeout(() => {
       expect(eventStub.calledWith('show')).toBe(true)
-      wrapper.find('.md-dialog-close').trigger('click')
+      wrapper.find('.n22-dialog-close').trigger('click')
       wrapper.setProps({
         value: false,
       })
@@ -120,7 +120,7 @@ describe('Captcha - Operation', () => {
 
     const eventStub = sinon.stub(wrapper.vm, '$emit')
     setTimeout(() => {
-      wrapper.find('.md-captcha-btn').trigger('click')
+      wrapper.find('.n22-captcha-btn').trigger('click')
       expect(eventStub.calledWith('send')).toEqual(true)
       done()
     }, 2500)
@@ -135,7 +135,7 @@ describe('Captcha - Operation', () => {
     })
 
     wrapper.vm.countdown()
-    expect(wrapper.findAll('.md-captcha-btn').length).toEqual(0)
+    expect(wrapper.findAll('.n22-captcha-btn').length).toEqual(0)
   })
 
   it('emit submit events', done => {

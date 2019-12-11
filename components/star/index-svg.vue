@@ -30,6 +30,8 @@
 	.rating_container{
         position: relative;
         top: 20px;
+        width: 200px;
+        height: 40px;
         // @include wh(200px, 40px);
         .star_overflow{
             overflow: hidden;

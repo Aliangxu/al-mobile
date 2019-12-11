@@ -1,7 +1,7 @@
 <template>
-  <div class="md-codebox-wrapper">
+  <div class="n22-codebox-wrapper">
     <div
-      class="md-codebox"
+      class="n22-codebox"
       :class="{
         'is-disabled': disabled,
         'is-justify': justify
@@ -13,21 +13,21 @@
           v-for="i in num"
           :key="i"
           :class="[
-            'md-codebox-box',
+            'n22-codebox-box',
             (i === code.length + 1) && focused && 'is-active',
             code.charAt(i-1) !== '' && 'is-filled'
           ]"
         >
           <template v-if="code.charAt(i-1)">
             <template v-if="mask">
-              <i class="md-codebox-dot"></i>
+              <i class="n22-codebox-dot"></i>
             </template>
             <template v-else>
               {{code.charAt(i-1)}}
             </template>
           </template>
           <template v-if="i === code.length + 1 && focused">
-            <i class="md-codebox-blink"></i>
+            <i class="n22-codebox-blink"></i>
           </template>
         </span>
       </template>
@@ -39,7 +39,7 @@
           :value="code"
           readonly
           disabled
-          :class="['md-codebox-holder', focused && 'is-active']"
+          :class="['n22-codebox-holder', focused && 'is-active']"
         />
         <input
           v-else
@@ -48,7 +48,7 @@
           :value="code"
           readonly
           disabled
-          :class="['md-codebox-holder', focused && 'is-active']"
+          :class="['n22-codebox-holder', focused && 'is-active']"
         />
       </template>
     </div>
@@ -60,13 +60,13 @@
         :maxlength="maxlength"
         @input="$_onInputChange"
         ref="input"
-        class="md-codebox-input"
+        class="n22-codebox-input"
       />
     </form>
-    <md-number-keyboard
+    <n22-number-keyboard
       v-show="!system"
       ref="keyboard"
-      class="md-codebox-keyboard"
+      class="n22-codebox-keyboard"
       :type="maxlength > 0 ? 'simple' : 'professional'"
       :okText="okText"
       :disorder="disorder"
@@ -75,14 +75,14 @@
       @delete="$_onDelete"
       @enter="$_onEnter"
       @confirm="$_onConfirm"
-    ></md-number-keyboard>
+    ></n22-number-keyboard>
   </div>
 </template>
 
 <script>import NumberKeyboard from '../number-keyboard'
 
 export default {
-  name: 'md-codebox',
+  name: 'n22-codebox',
   components: {
     [NumberKeyboard.name]: NumberKeyboard,
   },
@@ -237,22 +237,22 @@ export default {
 </script>
 
 <style lang="stylus">
-.md-codebox-wrapper
-  .md-codebox-input
+.n22-codebox-wrapper
+  .n22-codebox-input
     position absolute
     left -9999px
     opacity 0
 
-.md-codebox
+.n22-codebox
   position relative
   display flex
   flex-wrap nowrap
   justify-content center
   &.is-justify
-    .md-codebox-box
+    .n22-codebox-box
       flex 1 1 0%
 
-.md-codebox-box
+.n22-codebox-box
   position relative
   flex 0 1 codebox-width
   width codebox-width
@@ -280,7 +280,7 @@ export default {
   &.is-active, &.is-filled
     border-color codebox-border-active-color
 
-.md-codebox-blink
+.n22-codebox-blink
   display block
   if tab-height is a 'unit'
     height (codebox-height * 0.8)
@@ -288,16 +288,16 @@ export default {
     height "calc(%s * 0.8)" % codebox-height
   width 2px
   background-color codebox-blink-color
-  animation md-codebox-flash steps(2) 1s infinite
+  animation n22-codebox-flash steps(2) 1s infinite
 
-.md-codebox-dot
+.n22-codebox-dot
   display block
   height 10px
   width 10px
   border-radius 5px
   background-color codebox-dot-color
 
-.md-codebox-holder
+.n22-codebox-holder
   pointer-events none
   height codebox-height
   line-height codebox-height
@@ -325,19 +325,19 @@ export default {
   &.is-active
     border-color codebox-border-active-color
 
-.md-codebox.is-disabled
-  .md-codebox-box
+.n22-codebox.is-disabled
+  .n22-codebox-box
     color codebox-disabled-color
     border-color codebox-disabled-color
-  .md-codebox-blink
+  .n22-codebox-blink
     display none
-  .md-codebox-dot
+  .n22-codebox-dot
     background-color codebox-disabled-color
-  .md-codebox-holder
+  .n22-codebox-holder
     color codebox-disabled-color
     border-color codebox-disabled-color
 
-@keyframes md-codebox-flash
+@keyframes n22-codebox-flash
   from
     opacity 0
   to

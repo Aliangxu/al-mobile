@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import {Check, CheckGroup, CheckBox, CheckList} from 'mand-mobile'
+import {Check, CheckGroup, CheckBox, CheckList} from 'al-mobile'
 import sinon from 'sinon'
 import {shallowMount, mount} from '@vue/test-utils'
 
@@ -24,7 +24,7 @@ describe('Check - Operation', () => {
       },
     })
     const eventSpy = sinon.spy(wrapper.vm, '$emit')
-    const check = wrapper.find('.md-check')
+    const check = wrapper.find('.n22-check')
 
     check.trigger('click')
     expect(eventSpy.calledWith('input')).toBe(true)
@@ -47,7 +47,7 @@ describe('Check - Operation', () => {
     })
     const eventSpy = sinon.spy(wrapper.vm, '$emit')
 
-    wrapper.find('.md-check').trigger('click')
+    wrapper.find('.n22-check').trigger('click')
     expect(eventSpy.calledWith('input')).toBe(false)
     expect(clicked).toBe(false)
   })
@@ -60,7 +60,7 @@ describe('Check - Operation', () => {
         value,
       },
       slots: {
-        default: ['<md-check name="a"/>', '<md-check name="b"/>'],
+        default: ['<n22-check name="a"/>', '<n22-check name="b"/>'],
       },
       listeners: {
         input(val) {
@@ -70,7 +70,7 @@ describe('Check - Operation', () => {
       },
     })
 
-    const checks = wrapper.findAll('.md-check')
+    const checks = wrapper.findAll('.n22-check')
     expect(checks.at(0).classes('is-checked')).toBe(true)
 
     checks.at(1).trigger('click')
@@ -94,7 +94,7 @@ describe('Check - Operation', () => {
     })
 
     const eventSpy = sinon.spy(wrapper.vm, '$emit')
-    const checkBox = wrapper.find('.md-check-box')
+    const checkBox = wrapper.find('.n22-check-box')
 
     checkBox.trigger('click')
     expect(eventSpy.calledWith('input')).toBe(true)
@@ -111,7 +111,7 @@ describe('Check - Operation', () => {
         value,
       },
       slots: {
-        default: ['<md-check-box name="a"/>', '<md-check-box name="b"/>'],
+        default: ['<n22-check-box name="a"/>', '<n22-check-box name="b"/>'],
       },
       listeners: {
         input(val) {
@@ -121,7 +121,7 @@ describe('Check - Operation', () => {
       },
     })
 
-    const checks = wrapper.findAll('.md-check-box')
+    const checks = wrapper.findAll('.n22-check-box')
     expect(checks.at(0).classes('is-checked')).toBe(true)
 
     checks.at(1).trigger('click')
@@ -144,7 +144,7 @@ describe('Check - Operation', () => {
     })
     const eventSpy = sinon.spy(wrapper.vm, '$emit')
 
-    wrapper.find('.md-check-box').trigger('click')
+    wrapper.find('.n22-check-box').trigger('click')
     expect(eventSpy.calledWith('input')).toBe(false)
     expect(clicked).toBe(false)
   })
@@ -164,7 +164,7 @@ describe('Check - Operation', () => {
       },
     })
 
-    const items = wrapper.findAll('.md-cell-item')
+    const items = wrapper.findAll('.n22-cell-item')
     expect(items.at(0).classes('is-checked')).toBe(true)
 
     items.at(1).trigger('click')

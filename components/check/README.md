@@ -88,11 +88,11 @@ Vue.component(CheckList.name, CheckList)
 #### CheckList Slots
 ```html
 <template>
-  <md-check-list :options="data">
+  <n22-check-list :options="data">
     <template slot-scope="{ option }">
       <div class="custom-title" v-text="option.text"></div>
       <div class="custom-brief">{{ option.text }}的自定义描述</div>
     </template>
-  </md-check-list>
+  </n22-check-list>
 </template>
 ```

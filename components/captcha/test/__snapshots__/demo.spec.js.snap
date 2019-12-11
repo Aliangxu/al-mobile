@@ -1,14 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Captcha - Demo Customize 1`] = `
-<div class="md-example-child md-example-child-captcha">
+<div class="n22-example-child n22-example-child-captcha">
   <div class="md-captcha">
-    <div position="center" class="md-dialog">
-      <div class="md-popup with-mask center" style="display:none;">
-        <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
-        <div name="md-fade" class="md-popup-box md-fade" style="display:none;">
-          <div class="md-dialog-content">
-            <div class="md-dialog-body"><a role="button" class="md-dialog-close"><i class="md-icon icon-font md-icon-close close md" style="color:;"></i></a>
+    <div position="center" class="n22-dialog">
+      <div class="n22-popup with-mask center" style="display:none;">
+        <div name="n22-mask-fade" class="n22-popup-mask" style="display:none;"></div>
+        <div name="n22-fade" class="n22-popup-box n22-fade" style="display:none;">
+          <div class="n22-dialog-content">
+            <div class="n22-dialog-body"><a role="button" class="n22-dialog-close">
+                <svg-icon icon-class="close" class="icon_c"></svg-icon>
+              </a>
               <!---->
               <!---->
               <div class="md-captcha-content">
@@ -24,34 +26,32 @@ exports[`Captcha - Demo Customize 1`] = `
                 </footer>
                 <form action="" style="display:none;"><input type="text" maxlength="4" value="" class="md-codebox-input"></form>
                 <div class="md-number-keyboard md-codebox-keyboard">
-                  <div class="md-popup bottom" style="display:none;">
-                    <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
-                    <div name="md-slide-up" class="md-popup-box md-slide-up" style="display:none;">
-                      <div class="md-number-keyboard-container simple">
-                        <div class="keyboard-number">
-                          <ul class="keyboard-number-list">
-                            <li class="keyboard-number-item">1</li>
-                            <li class="keyboard-number-item">2</li>
-                            <li class="keyboard-number-item">3</li>
-                            <li class="keyboard-number-item">4</li>
-                            <li class="keyboard-number-item">5</li>
-                            <li class="keyboard-number-item">6</li>
-                            <li class="keyboard-number-item">7</li>
-                            <li class="keyboard-number-item">8</li>
-                            <li class="keyboard-number-item">9</li>
-                            <li class="keyboard-number-item no-bg"></li>
-                            <li class="keyboard-number-item">0</li>
-                            <li class="keyboard-number-item no-bg delete"></li>
-                          </ul>
-                        </div>
-                        <!---->
+                  <md-popup position="bottom">
+                    <!---->
+                    <div class="md-number-keyboard-container simple">
+                      <div class="keyboard-number">
+                        <ul class="keyboard-number-list">
+                          <li class="keyboard-number-item"><span>1</span></li>
+                          <li class="keyboard-number-item"><span>2</span></li>
+                          <li class="keyboard-number-item"><span>3</span></li>
+                          <li class="keyboard-number-item"><span>4</span></li>
+                          <li class="keyboard-number-item"><span>5</span></li>
+                          <li class="keyboard-number-item"><span>6</span></li>
+                          <li class="keyboard-number-item"><span>7</span></li>
+                          <li class="keyboard-number-item"><span>8</span></li>
+                          <li class="keyboard-number-item"><span>9</span></li>
+                          <li class="keyboard-number-item no-bg"></li>
+                          <li class="keyboard-number-item"><span>0</span></li>
+                          <li class="keyboard-number-item no-bg delete"><span></span></li>
+                        </ul>
                       </div>
+                      <!---->
                     </div>
-                  </div>
+                  </md-popup>
                 </div>
               </div>
             </div>
-            <footer class="md-dialog-actions"></footer>
+            <footer class="n22-dialog-actions"></footer>
           </div>
         </div>
       </div>
@@ -61,7 +61,7 @@ exports[`Captcha - Demo Customize 1`] = `
 `;
 
 exports[`Captcha - Demo Inline display 1`] = `
-<div class="md-example-child md-example-child-captcha-1">
+<div class="n22-example-child n22-example-child-captcha-1">
   <div class="md-captcha">
     <div class="md-captcha-content">
       <!---->
@@ -76,21 +76,22 @@ exports[`Captcha - Demo Inline display 1`] = `
       </footer>
       <form action="" style="display:none;"><input type="text" maxlength="4" value="" class="md-codebox-input"></form>
       <div class="md-number-keyboard md-codebox-keyboard in-view">
+        <!---->
         <div class="md-number-keyboard-container simple">
           <div class="keyboard-number">
             <ul class="keyboard-number-list">
-              <li class="keyboard-number-item">1</li>
-              <li class="keyboard-number-item">2</li>
-              <li class="keyboard-number-item">3</li>
-              <li class="keyboard-number-item">4</li>
-              <li class="keyboard-number-item">5</li>
-              <li class="keyboard-number-item">6</li>
-              <li class="keyboard-number-item">7</li>
-              <li class="keyboard-number-item">8</li>
-              <li class="keyboard-number-item">9</li>
+              <li class="keyboard-number-item"><span>1</span></li>
+              <li class="keyboard-number-item"><span>2</span></li>
+              <li class="keyboard-number-item"><span>3</span></li>
+              <li class="keyboard-number-item"><span>4</span></li>
+              <li class="keyboard-number-item"><span>5</span></li>
+              <li class="keyboard-number-item"><span>6</span></li>
+              <li class="keyboard-number-item"><span>7</span></li>
+              <li class="keyboard-number-item"><span>8</span></li>
+              <li class="keyboard-number-item"><span>9</span></li>
               <li class="keyboard-number-item no-bg"></li>
-              <li class="keyboard-number-item">0</li>
-              <li class="keyboard-number-item no-bg delete"></li>
+              <li class="keyboard-number-item"><span>0</span></li>
+              <li class="keyboard-number-item no-bg delete"><span></span></li>
             </ul>
           </div>
           <!---->

@@ -186,6 +186,7 @@ export default {
   height: 20px;
   margin-left: 95px;
   width: 14px;
+  transform(rotate(180deg));
   // @include transform(rotate(180deg));
 }
 .calendar_right_button {

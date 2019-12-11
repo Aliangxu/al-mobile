@@ -1,6 +1,6 @@
 <template>
-  <div class="md-example-child md-example-child-picker md-example-child-picker-1">
-    <md-picker
+  <div class="n22-example-child n22-example-child-picker n22-example-child-picker-1">
+    <n22-picker
       ref="picker"
       :data="pickerData"
       :cols="3"
@@ -8,12 +8,13 @@
       :key="tmp"
       is-view
       is-cascade
-    ></md-picker>
+    ></n22-picker>
   </div>
 </template>
 
-<script>import {Picker} from 'mand-mobile'
-import district from 'mand-mobile/components/picker/demo/data/district'
+<script>
+import {Picker} from 'al-mobile'
+import district from 'al-mobile/components/picker/demo/data/district'
 import {setTimeout} from 'timers'
 
 export default {
@@ -35,4 +36,5 @@ export default {
     }, 0)
   },
 }
-</script>
+
+</script>

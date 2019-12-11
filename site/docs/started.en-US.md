@@ -1,61 +1,23 @@
 ---
 title: Quickstart
 ---
-
-#### Scaffold
-
-**New project** can be initialized and integrated with `mand-mobile` by [vue-cli](https://github.com/vuejs/vue-cli). Please refer to <a href="javascript:jumpAnchor('Installation')">Installation</a> for **existing projects**.
-
-* **Vue CLI 2/3**([Template](https://github.com/mand-mobile/mand-mobile-template))(sp 1.x)
-
-```shell
-vue init mand-mobile/mand-mobile-template my-mand-mobile-project
-```
-
-* **Vue CLI 3**([Plugin](https://github.com/mand-mobile/vue-cli-plugin-mand))(sp 1.x/2.x)
-
-```shell
-vue create my-project
-cd my-project
-npm install --save-dev vue-cli-plugin-mand
-vue invoke mand
-```
-
-* **Vue CLI 3**([Example](https://github.com/mand-mobile/vue-cli3-example))(sp 1.x/2.x)
-
-* **Nuxt**([Example](https://github.com/mand-mobile/nuxt-example))
-
-#### Vue UI
-
-Create and manage projects with a graphical interface via [Vue UI](https://cli.vuejs.org/guide/creating-a-project.html#using-the-gui) and integrate `mand-mobile` with the plugin [vue-cli-plugin-mand](https://www.npmjs.com/package/vue-cli-plugin-mand)
-
-* Start `Vue UI`
-
-```shell
-vue ui
-```
-
-* Once the project is created, click on the **Plugins** and search for `mand-mobile`, click on the search result to complete the installation
-
-<img src="https://pt-starimg.didistatic.com/static/starimg/img/3zEzXVU28N1565160574175.png"/>
-
 #### Installation
 
 ##### **NPM or Yarn**
 
 ```shell
-npm install mand-mobile --save
+npm install al-mobile --save
 # OR 
-yarn add mand-mobile
+yarn add al-mobile
 ```
 
 ##### **Import in Browser**
 
-Add `script` and `link` tags in your browser and use the global variable `window['mand-mobile']`.
+Add `script` and `link` tags in your browser and use the global variable `window['al-mobile']`.
 
-The `JS` and `CSS` bundles are provided in the `mand-mobile/lib` or `mand-mobile/lib-vw` directory of the `npm` distribution. See <a href="javascript:jumpAnchor('Release Package Directory')">Release Package Directory</a>.    
+The `JS` and `CSS` bundles are provided in the `al-mobile/lib` or `al-mobile/lib-vw` directory of the `npm` distribution. See <a href="javascript:jumpAnchor('Release Package Directory')">Release Package Directory</a>.    
 
-You can also download it via [![](https://data.jsdelivr.com/v1/package/npm/mand-mobile/badge)](https://www.jsdelivr.com/package/npm/mand-mobile) or [UNPKG](https://unpkg.com/mand-mobile/lib/).
+You can also download it via [![](https://data.jsdelivr.com/v1/package/npm/al-mobile/badge)](https://www.jsdelivr.com/package/npm/al-mobile) or [UNPKG](https://unpkg.com/al-mobile/lib/).
 
 > It is recommended that users who are directly introduced with the CDN lock the version to avoid incompatibility updates. Please refer to [unpkg.com](unpkg.com) for more information.
 
@@ -71,7 +33,7 @@ You can also download it via [![](https://data.jsdelivr.com/v1/package/npm/mand-
 {
   "plugins": [
     ["import", {
-      "libraryName": "mand-mobile",
+      "libraryName": "al-mobile",
       "libraryDirectory": "lib"
     }]
   ]
@@ -91,7 +53,7 @@ You can also download it via [![](https://data.jsdelivr.com/v1/package/npm/mand-
 	     getCustomTransformers: () => ({
 	       before: [
             require('ts-import-plugin')({
-              "libraryName": "mand-mobile"
+              "libraryName": "al-mobile"
             })
 	       ]
 	     })
@@ -106,21 +68,21 @@ and then
 > If there is no configuration above, it will be imported in full amount, all styles need to be manually imported, and reference<a href="javascript:jumpAnchor('Totally Import')">Totally Import</a>
 
 ```javascript
-import { Button } from 'mand-mobile'
+import { Button } from 'al-mobile'
 ```
 
 ##### Manually Import
 
 ```javascript
-import Button from 'mand-mobile/lib/button'
+import Button from 'al-mobile/lib/button'
 ```
 
 ##### Totally Import
 
 ```javascript
 import Vue from 'vue'
-import mandMobile from 'mand-mobile'
-import 'mand-mobile/lib/mand-mobile.css'
+import mandMobile from 'al-mobile'
+import 'al-mobile/lib/al-mobile.css'
 
 Vue.use(mandMobile)
 ```
@@ -146,10 +108,10 @@ if ('addEventListener' in document && 'ontouchstart' in window) {
 
 ##### Release Package Directory
 
-[Release Package](https://unpkg.com/mand-mobile/) includes the following different directories, which are applicable in different scenarios. You can select one directory to load according to actual needs：
+[Release Package](https://unpkg.com/al-mobile/) includes the following different directories, which are applicable in different scenarios. You can select one directory to load according to actual needs：
 
 ```
-├── mand-mobile
+├── al-mobile
     ├── components  # Source code, custom theme, etc
     |
     ├── lib         # After compilation, style unit 'px', generally used
@@ -208,18 +170,3 @@ webpackConfig.plugins.push(new webpack.LoaderOptionsPlugin({
   }
 }))
 ```
-
-> [How to make the configuration only work on `mand-mobile`?](https://github.com/didi/mand-mobile/issues/103)
-
-
-#### Customization
-
-* [Customize Theme](#/en-US/docs/theme)
-* [Local Iconfont](#/en-US/docs/components/basic/icon?anchor=Importing%20local%20font%20files)
-
-#### Usage
-
-This is a form page developed by `Mand Mobile`
-
-<iframe src="https://codesandbox.io/embed/vue-template-ckqbz?fontsize=14&hidenavigation=1&module=%2Fsrc%2FApp.vue" title="Mand Mobile Quick Start" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media" style="width:100%; height:1000px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
-

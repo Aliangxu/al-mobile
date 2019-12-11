@@ -1,13 +1,14 @@
 <template>
-  <div class="md-example-child md-example-child-dialog md-example-child-dialog-1">
-    <md-button @click="alert">警告弹窗</md-button>
-    <md-button @click="confirm">确认弹窗</md-button>
-    <md-button @click="succeedConfirm">成功弹窗</md-button>
-    <md-button @click="failedConfirm">失败弹窗</md-button>
+  <div class="n22-example-child n22-example-child-dialog n22-example-child-dialog-1">
+    <n22-button @click="alert">警告弹窗</n22-button>
+    <n22-button @click="confirm">确认弹窗</n22-button>
+    <n22-button @click="succeedConfirm">成功弹窗</n22-button>
+    <n22-button @click="failedConfirm">失败弹窗</n22-button>
   </div>
 </template>
 
-<script>import {Dialog, Button} from 'mand-mobile'
+<script>
+import {Dialog, Button} from 'al-mobile'
 
 export default {
   name: 'dialog-demo',
@@ -55,4 +56,5 @@ export default {
     },
   },
 }
-</script>
+
+</script>

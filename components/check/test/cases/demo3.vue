@@ -1,15 +1,16 @@
 <template>
-  <div class="md-example-child md-example-child-check md-example-child-check-3">
-    <md-check-group v-model="insurants">
-      <md-check-box name="self" disabled>自己</md-check-box>
-      <md-check-box name="couple">配偶</md-check-box>
-      <md-check-box name="parent">父母</md-check-box>
-      <md-check-box name="child">子女</md-check-box>
-    </md-check-group>
+  <div class="n22-example-child n22-example-child-check n22-example-child-check-3">
+    <n22-check-group v-model="insurants">
+      <n22-check-box name="self" disabled>自己</n22-check-box>
+      <n22-check-box name="couple">配偶</n22-check-box>
+      <n22-check-box name="parent">父母</n22-check-box>
+      <n22-check-box name="child">子女</n22-check-box>
+    </n22-check-group>
 	</div>
 </template>
 
-<script>import {CheckBox, CheckGroup} from 'mand-mobile'
+<script>
+import {CheckBox, CheckGroup} from 'al-mobile'
 
 export default {
   name: 'check-demo',
@@ -23,4 +24,5 @@ export default {
     }
   },
 }
-</script>
+
+</script>

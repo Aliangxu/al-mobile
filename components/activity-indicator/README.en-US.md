@@ -7,7 +7,7 @@ Activity indicator, generally used for ongoing tasks
 ### Import
 
 ```javascript
-import { ActivityIndicator } from 'mand-mobile'
+import { ActivityIndicator } from 'al-mobile'
 
 Vue.component(ActivityIndicator.name, ActivityIndicator)
 ```

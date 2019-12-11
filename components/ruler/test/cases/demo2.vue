@@ -1,20 +1,21 @@
 <template>
-  <div class="md-example-child md-example-child-single-component">
+  <div class="n22-example-child n22-example-child-single-component">
     <p>当前值：{{ value }}</p>
     <div class="container">
-      <md-ruler
+      <n22-ruler
         :scope="scope"
         :step="100"
         :unit="10"
         :max="2000"
         :min="1000"
         v-model="value"
-      ></md-ruler>
+      ></n22-ruler>
     </div>
   </div>
 </template>
 
-<script>import {Ruler} from 'mand-mobile'
+<script>
+import {Ruler} from 'al-mobile'
 
 export default {
   name: 'ruler-demo',
@@ -33,8 +34,9 @@ export default {
     }
   },
 }
-</script>
 
+</script>
+n22-
 <style lang="stylus" scoped>
   .md-example-child-single-component
     .container

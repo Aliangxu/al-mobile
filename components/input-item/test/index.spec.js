@@ -1,4 +1,4 @@
-import {InputItem} from 'mand-mobile'
+import {InputItem} from 'al-mobile'
 import triggerEvent from '../../popup/test/touch-trigger'
 import sinon from 'sinon'
 import {mount} from '@vue/test-utils'
@@ -19,7 +19,7 @@ describe('InputItem - Operation', () => {
     })
 
     const eventStub = sinon.stub(wrapper.vm, '$emit')
-    const input = wrapper.find('.md-input-item-input')
+    const input = wrapper.find('.n22-input-item-input')
 
     wrapper.vm.focus()
     triggerEvent(input.element, 'keydown', 0, 0, 49)
@@ -57,7 +57,7 @@ describe('InputItem - Operation', () => {
       },
     })
     expect(wrapper.vm.isInputEmpty).toBe(false)
-    const clearBtn = wrapper.find('.md-input-item-clear')
+    const clearBtn = wrapper.find('.n22-input-item-clear')
     clearBtn.trigger('click')
     expect(wrapper.vm.isInputEmpty).toBe(true)
   })
@@ -89,7 +89,7 @@ describe('InputItem - Operation', () => {
     const eventStub = sinon.stub(wrapper.vm, '$emit')
     wrapper.vm.focus()
     setTimeout(() => {
-      const keyborad = wrapper.find('.md-number-keyboard')
+      const keyborad = wrapper.find('.n22-number-keyboard')
       const deleteBtn = keyborad.find('.delete')
       const confirmBtn = keyborad.find('.confirm')
       const keys = keyborad.findAll('.keyboard-number-item')
@@ -124,7 +124,7 @@ describe('InputItem - Operation', () => {
       },
     })
 
-    const input = wrapper.find('.md-input-item-fake')
+    const input = wrapper.find('.n22-input-item-fake')
 
     input.trigger('click')
   })
@@ -132,7 +132,7 @@ describe('InputItem - Operation', () => {
   test('should show error slot', async () => {
     wrapper = mount({
       template: `
-        <md-input-item
+        <n22-input-item
           type="bankCard"
           title="label">
           <p
@@ -141,7 +141,7 @@ describe('InputItem - Operation', () => {
             slot="error">
             errorMsg
           </p>
-        </md-input-item>
+        </n22-input-item>
       `,
       components: {
         [InputItem.name]: InputItem,
@@ -153,16 +153,16 @@ describe('InputItem - Operation', () => {
       },
     })
 
-    expect(wrapper.contains('.md-input-item-msg')).toBe(false)
+    expect(wrapper.contains('.n22-input-item-msg')).toBe(false)
     wrapper.vm.isError = true
     await wrapper.vm.$nextTick(() => {
-      expect(wrapper.contains('.md-input-item-msg')).toBe(true)
-      expect(wrapper.find('.md-input-item-msg').text()).toBe('errorMsg')
+      expect(wrapper.contains('.n22-input-item-msg')).toBe(true)
+      expect(wrapper.find('.n22-input-item-msg').text()).toBe('errorMsg')
     })
 
     wrapper.vm.isError = false
     await wrapper.vm.$nextTick(() => {
-      expect(wrapper.contains('.md-input-item-msg')).toBe(false)
+      expect(wrapper.contains('.n22-input-item-msg')).toBe(false)
     })
   })
 })

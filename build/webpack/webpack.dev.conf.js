@@ -43,7 +43,7 @@ module.exports = merge(baseWebpackConfig, {
   devtool: '#cheap-eval-source-map',
   plugins: [
     new WebpackBar({
-      name: 'mand-mobile'
+      name: 'al-mobile'
     }),
     new webpack.DefinePlugin({
       'process.env': config.dev.env,

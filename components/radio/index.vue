@@ -14,11 +14,24 @@
     }
   }
 
+  .radio-label {
+    position: relative;
+  }
+
   label > .input-box {
     .radio-input {
-      display: none;
+      position: absolute;
+      width: 800px;
+      opacity: 0;
+      margin-left: -100px;
+      height: 30px;
     }
     .radio-inputok {
+      position: absolute;
+      width: 800px;
+      opacity: 0;
+      margin-left: -100px;
+      height: 30px;
     }
     > textarea {
       margin-top: 22px;
@@ -27,6 +40,11 @@
     }
     // margin-left: 22px;
     margin-top: 33px;
+    .circle_error_not_select{
+      background-color: rgb(255, 0, 0)!important;
+      color: #fff!important;
+      transform: scale(1);
+    }
     > input {
       // display: none;
       &:checked + .circle_select {
@@ -54,7 +72,16 @@
       transform: scale(1);
     }
     > .input-box-circle {
-      float: left;
+      white-space: nowrap;
+      cursor: pointer;
+      outline: none;
+      display: inline-block;
+      line-height: 1;
+      position: relative;
+      vertical-align: middle;
+
+      // float: left;
+      z-index: -1;
       margin-left: 20px;
       // display: inline-block;
       width: 28px;
@@ -72,6 +99,7 @@
     }
     > .desc_c {
       line-height: 30px;
+      z-index: -1;
     }
     > .input-box-circle-select {
       float: left;
@@ -108,7 +136,7 @@
     <a class="radio-component" v-for="(option,i) in options" :key="option.key">
       <div class="radio-cell" v-if="isShow">
         <div class="radio-cell-title">
-          <label style="display:block;">
+          <label class="radio-label">
             <slot name="input-box">
               <!-- type为单选and多选 -->
               <span v-if="(type=='radio'||type=='checkbox')" class="input-box">
@@ -153,7 +181,7 @@
                     :class="(type=='radio'||type=='checkbox')?'radio-input':'radio-inputok'"
                     v-model="currentValue"
                     type="checkbox"
-                    :disabled="otherValue.disabled=='disabled'"
+                    :disabled="disabled===false?otherValue.disabled=='disabled':disabled"
                     :value="(option.optionId || option)"
                   >
                   <input
@@ -163,7 +191,7 @@
                     :class="(type=='radio'||type=='checkbox')?'radio-input':'radio-inputok'"
                     v-model="currentValue"
                     type="radio"
-                    :disabled="otherValue.disabled=='disabled'"
+                    :disabled="disabled===false?otherValue.disabled=='disabled':disabled"
                     :value="(option.optionId || option)"
                   >
                   <span
@@ -211,19 +239,38 @@ export default {
           class: "circle_select"
         };
         if (this.checkIsTrueOrFalse) {
-          if (opid == this.currentValue) {
-            if (value && value == this.currentValue) {
-              //选择了正确答案
-              show.desc = "correct";
-              show.class = "circle_correct";
-            } else {
-              //错误答案返回true
-              show.desc = "close";
-              show.class = "circle_error";
+          if(this.type === "radio"){//单选、判断
+            if (opid == this.currentValue) {
+              if (value && value == this.currentValue) {
+                //选择了正确答案
+                show.desc = "correct";
+                show.class = "circle_correct";
+              } else {
+                //错误答案返回true
+                show.desc = "close";
+                show.class = "circle_error";
+              }
+            } else if (opid == value) {
+              // show.desc = "correct";
+              // show.class = "circle_correct";
             }
-          } else if (opid == value) {
-            show.desc = "correct";
-            show.class = "circle_correct";
+          }else if(this.type === "checkbox"){
+            this.currentValue.forEach(currentValue => {
+              if (opid == currentValue) {
+                if (value && value.indexOf(currentValue)>-1) {
+                  //选择了正确答案
+                  show.desc = "correct";
+                  show.class = "circle_correct";
+                } else {
+                  //错误答案返回true
+                  show.desc = "close";
+                  show.class = "circle_error";
+                }
+              } else if (value && value.indexOf(opid)>-1) {
+                // show.desc = "close";
+                // show.class = "circle_error_not_select";
+              }
+            });
           }
         }
         return show[type];
@@ -248,6 +295,11 @@ export default {
     },
     checkIsTrueOrFalse: {
       //答题模式是否动态处理正确错误选项
+      type: Boolean,
+      default: false
+    },
+    disabled: {
+      //是否可选择
       type: Boolean,
       default: false
     },

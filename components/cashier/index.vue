@@ -1,5 +1,5 @@
 <template>
-  <div class="md-cashier">
+  <div class="n22-cashier">
     <n22-popup
       v-model="isCashierShow"
       position="bottom"
@@ -14,15 +14,15 @@
         :describe="describe"
         @cancel="$_onPopupCancel"
       >
-        <md-icon name="close" size="lg" slot="cancel"></md-icon>
+        <n22-icon name="close" size="lg" slot="cancel"></n22-icon>
       </n22-popup-title-bar>
-      <div class="md-cashier-container">
+      <div class="n22-cashier-container">
         <slot name="header" :scene="scene"></slot>
 
         <!-- Choose pay channel -->
         <div
           v-if="scene === 'choose'"
-          class="md-cashier-block md-cashier-choose"
+          class="n22-cashier-block n22-cashier-choose"
           :key="sceneKey">
           <n22-cashier-channel
             ref="channel"
@@ -47,7 +47,7 @@
         <!-- Captcha -->
         <div
           v-else-if="scene === 'captcha'"
-          class="md-cashier-block md-cashier-captcha"
+          class="n22-cashier-block n22-cashier-captcha"
           :key="sceneKey">
           <n22-captcha
             ref="captcha"
@@ -68,19 +68,19 @@
         <!-- Loaing, Success -->
         <div
           v-else-if="scene === 'loading' || scene === 'success'"
-          class="md-cashier-block"
+          class="n22-cashier-block"
           :class="{
-            'md-cashier-loading': scene === 'loading',
-            'md-cashier-success': scene === 'success'
+            'n22-cashier-loading': scene === 'loading',
+            'n22-cashier-success': scene === 'success'
           }"
           :key="sceneKey">
-          <div class="md-cashier-block-icon">
+          <div class="n22-cashier-block-icon">
             <n22-activity-indicator-rolling-success
               ref="rolling"
               :is-success="scene === 'success'"
             ></n22-activity-indicator-rolling-success>
           </div>
-          <div class="md-cashier-block-text">{{ scene === 'success' ? sceneOption.success.text : sceneOption.loading.text }}</div>
+          <div class="n22-cashier-block-text">{{ scene === 'success' ? sceneOption.success.text : sceneOption.loading.text }}</div>
           <n22-cashier-channel-button
             v-if="scene === 'success'"
             :actions="
@@ -96,12 +96,12 @@
         <!-- Fail -->
         <div
           v-else-if="scene === 'fail'"
-          class="md-cashier-block md-cashier-fail"
+          class="n22-cashier-block n22-cashier-fail"
           :key="sceneKey">
-          <div class="md-cashier-block-icon">
-            <md-icon name="warn-color"></md-icon>
+          <div class="n22-cashier-block-icon">
+            <n22-icon name="warn-color"></n22-icon>
           </div>
-          <div class="md-cashier-block-text" v-text="sceneOption.fail.text"></div>
+          <div class="n22-cashier-block-text" v-text="sceneOption.fail.text"></div>
           <n22-cashier-channel-button
             :actions="
               sceneOption.fail.actions ||
@@ -116,7 +116,7 @@
         <!-- Custom -->
         <div
           v-else-if="scene === 'custom'"
-          class="md-cashier-block md-cashier-custom"
+          class="n22-cashier-block n22-cashier-custom"
           :key="sceneKey">
           <slot name="scene"></slot>
         </div>
@@ -299,15 +299,15 @@ export default {
 </script>
 
 <style lang="stylus">
-.md-cashier
-  .md-popup-title-bar .md-popup-cancel
-    .md-icon
+.n22-cashier
+  .n22-popup-title-bar .n22-popup-cancel
+    .n22-icon
       align-self flex-start
       margin-left h-gap-lg
-  .md-popup-box
+  .n22-popup-box
     background-color color-bg-inverse
     border-radius popup-title-bar-radius popup-title-bar-radius 0 0
-  .md-cashier-container
+  .n22-cashier-container
     block()
     position relative
     background cashier-bg
@@ -315,9 +315,9 @@ export default {
     -webkit-user-select none
     transition all .3s
     overflow hidden
-    .md-cashier-block
+    .n22-cashier-block
       clearfix()
-      .md-cashier-block-icon
+      .n22-cashier-block-icon
         position relative
         left 50%
         float left
@@ -328,43 +328,43 @@ export default {
         .n22-activity-indicator-svg
           width 50px !important
           height 50px !important
-      .md-cashier-block-text
+      .n22-cashier-block-text
         block()
         margin-top 10px
         margin-bottom 90px
         font-size font-minor-large
         color color-text-minor
         text-align center
-      .md-cashier-block-btn
+      .n22-cashier-block-btn
         block()
         padding 0 20px 20px
         box-sizing border-box
-      // &.md-cashier-choose
+      // &.n22-cashier-choose
         
-      &.md-cashier-captcha
-        .md-captcha
+      &.n22-cashier-captcha
+        .n22-captcha
           block()
-        .md-captcha-content
+        .n22-captcha-content
           margin-top 22px
           margin-bottom 10px
           color color-text-caption
-        .md-codebox
+        .n22-codebox
           margin-bottom 13px
-        .md-captcha-content,
-        .md-captcha-message,
-        .md-codebox,
-        .md-captcha-footer
+        .n22-captcha-content,
+        .n22-captcha-message,
+        .n22-codebox,
+        .n22-captcha-footer
           margin-left 20px
           margin-right 20px
-        .md-captcha-footer
+        .n22-captcha-footer
           margin-bottom 22px
 
-      &.md-cashier-fail
-        .md-cashier-block-icon
+      &.n22-cashier-fail
+        .n22-cashier-block-icon
           position relative
           text-align center
           line-height 50px
-          .md-icon-warn-color
+          .n22-icon-warn-color
             position relative
             z-index 2
             color #FFF6F1

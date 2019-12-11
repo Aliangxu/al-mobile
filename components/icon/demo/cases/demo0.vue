@@ -1,20 +1,21 @@
 <template>
-  <div class="md-example-child md-example-child-icon md-example-child-icon-0">
+  <div class="n22-example-child n22-example-child-icon n22-example-child-icon-0">
     <div
-      class="md-example-item"
+      class="n22-example-item"
       v-for="icon in iconList"
       :key="icon"
     >
-      <md-icon
+      <n22-icon
         :name="icon.split('/')[0]"
         size="lg"
-      ></md-icon>
+      ></n22-icon>
       <p>{{ icon }}</p>
     </div>
   </div>
 </template>
 
-<script>import {Icon} from 'mand-mobile'
+<script>
+import {Icon} from 'al-mobile'
 
 export default {
   name: 'icon-demo',
@@ -88,4 +89,5 @@ export default {
     }
   },
 }
-</script>
+
+</script>

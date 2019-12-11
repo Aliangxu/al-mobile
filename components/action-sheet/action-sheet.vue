@@ -142,7 +142,7 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
-.n22-action-sheet /deep/ .md-popup.bottom .md-popup-box {
+.n22-action-sheet /deep/ .n22-popup.bottom .n22-popup-box {
     bottom: 1%;
     left: 2%;
     width 96%;

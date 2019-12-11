@@ -1,14 +1,14 @@
 <template>
-  <div class="md-example-child md-example-child-input-item-5">
-    <md-field>
-      <md-input-item
+  <div class="n22-example-child n22-example-child-input-item-5">
+    <n22-field>
+      <n22-input-item
         type="phone"
         title="手机号码"
         value="1999999999999"
         error="手机号码无效"
         clearable
-      ></md-input-item>
-      <md-input-item
+      ></n22-input-item>
+      <n22-input-item
         type="bankCard"
         title="储蓄卡号"
         v-model="bankCardNo"
@@ -22,12 +22,13 @@
         >
           不支持当前银行<span class="error-action">查看支持银行</span>
         </p>
-      </md-input-item>
-    </md-field>
+      </n22-input-item>
+    </n22-field>
   </div>
 </template>
 
-<script>import {InputItem, Field} from 'mand-mobile'
+<script>
+import {InputItem, Field} from 'al-mobile'
 
 export default {
   name: 'input-item-demo',
@@ -43,10 +44,11 @@ export default {
     }
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
-.md-example-child-input-item-5
+.n22-example-child-input-item-5
   .error
     float left
     width 100%

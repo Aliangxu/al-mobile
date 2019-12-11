@@ -1,10 +1,11 @@
 <template>
-  <div class="md-example-child md-example-child-slider">
-    <md-slider v-model="range" :min="15" :max="80" range></md-slider>
+  <div class="n22-example-child n22-example-child-slider">
+    <n22-slider v-model="range" :min="15" :max="80" range></n22-slider>
 	</div>
 </template>
 
-<script>import {Slider} from 'mand-mobile'
+<script>
+import {Slider} from 'al-mobile'
 
 export default {
   name: 'slider-demo',
@@ -21,4 +22,5 @@ export default {
     }
   },
 }
-</script>
+
+</script>

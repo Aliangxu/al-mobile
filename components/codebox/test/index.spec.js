@@ -1,4 +1,4 @@
-import {Codebox} from 'mand-mobile'
+import {Codebox} from 'al-mobile'
 import sinon from 'sinon'
 import {mount} from '@vue/test-utils'
 import triggerEvent from '../../popup/test/touch-trigger'
@@ -12,7 +12,7 @@ describe('Codebox - Operation', () => {
   it('create a simple codebox', () => {
     wrapper = mount(Codebox)
 
-    expect(wrapper.classes('md-codebox-wrapper')).toBe(true)
+    expect(wrapper.classes('n22-codebox-wrapper')).toBe(true)
   })
 
   it('create a codebox with input', () => {
@@ -21,7 +21,7 @@ describe('Codebox - Operation', () => {
         maxlength: -1,
       },
     })
-    expect(wrapper.contains('.md-codebox-holder')).toBe(true)
+    expect(wrapper.contains('.n22-codebox-holder')).toBe(true)
   })
 
   it('create a codebox with custom keyboard', () => {
@@ -32,7 +32,7 @@ describe('Codebox - Operation', () => {
       },
     })
 
-    expect(wrapper.contains('.md-number-keyboard')).toBe(true)
+    expect(wrapper.contains('.n22-number-keyboard')).toBe(true)
   })
 
   it('emit input/submit events', done => {
@@ -64,7 +64,7 @@ describe('Codebox - Operation', () => {
       },
     })
     const eventSpy = sinon.spy(wrapper.vm, '$emit')
-    wrapper.find('.md-codebox').trigger('click')
+    wrapper.find('.n22-codebox').trigger('click')
     expect(wrapper.vm.focused).toBe(true)
     wrapper
       .findAll('.keyboard-number-item')
@@ -75,7 +75,7 @@ describe('Codebox - Operation', () => {
       expect(wrapper.vm.focused).toBe(false)
       expect(eventSpy.calledWith('submit', '1')).toBe(true)
       wrapper.setProps({disabled: true})
-      wrapper.find('.md-codebox').trigger('click')
+      wrapper.find('.n22-codebox').trigger('click')
       expect(wrapper.vm.focused).toBe(false)
       done()
     }, 0)
@@ -95,10 +95,10 @@ describe('Codebox - Operation', () => {
       },
     })
 
-    wrapper.find('.md-codebox').trigger('click')
+    wrapper.find('.n22-codebox').trigger('click')
     expect(wrapper.vm.focused).toBe(true)
 
-    const input = wrapper.find('.md-codebox-input')
+    const input = wrapper.find('.n22-codebox-input')
     triggerEvent(input.element, 'input', 0, 0, '12')
     expect(value).toBe('12')
     triggerEvent(input.element, 'input', 0, 0, '34')
