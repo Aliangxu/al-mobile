@@ -1,5 +1,6 @@
 ---
 title: DropSelect下拉滑动选择组件
+preview: https://qiaoxiyan.com/al-mobile/examples/#/drop-select
 ---
 
 下拉滑动选择组件可进行的操作。
@@ -7,7 +8,7 @@ title: DropSelect下拉滑动选择组件
 ### 引入
 
 ```javascript
-import { DropSelectItem } from '@/compoments'
+import { DropSelectItem } from 'al-mobile'
 
 Vue.component(DropSelectItem.name, DropSelectItem)
 ```

@@ -3,23 +3,21 @@
     class="n22-activity-indicator-spinning"
     :class="{dark: color === 'dark'}"
   >
-    <!-- <md-icon
+    <n22-icon
       class="n22-activity-indicator-svg"
       name="spinner"
       :style="{width: `${size}px`, height: `${size}px`}"
-    ></md-icon> -->
-    <svg-icon :style="{width: `${size}px`, height: `${size}px`}" icon-class="spinner"></svg-icon>
+    ></n22-icon>
   </div>
 </template>
 
-<script>
-// import {Icon} from 'mand-mobile'
+<script>import Icon from '../icon'
 
 export default {
   name: 'n22-activity-indicator-spinning',
 
   components: {
-    // [Icon.name]: Icon,
+    [Icon.name]: Icon,
   },
 
   props: {
@@ -36,15 +34,14 @@ export default {
     },
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus">
 .n22-activity-indicator-spinning
   clearfix()
-  .md-icon
+  .n22-icon
     float left
   &.dark
-    .md-icon
+    .n22-icon
       filter invert(1)
 </style>

@@ -1,17 +1,17 @@
 <template>
-    <div class="stars">
-        <div
-            v-for="(item,ind) in num"
-            :key="ind"
-            class="star_item"
-            :style="starsStyle(ind)"
-            :class="{'on':(ind+1)<=cur}"
-            @mouseover="enter((ind+1))"
-            @mouseleave="out()"
-            @click="ok((ind+1))"
-        ></div>
-    </div>
-    <!-- <div class="rating_container">
+  <div class="stars">
+    <div
+      v-for="(item, ind) in num"
+      :key="ind"
+      class="star_item"
+      :style="starsStyle(ind)"
+      :class="{ on: ind + 1 <= cur }"
+      @mouseover="enter(ind + 1)"
+      @mouseleave="out()"
+      @click="ok(ind + 1)"
+    ></div>
+  </div>
+  <!-- <div class="rating_container">
         <section class="star_container">
             <svg-icon icon-class="star" class="grey_fill" v-for="num in 5" :key="num"></svg-icon>
         </section>
@@ -22,78 +22,77 @@
         </div>
     </div> -->
 </template>
-<script>
-export default {
-  name: "n22-star",
+<script>export default {
+  name: 'n22-star',
   data() {
     return {
       num: this.starNum,
       cur: this.value,
-      flag: false
-    };
+      flag: false,
+    }
   },
   computed: {
-    starsStyle(){
-      return (ind)=>{
+    starsStyle() {
+      return ind => {
         let sty = {
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
         }
-        if(this.onImage&&this.offImage){
-          sty.backgroundImage = (ind+1)<=this.cur?`url(${this.onImage})`:`url(${this.offImage})`
+        if (this.onImage && this.offImage) {
+          sty.backgroundImage = ind + 1 <= this.cur ? `url(${this.onImage})` : `url(${this.offImage})`
         }
-        return sty;
+        return sty
       }
-    }
+    },
   },
   props: {
     starNum: {
       type: Number,
-      default: 5
+      default: 5,
     },
     value: {
       type: Number,
-      default: 0
+      default: 0,
     },
     onImage: {
-      default: ""
+      default: '',
     },
     offImage: {
-      default: ""
+      default: '',
     },
     idx: {
       type: Number,
-      default: 0
-    }
+      default: 0,
+    },
   },
   methods: {
     enter(ind) {
       if (!this.flag) {
-        this.cur = ind;
+        this.cur = ind
       }
     },
     out() {
       if (!this.flag) {
-        this.cur = 0;
+        this.cur = 0
       }
     },
     ok(ind) {
-      this.flag = true;
-      this.cur = ind;
-    }
+      this.flag = true
+      this.cur = ind
+    },
   },
   watch: {
     value(val) {
-      this.cur = val;
+      this.cur = val
     },
-    cur(val,oldval) {
-      console.log('%c 监听到单选框值变更','color:#00CD00',val)
-      this.$emit('input', val);
-      this.$emit('rating', val,this.idx);
+    cur(val) {
+      console.log('%c 监听到单选框值变更', 'color:#00CD00', val)
+      this.$emit('input', val)
+      this.$emit('rating', val, this.idx)
     },
   },
-};
-</script>
+}
+</script>
 <style lang="stylus" scoped>
 .stars {
   height: 20px;
@@ -144,5 +143,4 @@ export default {
       }
   }
 }
-
 </style>

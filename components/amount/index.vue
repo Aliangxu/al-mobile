@@ -1,22 +1,35 @@
 <template>
   <span>
-    <span v-if="animateType==1" class="n22-amount" :class="{numerical: !isCapital,'n22-amount-num':(amountNumSty&&formatValue!=0)}">
-      <template v-if="!isCapital">{{ formatValue | doPrecision(legalPrecision, isRoundUp,zeroText) | doFormat(hasSeparator, separator) }}</template> <template v-else> {{ formatValue | doPrecision(4, isRoundUp,zeroText) | doCapital}} </template>
+    <span
+      v-if="animateType == 1"
+      class="n22-amount"
+      :class="{
+        numerical: !isCapital,
+        'n22-amount-num': amountNumSty && formatValue != 0
+      }"
+    >
+      <template v-if="!isCapital">{{
+        formatValue
+          | doPrecision(legalPrecision, isRoundUp, zeroText)
+          | doFormat(hasSeparator, separator)
+      }}</template>
+      <template v-else>
+        {{ formatValue | doPrecision(4, isRoundUp, zeroText) | doCapital }}
+      </template>
     </span>
-    <transition-group v-if="animateType==2" :name="amountNumChangeType">
+    <transition-group v-if="animateType == 2" :name="amountNumChangeType">
       <span
         v-for="item in items"
         v-bind:key="item"
-        :class="{'number-item': true,'n22-amount-num':(amountNumSty)}"
+        :class="{ 'number-item': true, 'n22-amount-num': amountNumSty }"
       >
-        {{ item | dealPrefix(zeroText,amountNumTemplate)}}
+        {{ item | dealPrefix(zeroText, amountNumTemplate) }}
       </span>
     </transition-group>
   </span>
 </template>
 
-<script>
-import {noop, inBrowser} from '../_util'
+<script>import {noop, inBrowser} from '../_util'
 import Animate from '../_util/animate'
 import {formatValueByGapStep} from '../_util/formate-value'
 import numberCapital from './number-capital'
@@ -26,23 +39,24 @@ export default {
 
   filters: {
     dealPrefix(value, zeroText, amountNumTemplate) {
-      if(zeroText&&(value==0||value=="0")){
+      if (zeroText && (value === 0 || value === '0')) {
         // console.log('%c this.zeroText','color:green;',zeroText);
         return zeroText
       }
-      if(amountNumTemplate&&((value+"").length!=amountNumTemplate)){
-        let num = amountNumTemplate-((value+"").length)
-        let zeroString = ""
+      // eslint-disable-next-line
+      if (amountNumTemplate && (value + '').length != amountNumTemplate) {
+        let num = amountNumTemplate - (value + '').length
+        let zeroString = ''
         for (let index = 0; index < num; index++) {
-          zeroString="0"+zeroString
-        } 
-        return zeroString+value
-      }else{
+          zeroString = '0' + zeroString
+        }
+        return zeroString + value
+      } else {
         return value
       }
     },
-    doPrecision(value, precision, isRoundUp,zeroText) {
-      if(zeroText&&value==0){
+    doPrecision(value, precision, isRoundUp, zeroText) {
+      if (zeroText && value === 0) {
         // console.log('%c this.zeroText','color:green;',zeroText);
         return zeroText
       }
@@ -77,7 +91,7 @@ export default {
     },
     zeroText: {
       type: String,
-      default: "",
+      default: '',
     },
     precision: {
       type: Number,
@@ -123,7 +137,7 @@ export default {
     },
     amountNumChangeType: {
       type: String,
-      default: "number-add",
+      default: 'number-add',
     },
 
     amountNumSty: {
@@ -143,7 +157,7 @@ export default {
       isMounted: false,
     }
   },
-  activated(){
+  activated() {
     // console.log('%c amount=>>>activated','color:green;',this.value);
     // const z = this.value
     // this.value = this.initNum
@@ -163,15 +177,15 @@ export default {
           this.formatValue = valnum
           return
         }
-        if (this.animateType===1&&(this.isAnimated || this.transition)) {
+        if (this.animateType === 1 && (this.isAnimated || this.transition)) {
           this.$_doAnimateDisplay(oldValnum, valnum)
-        } else if(this.animateType===2&&this.transition){
+        } else if (this.animateType === 2 && this.transition) {
           this.items.splice(0, 1, valnum)
         } else {
-          if(this.animateType===1){
+          if (this.animateType === 1) {
             this.formatValue = valnum
-          }else if(this.animateType===2){
-            //this.items.splice(0, 1, valnum)
+          } else if (this.animateType === 2) {
+            // this.items.splice(0, 1, valnum)
           }
         }
         // console.log('%c formatValue','color:green;',this.formatValue);
@@ -193,9 +207,9 @@ export default {
   methods: {
     // MARK: private methods
     $_doAnimateDisplay(fromValue = 0, toValue = 0) {
-        // console.log('%c fromValue','color:green;',fromValue);
-        // console.log('%c toValue','color:green;',toValue);
-      if (this.zeroIsInit&&toValue==0) {
+      // console.log('%c fromValue','color:green;',fromValue);
+      // console.log('%c toValue','color:green;',toValue);
+      if (this.zeroIsInit && toValue === 0) {
         fromValue = this.initNum
       }
       /* istanbul ignore next  */
@@ -210,12 +224,11 @@ export default {
     },
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus" scoped>
 .n22-amount{
-  
+
 }
 .n22-amount-num{
   // color: #ffcf10;
@@ -225,7 +238,7 @@ export default {
   color: #111a34;
   text-shadow: 1px 1px 1px #5d594a;
 }
-  
+
 
 .number-item {
   transition: all 1s;

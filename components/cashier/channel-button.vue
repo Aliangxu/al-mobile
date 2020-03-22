@@ -1,5 +1,5 @@
 <template>
-  <div class="md-cashier-block-btn">
+  <div class="n22-cashier-block-btn">
     <n22-button
       v-for="(action, index) in actions"
       :type="index === actions.length - 1 ? 'primary': 'default'"
@@ -14,8 +14,7 @@
   </div>
 </template>
 
-<script>
-import Button from '../button'
+<script>import Button from '../button'
 export default {
   name: 'n22-cashier-channel-button',
 
@@ -33,11 +32,10 @@ export default {
     },
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus">
-.md-cashier-block-btn
+.n22-cashier-block-btn
   display flex
   .n22-button
     flex 1

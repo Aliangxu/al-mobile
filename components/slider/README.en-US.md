@@ -1,6 +1,6 @@
 ---
 title: Slider
-preview: https://didi.github.io/mand-mobile/examples/#/slider
+preview: https://qiaoxiyan.com/al-mobile/examples/#/slider
 ---
 
 ### Import

@@ -1,5 +1,6 @@
 ---
 title: NumberKeyboard 数字键盘
+preview: https://qiaoxiyan.com/al-mobile/examples/#/number-keyboard
 ---
 
 一般用于密码，验证码或支付金额输入等金融场景
@@ -7,7 +8,7 @@ title: NumberKeyboard 数字键盘
 ### 引入
 
 ```javascript
-import { NumberKeyboard } from '@/compoments'
+import { NumberKeyboard } from 'al-mobile'
 
 Vue.component(NumberKeyboard.name, NumberKeyboard)
 ```
@@ -33,9 +34,9 @@ Vue.component(NumberKeyboard.name, NumberKeyboard)
 #### default
 
 ```html
-<md-number-keyboard>
-  <md-icon name="security"></md-icon>&nbsp;安全支付
-</md-number-keyboard>
+<n22-number-keyboard>
+  <n22-icon name="security"></n22-icon>&nbsp;安全支付
+</n22-number-keyboard>
 ```
 
 #### NumberKeyboard Methods

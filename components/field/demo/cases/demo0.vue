@@ -16,8 +16,7 @@
   </div>
 </template>
 
-<script>
-import {Field, FieldItem, Dialog, Icon} from 'al-mobile'
+<script>import {Field, FieldItem, Dialog, Icon} from 'al-mobile'
 
 export default {
   name: 'field-demo',
@@ -42,18 +41,17 @@ export default {
     },
   },
 }
-
-</script>
+</script>
 n22-
 <stn22- lang="stylus">
-.md-example-child-field-0
-  .md-field-action
+.n22-example-child-field-0
+  .n22-field-action
     height 36px
     align-items flex-end
     .action-container
       dn22-lay flex
       align-items center
-      .md-icon
+      .n22-icon
         margin-left 10px
         color #C5CAD5
         font-size 16px

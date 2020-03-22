@@ -1,5 +1,6 @@
 ---
 title: NoticeBar
+preview: https://qiaoxiyan.com/al-mobile/examples/#/notice-bar
 ---
 
 Mostly for system alerts, event reminders, etc
@@ -7,7 +8,7 @@ Mostly for system alerts, event reminders, etc
 ### Import
 
 ```javascript
-import { NoticeBar } from '@/compoments'
+import { NoticeBar } from 'al-mobile'
 
 Vue.component(NoticeBar.name, NoticeBar)
 ```

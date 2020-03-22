@@ -1,6 +1,6 @@
 ---
 title: CellItem 单元格
-preview: https://didi.github.io/mand-mobile/examples/#/cell-item
+preview: https://qiaoxiyan.com/al-mobile/examples/#/cell-item
 ---
 
 列表用于展现并列层级的信息内容，列表可承载功能入口、功能操作、信息展示等功能。
@@ -8,7 +8,7 @@ preview: https://didi.github.io/mand-mobile/examples/#/cell-item
 ### 引入
 
 ```javascript
-import { CellItem } from 'mand-mobile'
+import { CellItem } from 'al-mobile'
 
 Vue.component(CellItem.name, CellItem)
 ```

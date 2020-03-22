@@ -1,5 +1,6 @@
 ---
 title: Agree
+preview: https://qiaoxiyan.com/al-mobile/examples/#/agree
 ---
 
 For toggling states

@@ -1,5 +1,6 @@
 ---
 title: Ruler
+preview: https://qiaoxiyan.com/al-mobile/examples/#/ruler
 ---
 
 Slidable ruler<sup class="version-after">2.2.0+</sup>
@@ -7,7 +8,7 @@ Slidable ruler<sup class="version-after">2.2.0+</sup>
 ### Import
 
 ```javascript
-import { Ruler } from '@/components'
+import { Ruler } from 'al-mobile'
 
 Vue.component(Ruler.name, Ruler)
 ```

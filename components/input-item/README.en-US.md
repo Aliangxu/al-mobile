@@ -1,5 +1,6 @@
 ---
 title: InputItem
+preview: https://qiaoxiyan.com/al-mobile/examples/#/input-item
 ---
 
 Single-line text input, supports text formatting in exact scenarios
@@ -7,7 +8,7 @@ Single-line text input, supports text formatting in exact scenarios
 ### Import
 
 ```javascript
-import { InputItem } from '@/compoments'
+import { InputItem } from 'al-mobile'
 
 Vue.component(InputItem.name, InputItem)
 ```

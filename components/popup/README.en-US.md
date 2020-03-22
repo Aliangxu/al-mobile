@@ -1,12 +1,13 @@
 ---
 title: Popup
+preview: https://qiaoxiyan.com/al-mobile/examples/#/popup
 ---
 
 A customized content area slides out or pops up on the screen, triggered by other controls.
 ### Import
 
 ```javascript
-import { Popup, PopupTitleBar } from '@/components'
+import { Popup, PopupTitleBar } from 'al-mobile'
 
 Vue.component(Popup.name, Popup)
 Vue.component(PopupTitleBar.name, PopupTitleBar)

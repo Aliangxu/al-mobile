@@ -1,21 +1,16 @@
 <template>
-  <div class="n22-example-child n22-example-child-icon n22-example-child-icon-0">
-    <div
-      class="n22-example-item"
-      v-for="icon in iconList"
-      :key="icon"
-    >
-      <n22-icon
-        :name="icon.split('/')[0]"
-        size="lg"
-      ></n22-icon>
+  <div
+    class="n22-example-child n22-example-child-icon n22-example-child-icon-0"
+  >
+    <!-- <n22-icon name="mobile_phone" size="lg" svg></n22-icon> -->
+    <div class="n22-example-item" v-for="icon in iconList" :key="icon">
+      <n22-icon :name="icon.split('/')[0]" size="lg"></n22-icon>
       <p>{{ icon }}</p>
     </div>
   </div>
 </template>
 
-<script>
-import {Icon} from 'al-mobile'
+<script>import {Icon} from 'al-mobile'
 
 export default {
   name: 'icon-demo',
@@ -31,63 +26,51 @@ export default {
   data() {
     return {
       iconList: [
-        'rectangle',
-        'right',
-        'wrong',
-        'arrow-left',
-        'arrow-right',
-        'arrow-up',
-        'arrow-down',
-        'invisible',
-        'visible',
-        'service',
-        'setting',
-        'close',
-        'refresh',
+        'view_off',
+        'view',
+        'wechat',
+        'wechat_friends',
         'edit',
-        'sort',
-        'info',
-        'question',
-        'security',
-        'rmb',
-        'wait',
+        'setting',
         'check',
-        'checked/success',
-        'check-disabled',
-        'clear/fail',
+        'check_square',
+        'check_disabled',
+        'checked',
+        'success',
+        'checked_sauare',
+        'success_square',
+        'clear',
+        'fail',
+        'question_mark',
         'warn',
-        'info-solid',
+        'warning',
+        'alipay',
         'scan',
-        'share',
         'back',
-        'card-bag',
-        'message',
-        'order',
-        'balance',
-        'coupon',
-        'address-book',
-        'mobile-phone',
+        'add_pro',
         'calendar',
-        'home',
-        'discovery',
-        'switch',
-        'time',
-        'search',
-        'user',
+        'change',
+        'email',
+        'customer_service',
+        'correct',
+        'right',
+        'close',
+        'wrong',
+        'proccess',
         'camera',
-        'clock',
-        'delete',
-        'profession',
-        'id-card',
-        'authentication',
-        'location',
-        'filter',
-        'motor-vehicle',
-        'phone',
+        'mobile_phone',
+        'share',
+        'search',
         'volumn',
+        'triangle',
+        'delete',
+        'right_arrow',
+        'qq',
+        'calendar1',
+
+        'star',
       ],
     }
   },
 }
-
-</script>
+</script>

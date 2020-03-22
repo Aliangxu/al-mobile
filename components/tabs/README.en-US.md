@@ -1,6 +1,6 @@
 ---
 title: Tabs
-preview: https://didi.github.io/mand-mobile/examples/#/tabs
+preview: https://qiaoxiyan.com/al-mobile/examples/#/tabs
 ---
 
 To create a tab page with a content area
@@ -8,7 +8,7 @@ To create a tab page with a content area
 ### Import
 
 ```javascript
-import { Tabs, TabPane } from 'mand-mobile'
+import { Tabs, TabPane } from 'al-mobile'
 
 Vue.component(Tabs.name, Tabs)
 Vue.component(TabPane.name, TabPane)

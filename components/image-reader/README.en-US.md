@@ -1,5 +1,6 @@
 ---
 title: ImageReader
+preview: https://qiaoxiyan.com/al-mobile/examples/#/image-reader
 ---
 
 For photo album reading or photos taking
@@ -7,8 +8,8 @@ For photo album reading or photos taking
 ### Import
 
 ```javascript
-import { ImageReader } from '@/components'
-import imageProcessor from '@/components/image-reader/image-processor'
+import { ImageReader } from 'al-mobile'
+import imageProcessor from 'al-mobile/image-reader/image-processor'
 
 // Image processing plugin, refer to #imageProcessor for usage
 

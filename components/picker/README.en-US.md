@@ -1,5 +1,6 @@
 ---
 title: Picker
+preview: https://qiaoxiyan.com/al-mobile/examples/#/picker
 ---
 
 Scrollable multi-column selector
@@ -7,7 +8,7 @@ Scrollable multi-column selector
 ### Import
 
 ```javascript
-import { Picker } from '@/components'
+import { Picker } from 'al-mobile'
 
 Vue.component(Picker.name, Picker)
 ```

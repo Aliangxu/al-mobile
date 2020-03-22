@@ -1,5 +1,6 @@
 ---
 title: Transition
+preview: https://qiaoxiyan.com/al-mobile/examples/#/transition
 ---
 
 复用动画切换组件
@@ -7,7 +8,7 @@ title: Transition
 ### 引入
 
 ```javascript
-import { Transition } from '@/components'
+import { Transition } from 'al-mobile'
 
 Vue.component(Transition.name, Transition)
 ```

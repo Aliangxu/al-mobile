@@ -1,10 +1,11 @@
 ---
 title: radio radio1两种样式的单选、多选
+preview: https://qiaoxiyan.com/al-mobile/examples/#/radio
 ---
 ### 引入
 
 ```javascript
-import { Radio,RadioItem } from '@/components'
+import { Radio,RadioItem } from 'al-mobile'
 
 Vue.component(Radio.name, Radio)
 Vue.component(RadioItem.name, RadioItem)

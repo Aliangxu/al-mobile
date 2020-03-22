@@ -1,5 +1,6 @@
 ---
 title: NumberKeyboard
+preview: https://qiaoxiyan.com/al-mobile/examples/#/number-keyboard
 ---
 
 Generally used for financial scenarios such as password, verification code or payment amount input
@@ -7,7 +8,7 @@ Generally used for financial scenarios such as password, verification code or pa
 ### Import
 
 ```javascript
-import { NumberKeyboard } from '@/compoments'
+import { NumberKeyboard } from 'al-mobile'
 
 Vue.component(NumberKeyboard.name, NumberKeyboard)
 ```
@@ -33,9 +34,9 @@ Vue.component(NumberKeyboard.name, NumberKeyboard)
 #### default
 
 ```html
-<md-number-keyboard>
-  <md-icon name="security"></md-icon>&nbsp;安全支付
-</md-number-keyboard>
+<n22-number-keyboard>
+  <n22-icon name="security"></n22-icon>&nbsp;锟斤拷全支锟斤拷
+</n22-number-keyboard>
 ```
 #### NumberKeyboard Methods
 

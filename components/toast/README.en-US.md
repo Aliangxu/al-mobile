@@ -1,11 +1,12 @@
 ---
 title: Toast
+preview: https://qiaoxiyan.com/al-mobile/examples/#/toast
 ---
 
 ### Import
 
 ```javascript
-import { Toast } from '@/compontents'
+import { Toast } from 'al-mobile'
 
 Toast.succeed('Good Job!')
 

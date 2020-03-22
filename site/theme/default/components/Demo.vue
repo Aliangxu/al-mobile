@@ -186,8 +186,8 @@ export default {
     max-width 450px
     margin 0 auto
     overflow hidden
-    .md-example-child
-      zoom .6
+    .n22-example-child
+      // zoom .6
     ul>li
       list-style none !important
 .doc-demo-box-code
@@ -261,13 +261,13 @@ export default {
 @media (max-width: 1500px)
   .doc-demo-box-preview-box
     max-width 400px !important
-    .md-example-child
-      zoom .533 !important
+    .n22-example-child
+      // zoom .533 !important
 @media (max-width: 1200px)
   .doc-demo-box-preview-box
     max-width 350px !important
-    .md-example-child
-      zoom .467 !important
+    .n22-example-child
+      // zoom .467 !important
 @media (max-width: 1000px)
   .doc-demo-box-preview-box
     width 100% !important

@@ -20,8 +20,7 @@
   </div>
 </template>
 
-<script>
-import {ImageViewer} from 'al-mobile'
+<script>import {ImageViewer} from 'al-mobile'
 
 export default {
   name: 'image-viewer-demo',
@@ -52,11 +51,10 @@ export default {
     },
   },
 }
-
-</script>
+</script>
 n22-
 <style lang="stylus" scoped>
-.md-example-child-image-reader
+.n22-example-child-image-reader
   float left
   width 100%
   ul

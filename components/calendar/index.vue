@@ -18,35 +18,31 @@
       style="width:100%"
     >
       <!-- 自定义header -->
-      <span slot="header" slot-scope="{ year, month, movePrevMonth, moveNextMonth }">
+      <span
+        slot="header"
+        slot-scope="{ year, month, movePrevMonth, moveNextMonth }"
+      >
         <div class="my_header">
           <div @click="movePrevMonth" class="calendar_left_button">
-            <svg-icon class="calendar_button" icon-class="triangle"></svg-icon>
+            <!-- <svg-icon class="calendar_button" icon-class="triangle"></svg-icon> -->
+            <slot name="calendar_left_button">
+              <n22-icon name="back" size="lg"></n22-icon>
+            </slot>
           </div>
           <div class="header_title">{{ year }}年-{{ month }}月</div>
           <div @click="moveNextMonth" class="calendar_right_button">
-            <svg-icon class="calendar_button" icon-class="triangle"></svg-icon>
+            <!-- <svg-icon class="calendar_button" icon-class="triangle"></svg-icon> -->
+            <slot name="calendar_right_button">
+              <n22-icon name="right_arrow" size="lg"></n22-icon>
+            </slot>
           </div>
         </div>
       </span>
-      <!-- <span slot='header-left-button' slot-scope='{ movePrevMonth }'>
-            <div @click='movePrevMonth' class="calendar_left_button">
-              <svg-icon icon-class="left_button"></svg-icon>
-            </div>
-          </span>
-          <span slot='header-title' slot-scope='{ year, month }'>
-            {{ year }}年-{{ month }}月
-          </span>
-          <span slot='header-right-button' slot-scope='{ moveNextMonth }'>
-            <div @click='moveNextMonth' class="calendar_left_button">
-              <svg-icon icon-class="left_button"></svg-icon>
-            </div>
-      </span>-->
     </v-date-picker>
   </div>
 </template>
-<script>
-import { formatDateTime } from "../_util";
+<script>import Icon from '../icon'
+import {formatDateTime} from '../_util'
 
 // import Vue from 'vue';
 // import { setupCalendar, Calendar} from 'v-calendar'
@@ -59,9 +55,9 @@ import { formatDateTime } from "../_util";
 // Register component(s)
 // Vue.component('v-calendar', Calendar);
 export default {
-  name: "n22-calendar",
+  name: 'n22-calendar',
   components: {
-    // ['v-calendar']: Calendar
+    [Icon.name]: Icon,
   },
   data() {
     return {
@@ -69,84 +65,76 @@ export default {
         wrapper: {
           // background: 'linear-gradient(to bottom right, #ff5050, #ff66b3)',
           // color: '#fafafa',
-          "font-size": "44px"
+          'font-size': '44px',
         },
         dayContent: {
-          fontSize: "14px"
-        }
+          fontSize: '14px',
+        },
       },
       selectedValue: this.value,
-      attrs: []
-    };
+      attrs: [],
+    }
   },
   props: {
     starNum: {
       type: Number,
-      default: 5
+      default: 5,
     },
     starCur: {
       type: Number,
-      default: -1
+      default: -1,
     },
     attrsList: {
       type: Array,
       default: () => {
-        return [];
-      }
+        return []
+      },
     },
     value: {
       type: Date,
       default: () => {
-        return new Date();
-      }
-    }
+        return new Date()
+      },
+    },
   },
   methods: {
-    dealattrs(arr){
+    dealattrs(arr) {
       this.attrs = [
         {
           highlight: {
-            backgroundColor: "#FFC0CB	", // Turquoise background
-            borderColor: "#FFC0CB	",
-            borderWidth: "2px",
-            borderRadius: "1px"
+            backgroundColor: '#FFC0CB', // Turquoise background
+            borderColor: '#FFC0CB',
+            borderWidth: '2px',
+            borderRadius: '1px',
           },
           contentStyle: {
-            color: "white" // White text
+            color: 'white', // White text
           },
           dates: [
             {
               start: new Date(2019, 1, 4), // Jan 24th
-              end: new Date(2019, 1, 10) // - Jan 25th
-            }
-          ]
-        }
+              end: new Date(2019, 1, 10), // - Jan 25th
+            },
+          ],
+        },
       ]
       this.attrs.push(arr)
-      console.log('%c this.attrs','color:green;',this.attrs)
+      console.log('%c this.attrs', 'color:green;', this.attrs)
     },
     dayClicked(day) {
-      console.log(
-        "%c 选中日期>>>>",
-        "color:green;",
-        formatDateTime(day.date, "yyyy-MM-dd")
-      );
-      console.log(
-        "%c 选中之前日期>>>>",
-        "color:green;",
-        formatDateTime(this.selectedValue, "yyyy-MM-dd")
-      );
-      this.$emit("input", day.date);
-      this.$emit("selectDate", day);
+      console.log('%c 选中日期>>>>', 'color:green;', formatDateTime(day.date, 'yyyy-MM-dd'))
+      console.log('%c 选中之前日期>>>>', 'color:green;', formatDateTime(this.selectedValue, 'yyyy-MM-dd'))
+      this.$emit('input', day.date)
+      this.$emit('selectDate', day)
     },
     $_updateFrompage(page) {
-      console.log("%c updateFrompage", "color:green;", page);
-      this.$emit("selectPage", page);
+      console.log('%c updateFrompage', 'color:green;', page)
+      this.$emit('selectPage', page)
     },
     $_updateTopage(page) {
-      console.log("%c updateTopage", "color:green;", page);
-      this.$emit("selectPage", page);
-    }
+      console.log('%c updateTopage', 'color:green;', page)
+      this.$emit('selectPage', page)
+    },
   },
   mounted() {
     // this.attrsList.forEach(arr => {
@@ -155,25 +143,25 @@ export default {
   },
   watch: {
     value(val) {
-      this.selectedValue = val;
+      this.selectedValue = val
     },
     selectedValue(newvalue, oldvalue) {
       // this.$emit('input', newvalue)
-      console.log("%c newvalue", "color:green;", newvalue);
-      console.log("%c oldvalue", "color:green;", oldvalue);
+      console.log('%c newvalue', 'color:green;', newvalue)
+      console.log('%c oldvalue', 'color:green;', oldvalue)
     },
     attrsList: {
-      handler(newValue, oldValue) {
-        console.log('%c newValue','color:green;',newValue);
+      handler(newValue) {
+        console.log('%c newValue', 'color:green;', newValue)
         newValue.forEach(arr => {
           this.dealattrs(arr)
-        });
+        })
       },
-      deep: true
-    }
-  }
-};
-</script>
+      deep: true,
+    },
+  },
+}
+</script>
 <style lang="stylus" scoped>
 .my_header {
   margin: 10px 0px;

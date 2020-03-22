@@ -1,6 +1,6 @@
 ---
 title: Tag 标签
-preview: https://didi.github.io/mand-mobile/examples/#/tag
+preview: https://qiaoxiyan.com/al-mobile/examples/#/tag
 ---
 
 用于表示区域的状态的标签
@@ -8,7 +8,7 @@ preview: https://didi.github.io/mand-mobile/examples/#/tag
 ### 引入
 
 ```javascript
-import { Tag } from 'mand-mobile'
+import { Tag } from 'al-mobile'
 
 Vue.component(Tag.name, Tag)
 ```

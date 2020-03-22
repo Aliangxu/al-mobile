@@ -11,21 +11,19 @@
 	</div>
 </template>
 
-<script>
-import createDemoModule from '../../../examples/create-demo-module'
+<script>import createDemoModule from '../../../examples/create-demo-module'
 import Demo0 from './cases/demo0'
 import Demo1 from './cases/demo1'
 import Demo2 from './cases/demo2'
 import Demo3 from './cases/demo3'
+import Demo4 from './cases/demo4'
 
-export default {...createDemoModule('swiper', [Demo0, Demo1, Demo2, Demo3])}
-
-</script>
-n22-
-<stn22- lang="stylus">
+export default {...createDemoModule('swiper', [Demo0, Demo1, Demo2, Demo3, Demo4])}
+</script>
+<style lang="stylus">
 .n22-example.swiper
   .n22-example-content
-   n22-dth 100%
+   width 100%
     margin-bottom 20px
   .n22-example-title
     a

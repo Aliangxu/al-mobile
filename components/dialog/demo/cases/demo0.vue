@@ -17,7 +17,8 @@
     </n22-dialog>
 
     <n22-dialog
-      icon="location"
+      icon="alipay"
+      :iconSvg="false"
       :closable="true"
       v-model="iconDialog.open"
       :btns="iconDialog.btns"
@@ -53,21 +54,20 @@
     </n22-dialog>
 
     <n22-dialog
-      title="家"
+      title="新版本来了"
       :closable="false"
       v-model="slotDialog.open"
       :btns="slotDialog.btns"
     >
       <div class="dialog-banner" slot="header">
-        <img src="http://img-hxy021.didistatic.com/static/strategymis/insurancePlatform_spu/uploads/27fb7f097ca218d743f816836bc7ea4a" alt="">
+        <img src="http://qiaoxiyan.com/al/images/update.png" alt="">
       </div>
-      虽然其中有一些争吵、不愉快、曲折，但重要的是一家人整整齐齐。
+      虽然其中有一些bug、不愉快、曲折，但重要的是我们努力了💪。
     </n22-dialog>
   </div>
 </template>
 
-<script>
-import {Dialog, Button, Toast} from 'al-mobile'
+<script>import {Dialog, Button, Toast} from 'al-mobile'
 
 export default {
   name: 'dialog-demo',
@@ -187,12 +187,17 @@ export default {
     },
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus" scoped>
 .dialog-banner
   img
     display block
     width 100%
+>>> .n22-dialog-content
+      background-color rgba(0, 0, 0, 0)
+      .n22-dialog-body
+        background-color #ffffff
+      .n22-dialog-actions
+        background-color #ffffff
 </style>

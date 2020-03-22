@@ -1,5 +1,5 @@
 <template>
-  <div class="md-cashier-channel">
+  <div class="n22-cashier-channel">
     <div class="choose-text">
       <p class="choose-title" v-if="paymentTitle" v-html="paymentTitle"></p>
       <p class="choose-number" v-if="paymentAmount" v-html="paymentAmount"></p>
@@ -34,9 +34,9 @@
         @click="$_onChannelMoreClick"
       ></div>
     </div>
-    <div class="md-cashier-block-btn">
+    <div class="n22-cashier-block-btn">
       <n22-button
-        class="md-cashier-pay-button"
+        class="n22-cashier-pay-button"
         :type="payButtonDisabled ? 'disabled': 'primary'"
         @click="$_onChannelBtnClick"
       >
@@ -46,8 +46,7 @@
   </div>
 </template>
 
-<script>
-import Button from '../button'
+<script>import Button from '../button'
 // import Icon from '../icon'
 import ChannelItem from './channel-item'
 
@@ -123,11 +122,10 @@ export default {
     },
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus">
-.md-cashier-channel
+.n22-cashier-channel
   .choose-text
     clearfix()
     position relative

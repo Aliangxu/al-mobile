@@ -1,6 +1,5 @@
 ---
-title: Content 内容区域
- -包含swiper、mescroll
+title: Content 内容区域-包含swiper、mescroll
 ---
 
 全局内容区域组件

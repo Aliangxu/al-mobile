@@ -1,9 +1,9 @@
 <template>
   <div
-    class="md-steps"
+    class="n22-steps"
     :class="{
-      'md-steps-vertical': direction == 'vertical',
-      'md-steps-horizontal': direction == 'horizontal',
+      'n22-steps-vertical': direction == 'vertical',
+      'n22-steps-horizontal': direction == 'horizontal',
       'vertical-adaptive': direction == 'vertical' && verticalAdaptive,
       'no-current': currentLength % 1 !== 0
     }"
@@ -35,8 +35,8 @@
               name="current"
               :index="index"
             ></slot>
-            <!-- <md-icon v-else name="success"></md-icon> -->
-	          <svg-icon class="svg_class" v-else icon-class="success"></svg-icon>
+            <n22-icon v-else name="success"></n22-icon>
+	          <!-- <svg-icon class="svg_class" v-else icon-class="success"></svg-icon> -->
           </template>
           <template v-else>
             <slot
@@ -81,15 +81,14 @@
   </div>
 </template>
 
-<script>
-// import {Icon} from 'mand-mobile'
+<script>import Icon from '../icon'
 import {toArray} from '../_util'
 
 export default {
   name: 'n22-steps',
 
   components: {
-    // [Icon.name]: Icon,
+    [Icon.name]: Icon,
   },
 
   props: {
@@ -207,7 +206,7 @@ export default {
           stepHeight -= iconHeight
         } else {
           // Add spacing between steps to prevent distance too close
-          stepHeight += 40
+          stepHeight += 20
         }
         return stepHeight > 0 ? stepHeight : 0
       })
@@ -290,16 +289,15 @@ export default {
     },
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus">
-.md-steps
+.n22-steps
   display flex
   justify-content space-around
   font-size 14px
 
-  &.md-steps-horizontal
+  &.n22-steps-horizontal
     align-items center
     padding 20px 50px 50px
     .step-wrapper
@@ -326,7 +324,7 @@ export default {
       .reached:last-of-type
         display none !important
 
-  &.md-steps-vertical
+  &.n22-steps-vertical
     align-items flex-start
     padding 20px
     flex-direction column
@@ -380,7 +378,7 @@ export default {
     .icon-wrapper
       min-width steps-icon-size
       min-height steps-icon-size
-      .md-icon
+      .n22-icon
         width steps-icon-size
         height steps-icon-size
         font-size steps-icon-size

@@ -1,6 +1,6 @@
 ---
 title: TabPicker
-preview: https://didi.github.io/mand-mobile/examples/#/tab-picker
+preview: https://qiaoxiyan.com/al-mobile/examples/#/tab-picker
 ---
 
 Support cascaded selections in the footer
@@ -8,7 +8,7 @@ Support cascaded selections in the footer
 ### Import
 
 ```javascript
-import { TabPicker } from 'mand-mobile'
+import { TabPicker } from 'al-mobile'
 
 Vue.component(TabPicker.name, TabPicker)
 ```

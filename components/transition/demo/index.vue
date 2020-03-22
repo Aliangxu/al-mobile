@@ -1,9 +1,9 @@
 <template>
-  <div class="md-example transition">
-    <section class="md-example-section" v-for="(demo, index) in demos" :key="index">
-      <div class="md-example-title" v-html="demo.title || '基础'"></div>
-      <div class="md-example-describe" v-html="demo.describe"></div>
-      <div class="md-example-content">
+  <div class="n22-example transition">
+    <section class="n22-example-section" v-for="(demo, index) in demos" :key="index">
+      <div class="n22-example-title" v-html="demo.title || '基础'"></div>
+      <div class="n22-example-describe" v-html="demo.describe"></div>
+      <div class="n22-example-content">
         <component :is="demo"></component>
       </div>
     </section>

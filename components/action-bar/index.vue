@@ -33,8 +33,7 @@
   </div>
 </template>
 
-<script>
-import Button from '../button'
+<script>import Button from '../button'
 import ActivityIndicator from '../activity-indicator'
 import {isEmptyObject} from '../_util'
 
@@ -60,10 +59,9 @@ export default {
       default: false,
     },
     loading: {
-      type: [Boolean,String],
+      type: [Boolean, String],
       default: false,
     },
-    /*↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓--我是分割箭头--[n22-button]--↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
     type: {
       type: String,
       default: 'primary', // default, primary, warning, disabled, link
@@ -72,7 +70,6 @@ export default {
       type: Boolean,
       default: false,
     },
-    /*↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑--我是分割箭头--[n22-button]--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑*/
   },
 
   computed: {
@@ -92,8 +89,7 @@ export default {
     },
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus">
 .n22-action-bar

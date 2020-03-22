@@ -1,5 +1,6 @@
 ---
 title: Dialog 模态窗
+preview: https://qiaoxiyan.com/al-mobile/examples/#/dialog
 ---
 
 交互式模态窗口
@@ -7,7 +8,7 @@ title: Dialog 模态窗
 ### 引入
 
 ```javascript
-import { Dialog } from '@/components'
+import { Dialog } from 'al-mobile'
 
 Dialog.alert({ content: '' })
 

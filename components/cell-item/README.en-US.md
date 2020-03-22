@@ -1,6 +1,6 @@
 ---
 title: CellItem
-preview: https://didi.github.io/mand-mobile/examples/#/cell-item
+preview: https://qiaoxiyan.com/al-mobile/examples/#/cell-item
 ---
 
 Arrange vertically and display current contents, status and other allowable operations.
@@ -8,7 +8,7 @@ Arrange vertically and display current contents, status and other allowable oper
 ### Import
 
 ```javascript
-import { CellItem } from 'mand-mobile'
+import { CellItem } from 'al-mobile'
 
 Vue.component(CellItem.name, CellItem)
 ```

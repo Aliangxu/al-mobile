@@ -1,5 +1,6 @@
 ---
 title: Toast 轻提示
+preview: https://qiaoxiyan.com/al-mobile/examples/#/toast
 ---
 
 弹出式消息提示
@@ -7,7 +8,7 @@ title: Toast 轻提示
 ### 引入
 
 ```javascript
-import { Toast } from '@/compontents'
+import { Toast } from 'al-mobile'
 
 Toast.succeed('操作成功')
 

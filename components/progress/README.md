@@ -1,5 +1,6 @@
 ---
 title: Progress 进度
+preview: https://qiaoxiyan.com/al-mobile/examples/#/progress
 ---
 
 进度圆环，用于将数据直观地传达给用户
@@ -7,7 +8,7 @@ title: Progress 进度
 ### 引入
 
 ```javascript
-import { Progress } from '@/components'
+import { Progress } from 'al-mobile'
 
 Vue.component(Progress.name, Progress)
 ```

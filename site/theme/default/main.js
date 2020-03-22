@@ -11,19 +11,6 @@ import 'al-mobile/components/_style/global.styl'
 import 'al-mobile/components/icons'
 
 if (process.env.NODE_ENV === 'production') {
-  const hostname = location.hostname
-  const pathname = location.pathname
-  if (hostname === 'didi.github.io') {
-    __webpack_public_path__ = '/mand-mobile/'
-  } else if (hostname === 'mand-mobile.gitee.io') {
-    if (~pathname.indexOf('/1x-doc')) {
-      __webpack_public_path__ = '/1x-doc/'
-    } else if (~pathname.indexOf('/2x-doc')) {
-      __webpack_public_path__ = '/2x-doc/'
-    } else {
-      __webpack_public_path__ = '/docs/'
-    }
-  }
 }
 
 Vue.config.productionTip = false

@@ -38,7 +38,7 @@ module.exports = {
         options: vueLoaderConfig
       },
       {
-        test: /\.js$/,
+        test: /\.js[x]$/,
         loader: 'babel-loader?cacheDirectory=true',
         include: [resolve('components'), resolve('examples'), resolve('test')]
       },

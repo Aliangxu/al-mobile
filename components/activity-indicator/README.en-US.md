@@ -1,5 +1,6 @@
 ---
 title: ActivityIndicator
+preview: https://qiaoxiyan.com/al-mobile/examples/#/activity-indicator
 ---
 
 Activity indicator, generally used for ongoing tasks

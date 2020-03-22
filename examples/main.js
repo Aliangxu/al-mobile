@@ -21,12 +21,20 @@ const isProd = process.env.NODE_ENV === 'production'
 
 const router = new VueRouter({
   mode: 'hash',
-  base: isProd ? '/mand-mobile/examples' : '',
+  base: isProd ? '/al-mobile/examples' : '',
   routes,
 })
 
-router.afterEach(route => {
-  document.title = route.name ? `${route.name}-Mand Mobile` : 'Mand Mobile'
+router.afterEach((to, from, next) => {
+  document.title = to.name ? `${to.name}-Al Mobile` : 'Al Mobile'
+})
+
+Vue.mixin({
+  methods: {
+    back() {
+      window.history.back();
+    }
+  }
 })
 
 /* eslint-disable no-new */

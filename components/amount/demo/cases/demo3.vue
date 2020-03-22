@@ -7,8 +7,7 @@
 	</div>
 </template>
 
-<script>
-import {Amount} from 'al-mobile'
+<script>import {Amount} from 'al-mobile'
 
 export default {
   name: 'amount-demo',
@@ -20,12 +19,11 @@ export default {
     [Amount.name]: Amount,
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus" scoped>
 .n22-example-child-amount
   text-align center
-  font-size 32px
+  font-size 16px
   color #666
 </style>

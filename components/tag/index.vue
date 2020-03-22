@@ -1,5 +1,5 @@
 <template>
-  <div class="tag">
+  <div class="n22-tag">
     <template v-if="shape === 'quarter'">
       <div :class="computedClass">
         <div class="quarter-content">
@@ -35,10 +35,9 @@
   </div>
 </template>
 
-<script>
-import {transformCamelCase} from '../_util'
+<script>import {transformCamelCase} from '../_util'
 export default {
-  name: 'tag',
+  name: 'n22-tag',
   props: {
     size: {
       type: String, // tiny, small, large
@@ -117,11 +116,10 @@ export default {
     })
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus">
-.tag
+.n22-tag
   color color-text-base
   font-size 28px
   text-align center
@@ -144,8 +142,8 @@ export default {
   .shape-quarter
     position relative
     display flex
-    width 56px
-    height 56px
+    width 28px
+    height 28px
     background transparent !important
     overflow hidden
     .quarter-content
@@ -174,11 +172,11 @@ export default {
       padding 16px 12px 10px 26px
     
     &.size-small
-      width 40px
-      height 40px
+      width 20px
+      height 20px
     &.size-tiny
-      width 24px
-      height 24px
+      width 12px
+      height 12px
 
   .shape-coupon
     position relative
@@ -209,17 +207,17 @@ export default {
         width 5px
 
   .shape-bubble
-    width 50px
-    padding 6px 0
+    width 25px
+    padding 3px 0
     border-radius radius-circle
     border-bottom-left-radius 0
     box-sizing border-box
 
     &.size-small
-      width 38px
+      width 19px
       padding 3px 0
     &.size-tiny
-      width 24px
+      width 12px
       padding 2px 0
 
   .size-large

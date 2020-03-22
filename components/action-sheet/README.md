@@ -1,5 +1,6 @@
 ---
 title: ActionSheet 动作面板
+preview: https://qiaoxiyan.com/al-mobile/examples/#/action-sheet
 ---
 
 用于提供场景相关的多个操作动作

@@ -1,8 +1,8 @@
 <template>
-  <div class="md-cashier-channel-item">
+  <div class="n22-cashier-channel-item">
     <div class="item-icon" :class="data.icon" v-if="data.icon">
-      <!-- <md-icon :name="data.icon" size="lg"></md-icon> -->
-      <svg-icon :icon-class="data.icon"></svg-icon>
+      <n22-icon :name="data.icon" size="lg"></n22-icon>
+      <!-- <svg-icon :icon-class="data.icon"></svg-icon> -->
     </div>
     <div class="item-image" v-else-if="data.img">
       <img :src="data.img">
@@ -24,32 +24,31 @@
       ></p>
     </div>
     <div class="item-check-icon">
-      <svg-icon v-if="data.disabled" icon-class="check"></svg-icon>
+      <!-- <svg-icon v-if="data.disabled" icon-class="check"></svg-icon>
       <svg-icon v-else-if="active" icon-class="checked"></svg-icon>
-      <svg-icon v-else icon-class="check"></svg-icon>
-      <!-- <md-icon
+      <svg-icon v-else icon-class="check"></svg-icon> -->
+      <n22-icon
         v-if="data.disabled"
         name="check-disabled"
-      ></md-icon>
-      <md-icon
+      ></n22-icon>
+      <n22-icon
         v-else-if="active"
         name="checked"
-      ></md-icon>
-      <md-icon
+      ></n22-icon>
+      <n22-icon
         v-else
         name="check"
-      ></md-icon> -->
+      ></n22-icon>
     </div>
   </div>
 </template>
 
-<script>
-// import Icon from '../icon'
+<script>import Icon from '../icon'
 export default {
   name: 'n22-cashier-channel-item',
 
   components: {
-    // [Icon.name]: Icon,
+    [Icon.name]: Icon,
   },
 
   props: {
@@ -66,11 +65,10 @@ export default {
     },
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus">
-.md-cashier-channel-item
+.n22-cashier-channel-item
   block()
   position relative
   padding 10px 20px 10px 0
@@ -88,7 +86,7 @@ export default {
     float left
     margin-left h-gap-sm
     .title
-      line-height 0
+      line-height 30px
       font-size cashier-choose-channel-title-font-size
       color cashier-choose-channel-title-color
       .title-active

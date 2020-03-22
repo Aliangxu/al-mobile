@@ -37,8 +37,7 @@
 	</div>
 </template>
 
-<script>
-import {Button, Icon, Cashier, Toast, NoticeBar, ActivityIndicator} from 'al-mobile'
+<script>import {Button, Icon, Cashier, Toast, NoticeBar, ActivityIndicator} from 'al-mobile'
 
 export default {
   name: 'cashier-demo',
@@ -102,13 +101,13 @@ export default {
           countNormalText: 'Send Verification code',
           countActiveText: 'Retransmission after {$1}s',
           onSend: countdown => {
-            console.log('[Mand Mobile] Send Captcha')
+            console.log('[Al Mobile] Send Captcha')
             this.sendCaptcha().then(() => {
               countdown()
             })
           },
           onSubmit: code => {
-            console.log(`[Mand Mobile] Send Submit ${code}`)
+            console.log(`[Al Mobile] Send Submit ${code}`)
             this.checkCaptcha(code).then(res => {
               if (res) {
                 this.createPay().then(() => {
@@ -170,10 +169,10 @@ export default {
       }, 2000)
     },
     onCashierSelect(item) {
-      console.log(`[Mand Mobile] Select ${JSON.stringify(item)}`)
+      console.log(`[Al Mobile] Select ${JSON.stringify(item)}`)
     },
     onCashierPay(item) {
-      console.log(`[Mand Mobile] Pay ${JSON.stringify(item)}`)
+      console.log(`[Al Mobile] Pay ${JSON.stringify(item)}`)
       this.doPay()
     },
     onCashierCancel() {
@@ -182,8 +181,7 @@ export default {
     },
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus">
 .n22-example-child-cashier

@@ -1,5 +1,6 @@
 ---
 title: Dialog
+preview: https://qiaoxiyan.com/al-mobile/examples/#/dialog
 ---
 
 A floating layer to get users' feedback or display information.
@@ -7,7 +8,7 @@ A floating layer to get users' feedback or display information.
 ### Import
 
 ```javascript
-import { Dialog } from '@/components'
+import { Dialog } from 'al-mobile'
 
 Dialog.alert({ content: '' })
 

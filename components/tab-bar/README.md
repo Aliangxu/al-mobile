@@ -1,5 +1,6 @@
 ---
 title: TabBar 标签栏
+preview: https://qiaoxiyan.com/al-mobile/examples/#/tab-bar
 ---
 
 用于创建不含内容区域的标签栏
@@ -7,7 +8,7 @@ title: TabBar 标签栏
 ### 引入
 
 ```javascript
-import { TabBar } from '@/compontents'
+import { TabBar } from 'al-mobile'
 
 Vue.component(TabBar.name, TabBar)
 ```

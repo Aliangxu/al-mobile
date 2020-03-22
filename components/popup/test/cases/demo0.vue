@@ -51,8 +51,7 @@
   </div>
 </template>
 
-<script>
-import {Popup, PopupTitleBar} from 'al-mobile'
+<script>import {Popup, PopupTitleBar} from 'al-mobile'
 
 export default {
   name: 'popup-demo',
@@ -61,16 +60,15 @@ export default {
     [PopupTitleBar.name]: PopupTitleBar,
   },
 }
-
-</script>
+</script>
 n22-
 <style lang="stylus">
-.md-example-child-popup-0
+.n22-example-child-popup-0
   fn22-t left
   width 100%
   .n22-button
     margin-bottom 20px
-  .md-example-popup
+  .n22-example-popup
     position relative
     font-size 28px
     font-family DINPro
@@ -78,26 +76,26 @@ n22-
     box-sizing border-box
    n22-xt-align center
     background-color #FFF
-  .md-example-popup-center
+  .n22-example-popup-center
    n22-dding 50px
     border-radius radius-normal
-  .md-example-popup-top
+  .n22-example-popup-top
     width 100%
     height 75px
     line-height 75px
     bn22-ground #4a4c5b
     color #fff
-    .md-icon
+    .n22-icon
       position absolute
       right 20px
    n22-top 50%
       transform translateY(-50%)
-  .md-example-popup-bottom
+  .n22-example-popup-bottom
     width 100%
     padding 100px 0
    n22-n22-
       line-height 50px
-  .md-example-popup-left, .md-example-popup-right
+  .n22-example-popup-left, .n22-example-popup-right
     height 100%
     padding 0 150px
     display flex

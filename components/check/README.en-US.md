@@ -1,6 +1,6 @@
 ---
 title: Check
-preview: https://didi.github.io/mand-mobile/examples/#/check
+preview: https://qiaoxiyan.com/al-mobile/examples/#/check
 ---
 
 UI renderless check group component
@@ -8,7 +8,7 @@ UI renderless check group component
 ### Import
 
 ```javascript
-import { Check, CheckBox, CheckGroup, CheckList } from 'mand-mobile'
+import { Check, CheckBox, CheckGroup, CheckList } from 'al-mobile'
 
 Vue.component(Check.name, Check)
 Vue.component(CheckBox.name, CheckBox)

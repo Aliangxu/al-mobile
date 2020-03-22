@@ -29,10 +29,12 @@ const registerRoute = (components) => {
 const routes = registerRoute(components)
 
 routes.push({
+  name: 'home',
   path: '/home',
   component: demo['Home']
 })
 routes.push({
+  name: 'category',
   path: '/category',
   component: demo['Category']
 })

@@ -1,5 +1,6 @@
 ---
 title: Amount
+preview: https://qiaoxiyan.com/al-mobile/examples/#/amount
 ---
 
 Financial figures, generally used for amounts, quantities, etc
@@ -7,7 +8,7 @@ Financial figures, generally used for amounts, quantities, etc
 ### Import
 
 ```javascript
-import { Amount } from '@/components'
+import { Amount } from 'al-mobile'
 
 Vue.component(Amount.name, Amount)
 ```

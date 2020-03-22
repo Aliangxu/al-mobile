@@ -7,17 +7,23 @@
       isTitleLatent ? 'is-title-latent' : '',
       isInputActive ? 'is-active' : '',
       isInputFocus ? 'is-focus' : '',
-      isInputError()||isInputOnlyErrorLine() ? 'is-error' : '',
+      isInputError() || isInputOnlyErrorLine() ? 'is-error' : '',
       isInputBrief() && !isInputError() ? 'with-brief' : '',
-      isDisabled ? 'is-disabled': '',
-      isAmount ? 'is-amount': '',
+      isDisabled ? 'is-disabled' : '',
+      isAmount ? 'is-amount' : '',
       clearable ? 'is-clear' : '',
       align,
       size
     ]"
     v-on="$listeners"
     v-bind="$attrs"
-    :is-show-required="isShowRequired&&vvalidateModal&&vvalidateModal.indexOf('required')>-1?true:false"
+    :is-show-required="
+      isShowRequired &&
+      vvalidateModal &&
+      vvalidateModal.indexOf('required') > -1
+        ? true
+        : false
+    "
     :title="title"
     :solid="solid && !isTitleLatent"
   >
@@ -30,6 +36,25 @@
     <!-- Native Input -->
     <template v-if="!isVirtualKeyboard">
       <input
+        v-if="!vvalidateModal"
+        class="n22-input-item-input"
+        :type="inputType"
+        :name="name"
+        v-model="inputBindValue"
+        :placeholder="inputPlaceholder"
+        :disabled="isDisabled"
+        :readonly="readonly"
+        :maxlength="isFormative ? '' : maxlength"
+        autocomplete="off"
+        :data-vv-as="dataVvAs"
+        @focus="$_onFocus"
+        @blur="$_onBlur"
+        @keyup="$_onKeyup"
+        @keydown="$_onKeydown"
+        @input="$_onInput"
+      />
+      <input
+        v-else
         class="n22-input-item-input"
         :type="inputType"
         :name="name"
@@ -54,8 +79,8 @@
         class="n22-input-item-fake"
         :class="{
           'is-focus': isInputFocus,
-          'disabled': isDisabled,
-          'readonly': readonly
+          disabled: isDisabled,
+          readonly: readonly
         }"
         @click="$_onFakeInputClick"
       >
@@ -63,7 +88,8 @@
         <span
           class="n22-input-item-fake-placeholder"
           v-if="inputValue === '' && inputPlaceholder !== ''"
-          v-text="inputPlaceholder"></span>
+          v-text="inputPlaceholder"
+        ></span>
       </div>
     </template>
 
@@ -77,8 +103,7 @@
         v-show="!isInputEmpty && isInputFocus"
         @click="$_clearInput"
       >
-        <div class="svg_icon"><svg-icon icon-class="clear"></svg-icon></div>
-        <!-- <n22-icon name="clear"></n22-icon> -->
+        <n22-icon name="clear"></n22-icon>
       </div>
 
       <!-- ------------ -->
@@ -91,12 +116,12 @@
       <!-- -------------------- -->
       <!-- BRIEF/ERROR TIP -->
       <!-- -------------------- -->
-      <div
-        v-if="isInputError()"
-        class="n22-input-item-msg"
-      >
+      <div v-if="isInputError()" class="n22-input-item-msg">
         <p v-if="error !== ''" v-text="error"></p>
-        <p v-else-if="errors.first(name) !== ''" v-text="errors.first(name)"></p>
+        <p
+          v-else-if="errors && errors.first(name) !== ''"
+          v-text="errors && errors.first(name)"
+        ></p>
         <slot name="error" v-else></slot>
       </div>
       <div
@@ -121,19 +146,18 @@
   </n22-field-item>
 </template>
 
-<script>
-// import Icon from '../icon'
+<script>import Icon from '../icon'
 import FieldItem from '../field-item'
 import NumberKeyboard from '../number-keyboard'
 import {getCursorsPosition, setCursorsPosition} from './cursor'
-import {noop, isIOS, isAndroid, randomId} from '../_util'
-import {formatValueByGapRule, formatValueByGapStep, trimValue, doPrecision} from '../_util/formate-value'
+import {noop, randomId} from '../_util'
+import {formatValueByGapRule, formatValueByGapStep, trimValue} from '../_util/formate-value'
 
 export default {
   name: 'n22-input-item',
 
   components: {
-    // [Icon.name]: Icon,
+    [Icon.name]: Icon,
     [FieldItem.name]: FieldItem,
     [NumberKeyboard.name]: NumberKeyboard,
   },
@@ -147,8 +171,8 @@ export default {
 
   provide() {
     return {
-      $validatora: this.$validator
-    };
+      $validatora: this.$validator,
+    }
   },
 
   props: {
@@ -239,7 +263,14 @@ export default {
       type: Boolean,
       default() {
         const type = this.type
-        return type === 'bankCard' || type === 'phone' || type === 'gatPhone' || type === 'money' || type === 'digit' || type === 'realNum'
+        return (
+          type === 'bankCard' ||
+          type === 'phone' ||
+          type === 'gatPhone' ||
+          type === 'money' ||
+          type === 'digit' ||
+          type === 'realNum'
+        )
       },
     },
     isHighlight: {
@@ -255,30 +286,30 @@ export default {
       default: noop,
     },
 
-    //2019-03-18新增
+    // 2019-03-18新增
     isToNumber: {
       type: Boolean,
       default: false,
     },
     vvalidateModal: {
       type: String,
-      default: "",
+      default: '',
     },
     dataVvAs: {
       type: String,
-      default: "",
+      default: '',
     },
     id: {
       type: String,
-      default: ()=>{
-        return "defaultid"
+      default: () => {
+        return 'defaultid'
       },
     },
 
-    //2019-05-09新增
+    // 2019-05-09新增
     defaultValue: [String, Number],
-    itemObject: [String, Array, Object, Number], //v-modal对象
-    //2019-09-05新增 input是否开启数值更改触发validatorCallBack 默认不开启
+    itemObject: [String, Array, Object, Number], // v-modal对象
+    // 2019-09-05新增input是否开启数值更改触发validatorCallBack 默认不开启
     isValidatorCallBack: {
       type: Boolean,
       default: false,
@@ -292,10 +323,10 @@ export default {
       default: false,
     },
 
-   precision: {
+    precision: {
       type: Number,
       default: 2,
-   },
+    },
   },
 
   data() {
@@ -339,7 +370,7 @@ export default {
       return this.rootField.disabled || this.disabled
     },
     getIsValidator() {
-      return this.rootField.isValidator?this.isValidator:this.rootField.isValidator
+      return this.rootField.isValidator ? this.isValidator : this.rootField.isValidator
     },
     getIsOnlyErrorLine() {
       return this.rootField.isOnlyErrorLine || this.isOnlyErrorLine
@@ -347,20 +378,20 @@ export default {
   },
 
   watch: {
-    value(val,oldVal) {
+    value(val, oldVal) {
       // Filter out two-way binding
-      !val&&!oldVal&&(this.$emit("input", this.defaultValue));
+      !val && !oldVal && this.$emit('input', this.defaultValue)
       if (val !== this.$_trimValue(this.inputValue)) {
         this.inputValue = this.$_formateValue(this.$_subValue(val + '')).value
       }
     },
     inputValue(val, oldval) {
-      val && val != oldval && this.isValidatorCallBack && this.onvalidateAll(val,oldval);
+      val && val !== oldval && this.isValidatorCallBack && this.onvalidateAll(val, oldval)
       this.inputBindValue = val
       val = this.isFormative ? this.$_trimValue(val) : val
       if (val !== this.value) {
-        this.$emit('input', this.isToNumber? Number(val):val)
-        this.$emit('change', this.name, val, oldval,this.defaultValue, this.itemObject)
+        this.$emit('input', this.isToNumber ? Number(val) : val)
+        this.$emit('change', this.name, val, oldval, this.defaultValue, this.itemObject)
       }
     },
     isInputFocus(val) {
@@ -377,12 +408,12 @@ export default {
     },
   },
   created() {
-   //  console.log('%c this.value','color:green;',this.value);
+    //  console.log('%c this.value','color:green;',this.value);
     this.inputValue = this.$_formateValue(this.$_subValue(this.value + '')).value
   },
   mounted() {
-    !this.value&&this.defaultValue&&(this.$emit("input", this.defaultValue));
-    this.value&&(this.inputBindValue = this.value)
+    !this.value && this.defaultValue && this.$emit('input', this.defaultValue)
+    this.value && (this.inputBindValue = this.value)
     this.isVirtualKeyboard &&
       this.$nextTick(() => {
         this.$_initNumberKeyBoard()
@@ -396,15 +427,17 @@ export default {
   },
 
   methods: {
-    //validator callback
-    onvalidateAll(newval,oldval) {
-      const _this = this;
-      this.$validator.validateAll().then(result => {
-        console.log("%c n22-input-item-result", "color:green;", result);
-        if (result) {
-          _this.$emit("validatorCallBackFun", result,newval,oldval,this.itemObject);
-        }
-      });
+    // validator callback
+    onvalidateAll(newval, oldval) {
+      const _this = this
+      if (this.$validator) {
+        this.$validator.validateAll().then(result => {
+          console.log('%c n22-input-item-result', 'color:green;', result)
+          if (result) {
+            _this.$emit('validatorCallBackFun', result, newval, oldval, this.itemObject)
+          }
+        })
+      }
     },
 
     // MARK: private methods
@@ -442,13 +475,17 @@ export default {
         case 'money':
           gap = ','
           curValue = this.$_subValue(trimValue(curValue.replace(/[^\d.]/g, '')))
-          this.isDisabled&&(curValue = this.doPrecision(curValue,this.precision));
+          this.isDisabled && (curValue = this.doPrecision(curValue, this.precision))
           // curValue = curValue.replace(/\D/g, '')
           const dotPos = curValue.indexOf('.')
           // format if no dot or new add dot or insert befor dot
           const moneyCurValue1 = curValue.split('.')[0]
           const moneyCurValue2 = curValue.split('.')[1]
-          let moneyCurDecimal = ~dotPos ? `.${moneyCurValue2&&moneyCurValue2.length>this.precision?moneyCurValue2.slice(0,this.precision):moneyCurValue2}` : ''
+          let moneyCurDecimal = ~dotPos
+            ? `.${moneyCurValue2 && moneyCurValue2.length > this.precision
+                ? moneyCurValue2.slice(0, this.precision)
+                : moneyCurValue2}`
+            : ''
           formateValue = formatValueByGapStep(
             3,
             trimValue(moneyCurValue1, gap),
@@ -458,9 +495,9 @@ export default {
             isAdd,
             oldValue.split('.')[0],
           )
-         //  console.log('%c formateValue.value + moneyCurDecimal','color:green;',moneyCurDecimal);
-         //  console.log('%c formateValue.value + moneyCurDecimal','color:green;',formateValue.value);
-         formateValue.value += moneyCurDecimal
+          //  console.log('%c formateValue.value + moneyCurDecimal','color:green;',moneyCurDecimal);
+          //  console.log('%c formateValue.value + moneyCurDecimal','color:green;',formateValue.value);
+          formateValue.value += moneyCurDecimal
           break
         case 'digit':
           curValue = this.$_subValue(trimValue(curValue.replace(/\D/g, '')))
@@ -471,8 +508,12 @@ export default {
           const dotPosNum = curValue.indexOf('.')
           const numCurValue1 = curValue.split('.')[0]
           const numCurValue2 = curValue.split('.')[1]
-          curValue = ~dotPosNum ? `${numCurValue1}.${numCurValue2&&numCurValue2.length>this.precision?numCurValue2.slice(0,this.precision):numCurValue2}` : curValue
-          console.log('%c formateValue.value + moneyCurDecimal','color:green;',curValue);
+          curValue = ~dotPosNum
+            ? `${numCurValue1}.${numCurValue2 && numCurValue2.length > this.precision
+                ? numCurValue2.slice(0, this.precision)
+                : numCurValue2}`
+            : curValue
+          console.log('%c formateValue.value + moneyCurDecimal', 'color:green;', curValue)
           formateValue.value = curValue
           break
         /* istanbul ignore next */
@@ -482,17 +523,25 @@ export default {
 
       return formateValue
     },
-    doPrecision(value, precision, isRoundUp,zeroText) {
+    doPrecision(value, precision, isRoundUp) {
       const exponentialForm = Number(`${value}e${precision}`)
       const rounded = isRoundUp ? Math.round(exponentialForm) : Math.floor(exponentialForm)
       return Number(`${rounded}e-${precision}`).toFixed(precision)
     },
     isInputError() {
       // console.log('%c xxxxxxxxxxxxxxxxxxxxxxxerror','color:green;',this.errors.first(this.name));
-      return this.$slots.error || this.error !== '' || (this.getIsValidator&&this.vvalidateModal&&this.name&&this.errors.first(this.name))
+      return (
+        this.$slots.error ||
+        this.error !== '' ||
+        (this.getIsValidator && this.vvalidateModal && this.name && (this.errors && this.errors.first(this.name)))
+      )
     },
     isInputOnlyErrorLine() {
-      return this.$slots.error || this.error !== '' || (this.getIsOnlyErrorLine&&this.vvalidateModal&&this.name&&this.errors.first(this.name))
+      return (
+        this.$slots.error ||
+        this.error !== '' ||
+        (this.getIsOnlyErrorLine && this.vvalidateModal && this.name && (this.errors && this.errors.first(this.name)))
+      )
     },
     isInputBrief() {
       return this.$slots.brief || this.brief !== ''
@@ -576,7 +625,7 @@ export default {
       this.$emit('focus', this.name)
     },
     $_onBlur() {
-      // //解决微信浏览器bug-微信打开网页键盘弹起后页面上滑，导致弹框里的按钮响应区域错位
+      // 解决微信浏览器bug-微信打开网页键盘弹起后页面上滑，导致弹框里的按钮响应区域错位
       // if (!window.cordova) {
       //   setTimeout(function() {
       //     window.scrollTo(0, ui.clientHeight);
@@ -639,8 +688,7 @@ export default {
     },
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus">
 .svg_icon

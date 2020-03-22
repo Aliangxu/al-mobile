@@ -15,8 +15,7 @@
   </div>
 </template>
 
-<script>
-import {Swiper, SwiperItem} from 'al-mobile'
+<script>import {Swiper, SwiperItem} from 'al-mobile'
 import mulit from 'al-mobile/components/swiper/demo/data/mulit-item'
 
 export default {
@@ -60,9 +59,7 @@ export default {
     },
   },
 }
-
-</script>
-n22-
+</script>
 <style lang="stylus">
 .n22-example-child-swiper-3
   height 250px

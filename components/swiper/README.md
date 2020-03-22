@@ -1,5 +1,6 @@
 ---
 title: Swiper 轮播
+preview: https://qiaoxiyan.com/al-mobile/examples/#/swiper
 ---
 
 走马灯，用于一组图片或卡片轮播
@@ -7,7 +8,7 @@ title: Swiper 轮播
 ### 引入
 
 ```javascript
-import { Swiper, SwiperItem } from '@/components'
+import { Swiper, SwiperItem } from 'al-mobile'
 
 Vue.component(Swiper.name, Swiper)
 Vue.component(SwiperItem.name, SwiperItem)

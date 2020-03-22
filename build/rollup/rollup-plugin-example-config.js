@@ -84,7 +84,7 @@ const rollupPluginFactory = async () =>  {
   }),
 
   common({
-    include: 'node_modules/**',
+    include: ['node_modules/**', 'components/common/mescroll.js/mescroll.js', 'components/common/swiper/dist/js/swiper.js', 'components/scroll-table/assets/iscroll-probe.js'],
   }),
 
   // inject

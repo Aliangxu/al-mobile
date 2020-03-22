@@ -1,38 +1,51 @@
+/* eslint-disable */
 <template>
   <div class="">
     <input
+      v-if="!vvalidateModal"
+      class="n22-input"
+      :type="type"
+      :name="name"
+      v-model="value"
+      :data-vv-as="dataVvAs"
+    />
+    <input
+      v-else
       class="n22-input"
       :type="type"
       :name="name"
       v-model="value"
       v-validate="vvalidateModal"
       :data-vv-as="dataVvAs"
-    >
+    />
     <n22-field-item
       v-on="$listeners"
       v-bind="$attrs"
       :title="title"
-      :is-show-required="isShowRequired&&vvalidateModal&&vvalidateModal.indexOf('required')>-1?true:false"
+      :is-show-required="
+        isShowRequired &&
+        vvalidateModal &&
+        vvalidateModal.indexOf('required') > -1
+          ? true
+          : false
+      "
       :align="align"
       :isLinefeed="isLinefeed"
       :isLine="isLine"
       :class="[
         isInputError() ? 'is-error' : '',
-        isLinefeed?'':'n22_field_item_radio',
+        isLinefeed ? '' : 'n22_field_item_radio'
       ]"
       :solid="solid"
     >
-      <div slot="right"
-        :style="{'text-align': isLinefeed?'left':btnAlign,}"
-        :class="[
-          isLinefeed ? 'content-margin' : '',
-        ]"
+      <div
+        slot="right"
+        :style="{ 'text-align': isLinefeed ? 'left' : btnAlign }"
+        :class="[isLinefeed ? 'content-margin' : '']"
       >
         <div
           class="n22-switch"
-          :class="[
-            disabled ? 'disabled' : '',
-            isSelect ? 'active' : '']"
+          :class="[disabled ? 'disabled' : '', isSelect ? 'active' : '']"
           @click="$_onChange($event)"
         >
           <slot></slot>
@@ -43,7 +56,10 @@
           <!-- 错误 -->
           <div v-if="isInputError()" class="n22-input-item-msg">
             <p v-if="error !== ''" v-text="error"></p>
-            <p v-else-if="errors.first(name) !== ''" v-text="errors.first(name)"></p>
+            <p
+              v-else-if="errors && errors.first(name) !== ''"
+              v-text="errors && errors.first(name)"
+            ></p>
             <slot name="error" v-else></slot>
           </div>
         </slot>
@@ -52,90 +68,90 @@
   </div>
 </template>
 
-<script>
-import FieldItem from "../field-item";
+<script>/* eslint-disable */
+import FieldItem from '../field-item'
 export default {
-  name: "n22-switch-item",
+  name: 'n22-switch-item',
   components: {
-    [FieldItem.name]: FieldItem
+    [FieldItem.name]: FieldItem,
   },
   props: {
-    value: [String, Array, Boolean, Number], //v-modal值
+    value: [String, Array, Boolean, Number], // v-modal值
     disabled: {
       type: Boolean,
-      default: false
+      default: false,
     },
-    defaultValue: [String, Array, Boolean, Number], //默认值
+    defaultValue: [String, Array, Boolean, Number], // 默认值
     options: {
-      //选择码表数组
+      // 选择码表数组
       type: Array,
       // required: true,
-      default: ()=>{
+      default: () => {
         return []
-      }
+      },
     },
     isDefaultSelect: {
-      //是否默认选中第一个
+      // 是否默认选中第一个
       type: Boolean,
-      default: false
+      default: false,
     },
     title: {
-      //文本title
+      // 文本title
       type: String,
-      default: ""
+      default: '',
     },
     isShowRequired: {
-      //field-input是否显示必填的*
+      // field-input是否显示必填的*
       type: Boolean,
-      default: false
+      default: false,
     },
     btnAlign: {
-      //按钮对其方式
+      // 按钮对其方式
       type: String,
-      default: "right"
+      default: 'right',
     },
     valueKey: {
-      //码表value对应的key--可自定义--默认就是value
+      // 码表value对应的key--可自定义--默认就是value
       type: String,
-      default: "value"
+      default: 'value',
     },
     textKey: {
-      //码表text对应的key--可自定义--默认就是text
+      // 码表text对应的key--可自定义--默认就是text
       type: String,
-      default: "text"
+      default: 'text',
     },
     type: {
-      //input表单类型
+      // input表单类型
       type: String,
-      default: "radio"
+      default: 'radio',
     },
     name: {
-      //文本name
+      // 文本name
       type: String,
-      default: ""
+      default: '',
     },
     error: {
-      //错误信息对象--校验
+      // 错误信息对象--校验
       type: String,
-      default: ""
+      default: '',
     },
     vvalidateModal: {
-      //校验规则对象，字符串，以|隔开
+      // 校验规则对象，字符串，以|隔开
       type: String,
-      default: ""
+      default: '',
     },
     dataVvAs: {
-      //校验规则提示的字段名称
+      // 校验规则提示的字段名称
       type: String,
-      default: ""
+      default: '',
     },
     isLine: {
       type: Boolean,
-      default: true
+      default: true,
     },
     isLinefeed: {
       type: Boolean,
-      default: false
+      default: false,
     },
 
     align: {
@@ -152,124 +168,123 @@ export default {
   computed: {
     getIsSelect() {
       return (value, options, type) => {
-        if(options&&options.length>0){
+        if (options && options.length > 0) {
           for (let i = 0; i < options.length; i++) {
-            const op = options[i];
+            const op = options[i]
             if (
-              op.optionDes == "否" &&
+              op.optionDes == '否' &&
               ((type == 1 && op.optionId == value) ||
                 (type == 2 && value && op.optionId != value) ||
                 (!value && type == 1))
             ) {
-              this.isSelect = false;
-              return op.optionId;
+              this.isSelect = false
+              return op.optionId
             } else if (
-              op.optionDes == "是" &&
+              op.optionDes == '是' &&
               ((type == 1 && op.optionId == value) ||
                 (type == 2 && value && op.optionId != value) ||
                 (!value && type == 2))
             ) {
-              this.isSelect = true;
-              return op.optionId;
-            }else{
-              if(type == 1){
-                if(value==op.value&&i==1){//false为是--默认为否
-                  this.isSelect = false;
-                }else if(value===""){
-                  value = this.defaultValue || (options[1]&&options[1].value) || "";
-                  this.$emit("input", this.defaultValue || (options[1]&&options[1].value) || "");
-                  this.$emit("change", "default");
-                  this.isSelect = false;
-                }else{
-                  this.isSelect = true;
+              this.isSelect = true
+              return op.optionId
+            } else {
+              if (type == 1) {
+                if (value == op.value && i == 1) {
+                  //false为是--默认为否
+                  this.isSelect = false
+                } else if (value === '') {
+                  value = this.defaultValue || (options[1] && options[1].value) || ''
+                  this.$emit('input', this.defaultValue || (options[1] && options[1].value) || '')
+                  this.$emit('change', 'default')
+                  this.isSelect = false
+                } else {
+                  this.isSelect = true
                 }
-              }else if(type == 2){
-                if(op.value!=value){
-                  this.isSelect = !this.isSelect;
-                  return op.value;
+              } else if (type == 2) {
+                if (op.value != value) {
+                  this.isSelect = !this.isSelect
+                  return op.value
                 }
               }
             }
           }
-        }else{
-          if(type === 1){
-            this.isSelect = this.value;
-          }else if(type === 2){
-            this.isSelect = !this.isSelect;
+        } else {
+          if (type === 1) {
+            this.isSelect = this.value
+          } else if (type === 2) {
+            this.isSelect = !this.isSelect
           }
-          return this.isSelect;
+          return this.isSelect
         }
-      };
+      }
     },
   },
 
   mounted() {
-    console.log('%c n22-switch-item-mounted','color:green;','');
-    this.getIsSelect(this.value, this.options, 1);
+    console.log('%c n22-switch-item-mounted', 'color:green;', '')
+    this.getIsSelect(this.value, this.options, 1)
   },
 
   watch: {
-    value(newVal,oldVal){
-      if(newVal){
-        this.getIsSelectChange(newVal, this.options);
+    value(newVal, oldVal) {
+      if (newVal) {
+        this.getIsSelectChange(newVal, this.options)
       }
-    }
+    },
   },
 
   data() {
     return {
-      isSelect: false
-    };
+      isSelect: false,
+    }
   },
 
   methods: {
     isInputError() {
-      return this.vvalidateModal && this.name && this.errors.first(this.name);
+      return this.vvalidateModal && this.name && (this.errors && this.errors.first(this.name))
     },
     dealValue(val) {
-      let rval = val
-        ? val
-        : this.isDefaultSelect
-          ? this.options && this.options[0] && this.options[0].value
-          : "";
+      let rval = val ? val : this.isDefaultSelect ? this.options && this.options[0] && this.options[0].value : ''
       // console.log("%c rval", "color:green;", rval);
-      return this.type == "radio" ? rval : [];
+      return this.type == 'radio' ? rval : []
     },
     //validator callback
-     onvalidateAll(newval,oldval) {
-      const _this = this;
-      this.$validator.validateAll().then(result => {
-        console.log("%c drop-select-result", "color:green;", result);
-        if (result) {
-           _this.$emit("validatorCallBackFun", result,newval,oldval);
-        }
-      });
+    onvalidateAll(newval, oldval) {
+      const _this = this
+      if (this.$validator) {
+        this.$validator.validateAll().then(result => {
+          console.log('%c drop-select-result', 'color:green;', result)
+          if (result) {
+            _this.$emit('validatorCallBackFun', result, newval, oldval)
+          }
+        })
+      }
     },
     // MARK: events handler, 如 $_onButtonClick
     $_onChange(event) {
-      console.log('%c n22-switch-item','color:green;','$_onChange');
+      console.log('%c n22-switch-item', 'color:green;', '$_onChange')
       if (this.disabled) {
-        return;
+        return
       }
-      this.$emit("input", this.getIsSelect(this.value, this.options, 2));
-      this.$emit("change", event);
+      this.$emit('input', this.getIsSelect(this.value, this.options, 2))
+      this.$emit('change', event)
     },
     //监听v-modal
-    getIsSelectChange(value, options){
-      if(options){
+    getIsSelectChange(value, options) {
+      if (options) {
         for (let a = 0; a < options.length; a++) {
-          const op = options[a];
-          if(op.value==value&&a===0){
-            this.isSelect = true;
-          }else if(op.value==value&&a===1){
-            this.isSelect = false;
+          const op = options[a]
+          if (op.value == value && a === 0) {
+            this.isSelect = true
+          } else if (op.value == value && a === 1) {
+            this.isSelect = false
           }
         }
       }
     },
-  }
-};
-</script>
+  },
+}
+</script>
 
 <style lang="stylus" scoped>
 .n22-switch {

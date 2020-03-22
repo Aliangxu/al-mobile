@@ -1,5 +1,6 @@
 ---
 title: Progress
+preview: https://qiaoxiyan.com/al-mobile/examples/#/progress
 ---
 
 Progress circle, generally used to communicate data intuitively to users
@@ -7,7 +8,7 @@ Progress circle, generally used to communicate data intuitively to users
 ### Import
 
 ```javascript
-import { Progress } from '@/components'
+import { Progress } from 'al-mobile'
 
 Vue.component(Progress.name, Progress)
 ```

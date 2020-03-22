@@ -24,8 +24,7 @@
   </div>
 </template>
 
-<script>
-import {DatePicker, Field, FieldItem} from 'al-mobile'
+<script>import {DatePicker, Field, FieldItem} from 'al-mobile'
 
 export default {
   name: 'date-picker-demo',
@@ -59,16 +58,15 @@ export default {
     },
     onDatePickerChange(columnIndex, itemIndex, value) {
       console.log(
-        `[Mand Mobile] DatePicker Change\ncolumnIndex: ${columnIndex},\nitemIndex:${itemIndex},\nvalue: ${JSON.stringify(
+        `[Al Mobile] DatePicker Change\ncolumnIndex: ${columnIndex},\nitemIndex:${itemIndex},\nvalue: ${JSON.stringify(
           value,
         )}`,
       )
     },
     onDatePickerConfirm(columnsValue) {
-      console.log(`[Mand Mobile] DatePicker Confirm\nvalue: ${JSON.stringify(columnsValue)}`)
+      console.log(`[Al Mobile] DatePicker Confirm\nvalue: ${JSON.stringify(columnsValue)}`)
       this.datePickerValue = this.$refs.datePicker.getFormatDate('yyyy/MM/dd hh:mm')
     },
   },
 }
-
-</script>
+</script>

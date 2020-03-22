@@ -1,5 +1,6 @@
 ---
 title: Picker 选择器
+preview: https://qiaoxiyan.com/al-mobile/examples/#/picker
 ---
 
 滚动多列选择
@@ -7,7 +8,7 @@ title: Picker 选择器
 ### 引入
 
 ```javascript
-import { Picker } from '@/components'
+import { Picker } from 'al-mobile'
 
 Vue.component(Picker.name, Picker)
 ```

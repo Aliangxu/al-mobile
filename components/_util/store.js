@@ -1,3 +1,4 @@
+/* eslint-disable */
 import {noop} from './lang'
 /**
  * Mix properties into target object.
@@ -134,13 +135,8 @@ export function isEmptyObject(obj) {
  */
 export function isEmpty(value) {
   return (
-    !value ||
-    value === undefined ||
-    trim(value) === '' ||
-    trim(value) === 'null' ||
-    value === '' ||
-    value.length === 0
-  );
+    !value || value === undefined || trim(value) === '' || trim(value) === 'null' || value === '' || value.length === 0
+  )
 }
 
 /**
@@ -149,7 +145,7 @@ export function isEmpty(value) {
  * @return {Boolean}
  */
 export function isEmptyArray(value) {
-  return Array.isArray(value) ? value.length <= 0 : true;
+  return Array.isArray(value) ? value.length <= 0 : true
 }
 
 /**
@@ -159,28 +155,28 @@ export function isEmptyArray(value) {
  */
 export function deepClone(source, ignoreKeys) {
   if (!source && typeof source !== 'object') {
-    throw new Error('error arguments', 'shallowClone');
+    throw new Error('error arguments', 'shallowClone')
   }
-  ignoreKeys = Array.isArray(ignoreKeys) ? ignoreKeys : [];
-  const targetObj = source.constructor === Array ? [] : {};
+  ignoreKeys = Array.isArray(ignoreKeys) ? ignoreKeys : []
+  const targetObj = source.constructor === Array ? [] : {}
   for (const keys in source) {
     if (source.hasOwnProperty(keys) && !ignoreKeys.includes(keys)) {
       if (source[keys] && typeof source[keys] === 'object') {
-        targetObj[keys] = source[keys].constructor === Array ? [] : {};
-        targetObj[keys] = deepClone(source[keys]);
+        targetObj[keys] = source[keys].constructor === Array ? [] : {}
+        targetObj[keys] = deepClone(source[keys])
       } else {
-        targetObj[keys] = source[keys];
+        targetObj[keys] = source[keys]
       }
     }
   }
-  return targetObj;
+  return targetObj
 }
 
 /**
  * 日期格式化
  * @param {String} fmt 日期格式
  */
-Date.prototype.Format = function (fmt = 'yyyy-MM-dd') {
+Date.prototype.Format = function(fmt = 'yyyy-MM-dd') {
   //author: meizz
   let o = {
     'M+': this.getMonth() + 1, //月份
@@ -189,23 +185,14 @@ Date.prototype.Format = function (fmt = 'yyyy-MM-dd') {
     'm+': this.getMinutes(), //分
     's+': this.getSeconds(), //秒
     'q+': Math.floor((this.getMonth() + 3) / 3), //季度
-    S: this.getMilliseconds() //毫秒
-  };
-  if (/(y+)/.test(fmt))
-    fmt = fmt.replace(
-      RegExp.$1,
-      String(this.getFullYear()).substr(4 - RegExp.$1.length)
-    );
+    S: this.getMilliseconds(), //毫秒
+  }
+  if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, String(this.getFullYear()).substr(4 - RegExp.$1.length))
   for (let k in o)
     if (new RegExp('(' + k + ')').test(fmt))
-      fmt = fmt.replace(
-        RegExp.$1,
-        RegExp.$1.length === 1 ?
-          o[k] :
-          ('00' + o[k]).substr(String(o[k]).length)
-      );
-  return fmt;
-};
+      fmt = fmt.replace(RegExp.$1, RegExp.$1.length === 1 ? o[k] : ('00' + o[k]).substr(String(o[k]).length))
+  return fmt
+}
 
 /**
  * 变幻Date，兼容 iOS
@@ -216,10 +203,10 @@ function flatDateStr(date) {
     date = date
       .replace(/T/g, ' ')
       .replace(/\.[\d]{3}Z/, '')
-      .replace(/(-)/g, '/');
-    if (date.indexOf('.') > 0) date = date.slice(0, date.indexOf('.'));
+      .replace(/(-)/g, '/')
+    if (date.indexOf('.') > 0) date = date.slice(0, date.indexOf('.'))
   }
-  return date;
+  return date
 }
 
 /**
@@ -230,22 +217,15 @@ function flatDateStr(date) {
  */
 export function formatDateTime(unixTime, pattern = 'yyyy-MM-dd') {
   if (unixTime instanceof Date) {
-    return unixTime.Format(pattern);
+    return unixTime.Format(pattern)
   }
   if (is('String', unixTime) && !isEmpty(unixTime)) {
-    unixTime = flatDateStr(unixTime);
+    unixTime = flatDateStr(unixTime)
     if (unixTime.length === 8) {
-      unixTime =
-        unixTime.substring(0, 4) +
-        '-' +
-        unixTime.substring(4, 6) +
-        '-' +
-        unixTime.substring(6, 8);
+      unixTime = unixTime.substring(0, 4) + '-' + unixTime.substring(4, 6) + '-' + unixTime.substring(6, 8)
     }
   }
-  return !unixTime || isEmpty(unixTime) ?
-    '' :
-    new Date(unixTime).Format(pattern);
+  return !unixTime || isEmpty(unixTime) ? '' : new Date(unixTime).Format(pattern)
 }
 
 /**
@@ -255,5 +235,5 @@ export function formatDateTime(unixTime, pattern = 'yyyy-MM-dd') {
  * @return {Boolean}
  */
 export function isType(type, val) {
-  return Object.prototype.toString.call(val) === '[object ' + type + ']';
+  return Object.prototype.toString.call(val) === '[object ' + type + ']'
 }

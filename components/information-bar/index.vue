@@ -1,23 +1,33 @@
 <template>
-  <div>
+  <div :style="{ lineHeight: (swiperOption.height+'').indexOf('px')>-1?swiperOption.height:swiperOption.height+'px' }">
     <ul class="information">
-      <li>
-        <img :src="leftImg">
+      <li :style="{ fontSize: swiperOption.height }">
+        <n22-icon v-if="leftIcon" :name="leftIcon" size="lg"></n22-icon>
+        <img v-else :src="leftImg" />
       </li>
       <swiper v-if="isShow" :options="swiperOption" ref="mySwiper">
-        <swiper-slide class="information_slide" v-for="item in informationList" :key="item.id">
+        <swiper-slide
+          class="information_slide"
+          v-for="item in informationList"
+          :key="item.id"
+        >
           <div class="information_content" @click="goLink(item)">
             <li
               class="information_content_li1"
               v-if="item.label"
-              :style="{color: item.labelColor,borderColor: item.labelColor}"
+              :style="{ color: item.labelColor, borderColor: item.labelColor }"
             >
-              <span class="label-c">{{item.label}}</span>
+              <span class="label-c">{{ item.label }}</span>
             </li>
             <li
               class="information_content_li2"
-              :style="{color: item.contentColor,borderColor: item.contentColor}"
-            >{{item.content}}</li>
+              :style="{
+                color: item.contentColor,
+                borderColor: item.contentColor
+              }"
+            >
+              {{ item.content }}
+            </li>
           </div>
         </swiper-slide>
       </swiper>
@@ -29,73 +39,83 @@
   </div>
 </template>
 
-<script>
-import "../common/swiper/dist/css/swiper.css";
-import { swiper, swiperSlide } from "../common/swiper/swiper-vue";
-import { ui } from "../_util";
+<script>import '../common/swiper/dist/css/swiper.css'
+import {swiper, swiperSlide} from '../common/swiper/swiper-vue'
+import {ui} from '../_util'
+import Icon from '../icon'
 export default {
-  name: "n22-information-bar", //使用xx-xx-xx命名方式具体看操作文档
+  name: 'n22-information-bar', // 使用xx-xx-xx命名方式具体看操作文档
   props: {
-    leftImg: {
-      //props定义样例
+    leftIcon: {
+      // props定义样例
       type: String,
-      default: ""
+      default: '',
+    },
+    leftImg: {
+      // props定义样例
+      type: String,
+      default: '',
+    },
+    propHeight: {
+      // 滚动高度
+      type: Number,
+      default: 0,
     },
     direction: {
-      //滚动方向
+      // 滚动方向
       type: String,
-      default: "vertical" //horizontal//vertical
+      default: 'vertical', // horizontal //vertical
     },
     informationList: {
-      //咨询数组
+      // 咨询数组
       type: Array,
       default: [
         {
-          label: "N22资讯",
-          url: "/center", //跳转链接
-          content:
-            "欢迎使用n22咨询！！！欢迎使用n22咨询！！！欢迎使用n22咨询！！！欢迎使用n22咨询！！！"
-        }
-      ]
-    }
+          label: 'N22资讯',
+          url: '/center', // 跳转链接
+          content: '欢迎使用n22咨询！！！欢迎使用n22咨询！！！欢迎使用n22咨询！！！欢迎使用n22咨询！！！',
+        },
+      ],
+    },
   },
   components: {
+    [Icon.name]: Icon,
     swiper,
-    swiperSlide
+    swiperSlide,
   },
   computed: {
-    //...mapState(["common"])//引入vuex state样例>>>可通过this.common.userInfo获取vuex-state数据
+    // ...mapState(["common"])//引入vuex state样例>>>可通过this.common.userInfo获取vuex-state数据
     swiper() {
-      return this.$refs.mySwiper.swiper;
-    }
+      return this.$refs.mySwiper.swiper
+    },
   },
   activated() {
-    console.log("%c consultation 组件", "color:orange;", "活跃");
-    this.isShow = true;
+    console.log('%c consultation 组件', 'color:orange;', '活跃')
+    this.isShow = true
     // console.log("%c 启动xxxxxxxx", "color:orange;", this.swiper);
     // this.swiper.autoplay.run();
   },
   deactivated() {
-    console.log("%c consultation 组件", "color:orange;", "销毁");
-    this.isShow = false;
+    console.log('%c consultation 组件', 'color:orange;', '销毁')
+    this.isShow = false
     // console.log("%c 启动xxxxxxxx", "color:orange;", this.swiper);
     // this.swiper.autoplay.run();
   },
   data() {
     return {
-      isShow:true,
+      isShow: true,
       swiperOption: {
-        //以下配置不懂的，可以去swiper官网看api，链接http://www.swiper.com.cn/api/
-        // notNextTick是一个组件自有属性，如果notNextTick设置为true，组件则不会通过NextTick来实例化swiper，也就意味着你可以在第一时间获取到swiper对象，<br>　　　　　　　　假如你需要刚加载遍使用获取swiper对象来做什么事，那么这个属性一定要是true
+        // 以下配置不懂的，可以去swiper官网看api，链接http://www.swiper.com.cn/api/
+        // notNextTick是一个组件自有属性，如果notNextTick设置为true，组件则不会通过NextTick来实例化swiper，也就意味着你可以在第一时间获取到swiper对象，<br>假如你需要刚加载遍使用获取swiper对象来做什么事，那么这个属性一定要是true
         notNextTick: true,
         // swiper configs 所有的配置同swiper官方api配置
         autoplay: {
-          //可选选项，自动滑动
-          disableOnInteraction: false
+          // 可选选项，自动滑动
+          disableOnInteraction: false,
           // delay: 1000,
           // waitForTransition: false,
         },
-        allowTouchMove: false, //禁止手滑-只能自动
+        allowTouchMove: false, // 禁止手滑-只能自动
         loop: true,
         speed: 1000,
         // slidesPerView: 1,
@@ -104,42 +124,42 @@ export default {
         direction: this.direction,
         grabCursor: true,
         setWrapperSize: true,
-        uniqueNavElements: false, //独立分页元素，当启用（默认）并且分页元素的传入值为字符串时，swiper会优先查找子元素匹配这些元素。可应用于分页器，按钮和滚动条（pagination, prev/next buttons and scrollbar elements）。当你的控制组件放在container外面的时候，需要用到。
+        uniqueNavElements: false, // 独立分页元素，当启用（默认）并且分页元素的传入值为字符串时，swiper会优先查找子元素匹配这些元素。可应用于分页器，按钮和滚动条（pagination, prev/next buttons and scrollbar elements）。当你的控制组件放在container外面的时候，需要用到。
         paginationClickable: true,
-        prevButton: ".swiper-button-prev", //上一张
-        nextButton: ".swiper-button-next", //下一张
-        scrollbar: ".swiper-scrollbar", //滚动条
+        prevButton: '.swiper-button-prev', // 上一张
+        nextButton: '.swiper-button-next', // 下一张
+        scrollbar: '.swiper-scrollbar', // 滚动条
         mousewheelControl: true,
         observeParents: true,
-        height: ui.screenHeightR(26), //你的slide高度
-        autoHeight: true, //高度随内容变化
+        height: this.propHeight || ui.screenHeightR(26), // 你的slide高度
+        autoHeight: true, // 高度随内容变化
         // 如果自行设计了插件，那么插件的一些配置相关参数，也应该出现在这个对象中，如下debugger
         debugger: true,
-        noSwipingClass: "removerule",
+        noSwipingClass: 'removerule',
         on: {
           slideChangeTransitionEnd: function() {
             // that.handleChange(this.activeIndex,false,true)
             // console.log(this.activeIndex);//切换结束时，告诉我现在是第几个slide
             // console.log(that.index);//切换结束时，告诉我现在是第几个slide
-          }
-        }
-      }
-    };
-  },
-  methods: {
-    //...mapActions(["getUserInfo"]),//vuex-action引入样例>>>通过this.getUserInfo()可直接调用获取state数据可异步
-    //...mapMutations([//提交vuex-state更改样例
-    //    'USER_INFO',
-    //]),
-    goLink(item) {
-      //目前只是跳转本地目录--后期维护iframe等
-      this.$router.push(item.url);
+          },
+        },
+      },
     }
   },
+  methods: {
+    // ...mapActions(["getUserInfo"]),//vuex-action引入样例>>>通过this.getUserInfo()可直接调用获取state数据可异步
+    // ...mapMutations([//提交vuex-state更改样例
+    //    'USER_INFO',
+    // ]),
+    goLink(item) {
+      // 目前只是跳转本地目录--后期维护iframe等
+      this.$emit('goLink', item)
+    },
+  },
   mounted() {},
-  watch: {}
-};
-</script>
+  watch: {},
+}
+</script>
 
 <style lang="stylus" scoped>
 .information {
@@ -178,7 +198,7 @@ export default {
   margin: 1px 5px 0px 5px;
 }
 .information_content .information_content_li2 {
-  width: 249px;
+  width: 70%;
   color: #000;
   font-size: 12px;
   margin: 5px 0 5px 6px;

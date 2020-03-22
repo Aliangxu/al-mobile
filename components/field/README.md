@@ -1,5 +1,6 @@
 ---
 title: Field 区域列表组合
+preview: https://qiaoxiyan.com/al-mobile/examples/#/field
 ---
 
 区域列表垂直排列，显示当前的内容、状态和可进行的操作。
@@ -7,7 +8,7 @@ title: Field 区域列表组合
 ### 引入
 
 ```javascript
-import { Field, FieldItem } from '@/compoments'
+import { Field, FieldItem } from 'al-mobile'
 
 Vue.component(Field.name, Field)
 Vue.component(FieldItem.name, FieldItem)

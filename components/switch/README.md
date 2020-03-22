@@ -1,5 +1,6 @@
 ---
 title: Switch 开关
+preview: https://qiaoxiyan.com/al-mobile/examples/#/switch
 ---
 
 开关按钮，用于表示开关状态/两种状态之间的切换
@@ -7,7 +8,7 @@ title: Switch 开关
 ### 引入
 
 ```javascript
-import { Switch } from '@/components'
+import { Switch } from 'al-mobile'
 
 Vue.component(Switch.name, Switch)
 ```

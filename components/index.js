@@ -1,13 +1,14 @@
 /* eslint comma-dangle: ["error", "always-multiline"] */
 
 // 组件引入
-import { transformCamelCase, warn } from './_util'
+import {transformCamelCase, warn} from './_util'
 import AllHead from './all-head'
 import Content from './content'
 // import HomeHead from './home-head'
 import Foot from './foot'
 import ActionSheet from './action-sheet'
 import Captcha from './captcha'
+import Codebox from './codebox'
 import WaveCircle from './wave-circle'
 import Star from './star'
 import Calendar from './calendar'
@@ -35,7 +36,8 @@ import Ruler from './ruler'
 import Slider from './slider'
 import ActionBar from './action-bar'
 import Button from './button'
-import Swiper from './swiper/swiper'
+import Swiper from './swiper'
+import SwiperItem from './swiper-item'
 import Switch from './switch'
 import SwitchItem from './switch-item'
 import ImageReader from './image-reader'
@@ -54,7 +56,15 @@ import ActivityIndicator from './activity-indicator'
 import NumberKeyboard from './number-keyboard'
 import Textarea from './textarea'
 import TabBar from './tab-bar'
-
+import Tag from './tag'
+import Tabs from './tabs'
+import TabPane from './tab-pane'
+import ScrollView from './scroll-view'
+import CellItem from './cell-item'
+import TabPicker from './tab-picker'
+import DetailItem from './detail-item'
+import Bill from './bill'
+import ContentLoader from './content-loader'
 
 // import Audio from './audio'
 // import Video from './video'
@@ -64,166 +74,188 @@ import TabBar from './tab-bar'
 
 // 全量引入提醒
 warn(
-    'You are using a whole package of n22-mobile, ' +
+  'You are using a whole package of n22-mobile, ' +
     'please use https://www.npmjs.com/package/babel-plugin-import to reduce app bundle size.',
-    'warn',
+  'warn',
 )
 
-/* global AL_VERSION */
-// const version = /* @echo MAN_VERSION */
-const version = '0.1.0'
+/* global MAN_VERSION */
+const version = /* @echo MAN_VERSION */ MAN_VERSION
+// const version = '0.1.0'
 
 // 单个组件暴露
 export const components = {
-    AllHead,
-    Content,
-    // HomeHead,
-    Foot,
-    ActionSheet,
-    Captcha,
-    WaveCircle,
-    Star,
-    Calendar,
-    NoticeBar,
-    InformationBar,
-    Radio,
-    RadioItem,
-    RadioList,
-    Amount,
-    ListTabs,
-    // Search,
-    Steps,
-    InputItem,
-    Field,
-    FieldItem,
-    Icon,
-    Popup,
-    PopupTitleBar,
-    Picker,
-    DatePicker,
-    DropSelectItem,
-    Dialog,
-    Cashier,
-    Ruler,
-    Slider,
-    ActionBar,
-    Button,
-    Swiper,
-    Switch,
-    SwitchItem,
-    ImageReader,
-    ImageViewer,
-    // CASign,
-    Check,
-    // CheckBox,//--2019-08-15-aliang暂时关闭引用
-    CheckGroup,
-    CheckList,
-    Agree,
-    Progress,
-    ScrollTable,
-    Work,
-    Toast,
-    ActivityIndicator,
-    Textarea,
-    TabBar,
+  AllHead,
+  Content,
+  // HomeHead,
+  Foot,
+  ActionSheet,
+  Captcha,
+  Codebox,
+  WaveCircle,
+  Star,
+  Calendar,
+  NoticeBar,
+  InformationBar,
+  Radio,
+  RadioItem,
+  RadioList,
+  Amount,
+  ListTabs,
+  // Search,
+  Steps,
+  InputItem,
+  Field,
+  FieldItem,
+  Icon,
+  Popup,
+  PopupTitleBar,
+  Picker,
+  DatePicker,
+  DropSelectItem,
+  Dialog,
+  Cashier,
+  Ruler,
+  Slider,
+  ActionBar,
+  Button,
+  Swiper,
+  SwiperItem,
+  Switch,
+  SwitchItem,
+  ImageReader,
+  ImageViewer,
+  // CASign,
+  Check,
+  // CheckBox,//--2019-08-15-aliang暂时关闭引用
+  CheckGroup,
+  CheckList,
+  Agree,
+  Progress,
+  ScrollTable,
+  Work,
+  Toast,
+  ActivityIndicator,
+  NumberKeyboard,
+  Textarea,
+  TabBar,
+  Tag,
+  Tabs,
+  TabPane,
+  ScrollView,
+  CellItem,
+  TabPicker,
+  DetailItem,
+  Bill,
+  ContentLoader,
 
-
-    // Audio,
-    // Video,
-    // Page,
-    // ExamItem
-    /* @init<%${componentNameUpper},%> */
+  // Audio,
+  // Video,
+  // Page,
+  // ExamItem
+  /* @init<%${componentNameUpper},%> */
 }
 
 // 定义插件安装方法
-const install = function (Vue) {
-    if (!Vue || install.installed) {
-        return
+const install = function(Vue) {
+  if (!Vue || install.installed) {
+    return
+  }
+  const componentsNames = Object.keys(components)
+  componentsNames.forEach(name => {
+    const component = components[name]
+    if (component.name) {
+      Vue.component(component.name, component) // kebab-case
+      Vue.component(transformCamelCase(`-${component.name}`), component) // PascalCase
     }
-    const componentsNames = Object.keys(components)
-    componentsNames.forEach(name => {
-        const component = components[name]
-        if (component.name) {
-          Vue.component(component.name, component) // kebab-case
-          Vue.component(transformCamelCase(`-${component.name}`), component) // PascalCase
-        }
-    })
+  })
 
-    // 全局服务注入
-    //   Vue.prototype.$toast = Toast
-    //   Vue.prototype.$dialog = Dialog
-    //   Vue.prototype.$actionsheet = ActionSheet
+  // 全局服务注入
+  //   Vue.prototype.$toast = Toast
+  //   Vue.prototype.$dialog = Dialog
+  //   Vue.prototype.$actionsheet = ActionSheet
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
-    install(window.Vue)
+  install(window.Vue)
 }
 
 // 集合组件暴露
 export {
-    install,
-    version,
-    AllHead,
-    Content,
-    // HomeHead,
-    Foot,
-    ActionSheet,
-    Captcha,
-    WaveCircle,
-    Star,
-    Calendar,
-    NoticeBar,
-    InformationBar,
-    Radio,
-    RadioItem,
-    RadioList,
-    Amount,
-    ListTabs,
-    // Search,
-    Steps,
-    InputItem,
-    Field,
-    FieldItem,
-    Icon,
-    Popup,
-    PopupTitleBar,
-    Picker,
-    DatePicker,
-    DropSelectItem,
-    Dialog,
-    Cashier,
-    Ruler,
-    Slider,
-    ActionBar,
-    Button,
-    Swiper,
-    Switch,
-    SwitchItem,
-    ImageReader,
-    ImageViewer,
-    // CASign,
-    Check,
-    // CheckBox,//--2019-08-15-aliang暂时关闭引用
-    CheckGroup,
-    CheckList,
-    Agree,
-    Progress,
-    ScrollTable,
-    Work,
-    Toast,
-    ActivityIndicator,
-    Textarea,
-    TabBar,
+  install,
+  version,
+  AllHead,
+  Content,
+  // HomeHead,
+  Foot,
+  ActionSheet,
+  Captcha,
+  Codebox,
+  WaveCircle,
+  Star,
+  Calendar,
+  NoticeBar,
+  InformationBar,
+  Radio,
+  RadioItem,
+  RadioList,
+  Amount,
+  ListTabs,
+  // Search,
+  Steps,
+  InputItem,
+  Field,
+  FieldItem,
+  Icon,
+  Popup,
+  PopupTitleBar,
+  Picker,
+  DatePicker,
+  DropSelectItem,
+  Dialog,
+  Cashier,
+  Ruler,
+  Slider,
+  ActionBar,
+  Button,
+  Swiper,
+  SwiperItem,
+  Switch,
+  SwitchItem,
+  ImageReader,
+  ImageViewer,
+  // CASign,
+  Check,
+  // CheckBox,//--2019-08-15-aliang暂时关闭引用
+  CheckGroup,
+  CheckList,
+  Agree,
+  Progress,
+  ScrollTable,
+  Work,
+  Toast,
+  ActivityIndicator,
+  NumberKeyboard,
+  Textarea,
+  TabBar,
+  Tag,
+  Tabs,
+  TabPane,
+  ScrollView,
+  CellItem,
+  TabPicker,
+  DetailItem,
+  Bill,
+  ContentLoader,
 
-
-    // Audio,
-    // Video,
-    // Page,
-    // ExamItem
-    /* @init<%${componentNameUpper},%> */
+  // Audio,
+  // Video,
+  // Page,
+  // ExamItem
+  /* @init<%${componentNameUpper},%> */
 }
 
 export default {
-    install,
-    version,
+  install,
+  version,
 }

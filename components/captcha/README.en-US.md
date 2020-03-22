@@ -1,13 +1,13 @@
 ---
 title: Captcha
-preview: https://mand-mobile.github.io/2x-doc/examples/#/captcha
+preview: https://qiaoxiyan.com/al-mobile/examples/#/captcha
 ---
 SMS code confirming dialog
 
 ### Import
 
 ```javascript
-import { Captcha } from '@/components'
+import { Captcha } from 'al-mobile'
 
 Vue.component(Captcha.name, Captcha)
 ```

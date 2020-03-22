@@ -1,6 +1,6 @@
 ---
 title: Captcha 验证码
-preview: https://mand-mobile.github.io/2x-doc/examples/#/captcha
+preview: https://qiaoxiyan.com/al-mobile/examples/#/captcha
 ---
 
 验证码校验窗口
@@ -8,7 +8,7 @@ preview: https://mand-mobile.github.io/2x-doc/examples/#/captcha
 ### 引入
 
 ```javascript
-import { Captcha } from '@/components'
+import { Captcha } from 'al-mobile'
 
 Vue.component(Captcha.name, Captcha)
 ```

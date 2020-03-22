@@ -1,5 +1,5 @@
 <template>
-  <div :class="{al_head:headBottom}" class="bar">
+  <div :class="{ al_head: headBottom }" class="bar">
     <!-- <van-nav-bar
       :title="title"
       :left-text="$t('edit.backBtn')"
@@ -13,13 +13,15 @@
     <slot>
       <div
         class="n22-nav-bar n22-nav-bar--fixed"
-        :class="{'n22-hairline--bottom':hairline}"
+        :class="{ 'n22-hairline--bottom': hairline }"
         :style="style"
       >
         <div
           class="n22-nav-bar__left"
-          :style="{color:(opacityStyle.backgroundColor?opacityStyle.textColor:'')}"
-          @click="leftText?$emit('click-left'):onClickLeft()"
+          :style="{
+            color: opacityStyle.backgroundColor ? opacityStyle.textColor : ''
+          }"
+          @click="leftText ? $emit('click-left') : onClickLeft()"
         >
           <slot name="left">
             <!-- <icon
@@ -29,29 +31,39 @@
             />-->
             <!-- <i v-if="leftArrow" class="fa fa-angle-left"></i> -->
 
-            <svg-icon
+            <n22-icon
               v-if="leftTextIcon"
               class="back_icon"
-              :style="{color:(opacityStyle.backgroundColor?opacityStyle.textColor:'')}"
-              :icon-class="leftTextIcon"
-            ></svg-icon>
+              :style="{
+                color: opacityStyle.backgroundColor
+                  ? opacityStyle.textColor
+                  : ''
+              }"
+              :name="leftTextIcon"
+            ></n22-icon>
             <!-- <a> -->
             <span
               v-if="leftText"
-              v-text="leftText?leftText:$t('edit.backBtn')"
-              :style="{color:(opacityStyle.backgroundColor?opacityStyle.textColor:'')}"
+              v-text="leftText ? leftText : $t('edit.backBtn')"
+              :style="{
+                color: opacityStyle.backgroundColor
+                  ? opacityStyle.textColor
+                  : ''
+              }"
               class="n22-nav-bar__text"
             ></span>
             <!-- </a> -->
           </slot>
         </div>
         <div
-          :style="{color:(opacityStyle.backgroundColor?opacityStyle.textColor:'')}"
+          :style="{
+            color: opacityStyle.backgroundColor ? opacityStyle.textColor : ''
+          }"
           class="n22-ellipsis n22-nav-bar__title"
         >
           <slot name="title">
             <span
-              v-if="title=='search_all'"
+              v-if="title == 'search_all'"
               class="algolia-autocomplete000"
               slot="msite-title"
               style="position: relative; display: inline-block; direction: ltr;"
@@ -63,31 +75,45 @@
                   v-bind="$attrs"
                   type="search"
                   id="search_query"
-                  @focus="searchFocusDefault?$emit('search-focus'):searchFocus()"
+                  @focus="
+                    searchFocusDefault ? $emit('search-focus') : searchFocus()
+                  "
                   :placeholder="placeholder"
                   v-focus="searchAutoFocus"
                   class="search_query search_query_icon"
                   style="position: relative; vertical-align: top;"
-                >
+                />
               </form>
             </span>
-            <span v-else class="al-head-title-c">{{ title?title:$route.meta.title }}</span>
+            <span v-else class="al-head-title-c">{{
+              title ? title : $route.meta.title
+            }}</span>
           </slot>
         </div>
         <div
           class="n22-nav-bar__right"
-          :style="{color:(opacityStyle.backgroundColor?opacityStyle.textColor:'')}"
+          :style="{
+            color: opacityStyle.backgroundColor ? opacityStyle.textColor : ''
+          }"
           @click="$emit('click-right')"
         >
           <slot name="right">
-            <svg-icon
+            <n22-icon
               v-if="rightTextIcon"
               class="back_icon"
-              :style="{color:(opacityStyle.backgroundColor?opacityStyle.textColor:'')}"
-              :icon-class="rightTextIcon"
-            ></svg-icon>
+              :style="{
+                color: opacityStyle.backgroundColor
+                  ? opacityStyle.textColor
+                  : ''
+              }"
+              :name="rightTextIcon"
+            ></n22-icon>
             <span
-              :style="{color:(opacityStyle.backgroundColor?opacityStyle.textColor:'')}"
+              :style="{
+                color: opacityStyle.backgroundColor
+                  ? opacityStyle.textColor
+                  : ''
+              }"
               v-if="rightText"
               v-text="rightText"
               class="n22-nav-bar__text"
@@ -102,33 +128,34 @@
 
 <script>
 // import { mapState, mapActions, mapMutations } from "vuex";
+import Icon from '../icon'
 
 export default {
-  name: "al-all-head",
+  name: 'al-all-head',
   inheritAttrs: false,
-  components: {},
+  components: {
+    [Icon.name]: Icon
+  },
   directives: {
     focus: {
       // 接收3个参数el binding vnode
-      inserted(el, binding, vnode) {
-        console.log("%c binding", "color:#00CD00", binding);
+      inserted (el, binding, vnode) {
+        console.log('%c binding', 'color:#00CD00', binding)
+        console.log('%c vnode', 'color:#00CD00', vnode)
         if (binding.value) {
-          el.focus();
+          el.focus()
         }
       }
     }
   },
-  mounted() {
-    //获取用户信息
-    // this.getUserInfo();
-  },
+  mounted () {},
   props: {
     title: String,
     fixed: Boolean,
     leftText: String,
     leftTextIcon: {
       type: String,
-      default: "back"
+      default: 'back'
     },
     rightText: String,
     rightTextIcon: String,
@@ -152,7 +179,7 @@ export default {
     opacityStyle: {
       type: Object,
       default: () => {
-        return {};
+        return {}
       }
     },
     searchFocusDefault: {
@@ -165,28 +192,29 @@ export default {
     },
     placeholder: {
       type: String,
-      default: "请输入关键字"
+      default: '请输入关键字'
     },
     value: String,
-    backUrl: String,
+    backUrl: String
   },
   computed: {
     // ...mapState(["common"]),
-    listeners() {
+    listeners () {
       return {
         // ...this.$listeners,
         input: this.onInput,
         keypress: this.onKeypress,
         focus: this.onFocus,
         blur: this.onBlur
-      };
+      }
     },
-    style() {
+    style () {
       let z = {
         zIndex: this.zIndex
-      };
-      let o3 = $.extend({}, z, this.opacityStyle);
-      return o3;
+      }
+      // eslint-disable-next-line
+      let o3 = $.extend({}, z, this.opacityStyle)
+      return o3
     }
   },
   methods: {
@@ -196,8 +224,8 @@ export default {
     //   "SHOWSEARCH"
     // ]),
     // native maxlength not work when type = number
-    format(target = this.$refs.input) {
-      let { value } = target;
+    format (target = this.$refs.input) {
+      let { value } = target
       // const { maxlength } = this.$attrs;
 
       // if (this.type === 'number' && this.isDef(maxlength) && value.length > maxlength) {
@@ -205,54 +233,54 @@ export default {
       //   target.value = value;
       // }
 
-      return value;
+      return value
     },
-    onInput(event) {
-      this.$emit("input", this.format(event.target));
+    onInput (event) {
+      this.$emit('input', this.format(event.target))
     },
-    onFocus(event) {
+    onFocus (event) {
       // this.focused = true;
-      this.$emit("focus", event);
+      this.$emit('focus', event)
       // hack for safari
       /* istanbul ignore if */
       if (this.readonly) {
-        this.blur();
+        this.blur()
       }
     },
-    onBlur(event) {
+    onBlur (event) {
       // this.focused = false;
-      this.$emit("blur", event);
+      this.$emit('blur', event)
     },
-    onKeypress(event) {
-      if (this.type === "number") {
-        const { keyCode } = event;
-        const allowPoint = String(this.value).indexOf(".") === -1;
+    onKeypress (event) {
+      if (this.type === 'number') {
+        const { keyCode } = event
+        const allowPoint = String(this.value).indexOf('.') === -1
         const isValidKey =
           (keyCode >= 48 && keyCode <= 57) ||
           (keyCode === 46 && allowPoint) ||
-          keyCode === 45;
+          keyCode === 45
         if (!isValidKey) {
-          event.preventDefault();
+          event.preventDefault()
         }
       }
       // trigger blur after click keyboard search button
       /* istanbul ignore next */
-      if (this.type === "search" && event.keyCode === 13) {
-        this.blur();
+      if (this.type === 'search' && event.keyCode === 13) {
+        this.blur()
       }
-      this.$emit("keypress", event);
+      this.$emit('keypress', event)
     },
-    onClickLeft() {
-      this.back(this.backUrl);
+    onClickLeft () {
+      this.back(this.backUrl)
     },
-    searchFocus() {
+    searchFocus () {
       // this.SHOWSEARCH(true);
     }
     // onClickRight() {
     //   // Toast('按钮');
     // }
   }
-};
+}
 </script>
 
 <style lang="stylus">

@@ -45,7 +45,7 @@ export default {
     initDocSearch(lang) {
       this.docsearchIns = docsearch({ 
         apiKey: 'f6464cd4e62607a36f03b4cd59d2141b', 
-        indexName: 'mand-mobile', 
+        indexName: 'al-mobile', 
         inputSelector: '#search-query-nav',
         algoliaOptions: { 'facetFilters': [`lang:${lang}`] },
         debug: process.env.NODE_ENV !== 'production'

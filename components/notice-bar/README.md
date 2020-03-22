@@ -1,5 +1,6 @@
 ---
 title: NoticeBar 通告栏
+preview: https://qiaoxiyan.com/al-mobile/examples/#/notice-bar
 ---
 
 通常用于系统提醒、活动提醒等通知
@@ -7,7 +8,7 @@ title: NoticeBar 通告栏
 ### 引入
 
 ```javascript
-import { NoticeBar } from '@/compoments'
+import { NoticeBar } from 'al-mobile'
 
 Vue.component(NoticeBar.name, NoticeBar)
 ```

@@ -1,5 +1,6 @@
 ---
 title: ActionSheet
+preview: https://qiaoxiyan.com/al-mobile/examples/#/action-sheet
 ---
 
 Support scenario-relevent operations

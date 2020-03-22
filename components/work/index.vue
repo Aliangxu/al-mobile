@@ -1,7 +1,7 @@
 <template>
   <div class="n22-picker">
     <n22-popup
-      :class="[isAppendTo ? 'n22-popup-is-append-to' : '',]"
+      :class="[isAppendTo ? 'n22-popup-is-append-to' : '']"
       v-model="isPickerShow"
       position="bottom"
       :mask-closable="maskClosable"
@@ -22,7 +22,11 @@
         <div class="ctc_div_mask" style="z-index: 100;">
           <div ref="ctc_div_markcenctinput" class="ctc_div_markcenct">
             <div v-if="isShowSearch" class="ctc_div_query">
-              <img class="prd_img_query" src="/static/qijianwei/SearchGlyph.png" @click="queryName">
+              <img
+                class="prd_img_query"
+                src="/static/qijianwei/SearchGlyph.png"
+                @click="queryName"
+              />
               <input
                 v-model="oName"
                 class="prd_input_query"
@@ -31,19 +35,20 @@
                 @change="queryName"
                 @focus="focusInput"
                 @blur="blurInput"
-              >
+              />
             </div>
             <div class="ctc_div_queryitem">
               <!-- work头部展示选择 -->
               <div class="select_now">
                 选择：
-                <span v-for="(sel,si) in selectArray" :key="si">
+                <span v-for="(sel, si) in selectArray" :key="si">
                   <span
                     class="crumb"
-                    v-if="sel&&sel.text"
-                    @click="selectClass(si,activei)"
-                  >{{sel.text}}</span>
-                  <span class="fenge" v-if="sel&&sel.text">&gt;</span>
+                    v-if="sel && sel.text"
+                    @click="selectClass(si, activei)"
+                    >{{ sel.text }}</span
+                  >
+                  <span class="fenge" v-if="sel && sel.text">&gt;</span>
                 </span>
               </div>
               <transition-group
@@ -52,27 +57,32 @@
                 @after-leave="afterLeave()"
               >
                 <div
-                  v-for="(item,index) in arrItemAll"
-                  :key="index+1"
-                  v-if="activei>=index"
+                  v-for="(item, index) in arrItemAll"
+                  :key="index + 1"
+                  v-if="activei >= index"
                   style="z-index: 100;position: relative;"
                 >
                   <div
                     class="ctc_div_queryitemall"
-                    :class="`ctc_div_queryitemall-child${index+1}`"
-                    @click="selectClass(index,activei)"
+                    :class="`ctc_div_queryitemall-child${index + 1}`"
+                    @click="selectClass(index, activei)"
                   >
                     <div
                       ref="sss"
-                      v-for="(zy,mndex) in item"
-                      @click="changeSkider(zy,mndex,index)"
+                      v-for="(zy, mndex) in item"
+                      @click="changeSkider(zy, mndex, index)"
                       class="ctc_div_item"
                       :key="zy.key"
                     >
                       <span
                         class="pr_span_title marRightitem"
-                        :class="dealSelectSty(zy,mndex,index)?'is-select-class':'not-select-class'"
-                      >{{zy.text}}</span>
+                        :class="
+                          dealSelectSty(zy, mndex, index)
+                            ? 'is-select-class'
+                            : 'not-select-class'
+                        "
+                        >{{ zy.text }}</span
+                      >
                     </div>
                   </div>
                 </div>
@@ -85,19 +95,18 @@
   </div>
 </template>
 
-<script>
-import Popup from '../popup'
+<script>import Popup from '../popup'
 import PopupTitleBar from '../popup/title-bar'
 import Toast from '../toast'
-import pickerLevelMixin from "./mixins";
+import pickerLevelMixin from './mixins'
 
 export default {
-  name: "n22-work",
-  title: "职业选择组件",
+  name: 'n22-work',
+  title: '职业选择组件',
   components: {
-    [Popup.name]: Popup, //引入组件样例如此
-    [PopupTitleBar.name]: PopupTitleBar, //
-    [Toast.name]: Toast //
+    [Popup.name]: Popup,
+    [PopupTitleBar.name]: PopupTitleBar,
+    [Toast.name]: Toast,
   },
   mixins: [pickerLevelMixin],
   props: {
@@ -105,78 +114,79 @@ export default {
 
     disabled: {
       type: Boolean,
-      default: false
+      default: false,
     },
     value: {
       type: Boolean,
-      default: false
+      default: false,
     },
     data: {
       type: Array,
-      default: () => ([]),
+      default: () => [],
     },
     isShowSearch: {
       type: Boolean,
-      default: false
+      default: false,
     },
     maxLevel: {
       type: Number,
-      default: 3
+      default: 3,
     },
-    selectValue: [String,Number,Array,Object],
+    selectValue: [String, Number, Array, Object],
     isAppendTo: {
       type: Boolean,
     },
     notSelectIdf: {
       type: String,
-      default: "",
-    }
+      default: '',
+    },
   },
   data() {
     return {
       workCodeData: this.data,
-      arrItemAll: [], //所有级的总数组，数组里面每个index即为每一级的数组
-      selectArray: [], //所选所有级的数据
+      // 所有级的总数组，数组里面每个index即为每一级的数组
+      arrItemAll: [],
+      // 所选所有级的数据
+      selectArray: [],
       activei: 0,
       activeis: true,
       isPickerShow: false,
       levelArray: this.levelArrayProp || [2, 4, 6],
-
-      arrItemBig: "",
-      arrItemSmall: "",
-      arrItem: "",
+      arrItemBig: '',
+      arrItemSmall: '',
+      arrItem: '',
       isQueryName: false,
       selectBigItem: {
         big: {
-          text: "",
-          value: ""
+          text: '',
+          value: '',
         },
         small: {
-          text: "",
-          value: ""
+          text: '',
+          value: '',
         },
         work: {
-          text: "",
-          value: this.value
-        }
+          text: '',
+          value: this.value,
+        },
       },
       // value: 0,
-      oName: "",
+      oName: '',
       allUseLoad: false,
-      bottomText: "上拉加载更多...",
-      selectImg: "",
-      unselectImg: ""
-    };
+      bottomText: '上拉加载更多...',
+      selectImg: '',
+      unselectImg: '',
+    }
   },
   computed: {
     dealSelectSty() {
       return (zy, mndex, index) => {
-        return (this.selectArray[index] && this.selectArray[index].value) ==
-          zy.value
-          ? true
-          : false;
-      };
-    }
+        return (
+          // eslint-disable-next-line
+          (this.selectArray[index] && this.selectArray[index].value) == zy.value
+        )
+      }
+    },
   },
   watch: {
     value(val) {
@@ -192,57 +202,54 @@ export default {
     //   console.log("%c value监听", "color:#00CD00", val);
     //   this.dealData(val);
     // },
-    oName(val, oldval) {
+    oName(val) {
       if (this.isQueryName) {
-        console.log("%c oName监听到值变更", "color:#00CD00", val);
-        this.queryName();
+        console.log('%c oName监听到值变更', 'color:#00CD00', val)
+        this.queryName()
       }
-    }
+    },
   },
   mounted() {
     // console.log("%c work-mounted", "color:#00CD00", this.data);
     // console.log("%c work-mounted", "color:#00CD00", this.selectValue);
-    this.$_initPicker();
+    this.$_initPicker()
   },
   created() {
-    this.occupation_init("0");
+    this.occupation_init('0')
   },
   methods: {
     $_onPickerHide() {
-      this.$emit("hide");
+      this.$emit('hide')
     },
     $_onPickerShow() {
-      this.$emit("show");
+      this.$emit('show')
     },
     $_initPicker() {
       if (this.value) {
-        this.isPickerShow = this.value;
+        this.isPickerShow = this.value
       }
-      if(this.selectValue){
-        this.dealData(this.selectValue);
+      if (this.selectValue) {
+        this.dealData(this.selectValue)
       }
     },
-    afterEnter(val) {
-      this.activeis = true;
+    afterEnter() {
+      this.activeis = true
     },
-    afterLeave(val) {
-      this.activeis = true;
+    afterLeave() {
+      this.activeis = true
     },
     selectClass(val, activei) {
+      // eslint-disable-next-line
       if (val != activei && this.activeis) {
-        console.log(
-          "%c 触发切换switch-activei",
-          "color:#00CD00",
-          "当前点击" + val + "点击前" + this.activei
-        );
-        const length = this.arrItemAll.length;
+        console.log('%c 触发切换switch-activei', 'color:#00CD00', '当前点击' + val + '点击前' + this.activei)
+        const length = this.arrItemAll.length
         // this.arrItemAll.splice(val+1,length-val-1);
-        this.selectArray.splice(val, length - val);
-        this.activei = val;
+        this.selectArray.splice(val, length - val)
+        this.activei = val
       }
     },
     dealData(val) {
-      for (let index = this.maxLevel-1; index>=0; index--) {
+      for (let index = this.maxLevel - 1; index >= 0; index--) {
         // let codeKey = "";
         // switch (index) {
         //   case 0:
@@ -260,60 +267,54 @@ export default {
         // if (!codeKey) {
         //   return;
         // }
-        let dataCode = this.workCodeData[index]; //00-0001-000101
-        let canSelectCodeList = [];
+        // 00-0001-000101
+        let dataCode = this.workCodeData[index]
+        let canSelectCodeList = []
         if (index !== 0) {
           canSelectCodeList = dataCode.filter(item => {
-            return (
-              item.value.indexOf(val.substr(0, this.levelArray[index - 1])) ===
-              0
-            );
-          });
+            return item.value.indexOf(val.substr(0, this.levelArray[index - 1])) === 0
+          })
         } else {
-          canSelectCodeList = dataCode;
+          canSelectCodeList = dataCode
         }
         let canSelectCode = dataCode.filter(item => {
-          return val.substr(0, this.levelArray[index]) == item.value;
-        });
-        this.$set(this.arrItemAll, index, canSelectCodeList);
-        this.$set(this.selectArray, index, canSelectCode[0]);
-        this.activei = 2;
-        console.log("%c this.arrItemAll", "color:green;", this.arrItemAll);
-        console.log("%c this.selectArray", "color:green;", this.selectArray);
+          // eslint-disable-next-line
+          return val.substr(0, this.levelArray[index]) == item.value
+        })
+        this.$set(this.arrItemAll, index, canSelectCodeList)
+        this.$set(this.selectArray, index, canSelectCode[0])
+        this.activei = 2
+        console.log('%c this.arrItemAll', 'color:green;', this.arrItemAll)
+        console.log('%c this.selectArray', 'color:green;', this.selectArray)
       }
     },
     $_onBeforeShow() {},
     $_onCancel() {
-      this.isPickerShow = false;
+      this.isPickerShow = false
     },
     $_onConfirm() {
-      this.confirmSelect();
+      this.confirmSelect()
     },
     getColumnValues() {
-      return [this.selectArray[this.maxLevel - 1]];
+      return [this.selectArray[this.maxLevel - 1]]
     },
     confirmSelect() {
-      let checkDate = this.selectArray;
-      if (
-        checkDate &&
-        checkDate.length > 0 &&
-        checkDate[this.maxLevel - 1] &&
-        checkDate[this.maxLevel - 1].value
-      ) {
-        this.activei = 3;
-        this.activeis = true;
-        this.$emit("confirm", this.getColumnValues());
+      let checkDate = this.selectArray
+      if (checkDate && checkDate.length > 0 && checkDate[this.maxLevel - 1] && checkDate[this.maxLevel - 1].value) {
+        this.activei = 3
+        this.activeis = true
+        this.$emit('confirm', this.getColumnValues())
       } else {
         Toast({
-          content: "请选择职业",
-          position: "center",
-          duration: 3000
-        });
-        return;
+          content: '请选择职业',
+          position: 'center',
+          duration: 3000,
+        })
+        return
       }
-      this.isPickerShow = false;
+      this.isPickerShow = false
     },
-    cancelOccupationSelect(index) {
+    cancelOccupationSelect() {
       // let checkDate = this.selectBigItem;
       // if (!checkDate.work.value) {
       //   Toast("请选择职业");
@@ -321,80 +322,70 @@ export default {
       // }
       // this.activei = 3;
     },
-    occupation_init(value) {
-      //初始化数据
-      this.arrItemAll = [];
-      let arrItemAll = this.workCodeData[0];
-      this.arrItemAll.push(arrItemAll);
+    // 初始化数据
+    occupation_init() {
+      this.arrItemAll = []
+      let arrItemAll = this.workCodeData[0]
+      this.arrItemAll.push(arrItemAll)
     },
     echoSelect(zy, mndex, index) {
       if (zy.AccidentRiskLevel && zy.AccidentRiskLevel === this.notSelectIdf) {
-        this.$emit("notSelectFun",zy);
-        this.activeis = true;
-        return;
+        this.$emit('notSelectFun', zy)
+        this.activeis = true
+        return
       }
-      this.$set(this.selectArray, index, zy);
+      this.$set(this.selectArray, index, zy)
       // if (!codeKey) {
       //   this.confirmSelect();
       //   return;
       // }
-      if(index+1===this.maxLevel){
-        this.confirmSelect();
-        return;
+      if (index + 1 === this.maxLevel) {
+        this.confirmSelect()
+        return
       }
-      let dataCode = this.workCodeData[index+1];
+      let dataCode = this.workCodeData[index + 1]
       let canSelectCodeList = dataCode.filter(item => {
-        return item.value.indexOf(zy.value) === 0;
-      });
-      console.log(
-        "%c 所选下一级数组-canSelectCodeList",
-        "color:green;",
-        canSelectCodeList
-      );
-      this.$set(this.arrItemAll, index + 1, canSelectCodeList);
-      this.activei = index + 1;
+        return item.value.indexOf(zy.value) === 0
+      })
+      console.log('%c 所选下一级数组-canSelectCodeList', 'color:green;', canSelectCodeList)
+      this.$set(this.arrItemAll, index + 1, canSelectCodeList)
+      this.activei = index + 1
     },
     changeSkider(zy, mndex, index) {
+      // eslint-disable-next-line
       if (index == this.activei) {
-        this.activeis = false;
-        console.log("%c changeSkider-mndex", "color:#00CD00", mndex);
-        console.log("%c changeSkider-zy", "color:#00CD00", zy);
-        this.echoSelect(zy, mndex, index);
+        this.activeis = false
+        console.log('%c changeSkider-mndex', 'color:#00CD00', mndex)
+        console.log('%c changeSkider-zy', 'color:#00CD00', zy)
+        this.echoSelect(zy, mndex, index)
       }
     },
 
     focusInput() {
-      this.isQueryName = true;
+      this.isQueryName = true
     },
     blurInput() {
-      this.isQueryName = false;
+      this.isQueryName = false
     },
     queryName() {
-      if (this.oName == "") {
-        this.echoSelect(
-          this.selectBigItem.work.pid,
-          this.selectBigItem.work.value,
-          "",
-          "",
-          "work",
-          true
-        );
+      if (this.oName === '') {
+        this.echoSelect(this.selectBigItem.work.pid, this.selectBigItem.work.value, '', '', 'work', true)
       } else {
-        var data = {
-          keyWord: this.oName,
-          orgCode: "000095"
-        };
+        // var data = {
+        //   keyWord: this.oName,
+        //   orgCode: '000095'
+        // }
         if (true) {
-          this.activei = 3;
-          this.arrItem = res.data.output;
+          this.activei = 3
+          this.arrItem = []
         } else {
-          this.arrItem = [];
+          this.arrItem = []
         }
       }
-    }
-  }
-};
-</script>
+    },
+  },
+}
+</script>
 <style lang="stylus" scoped>
 .crumb {
   // border-bottom: 1px solid #999;

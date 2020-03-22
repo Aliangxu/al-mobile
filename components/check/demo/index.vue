@@ -10,20 +10,18 @@
 	</div>
 </template>
 
-<script>
-import createDemoModule from '../../../examples/create-demo-module'
+<script>import createDemoModule from '../../../examples/create-demo-module'
 import Demo0 from './cases/demo0'
 import Demo1 from './cases/demo1'
-import Demo2 from './cases/demo2'
-import Demo3 from './cases/demo3'
-import Demo4 from './cases/demo4'
+// import Demo2 from './cases/demo2'
+// import Demo3 from './cases/demo3'
+// import Demo4 from './cases/demo4'
 import Demo5 from './cases/demo5'
 
 export default {
-  ...createDemoModule('check-group', [Demo0, Demo1, Demo2, Demo3, Demo4, Demo5]),
+  ...createDemoModule('check-group', [Demo0, Demo1, Demo5]),
 }
-
-</script>
+</script>
 n22-n22-
 <style lang="stylus">
 .n22-example.n22-example-child-check

@@ -11,123 +11,142 @@
         <slot></slot>
       </div>
       <div class="n22-toast-content" v-else>
-        <n22-icon v-if="icon" :name="icon" size="lg" :svg="iconSvg"/>
+        <n22-icon v-if="icon" :name="icon" size="lg" :svg="iconSvg" />
 
         <!-- <div v-if="icon" class="svg_class">
           <svg-icon :icon-class="icon"></svg-icon>
         </div> -->
-        <template v-if="content">
+        <!-- <template v-if="content">
+          {{maxTextNum}}
           <div
-            :class="content.length<50?'':'n22-toast-text'"
-            v-if="content&&content.match(/#(\S*)#/)===null"
+            :class="content.length < maxTextNum ? '' : 'n22-toast-text'"
+            v-if="content && content.match(/#(\S*)#/) === null"
             v-text="content"
           ></div>
-          <div :class="content.length<50?'':'n22-toast-text'" v-else>
+          <div :class="content.length < maxTextNum ? '' : 'n22-toast-text'" v-else>
             <span v-html="getContent(content)"></span>
           </div>
-        </template>
+        </template> -->
+        <toast-content
+          v-if="content"
+          :class="content.length < maxTextNum ? '' : 'n22-toast-text'"
+          :maxTextNum="maxTextNum"
+          v-model="content"
+          :isHaveNum="isHaveNum"
+        ></toast-content>
       </div>
     </n22-popup>
   </div>
 </template>
 
-<script>
-import Popup from "../popup";
+<script>import Popup from '../popup'
 import Icon from '../icon'
+import ToastContent from './toast-content.js'
 
 export default {
-  name: "n22-toast",
+  name: 'n22-toast',
 
   components: {
     [Popup.name]: Popup,
     [Icon.name]: Icon,
+    [ToastContent.name]: ToastContent,
   },
 
-  computed: {
-    getContent() {
-      return content => {
-        let con = "";
-        if(content){
-          let m = content.match(/#(\S*)#/);
-          console.log("%c m[1]", "color:green;", m[1]);
-          m[1].split(",").forEach(val => {
-            con += `${content.split(m[0])[0]}${val}${content.split(m[0])[1]}<br>`;
-          });
-        }else{
-          con = content;
-        }
-        return con;
-      };
-    }
-  },
+  // computed: {
+  //   getContent () {
+  //     return content => {
+  //       let con = ''
+  //       if (content) {
+  //         let m = content.match(/#(\S*)#/)
+  //         console.log('%c m[1]', 'color:green;', m[1])
+  //         m[1].split(',').forEach(val => {
+  //           con += `${content.split(m[0])[0]}${val}${
+  //             content.split(m[0])[1]
+  //           }<br>`
+  //         })
+  //       } else {
+  //         con = content
+  //       }
+  //       return con
+  //     }
+  //   }
+  // },
 
   props: {
+    maxTextNum: {
+      type: Number,
+      default: 40,
+    },
+    isHaveNum: {
+      type: Boolean,
+      default: true,
+    },
     icon: {
       type: String,
-      default: ""
+      default: '',
     },
     iconSvg: {
       type: Boolean,
-      default: false
+      default: false,
     },
     content: {
-      type: [String, Number,Object],
-      default: ""
+      type: [String, Number, Object],
+      default: '',
     },
     duration: {
       type: Number,
-      default: 0
+      default: 0,
     },
     position: {
       // top, left, bottom
       type: String,
-      default: "center"
+      default: 'center',
     },
     hasMask: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
 
   data() {
     return {
-      visible: false
-    };
+      visible: false,
+    }
   },
 
   beforeDestroy() {
     if (this.$_timer) {
-      clearTimeout(this.$_timer);
+      clearTimeout(this.$_timer)
     }
   },
 
   methods: {
     $_onShow() {
-      this.$emit("show");
+      this.$emit('show')
     },
     $_onHide() {
-      this.$emit("hide");
+      this.$emit('hide')
     },
     fire() {
       if (this.$_timer) {
-        clearTimeout(this.$_timer);
+        clearTimeout(this.$_timer)
       }
       if (this.visible && this.duration) {
         this.$_timer = setTimeout(() => {
-          this.hide();
-        }, this.duration);
+          this.hide()
+        }, this.duration)
       }
     },
     show() {
-      this.visible = true;
-      this.fire();
+      this.visible = true
+      this.fire()
     },
     hide() {
-      this.visible = false;
-    }
-  }
-};
-</script>
+      this.visible = false
+    },
+  },
+}
+</script>
 
 <style lang="stylus">
 .n22-toast {
@@ -193,9 +212,10 @@ export default {
 }
 
 .n22-toast-text {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
+  text-align justify
+  // white-space: nowrap;
+  // text-overflow: ellipsis;
+  // overflow: hidden;
 }
 
 .svg_class {

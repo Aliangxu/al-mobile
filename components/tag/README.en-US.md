@@ -1,6 +1,6 @@
 ---
 title: Tag
-preview: https://didi.github.io/mand-mobile/examples/#/tag
+preview: https://qiaoxiyan.com/al-mobile/examples/#/tag
 ---
 
 For showing the area status 
@@ -8,7 +8,7 @@ For showing the area status
 ### Import
 
 ```javascript
-import { Tag } from 'mand-mobile'
+import { Tag } from 'al-mobile'
 
 Vue.component(Tag.name, Tag)
 ```

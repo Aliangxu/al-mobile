@@ -1,9 +1,9 @@
 <template>
-  <div class="md-cg">
-    <h1 class="md-cg-title">Mand Mobile</h1>
-    <h1 class="md-cg-subtitle">面向金融场景的移动端Vue组件库</h1>
-    <div class="md-cg-logo">
-      <img src="//manhattan.didistatic.com/static/manhattan/mand/docs/mand-logo-black.svg" alt="">
+  <div class="n22-cg">
+    <h1 class="n22-cg-title">Al Mobile</h1>
+    <h1 class="n22-cg-subtitle">面向金融场景的移动端Vue组件库</h1>
+    <div class="n22-cg-logo">
+      <img src="http://qiaoxiyan.com/al/images/al.svg" alt="">
     </div>
     <section
       v-for="(category, i) in components" :key="i"
@@ -14,7 +14,7 @@
         :class="{'active': category.show}"
         @click="toggleCategory(i, category)">
         {{ category.name }}&nbsp;&nbsp;<span>{{ category.text }}</span>
-        <md-icon name="arrow-right" size="md"></md-icon>
+        <n22-icon name="right_arrow" size="md"></n22-icon>
       </div>
       <transition name="slide-fade">
         <div class="cg-category-list" v-show="category.show">
@@ -24,7 +24,7 @@
             @click="goToComponent(item.path)">
             <div class="cg-category-item-inner">
               {{ item.name }} - {{ item.text }}
-              <md-icon name="arrow-right" size="sm"></md-icon>
+              <n22-icon name="right_arrow" size="sm"></n22-icon>
             </div>
           </div>
           <div class="cg-category-item" @click="toggleCategory(i, category)">
@@ -33,7 +33,7 @@
         </div>
       </transition>
     </section>
-    <h1 class="md-cg-copyright">Produced By DiDi - FDC &times; MFE</h1>
+    <h1 class="n22-cg-copyright">Produced By aliang</h1>
   </div>
 </template>
 
@@ -68,30 +68,30 @@ export default {
 block()
   float left
   width 100%
-.md-cg
-  padding 20px 20px 50px
+.n22-cg
+  padding 10px 10px 25px
   clearfix()
-  .md-cg-title
+  .n22-cg-title
     block()
-    margin 20px 0
+    margin 10px 0
     font-size font-heading-large
     font-weight font-weight-normal
     color color-text-minor
     span
       color color-text-base
-  .md-cg-subtitle
+  .n22-cg-subtitle
     block()
-    margin-bottom 30px
+    margin-bottom 15px
     font-size font-body-normal
     font-weight 300
     color color-text-minor
-  .md-cg-logo
+  .n22-cg-logo
     position fixed
-    top -.3rem
-    right -.3rem
-    width 2rem
-    height 2rem
-    opacity .05
+    top -.15rem
+    right -.15rem
+    width 1rem
+    height 1rem
+    opacity .5
     z-index -1
     img
       width 100%
@@ -99,8 +99,8 @@ block()
     block()
     position relative
     z-index 3
-    height 120px
-    margin-bottom 20px
+    height 60px
+    margin-bottom 10px
     border-radius border-width-base
     transform translate(0, 0)
     &.active
@@ -110,9 +110,9 @@ block()
       position relative
       z-index 2
       block()
-      height 120px
+      height 60px
       padding 0 h-gap-lg
-      line-height 120px
+      line-height 60px
       font-size font-heading-normal
       font-family DINAlternate-Bold
       // font-weight font-weight-medium
@@ -124,13 +124,13 @@ block()
       span
         font-size font-body-large
         color color-text-minor
-      .md-icon
+      .n22-icon
         position absolute
         right h-gap-lg
         top 50%
         transform translateY(-50%)
         transition transform .3s ease-in-out-quint
-      &.active .md-icon
+      &.active .n22-icon
           transform translateY(-50%) rotate(90deg)
       &:before
         content ""
@@ -163,13 +163,13 @@ block()
         .cg-category-item-inner
           position relative
           block()
-          height 100px
-          line-height 100px
+          height 50px
+          line-height 50px
           font-size font-body-normal
           font-family DINAlternate-Bold
           color color-text-minor
           hairline(bottom, color-border-base)
-          .md-icon
+          .n22-icon
             position absolute
             right 0
             top 50%
@@ -182,10 +182,10 @@ block()
               display none
 
 
-  .md-cg-copyright
+  .n22-cg-copyright
     position fixed
     left 0
-    bottom 20px
+    bottom 10px
     width 100%
     text-align center
     font-size font-minor-normal

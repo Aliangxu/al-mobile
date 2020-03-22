@@ -133,88 +133,152 @@
 
 <template>
   <div>
-    <a class="radio-component" v-for="(option,i) in options" :key="option.key">
+    <a class="radio-component" v-for="(option, i) in options" :key="option.key">
       <div class="radio-cell" v-if="isShow">
         <div class="radio-cell-title">
           <label class="radio-label">
             <slot name="input-box">
               <!-- type为单选and多选 -->
-              <span v-if="(type=='radio'||type=='checkbox')" class="input-box">
-                <template v-if="mode=='select'">
+              <span
+                v-if="type == 'radio' || type == 'checkbox'"
+                class="input-box"
+              >
+                <template v-if="mode == 'select'">
                   <input
-                    v-if="type=='checkbox'"
+                    v-if="type == 'checkbox'"
                     :name="option.optionId"
                     :id="`${mode}-${i}`"
-                    :class="(type=='radio'||type=='checkbox')?'radio-input':'radio-inputok'"
+                    :class="
+                      type == 'radio' || type == 'checkbox'
+                        ? 'radio-input'
+                        : 'radio-inputok'
+                    "
                     v-model="currentValue"
                     type="checkbox"
-                    :disabled="option.disabled=='disabled'"
-                    :value="(option.value)"
-                  >
+                    :disabled="option.disabled == 'disabled'"
+                    :value="option.value"
+                  />
                   <input
-                    v-if="type=='radio'"
+                    v-if="type == 'radio'"
                     :name="option.optionId"
                     :id="`${mode}-${i}`"
-                    :class="(type=='radio'||type=='checkbox')?'radio-input':'radio-inputok'"
+                    :class="
+                      type == 'radio' || type == 'checkbox'
+                        ? 'radio-input'
+                        : 'radio-inputok'
+                    "
                     v-model="currentValue"
                     type="radio"
-                    :disabled="option.disabled=='disabled'"
-                    :value="(option.value)"
-                  >
+                    :disabled="option.disabled == 'disabled'"
+                    :value="option.value"
+                  />
                   <span class="input-box-circle-select circle_select">
-                    {{option.disabled}}
-                    <svg-icon
-                      v-show="type=='radio'?currentValue==(option.value):currentValue.indexOf((option.value))>-1"
-                      icon-class="correct"
-                    ></svg-icon>
+                    {{ option.disabled }}
+                    <n22-icon
+                      v-show="
+                        type == 'radio'
+                          ? currentValue == option.value
+                          : currentValue.indexOf(option.value) > -1
+                      "
+                      name="correct"
+                    ></n22-icon>
                   </span>
                   <span
                     class="desc_c_select"
-                    :class="{'input-box-text-disabled':option.disabled}"
-                  >{{option.text}}</span>
+                    :class="{ 'input-box-text-disabled': option.disabled }"
+                    >{{ option.text }}</span
+                  >
                 </template>
                 <template v-else>
                   <input
-                    v-if="type=='checkbox'"
+                    v-if="type == 'checkbox'"
                     :name="option.optionId"
                     :id="`${mode}-${i}`"
-                    :class="(type=='radio'||type=='checkbox')?'radio-input':'radio-inputok'"
+                    :class="
+                      type == 'radio' || type == 'checkbox'
+                        ? 'radio-input'
+                        : 'radio-inputok'
+                    "
                     v-model="currentValue"
                     type="checkbox"
-                    :disabled="disabled===false?otherValue.disabled=='disabled':disabled"
-                    :value="(option.optionId || option)"
-                  >
+                    :disabled="
+                      disabled === false
+                        ? otherValue.disabled == 'disabled'
+                        : disabled
+                    "
+                    :value="option.optionId || option"
+                  />
                   <input
-                    v-if="type=='radio'"
+                    v-if="type == 'radio'"
                     :name="option.optionId"
                     :id="`${mode}-${i}`"
-                    :class="(type=='radio'||type=='checkbox')?'radio-input':'radio-inputok'"
+                    :class="
+                      type == 'radio' || type == 'checkbox'
+                        ? 'radio-input'
+                        : 'radio-inputok'
+                    "
                     v-model="currentValue"
                     type="radio"
-                    :disabled="disabled===false?otherValue.disabled=='disabled':disabled"
-                    :value="(option.optionId || option)"
-                  >
+                    :disabled="
+                      disabled === false
+                        ? otherValue.disabled == 'disabled'
+                        : disabled
+                    "
+                    :value="option.optionId || option"
+                  />
                   <span
                     class="input-box-circle"
-                    :class="dealTrueOrFalse(otherValue.topicAnswer,(option.optionId || option),i,'class')"
+                    :class="
+                      dealTrueOrFalse(
+                        otherValue.topicAnswer,
+                        option.optionId || option,
+                        i,
+                        'class'
+                      )
+                    "
                   >
-                    <svg-icon
-                      v-if="dealTrueOrFalse(otherValue.topicAnswer,(option.optionId || option),i,'desc')=='correct'
-                      || dealTrueOrFalse(otherValue.topicAnswer,(option.optionId || option),i,'desc')=='close'"
-                      :icon-class="dealTrueOrFalse(otherValue.topicAnswer,(option.optionId || option),i,'desc')"
-                    ></svg-icon>
-                    <span
-                      v-else
-                    >{{ dealTrueOrFalse(otherValue.topicAnswer,(option.optionId || option),i,'desc') }}</span>
+                    <n22-icon
+                      v-if="
+                        dealTrueOrFalse(
+                          otherValue.topicAnswer,
+                          option.optionId || option,
+                          i,
+                          'desc'
+                        ) == 'correct' ||
+                          dealTrueOrFalse(
+                            otherValue.topicAnswer,
+                            option.optionId || option,
+                            i,
+                            'desc'
+                          ) == 'close'
+                      "
+                      :name="
+                        dealTrueOrFalse(
+                          otherValue.topicAnswer,
+                          option.optionId || option,
+                          i,
+                          'desc'
+                        )
+                      "
+                    ></n22-icon>
+                    <span v-else>{{
+                      dealTrueOrFalse(
+                        otherValue.topicAnswer,
+                        option.optionId || option,
+                        i,
+                        'desc'
+                      )
+                    }}</span>
                   </span>
                   <span
                     class="desc_c"
-                    :class="{'input-box-text-disabled':otherValue.disabled}"
-                  >{{option.optionDes || option}}</span>
+                    :class="{ 'input-box-text-disabled': otherValue.disabled }"
+                    >{{ option.optionDes || option }}</span
+                  >
                 </template>
               </span>
               <!-- type为文本输入 -->
-              <span class="input-box" v-if="type=='textarea'&&i==0">
+              <span class="input-box" v-if="type == 'textarea' && i == 0">
                 <textarea v-model="currentValue"></textarea>
               </span>
             </slot>
@@ -227,128 +291,134 @@
   </div>
 </template>
 
-<script>
-import { constant } from "../_util";
+<script>/* eslint-disable */
+import {constant} from '../_util'
+import Icon from '../icon'
 export default {
-  name: "n22-radio",
+  name: 'n22-radio',
+  components: {
+    [Icon.name]: Icon,
+  },
   computed: {
     dealTrueOrFalse() {
       return (value, opid, i, type) => {
         let show = {
           desc: this.selectOptionList[i],
-          class: "circle_select"
-        };
+          class: 'circle_select',
+        }
         if (this.checkIsTrueOrFalse) {
-          if(this.type === "radio"){//单选、判断
+          if (this.type === 'radio') {
+            // 单选、判断
             if (opid == this.currentValue) {
               if (value && value == this.currentValue) {
-                //选择了正确答案
-                show.desc = "correct";
-                show.class = "circle_correct";
+                // 选择了正确答案
+                show.desc = 'correct'
+                show.class = 'circle_correct'
               } else {
-                //错误答案返回true
-                show.desc = "close";
-                show.class = "circle_error";
+                // 错误答案返回true
+                show.desc = 'close'
+                show.class = 'circle_error'
               }
             } else if (opid == value) {
               // show.desc = "correct";
               // show.class = "circle_correct";
             }
-          }else if(this.type === "checkbox"){
+          } else if (this.type === 'checkbox') {
             this.currentValue.forEach(currentValue => {
               if (opid == currentValue) {
-                if (value && value.indexOf(currentValue)>-1) {
-                  //选择了正确答案
-                  show.desc = "correct";
-                  show.class = "circle_correct";
+                if (value && value.indexOf(currentValue) > -1) {
+                  // 选择了正确答案
+                  show.desc = 'correct'
+                  show.class = 'circle_correct'
                 } else {
-                  //错误答案返回true
-                  show.desc = "close";
-                  show.class = "circle_error";
+                  // 错误答案返回true
+                  show.desc = 'close'
+                  show.class = 'circle_error'
                 }
-              } else if (value && value.indexOf(opid)>-1) {
+              } else if (value && value.indexOf(opid) > -1) {
                 // show.desc = "close";
                 // show.class = "circle_error_not_select";
               }
-            });
+            })
           }
         }
-        return show[type];
-      };
-    }
+        return show[type]
+      }
+    },
   },
   props: {
     options: {
-      //选择数组
+      // 选择数组
       type: Array,
-      required: true
+      required: true,
     },
     type: {
-      //input type
+      // input type
       type: String,
-      required: true
+      required: true,
     },
     mode: {
-      //业务模式--默认选择模式--exam为考试模式
+      // 业务模式--默认选择模式--exam为考试模式
       type: String,
-      default: "select"
+      default: 'select',
     },
     checkIsTrueOrFalse: {
-      //答题模式是否动态处理正确错误选项
+      // 答题模式是否动态处理正确错误选项
       type: Boolean,
-      default: false
+      default: false,
     },
     disabled: {
-      //是否可选择
+      // 是否可选择
       type: Boolean,
-      default: false
+      default: false,
     },
     isShow: {
-      //是否显示选择项
+      // 是否显示选择项
       type: Boolean,
-      default: true
+      default: true,
     },
-    value: [String, Array, Boolean, Number],//v-modal
-    otherValue: Object,//item
-    selectOptionList: {//选择显示的选项--默认A-Z
+    value: [String, Array, Boolean, Number], // v-modal
+    otherValue: Object, // item
+    selectOptionList: {
+      // 选择显示的选项--默认A-Z
       type: Array,
       default: () => {
-        return constant.selectOptionList;
-      }
-    }
+        return constant.selectOptionList
+      },
+    },
   },
 
   data() {
     return {
-      currentValue: this.value ?this.value : this.type == "checkbox" ? [] : ""
-    };
+      currentValue: this.value ? this.value : this.type == 'checkbox' ? [] : '',
+    }
   },
   methods: {
     // selectOptionShowFun(op){
     //   this.otherValue.show = op
     // }
     selectClick(i) {
-      console.log("%c selectClick", "color:green;", `${this.mode}-${i}`);
-      $(`#${this.mode}-${i}`).click();
-    }
+      console.log('%c selectClick', 'color:green;', `${this.mode}-${i}`)
+      // $(`#${this.mode}-${i}`).click()
+    },
   },
 
   watch: {
-    value(newVal,oldVal) {
-      if(newVal && newVal!=oldVal){
-        console.log("%c radio-newVal", "color:green;", newVal);
-        console.log("%c radio-oldVal", "color:green;", oldVal);
+    value(newVal, oldVal) {
+      if (newVal && newVal != oldVal) {
+        console.log('%c radio-newVal', 'color:green;', newVal)
+        console.log('%c radio-oldVal', 'color:green;', oldVal)
         this.currentValue = newVal
-      };
+      }
     },
 
-    currentValue(newVal,oldVal) {
-      if(newVal!=oldVal){
-        console.log("%c radio-currentValue", "color:green;", "currentValue更改");
-        this.$emit("input", newVal);
-        this.$emit("changeData", this.otherValue);
+    currentValue(newVal, oldVal) {
+      if (newVal != oldVal) {
+        console.log('%c radio-currentValue', 'color:green;', 'currentValue更改')
+        this.$emit('input', newVal)
+        this.$emit('changeData', this.otherValue)
       }
-    }
-  }
-};
-</script>
+    },
+  },
+}
+</script>

@@ -1,12 +1,12 @@
 <template>
-  <div class="md-picker-column" :style="{ height: `${style.indicatorHeight + 2 * style.maskerHeight}px` }">
-    <div class="md-picker-column-container">
-      <div class="md-picker-column-masker top" :style="{ height: `${style.maskerHeight}px` }"></div>
-      <div class="md-picker-column-masker bottom" :style="{ height: `${style.maskerHeight}px` }"></div>
-      <div class="md-picker-column-list">
+  <div class="n22-picker-column" :style="{ height: `${style.indicatorHeight + 2 * style.maskerHeight}px` }">
+    <div class="n22-picker-column-container">
+      <div class="n22-picker-column-masker top" :style="{ height: `${style.maskerHeight}px` }"></div>
+      <div class="n22-picker-column-masker bottom" :style="{ height: `${style.maskerHeight}px` }"></div>
+      <div class="n22-picker-column-list">
         <template v-for="(colunm, i) in columnValues">
           <div
-            class="md-picker-column-item"
+            class="n22-picker-column-item"
             :key="i"
           >
             <ul class="column-list" :style="{ 'padding-top': `${style.maskerHeight}px` }">
@@ -31,7 +31,7 @@
         </template>
         <template v-if="cols">
           <div
-            class="md-picker-column-item"
+            class="n22-picker-column-item"
             v-for="n in (cols - columnValues.length)"
             :key="n + columnValues.length - 1"
           >
@@ -39,10 +39,10 @@
           </div>
         </template>
       </div>
-      <div class="md-picker-column-hooks">
+      <div class="n22-picker-column-hooks">
         <template v-if="cols">
           <div
-            class="md-picker-column-hook"
+            class="n22-picker-column-hook"
             v-for="n in cols"
             :key="n - 1"
             @touchstart="$_onColumnTouchStart($event, n - 1)"
@@ -58,8 +58,7 @@
   </div>
 </template>
 
-<script>
-import Scroller from '../_util/scroller'
+<script>import Scroller from '../_util/scroller'
 import {render} from '../_util/render'
 import {noop, getDpr, traverse, inArray, extend, warn} from '../_util'
 
@@ -133,7 +132,7 @@ export default {
 
   computed: {
     hooks() {
-      const _hooks = this.$el.querySelectorAll('.md-picker-column-hook')
+      const _hooks = this.$el.querySelectorAll('.n22-picker-column-hook')
       /* istanbul ignore if */
       if (!_hooks) {
         return []
@@ -277,7 +276,11 @@ export default {
         if (
           (itemDefaultIndex !== undefined && itemIndex === itemDefaultIndex) ||
           (itemDefaultValue !== undefined &&
-            (item.text === itemDefaultValue || item.label === itemDefaultValue || item.show === itemDefaultValue || item.value === itemDefaultValue || item.code === itemDefaultValue))
+            (item.text === itemDefaultValue ||
+              item.label === itemDefaultValue ||
+              item.show === itemDefaultValue ||
+              item.value === itemDefaultValue ||
+              item.code === itemDefaultValue))
         ) {
           fn(columnIndex, itemIndex)
           return 2
@@ -481,11 +484,10 @@ export default {
     },
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus">
-.md-picker-column
+.n22-picker-column
   position relative
   width 100%
   padding 0 picker-padding-h
@@ -494,10 +496,10 @@ export default {
   box-sizing border-box
   transform translate3d(0, 0, 0)
 
-.md-picker-column-container
+.n22-picker-column-container
   height 100%
 
-.md-picker-column-masker
+.n22-picker-column-masker
   position absolute !important
   z-index 2
   left picker-padding-h
@@ -515,23 +517,23 @@ export default {
     hairline(top, picker-border-color, 0, 3px)
     // border-top solid 1px picker-border-color
 
-.md-picker-column-hooks
+.n22-picker-column-hooks
   display flex
   position absolute
   z-index 3
   absolute-pos()
   padding 0 picker-padding-h
 
-.md-picker-column-hook
+.n22-picker-column-hook
   display flex
   flex 1
   height 100%
 
-.md-picker-column-list
+.n22-picker-column-list
   display flex
   height 100%
 
-.md-picker-column-item
+.n22-picker-column-item
   position relative
   display flex
   flex 1

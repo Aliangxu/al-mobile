@@ -1,6 +1,6 @@
 ---
 title: work 职业专用三级以上组件
-preview: xxxxxxxyyyyy
+preview: https://qiaoxiyan.com/al-mobile/examples/#/work
 ---
 
 用于职业的专属应用组件

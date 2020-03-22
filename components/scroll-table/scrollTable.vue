@@ -36,6 +36,7 @@
   </div>
 </template>
 <script>
+/* eslint-disable */
 import { createIScroller, refreshScroller } from "./assets/iscrollTable";
 export default {
   name: "n22-scroll-table",

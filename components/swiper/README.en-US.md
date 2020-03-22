@@ -1,5 +1,6 @@
 ---
 title: Swiper
+preview: https://qiaoxiyan.com/al-mobile/examples/#/swiper
 ---
 
 Carousel, used to cycle through a set of pictures or cards
@@ -8,7 +9,7 @@ Carousel, used to cycle through a set of pictures or cards
 ### Import
 
 ```javascript
-import { Swiper, SwiperItem } from '@/components'
+import { Swiper, SwiperItem } from 'al-mobile'
 
 Vue.component(Swiper.name, Swiper)
 Vue.component(SwiperItem.name, SwiperItem)

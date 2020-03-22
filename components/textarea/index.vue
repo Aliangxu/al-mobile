@@ -1,110 +1,121 @@
 vue
 <template>
-    <div
-        :style="{fontSize: fontSize , lineHeight: lineHeight, height: fullHeight ? (rows?'':maxHeight): 'auto'}"
-        class="auto-textarea-wrapper"
-    >
-        <pre
-            :style="{fontSize: fontSize , lineHeight: lineHeight, minHeight: fullHeight ? maxHeight: 'auto'}"
-            class="auto-textarea-block"
-        ><br>{{temp_value}} </pre>
-        <textarea
-            ref="vTextarea"
-            :row="rows"
-            :autofocus="s_autofocus"
-            @keyup="change"
-            spellcheck="false"
-            :placeholder="placeholder"
-            v-model="temp_value"
-            style="overflow: auto"
-            :style="{fontSize: fontSize , lineHeight: lineHeight , maxHeight: maxHeight}"
-            :class="{'no-border': !border , 'no-resize': !resize}"
-            class="auto-textarea-input"
-        ></textarea>
-    </div>
+  <div
+    :style="{
+      fontSize: fontSize,
+      lineHeight: lineHeight,
+      height: fullHeight ? (rows ? '' : maxHeight) : 'auto'
+    }"
+    class="auto-textarea-wrapper"
+  >
+    <pre
+      :style="{
+        fontSize: fontSize,
+        lineHeight: lineHeight,
+        minHeight: fullHeight ? maxHeight : 'auto'
+      }"
+      class="auto-textarea-block"
+    ><br>{{temp_value}} </pre>
+    <textarea
+      ref="vTextarea"
+      :row="rows"
+      :autofocus="s_autofocus"
+      @keyup="change"
+      spellcheck="false"
+      :placeholder="placeholder"
+      v-model="temp_value"
+      style="overflow: auto"
+      :style="{
+        fontSize: fontSize,
+        lineHeight: lineHeight,
+        maxHeight: maxHeight
+      }"
+      :class="{ 'no-border': !border, 'no-resize': !resize }"
+      class="auto-textarea-input"
+    ></textarea>
+  </div>
 </template>
 
-<script>
-export default {
-  name: "n22-textarea",
+<script>export default {
+  name: 'n22-textarea',
   data() {
     return {
       temp_value: (() => {
-        return this.value;
+        return this.value
       })(),
       s_autofocus: (() => {
         if (this.autofocus) {
-          return "autofocus";
+          return 'autofocus'
         } else {
-          null;
+          null
         }
-      })()
-    };
+      })(),
+    }
   },
   created() {},
   props: {
     fullHeight: {
       type: Boolean,
-      default: true
+      default: true,
     },
     autofocus: {
       type: Boolean,
-      default: false
+      default: false,
     },
     value: {
       type: String,
-      default: ""
+      default: '',
     },
     placeholder: {
       type: String,
-      default: ""
+      default: '',
     },
     border: {
       type: Boolean,
-      default: false
+      default: false,
     },
     resize: {
       type: Boolean,
-      default: false
+      default: false,
     },
     onchange: {
       type: Function,
-      default: null
+      default: null,
     },
     fontSize: {
       type: String,
-      default: "14px"
+      default: '14px',
     },
     lineHeight: {
       type: String,
-      default: "20px"
+      default: '20px',
     },
     maxHeight: {
       type: String,
-      default: "160px"
+      default: '160px',
     },
     rows: {
       type: Number,
-      default: 1
+      default: 1,
     },
   },
   methods: {
     change($event) {
       if (this.onchange) {
-        this.onchange(this.temp_value, $event);
+        this.onchange(this.temp_value, $event)
       }
-    }
+    },
   },
   watch: {
-    value: function(val, oldVal) {
-      this.temp_value = val;
+    value: function(val) {
+      this.temp_value = val
     },
-    temp_value: function(val, oldVal) {
-      this.$emit("input", val);
-    }
-  }
-};
-</script>
+    temp_value: function(val) {
+      this.$emit('input', val)
+    },
+  },
+}
+</script>
 <style lang="stylus" scoped>
 .auto-textarea-wrapper {
     margin 10px;

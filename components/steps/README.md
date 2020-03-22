@@ -1,5 +1,6 @@
 ---
 title: Steps 步骤条
+preview: https://qiaoxiyan.com/al-mobile/examples/#/steps
 ---
 
 用于引导用户按照流程完成任务的导航条，显示当前所在步骤
@@ -7,7 +8,7 @@ title: Steps 步骤条
 ### 引入
 
 ```javascript
-import { Steps } from '@/components'
+import { Steps } from 'al-mobile'
 
 Vue.component(Steps.name, Steps)
 ```
@@ -47,7 +48,7 @@ Vue.component(Steps.name, Steps)
 ```html
 <template slot="reached" slot-scope="{ index }">
   <!-- 如果索引值为1，则自定义 -->
-  <md-icon name="checked" v-if="index === 1"></md-icon>
+  <n22-icon name="checked" v-if="index === 1"></n22-icon>
   <!-- 默认步骤图标 -->
   <div class="step-node-default" v-else></div>
 </template>

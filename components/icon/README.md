@@ -1,6 +1,6 @@
 ---
 title: Icon 图标
-preview: https://didi.github.io/mand-mobile/examples/#/icon
+preview: https://qiaoxiyan.com/al-mobile/examples/#/icon
 ---
 
 IconFont、SVG 图标
@@ -8,7 +8,7 @@ IconFont、SVG 图标
 ### 引入
 
 ```javascript
-import { Icon } from 'mand-mobile'
+import { Icon } from 'al-mobile'
 
 Vue.component(Icon.name, Icon)
 ```
@@ -67,15 +67,15 @@ module.exports = {
 ```vue
 <template>
   <div>
-    <md-icon name="hello" svg></md-icon>
-    <md-icon name="world" svg></md-icon>
+    <n22-icon name="hello" svg></n22-icon>
+    <n22-icon name="world" svg></n22-icon>
   </div>
 </template>
 
 <script>
 import 'src/my-project-svg-folder/hello.svg'
 import 'src/my-project-svg-folder/world.svg'
-import { Icon } from 'mand-mobile'
+import { Icon } from 'al-mobile'
 
 export default {
   name: 'icon-demo',
@@ -94,7 +94,7 @@ export default {
 
 ```css
 @font-face{
-  font-family: Mand-Mobile-Icon;
+  font-family: Al-Mobile-Icon;
   font-style: normal;
   font-weight: 400;
   src: url(~mand-mobile/components/icon/iconfont.woff) format("woff"),url(~mand-mobile/components/icon/iconfont.woff) format("truetype")

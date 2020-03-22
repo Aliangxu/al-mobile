@@ -1,11 +1,12 @@
 <template>
   <div class="n22-example-child n22-example-child-action-bar n22-example-child-0">
-    <n22-action-bar :actions="data"></n22-action-bar>
+    <al-content>
+      <n22-action-bar :actions="data"></n22-action-bar>
+    </al-content>
   </div>
 </template>
 
-<script>
-import {ActionBar, Toast} from 'al-mobile'
+<script>import {Content, ActionBar, Toast} from 'al-mobile'
 
 export default {
   name: 'action-bar-demo',
@@ -13,6 +14,7 @@ export default {
   height: 150,
   /* DELETE */
   components: {
+    [Content.name]: Content,
     [ActionBar.name]: ActionBar,
   },
   data() {
@@ -31,5 +33,4 @@ export default {
     },
   },
 }
-
-</script>
+</script>

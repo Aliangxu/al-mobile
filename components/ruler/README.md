@@ -1,5 +1,6 @@
 ---
 title: Ruler 刻度尺
+preview: https://qiaoxiyan.com/al-mobile/examples/#/ruler
 ---
 
 可滑动刻度尺<sup class="version-after">2.2.0+</sup>
@@ -7,7 +8,7 @@ title: Ruler 刻度尺
 ### 引入
 
 ```javascript
-import { Ruler } from '@/components'
+import { Ruler } from 'al-mobile'
 
 Vue.component(Ruler.name, Ruler)
 ```

@@ -9,8 +9,8 @@
     @click="$_onClick"
   >
     <div class="n22-radio-icon">
-       <svg-icon icon-class="currentIcon"></svg-icon>
-      <!-- <n22-icon :name="currentIcon" :size="size" :svg="iconSvg"/> -->
+       <!-- <svg-icon icon-class="currentIcon"></svg-icon> -->
+      <n22-icon :name="currentIcon" :size="size" :svg="iconSvg"/>
     </div>
     <div class="n22-radio-label" v-if="$slots.default || label">
       <slot>{{ label }}</slot>
@@ -18,8 +18,7 @@
   </label>
 </template>
 
-<script>
-// import Icon from '../icon'
+<script>import Icon from '../icon'
 import radioMixin from './mixins'
 
 export default {
@@ -28,7 +27,7 @@ export default {
   mixins: [radioMixin],
 
   components: {
-   //  [Icon.name]: Icon,
+    [Icon.name]: Icon,
   },
 
   props: {
@@ -90,8 +89,7 @@ export default {
     },
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus" scoped>
 .n22-radio

@@ -1,11 +1,11 @@
 <template>
-  <div class="md-home">
-    <div class="md-home-logo">
-      <img src="//manhattan.didistatic.com/static/manhattan/mand/docs/mand-logo-black.svg" alt="">
+  <div class="n22-home">
+    <div class="n22-home-logo">
+      <img src="http://qiaoxiyan.com/al/images/al.svg" alt="">
     </div>
-    <div class="md-home-name" data-in-effect="fadeInLeftBig">Mand Mobile 2</div>
-    <div class="md-home-time">0%</div>
-    <h1 class="md-home-copyright">Produced By DiDi - FDC &times; MFE</h1>
+    <div class="n22-home-name" data-in-effect="fadeInLeftBig">Al Mobile</div>
+    <div class="n22-home-time">0%</div>
+    <h1 class="n22-home-copyright">Produced By aliang</h1>
   </div>
 </template>
 
@@ -17,7 +17,7 @@ export default {
     }
   },
   mounted() {
-    $('.md-home-name')
+    $('.n22-home-name')
       .textillate()
       .on('end.tlt')
     this.timeCount(() => {
@@ -34,7 +34,7 @@ export default {
       const time = setInterval(() => {
         if (percent < 100) {
           percent += per
-          $('.md-home-time').text(`${parseInt(percent)}%`)
+          $('.n22-home-time').text(`${parseInt(percent)}%`)
         } else {
           clearInterval(time)
           setTimeout(() => {
@@ -49,11 +49,11 @@ export default {
 </script>
 
 <style lang="stylus">
-.md-home
+.n22-home
   position fixed
   absolute-pos()
   background color-bg-base
-  .md-home-logo
+  .n22-home-logo
     position absolute
     top 30%
     left 50%
@@ -63,7 +63,7 @@ export default {
     animation blur-out 2s ease-in-out-quint forwards
     img
       width 100%
-  .md-home-name
+  .n22-home-name
     position absolute
     width 100%
     top 45%
@@ -75,7 +75,7 @@ export default {
     span.word3
         color color-primary
         font-family DINAlternate-Bold
-  .md-home-time
+  .n22-home-time
     position absolute
     width 100%
     top 50%
@@ -84,7 +84,7 @@ export default {
     font-weight font-weight-light
     color color-text-minor
     text-align center
-  .md-home-copyright
+  .n22-home-copyright
     position fixed
     left 0
     bottom 20px

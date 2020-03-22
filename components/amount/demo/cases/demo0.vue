@@ -15,8 +15,7 @@
 	</div>
 </template>
 
-<script>
-import {Amount} from 'al-mobile'
+<script>import {Amount} from 'al-mobile'
 
 export default {
   name: 'amount-demo',
@@ -24,15 +23,14 @@ export default {
     [Amount.name]: Amount,
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus" scoped>
 .n22-example-child-amount
   text-align center
   color #666
   p
-    font-size 50px
+    font-size 25px
     span.describe
-      font-size 18px
+      font-size 9px
 </style>

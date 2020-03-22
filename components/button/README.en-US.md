@@ -1,5 +1,6 @@
 ---
 title: Button
+preview: https://qiaoxiyan.com/al-mobile/examples/#/button
 ---
 
 Button components for configuring different button styles
@@ -7,7 +8,7 @@ Button components for configuring different button styles
 ### Import
 
 ```javascript
-import { Button } from '@/components'
+import { Button } from 'al-mobile'
 
 Vue.component(Button.name, Button)
 ```

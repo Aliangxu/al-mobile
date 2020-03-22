@@ -81,7 +81,7 @@ devMiddleware.waitUntilValid(() => {
     info('Listening at ' + uri.warn.bold + '\n')
     // when env is testing, don't need open it
     if (autoOpenBrowser && process.env.NODE_ENV !== 'testing') {
-      opn(uri)
+      // opn(uri)
     }
     server = app.listen(port)
     _resolve()

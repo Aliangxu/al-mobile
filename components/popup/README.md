@@ -1,5 +1,6 @@
 ---
 title: Popup 弹出层
+preview: https://qiaoxiyan.com/al-mobile/examples/#/popup
 ---
 
 由其他控件触发，屏幕滑出或弹出一块自定义内容区域
@@ -7,7 +8,7 @@ title: Popup 弹出层
 ### 引入
 
 ```javascript
-import { Popup, PopupTitleBar } from '@/components'
+import { Popup, PopupTitleBar } from 'al-mobile'
 
 Vue.component(Popup.name, Popup)
 Vue.component(PopupTitleBar.name, PopupTitleBar)

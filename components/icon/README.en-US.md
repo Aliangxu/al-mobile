@@ -1,6 +1,6 @@
 ---
 title: Icon
-preview: https://didi.github.io/mand-mobile/examples/#/icon
+preview: https://qiaoxiyan.com/al-mobile/examples/#/icon
 ---
 
 IconFont、SVG Icons
@@ -8,7 +8,7 @@ IconFont、SVG Icons
 ### Import
 
 ```javascript
-import { Icon } from 'mand-mobile'
+import { Icon } from 'al-mobile'
 
 Vue.component(Icon.name, Icon)
 ```
@@ -67,8 +67,8 @@ module.exports = {
 ```vue
 <template>
   <div>
-    <md-icon name="hello" svg></md-icon>
-    <md-icon name="world" svg></md-icon>
+    <n22-icon name="hello" svg></n22-icon>
+    <n22-icon name="world" svg></n22-icon>
   </div>
 </template>
 

@@ -10,6 +10,7 @@ import ToastOptions from './toast'
 const Toast = function({
   content = '',
   icon = '',
+  maxTextNum = 40,
   iconSvg = false,
   duration = 3000,
   position = 'center',
@@ -23,6 +24,7 @@ const Toast = function({
     vm = Toast._instance = new ToastConstructor({
       propsData: {
         content,
+        maxTextNum,
         icon,
         iconSvg,
         duration,
@@ -37,6 +39,7 @@ const Toast = function({
   }
 
   vm.content = content
+  vm.maxTextNum = maxTextNum
   vm.icon = icon
   vm.iconSvg = iconSvg
   vm.duration = duration
@@ -71,10 +74,11 @@ Toast.hide = () => {
  * @returns {Toast}
  */
 
-Toast.info = (content = '', duration = 3000, hasMask = false, parentNode = document.body) => {
+Toast.info = (content = '', maxTextNum, duration = 3000, hasMask = false, parentNode = document.body) => {
   return Toast({
     icon: '',
     content,
+    maxTextNum,
     duration,
     hasMask,
     parentNode,
@@ -90,9 +94,10 @@ Toast.info = (content = '', duration = 3000, hasMask = false, parentNode = docum
  * @returns {Toast}
  */
 
-Toast.succeed = (content = '', duration = 3000, hasMask = false, parentNode = document.body) => {
+Toast.succeed = (content = '', maxTextNum, duration = 3000, hasMask = false, parentNode = document.body) => {
   return Toast({
     icon: 'success',
+    maxTextNum,
     content,
     duration,
     hasMask,
@@ -109,9 +114,10 @@ Toast.succeed = (content = '', duration = 3000, hasMask = false, parentNode = do
  * @returns {Toast}
  */
 
-Toast.failed = (content = '', duration = 3000, hasMask = false, parentNode = document.body) => {
+Toast.failed = (content = '', maxTextNum, duration = 3000, hasMask = false, parentNode = document.body) => {
   return Toast({
     icon: 'fail',
+    maxTextNum,
     content,
     duration,
     hasMask,
@@ -127,10 +133,11 @@ Toast.failed = (content = '', duration = 3000, hasMask = false, parentNode = doc
  * @param {node=} [parentNode=document.body]
  * @returns {Toast}
  */
-Toast.loading = (content = '', duration = 0, hasMask = true, parentNode = document.body) => {
+Toast.loading = (content = '', maxTextNum, duration = 0, hasMask = true, parentNode = document.body) => {
   return Toast({
     icon: 'spinner',
     iconSvg: true,
+    maxTextNum,
     content,
     duration,
     hasMask,

@@ -9,15 +9,31 @@
     ]"
     @click="$_onClick"
   >
-    <div :class="[isLinefeed?'n22-field-item-content-Linefeed':'n22-field-item-content',isLine?'n22-field-item-content-line':'']">
+    <div
+      :class="[
+        isLinefeed
+          ? 'n22-field-item-content-Linefeed'
+          : 'n22-field-item-content',
+        isLine ? 'n22-field-item-content-line' : ''
+      ]"
+    >
       <slot name="isShowRequired">
-        <span class="n22-show-required-star" v-if="isShowRequired">*&nbsp;</span>
+        <span class="n22-show-required-star" v-if="isShowRequired"
+          >*&nbsp;</span
+        >
       </slot>
       <!-- <label class="n22-field-item-title" v-if="title" v-text="title"></label> -->
-      <label class="n22-field-item-title" :class="dealFieldItemWidth?'pf-solid':''" v-if="title">
+      <label
+        class="n22-field-item-title"
+        :class="dealFieldItemWidth ? 'pf-solid' : ''"
+        v-if="title"
+      >
         <span v-text="title"></span>
         <span class="svg_icon" v-if="mark" @click.stop="$emit('markFun')">
-          <svg-icon :icon-class="markSvg"></svg-icon>
+          <!-- <svg-icon :icon-class="markSvg"></svg-icon> -->
+          <slot name="markSvg">
+            <n22-icon :name="markSvg"></n22-icon>
+          </slot>
         </span>
         <div class="n22-field-item-brief" v-if="titleBref">
           {{ titleBref }}
@@ -29,10 +45,18 @@
       <div class="n22-field-item-control">
         <slot>
           <template v-if="content">{{ content }}</template>
-          <div class="n22-field-item-placeholder" v-else-if="placeholder&&addon==='请选择'" v-text="placeholder"></div>
+          <div
+            class="n22-field-item-placeholder"
+            v-else-if="placeholder && addon === '请选择'"
+            v-text="placeholder"
+          ></div>
         </slot>
       </div>
-      <div class="n22-field-item-right" :class="dealFieldItemWidth?'pf-solid':''" v-if="arrow || addon || $slots.right">
+      <div
+        class="n22-field-item-right"
+        :class="dealFieldItemWidth ? 'pf-solid' : ''"
+        v-if="arrow || addon || $slots.right"
+      >
         <slot name="right">{{ addon }}</slot>
         <!-- <span class="svg_icon" v-if="arrow">
           <svg-icon icon-class="right_arrow"></svg-icon>
@@ -41,18 +65,21 @@
         <slot name="right-children"></slot>
       </div>
     </div>
-    <div class="n22-field-item-children" :style="{'text-align':fieldItemChildrenAlign}" v-if="$slots.children">
+    <div
+      class="n22-field-item-children"
+      :style="{ 'text-align': fieldItemChildrenAlign }"
+      v-if="$slots.children"
+    >
       <slot name="children"></slot>
     </div>
   </div>
 </template>
 
-<script>
-import Icon from '../icon'
+<script>import Icon from '../icon'
 import {isIOS, isAndroid} from '../_util'
 
 export default {
-  name: "n22-field-item",
+  name: 'n22-field-item',
 
   components: {
     [Icon.name]: Icon,
@@ -75,7 +102,7 @@ export default {
     },
     isShowRequired: {
       type: Boolean,
-      default: false
+      default: false,
     },
     placeholder: {
       type: String,
@@ -107,34 +134,34 @@ export default {
     },
     isLine: {
       type: Boolean,
-      default: true
+      default: true,
     },
     isLinefeed: {
       type: Boolean,
-      default: false
+      default: false,
     },
 
-    //2019-07-23新增
+    // 2019-07-23新增
     fieldItemChildrenAlign: {
       type: String,
-      default: "right"
+      default: 'right',
     },
-    //2019-07-31新增
+    // 2019-07-31新增
     mark: {
-      //字段name后面的mark是否展示
+      // 字段name后面的mark是否展示
       type: Boolean,
-      default: false
+      default: false,
     },
     markSvg: {
-      //字段name后面的mark svg名字
+      // 字段name后面的mark svg名字
       type: String,
-      default: "question_mark"
+      default: 'question_mark',
     },
     titleBref: {
-      //title的描述内容（标题下、下划线上）-2019-08-15 aliang add
+      // title的描述内容（标题下、下划线上）-2019-08-15 aliang add
       type: String,
-      default: ""
-    }
+      default: '',
+    },
   },
 
   computed: {
@@ -149,11 +176,11 @@ export default {
       }
     },
     currentDisabled() {
-      return this.rootField.disabled || this.disabled;
+      return this.rootField.disabled || this.disabled
     },
-    dealFieldItemWidth(){
-       return (this.title+this.addon)&&(this.title+this.addon).length>20
-    }
+    dealFieldItemWidth() {
+      return this.title + this.addon && (this.title + this.addon).length > 20
+    },
   },
 
   methods: {
@@ -164,8 +191,7 @@ export default {
     },
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus" scoped>
 .n22-field-item {
@@ -211,7 +237,7 @@ export default {
   float left ;
   &.pf-solid {
      max-width 145px
-     text-align left 
+     text-align left
   }
   /deep/.svg-icon {
     color: color-svg-question-mark;
@@ -306,4 +332,3 @@ export default {
   }
 }
 </style>
-

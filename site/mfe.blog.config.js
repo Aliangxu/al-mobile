@@ -20,12 +20,13 @@ function generateDemos (name) {
 }
 
 function generateSource (lang = 'zh-CN') {
+  console.log(">>>>>>>>>>>>>>>>>>>");
   const menus = []
   components.forEach(category => {
     const list = category.list
     const subMenus = []
 
-    list && list.forEach(component => {
+    list && list.forEach((component,i) => {
       subMenus.push({
         name: component.path.substr(1),
         text: lang === 'en-US'
@@ -51,8 +52,8 @@ module.exports = {
   title: 'Al Mobile',
   subtitle: '面向金融场景的Vue移动端UI组件库',
   subtitleEnUs: 'A mobile UI toolkit, based on Vue.js 2, designed for financial scenarios',
-  logo: 'https://avatars2.githubusercontent.com/u/23047590?s=200&v=4',
-  favicon: 'https://avatars2.githubusercontent.com/u/23047590?s=200&v=4',
+  logo: 'http://qiaoxiyan.com/al/images/al.svg',
+  favicon: 'http://qiaoxiyan.com/al/images/al.svg',
   source: [{
     name: 'zh-CN',
     text: '中文',

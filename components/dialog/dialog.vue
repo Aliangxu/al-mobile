@@ -21,13 +21,13 @@
             class="n22-dialog-close"
             @click="close"
           >
-            <svg-icon class="icon_c" icon-class="close"></svg-icon>
-            <!-- <n22-icon name="close" /> -->
+            <!-- <svg-icon class="icon_c" icon-class="close"></svg-icon> -->
+            <n22-icon name="close" />
           </a>
           <div v-if="icon" class="n22-dialog-icon">
-            <svg-icon v-if="!iconSvg" :icon-class="icon"></svg-icon>
-            <img v-else :src="icon" alt="">
-            <!-- <n22-icon :name="icon" :svg="iconSvg"/> -->
+            <!-- <svg-icon v-if="!iconSvg" :icon-class="icon"></svg-icon>
+            <img v-else :src="icon" alt=""> -->
+            <n22-icon :name="icon" :svg="iconSvg"/>
           </div>
           <h2 class="n22-dialog-title" v-if="title" v-text="title"></h2>
           <slot>
@@ -55,9 +55,8 @@
   </div>
 </template>
 
-<script>
-import Popup from '../popup'
-// import Icon from '../icon'
+<script>import Popup from '../popup'
+import Icon from '../icon'
 import {mdDocument} from '../_util'
 
 export default {
@@ -65,7 +64,7 @@ export default {
 
   components: {
     [Popup.name]: Popup,
-    // [Icon.name]: Icon,
+    [Icon.name]: Icon,
   },
 
   props: {
@@ -83,7 +82,7 @@ export default {
     },
     iconSvg: {
       type: Boolean,
-      default: false,
+      default: true,
     },
     closable: {
       type: Boolean,
@@ -170,8 +169,7 @@ export default {
     },
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus">
 .n22-dialog

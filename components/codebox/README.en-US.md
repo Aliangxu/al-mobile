@@ -1,12 +1,12 @@
 ---
 title: CodeBox
-preview: https://didi.github.io/mand-mobile/examples/#/codebox
+preview: https://qiaoxiyan.com/al-mobile/examples/#/codebox
 ---
 
 ### Import
 
 ```javascript
-import { Codebox } from 'mand-mobile'
+import { Codebox } from 'al-mobile'
 
 Vue.component(Codebox.name, Codebox)
 ```

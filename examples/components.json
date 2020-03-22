@@ -65,15 +65,27 @@
                 "text": "通知栏"
             },
             {
+                "name": "InformationBar",
+                "path": "/information-bar",
+                "icon": "information-bar",
+                "text": "通知栏"
+            },
+            {
                 "name": "Progress",
                 "path": "/progress",
                 "icon": "progress",
                 "text": "进度"
             },
             {
-                "name": "Skeleton",
-                "path": "/skeleton",
-                "icon": "skeleton",
+                "name": "WaveCircle",
+                "path": "/wave-circle",
+                "icon": "wave-circle",
+                "text": "水纹进度"
+            },
+            {
+                "name": "ContentLoader",
+                "path": "/content-loader",
+                "icon": "content-loader",
                 "text": "骨架屏"
             },
             {
@@ -129,7 +141,7 @@
                 "name": "Work",
                 "path": "/work",
                 "icon": "work",
-                "text": "xxxll"
+                "text": "三级职业"
             },
             {
                 "name": "Bill",

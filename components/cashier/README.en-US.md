@@ -1,5 +1,6 @@
 ---
 title: Cashier
+preview: https://qiaoxiyan.com/al-mobile/examples/#/cashier
 ---
 
 Business payment pop-up window, supports payment channel selecting and payment verification code sending
@@ -7,7 +8,7 @@ Business payment pop-up window, supports payment channel selecting and payment v
 ### Import
 
 ```javascript
-import { Cashier } from 'mand-mobile'
+import { Cashier } from 'al-mobile'
 
 Vue.component(Cashier.name, Cashier)
 ```

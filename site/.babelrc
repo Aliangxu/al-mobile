@@ -13,6 +13,9 @@
     "stage-2"
   ],
   "plugins": [
+    "transform-object-rest-spread",
+    "syntax-dynamic-import",
+    "transform-vue-jsx",
     // ["import", { "libraryName": "mand-mobile" }]
     // ["import", { "libraryName": "al-mobile" }]
     ["import", {

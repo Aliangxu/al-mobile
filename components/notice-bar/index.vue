@@ -13,8 +13,8 @@
         <slot name="left"></slot>
       </template>
       <template v-else-if="icon">
-        <!-- <n22-icon class="n22-notice-icon" :name="icon" :svg="iconSvg"></n22-icon> -->
-        <svg-icon class="n22-notice-svg n22-notice-icon" :icon-class="icon"></svg-icon>
+        <n22-icon class="n22-notice-icon" :name="icon" :svg="iconSvg"></n22-icon>
+        <!-- <svg-icon class="n22-notice-svg n22-notice-icon" :icon-class="icon"></svg-icon> -->
       </template>
     </div>
     <div
@@ -34,23 +34,23 @@
         <slot name="right"></slot>
       </template>
       <template v-else-if="mode || closable">
-        <!-- <n22-icon
+        <n22-icon
           class="n22-notice-icon n22-notice-icon-right"
           :name="rightIcon"
           @click.native.stop="$_close"
-        ></n22-icon> -->
-        <svg-icon class="n22-notice-svg md-notice-icon md-notice-icon-right" :icon-class="rightIcon" @click.native.stop="$_close"></svg-icon>
+        ></n22-icon>
+        <!-- <svg-icon class="n22-notice-svg md-notice-icon md-notice-icon-right" :icon-class="rightIcon" @click.native.stop="$_close"></svg-icon> -->
       </template>
     </div>
   </div>
 </template>
 
-<script>
-// import Icon from '../icon'
+<script>import Icon from '../icon'
 export default {
   name: 'n22-notice-bar',
 
   components: {
+    [Icon.name]: Icon,
   },
 
   props: {
@@ -153,8 +153,7 @@ export default {
     },
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus">
 .n22-notice-bar

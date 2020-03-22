@@ -12,8 +12,7 @@
   </div>
 </template>
 
-<script>
-import {DatePicker} from 'al-mobile'
+<script>import {DatePicker} from 'al-mobile'
 
 export default {
   name: 'date-picker-demo',
@@ -34,9 +33,8 @@ export default {
   },
   methods: {
     onDatePickerInitialed() {
-      console.log(`[Mand Mobile] DatePicker getFormatDate: ${this.$refs.datePicker.getFormatDate('yyyy/MM/dd')}`)
+      console.log(`[Al Mobile] DatePicker getFormatDate: ${this.$refs.datePicker.getFormatDate('yyyy/MM/dd')}`)
     },
   },
 }
-
-</script>
+</script>

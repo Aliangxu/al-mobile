@@ -1,5 +1,6 @@
 ---
 title: Switch
+preview: https://qiaoxiyan.com/al-mobile/examples/#/switch
 ---
 
 Switch between two status
@@ -7,7 +8,7 @@ Switch between two status
 ### Import
 
 ```javascript
-import { Switch } from '@/components'
+import { Switch } from 'al-mobile'
 
 Vue.component(Switch.name, Switch)
 ```

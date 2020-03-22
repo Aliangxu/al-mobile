@@ -18,8 +18,8 @@
         <n22-activity-indicator-rolling class="n22-button-loading"></n22-activity-indicator-rolling>
       </template>
       <template v-else-if="icon">
-        <!-- <md-icon :name="icon" :svg="iconSvg"></md-icon> -->
-        <svg-icon :icon-class="icon"></svg-icon>
+        <n22-icon :name="icon" :svg="iconSvg"></n22-icon>
+        <!-- <svg-icon :icon-class="icon"></svg-icon> -->
       </template>
       <p class="n22-button-content">
         <slot></slot>
@@ -28,15 +28,14 @@
   </button>
 </template>
 
-<script>
-import ActivityIndicatorRolling from '../activity-indicator/roller'
-// import Icon from '../icon'
+<script>import ActivityIndicatorRolling from '../activity-indicator/roller'
+import Icon from '../icon'
 export default {
   name: 'n22-button',
 
   components: {
     [ActivityIndicatorRolling.name]: ActivityIndicatorRolling,
-    // [Icon.name]: Icon,
+    [Icon.name]: Icon,
   },
 
   props: {
@@ -82,8 +81,7 @@ export default {
     },
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus">
 .n22-button
@@ -118,8 +116,8 @@ export default {
 
 .n22-button-loading
   .n22-activity-indicator-svg
-    width 35px !important
-    height 35px !important
+    width 17.5px !important
+    height 17.5px !important
     margin-right 10px
 
 .n22-button-content

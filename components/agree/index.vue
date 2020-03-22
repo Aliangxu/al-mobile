@@ -11,9 +11,8 @@
       ]"
       @click="$_onChange($event)">
       <div class="n22-agree-icon-container">
-        <svg-icon :icon-class="value?checked:check"></svg-icon>
-        <!-- <md-icon name="checked" :size="size"></md-icon>
-        <md-icon name="check" :size="size"></md-icon> -->
+        <!-- <svg-icon :icon-class="value?checked:check"></svg-icon> -->
+        <n22-icon :name="value?checked:check" :size="size"></n22-icon>
       </div>
     </div>
     <div @click="isContentClick?$_onChange($event):''" class="n22-agree-content">
@@ -22,13 +21,12 @@
   </div>
 </template>
 
-<script>
-// import Icon from '../icon'
+<script>import Icon from '../icon'
 export default {
   name: 'n22-agree',
 
   components: {
-    // [Icon.name]: Icon,
+    [Icon.name]: Icon,
   },
 
   props: {
@@ -73,8 +71,7 @@ export default {
     },
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus" scoped>
 .n22-agree
@@ -108,7 +105,7 @@ export default {
       line-height 1
       will-change auto
       &.n22-icon-checked
-        position absolute
+        // position absolute
         top 0
         left 0
         transform scale(0.6)

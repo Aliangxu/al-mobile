@@ -1,5 +1,6 @@
 ---
 title: head 布局头部
+preview: https://qiaoxiyan.com/al-mobile/examples/#/al-all-head
 ---
 
 用于整体布局的头部处理

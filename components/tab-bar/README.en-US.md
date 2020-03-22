@@ -1,5 +1,6 @@
 ---
 title: TabBar
+preview: https://qiaoxiyan.com/al-mobile/examples/#/tab-bar
 ---
 
 To create a tab bar without a content area
@@ -7,7 +8,7 @@ To create a tab bar without a content area
 ### Import
 
 ```javascript
-import { TabBar } from '@/compontents'
+import { TabBar } from 'al-mobile'
 
 Vue.component(TabBar.name, TabBar)
 ```

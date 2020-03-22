@@ -38,8 +38,7 @@
   </div>
 </template>
 
-<script>
-import {Icon, ImageReader, Tag, Toast} from 'al-mobile'
+<script>import {Icon, ImageReader, Tag, Toast} from 'al-mobile'
 
 export default {
   name: 'image-reader-demo',
@@ -64,15 +63,15 @@ export default {
     }
   },
   methods: {
-    onReaderSelect(name, {files}) {
+    onReaderSelect(name, index, {files}) {
       files.forEach(file => {
-        console.log('[Mand Mobile] ImageReader Selected:', 'File Name ' + file.name)
+        console.log('[Al Mobile] ImageReader Selected:', 'File Name ' + file.name)
       })
       Toast.loading('图片读取中...')
     },
-    onReaderComplete(name, {dataUrl, file}) {
+    onReaderComplete(name, index, {dataUrl, file}) {
       Toast.hide()
-      console.log('[Mand Mobile] ImageReader Complete:', 'File Name ' + file.name)
+      console.log('[Al Mobile] ImageReader Complete:', 'File Name ' + file.name)
       setTimeout(() => {
         const demoImageList = this.imageList[name] || []
         demoImageList.push(dataUrl)
@@ -89,11 +88,9 @@ export default {
     },
   },
 }
-
-</script>
-n22-
+</script>
 <style lang="stylus" scoped>
-.md-example-child-reader
+.n22-example-child-reader
   .image-reader-list
     float left 
     width 100%
@@ -112,9 +109,9 @@ n22-
       background-size cover
       overflow hidden
       &:nth-of-type(4n)
-        mn22-in-right 0
+        n22-in-right 0
       &.add 
-        .md-icon
+        .n22-icon
           position absolute
           top 40%
           left 50%
@@ -125,8 +122,8 @@ n22-
           top 50%
           left 0
           width 100%
-          margin-top 15px
-          font-size 22px
+          margin-top 7.5px
+          font-size 11px
           color #CCC
           text-align center
       .image-reader-item-del
@@ -135,6 +132,6 @@ n22-
         right 0
         zn22-dex 3
         opacity .8
-        .md-icon-close
-          font-size 24px
+        .n22-icon-close
+          font-size 12px
 </style>

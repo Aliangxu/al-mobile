@@ -1,5 +1,5 @@
 <template>
-  <nav class="n22-tab-bar" :style="{marginTop: getSwiperTop,}">
+  <nav class="n22-tab-bar" :style="{ marginTop: getSwiperTop }">
     <div class="n22-tab-bar-inner" ref="wrapper">
       <template v-if="scrollable">
         <div class="n22-tab-bar-start" v-show="maskStartShown"></div>
@@ -12,15 +12,15 @@
         :key="scrollerTmpKey"
         @scroll="$_onScroll"
       >
-         <div class="n22-tab-bar-list" :style="{width: contentW + 'px'}">
+        <div class="n22-tab-bar-list" :style="{ width: contentW + 'px' }">
           <a
             class="n22-tab-bar-item"
             :class="{
-              'is-active': currentName === (item.name||index),
+              'is-active': currentName === (item.name || index),
               'is-disabled': !!item.disabled
             }"
             v-for="(item, index) in items"
-            :key="(item.name||index)"
+            :key="item.name || index"
             ref="items"
             @click="$_onClick(item, index)"
           >
@@ -30,7 +30,8 @@
               :items="items"
               :index="index"
               :currentName="currentName"
-            >{{ item.label||item.name }}</slot>
+              >{{ item.label || item.name }}</slot
+            >
           </a>
         </div>
         <span
@@ -41,22 +42,25 @@
           v-if="hasInk"
           :style="{
             width: inkWidth + 'px',
-            transform: 'translateX(' + inkPos + 'px)',
+            transform: 'translateX(' + inkPos + 'px)'
           }"
         ></span>
       </n22-scroll-view>
     </div>
-    <div v-for="(tab,i) in items" :key="i">
+    <div v-for="(tab, i) in items" :key="i">
       <transition :name="secMenuAnm">
-        <slot :curIndex="currentName" v-if="i===currentName" name="secMenu"></slot>
+        <slot
+          :curIndex="currentName"
+          v-if="i === currentName"
+          name="secMenu"
+        ></slot>
       </transition>
     </div>
   </nav>
 </template>
 
-<script>
-import ScrollView from '../scroll-view'
-import { ui } from "../_util";
+<script>import ScrollView from '../scroll-view'
+import {ui} from '../_util'
 
 export default {
   name: 'n22-tab-bar',
@@ -86,19 +90,23 @@ export default {
       type: Boolean,
       default: false,
     },
+    isScrollable: {
+      type: Boolean,
+      default: true,
+    },
 
     swiperTop: {
       // 顶部距离高度
-      type: [Number,Array],
+      type: [Number, Array],
       default: () => {
-        return [];
-      }
+        return []
+      },
     },
     secMenuAnm: {
       // 二级菜单动画
       type: String,
-      default: ""
-    }
+      default: '',
+    },
   },
 
   data() {
@@ -117,17 +125,17 @@ export default {
   computed: {
     getSwiperTop() {
       // 内容区距离顶部距离
-      let head = 0;
-      if(Array.isArray(this.swiperTop)){
-        head = this.swiperTop[this.currentName] || 0;
-      }else{
-        head = this.swiperTop || 0;
+      let head = 0
+      if (Array.isArray(this.swiperTop)) {
+        head = this.swiperTop[this.currentName] || 0
+      } else {
+        head = this.swiperTop || 0
       }
-      console.log('%c ui.allHeadTopPx','color:green;',ui.allHeadTopPx);
-      return ui.dealPxToVw(head) + "vw";
+      console.log('%c ui.allHeadTopPx', 'color:green;', ui.allHeadTopPx)
+      return ui.dealPxToVw(head) + 'vw'
     },
     scrollable() {
-      return this.contentW > this.wrapperW
+      return this.isScrollable ? this.contentW > this.wrapperW : this.isScrollable
     },
     currentIndex() {
       for (let i = 0, len = this.items.length; i < len; i++) {
@@ -213,8 +221,8 @@ export default {
         return
       }
       this.$emit('change', item, index, this.currentIndex)
-      this.currentName = (item.name||index)
-      this.$emit('input', (item.name||index))
+      this.currentName = item.name || index
+      this.$emit('input', item.name || index)
     },
     // MARK: public methods
     reflow() {
@@ -266,8 +274,7 @@ export default {
     },
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus" scoped>
 .n22-tab-bar

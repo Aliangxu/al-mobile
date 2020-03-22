@@ -1,30 +1,25 @@
  <template>
 	<div class="rating_container">
         <section class="star_container">
-            <svg-icon icon-class="star" class="grey_fill" v-for="num in 5" :key="num"></svg-icon>
+            <!-- <svg-icon icon-class="star" class="grey_fill" v-for="num in 5" :key="num"></svg-icon> -->
         </section>
         <div :style="'width:' + 3.5*2/5*100 + 'px'" class="star_overflow">
             <section class="star_container" >
-                <svg-icon icon-class="star_on" class="orange_fill" v-for="num in 5" :key="num"></svg-icon>
+                <!-- <svg-icon icon-class="star_on" class="orange_fill" v-for="num in 5" :key="num"></svg-icon> -->
             </section>
         </div>
     </div>
 </template>
 
-<script>
-    export default {
-      name: 'n22-star',
-    	data(){
-            return{
-               
-            }
-        },
-        mounted(){
-        	
-        },
-        props:['rating'],
-    }
-</script>
+<script>export default {
+  name: 'n22-star',
+  data() {
+    return {}
+  },
+  mounted() {},
+  props: ['rating'],
+}
+</script>
 
 <style lang="stylus" scoped>
 	.rating_container{

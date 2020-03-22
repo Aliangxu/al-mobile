@@ -1,5 +1,6 @@
 ---
 title: ImageReader 图片选择器
+preview: https://qiaoxiyan.com/al-mobile/examples/#/image-reader
 ---
 
 用于相册照片读取或拉起拍照
@@ -7,8 +8,8 @@ title: ImageReader 图片选择器
 ### 引入
 
 ```javascript
-import { ImageReader } from '@/components'
-import imageProcessor from '@/components/image-reader/image-processor' // 图片处理插件，用法参考#imageProcessor
+import { ImageReader } from 'al-mobile'
+import imageProcessor from 'al-mobile/image-reader/image-processor' // 图片处理插件，用法参考#imageProcessor
 
 Vue.component(ImageReader.name, ImageReader)
 ```
@@ -36,6 +37,7 @@ Vue.component(ImageReader.name, ImageReader)
 |属性 | 说明 | 类型| 备注|
 |-----|-----|-----|-----|
 |name|选择器标识|String|-|
+|select|下标|String|-|
 |files|图片对象集合|Array<File>|-|
 
 ##### @complete(name, { dataUrl, blob, file })
@@ -44,8 +46,8 @@ Vue.component(ImageReader.name, ImageReader)
 |属性 | 说明 | 类型| 备注|
 |-----|-----|-----|-----|
 |name|选择器标识|String|-|
-|dataUrl|图片Base64|String|-|
 |blob|图片Blob对象，可用于`formData`|Blob|-|
+|dataUrl|图片Base64|String|-|
 |file|图片对象|File|-|
 
 ##### @error(name, { code, msg })

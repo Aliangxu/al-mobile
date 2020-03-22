@@ -1,5 +1,6 @@
 ---
 title: Agree 勾选按钮
+preview: https://qiaoxiyan.com/al-mobile/examples/#/agree
 ---
 
 用于标记切换某种状态，如协议勾选

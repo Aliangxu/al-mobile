@@ -8,12 +8,12 @@
       :accept="mimeType"
       :capture="isCameraOnly"
       :multiple="isMultiple"
-      @change="$_onFileChange"/>
+      @change="$_onFileChange"
+    />
   </div>
 </template>
 
-<script>
-import createImageReader from './image-reader'
+<script>import createImageReader from './image-reader'
 import {dataURItoBlob} from './image-dataurl'
 import {functionToUrl, randomId} from '../_util'
 
@@ -87,7 +87,7 @@ export default {
   methods: {
     // MARK: private methods
     $_emitter(event, data) {
-      this.$emit(event, this.name,this.selectIndex, data)
+      this.$emit(event, this.name, this.selectIndex, data)
     },
     $_openWebWorker(fn) {
       /* istanbul ignore next */
@@ -145,6 +145,7 @@ export default {
 
       /* istanbul ignore next */
       if (fileElement.files && fileElement.files.length) {
+        console.log('%c fileElement', 'color:#00CD00', fileElement.files)
         this.$_emitter('select', {
           files: Array.prototype.slice.call(fileElement.files),
         })
@@ -180,8 +181,7 @@ export default {
     },
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus">
 .n22-image-reader

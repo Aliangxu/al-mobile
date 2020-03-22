@@ -1,5 +1,6 @@
 ---
 title: DatePicker
+preview: https://qiaoxiyan.com/al-mobile/examples/#/date-picker
 ---
 
 Date or time selecting, supports year/month/day/hour/minute and range selecting
@@ -7,7 +8,7 @@ Date or time selecting, supports year/month/day/hour/minute and range selecting
 ### Import
 
 ```javascript
-import { DatePicker } from '@/components'
+import { DatePicker } from 'al-mobile'
 
 Vue.component(DatePicker.name, DatePicker)
 ```

@@ -1,5 +1,6 @@
 ---
 title: InputItem 输入框
+preview: https://qiaoxiyan.com/al-mobile/examples/#/input-item
 ---
 
 单行文本输入框，支持特殊场景文本格式化
@@ -7,7 +8,7 @@ title: InputItem 输入框
 ### 引入
 
 ```javascript
-import { InputItem } from '@/compoments'
+import { InputItem } from 'al-mobile'
 
 Vue.component(InputItem.name, InputItem)
 ```

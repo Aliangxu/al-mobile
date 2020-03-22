@@ -1,6 +1,6 @@
 ---
 title: CodeBox 验证码输入框
-preview: https://didi.github.io/mand-mobile/examples/#/codebox
+preview: https://qiaoxiyan.com/al-mobile/examples/#/codebox
 ---
 
 验证码输入框
@@ -8,7 +8,7 @@ preview: https://didi.github.io/mand-mobile/examples/#/codebox
 ### 引入
 
 ```javascript
-import { Codebox } from 'mand-mobile'
+import { Codebox } from 'al-mobile'
 
 Vue.component(Codebox.name, Codebox)
 ```

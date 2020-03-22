@@ -52,8 +52,7 @@
   </div>
 </template>
 
-<script>
-import {Steps, Amount, Icon} from 'al-mobile'
+<script>import {Steps, Amount, Icon} from 'al-mobile'
 
 export default {
   name: 'steps-demo',
@@ -90,26 +89,25 @@ export default {
     }
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus">
 .n22-example-child-steps-8
   .custom-content
     .name
-      font-size 28px
+      font-size 14px
       color #858B9C
       &.active
-        font-size 40px
+        font-size 20px
         color #111A34
     .amount
-      margin-top 20px
+      margin-top 10px
       color #111A34
       .n22-amount
         margin-right 5px
-        font-size 80px
+        font-size 40px
     .desc
-      line-height 40px !important
+      line-height 20px !important
       span
         color #FF8325
 </style>

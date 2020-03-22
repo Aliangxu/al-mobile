@@ -1,5 +1,6 @@
 ---
 title: ActionBar 操作栏
+preview: https://qiaoxiyan.com/al-mobile/examples/#/action-bar
 ---
 
 汇集若干文案或操作按钮的吸底边栏，可用于展示表单信息与提交按钮

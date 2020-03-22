@@ -18,49 +18,49 @@
         <!-- <n22-icon name="close" size="lg" slot="cancel" /> -->
       </n22-popup-title-bar>
       <div class="n22-tab-picker-search" v-if="isSearch">
-         <input class="n22-tab-picker-search-input" v-model="searchText" type="text" @change="$_onInputChange">
+        <input
+          class="n22-tab-picker-search-input"
+          v-model="searchText"
+          type="text"
+          @change="$_onInputChange"
+        />
       </div>
       <div class="n22-tab-picker-content">
-          <n22-tabs
-            v-model="currentTab"
-            :key="tabsTmpKey"
-            :inkLength="100"
-            ref="tabs"
-          >
-            <n22-scroll-view
-              ref="scrollView"
-              :scrolling-x="false"
-              auto-reflow
+        <n22-tabs
+          v-model="currentTab"
+          :key="tabsTmpKey"
+          :inkLength="100"
+          ref="tabs"
+        >
+          <n22-scroll-view ref="scrollView" :scrolling-x="false" auto-reflow>
+            <n22-tab-pane
+              v-for="(pane, index) in searchText ? searchResult : panes"
+              :key="pane.name"
+              :name="pane.name"
+              :label="pane.label"
             >
-              <n22-tab-pane
-                v-for="(pane, index) in (searchText?searchResult:panes)"
-                :key="pane.name"
-                :name="pane.name"
-                :label="pane.label"
-              >
-                <n22-radio-list
-                  :value="pane.value"
-                  :options="pane.options"
-                  :is-slot-scope="hasSlot"
-                  @input="$_onSelectPaneItem($event, index)"
-                  icon=""
-                  icon-inverse=""
-                  icon-position="right"
-                >{{pane.value}}
-                  <template slot-scope="{ option }">
-                    <slot :option="option"></slot>
-                  </template>
-                </n22-radio-list>
-              </n22-tab-pane>
-            </n22-scroll-view>
-          </n22-tabs>
+              <n22-radio-list
+                :value="pane.value"
+                :options="pane.options"
+                :is-slot-scope="hasSlot"
+                @input="$_onSelectPaneItem($event, index)"
+                icon=""
+                icon-inverse=""
+                icon-position="right"
+                >{{ pane.value }}
+                <template slot-scope="{ option }">
+                  <slot :option="option"></slot>
+                </template>
+              </n22-radio-list>
+            </n22-tab-pane>
+          </n22-scroll-view>
+        </n22-tabs>
       </div>
     </n22-popup>
   </div>
 </template>
 
-<script>
-import Popup from '../popup'
+<script>import Popup from '../popup'
 import PopupTitlebar from '../popup/title-bar'
 import popupMixin from '../popup/mixins'
 import popupTitleBarMixin from '../popup/mixins/title-bar'
@@ -71,7 +71,7 @@ import RadioList from '../radio-list'
 import ScrollView from '../scroll-view'
 import {extend} from '../_util'
 
-//外部组件
+// 外部组件
 // import Fuse from "fuse.js";
 
 export default {
@@ -82,7 +82,7 @@ export default {
   components: {
     [Popup.name]: Popup,
     [PopupTitlebar.name]: PopupTitlebar,
-   //  [Icon.name]: Icon,
+    //  [Icon.name]: Icon,
     [Tabs.name]: Tabs,
     [TabPane.name]: TabPane,
     [RadioList.name]: RadioList,
@@ -137,21 +137,23 @@ export default {
       currentTab: '',
       oldCurrentTab: '',
       tabsTmpKey: Date.now(),
-      searchText: "",
+      searchText: '',
       fuse: null,
-      searchResult:[{
-         "name": "province",
-         "label": "请选择",
-         "options": []
-      }],
+      searchResult: [
+        {
+          name: 'province',
+          label: '请选择',
+          options: [],
+        },
+      ],
     }
   },
 
   watch: {
-     searchText(newVal,oldVal){
-        console.log('%c tab-picker-searchText-newVal','color:green;',newVal);
-        newVal&&this.search(this.searchText);
-     }
+    searchText(newVal) {
+      console.log('%c tab-picker-searchText-newVal', 'color:green;', newVal)
+      newVal && this.search(this.searchText)
+    },
   },
 
   computed: {
@@ -203,7 +205,7 @@ export default {
     }
 
     /* search */
-    if (this.isSearch&&this.searchData&&this.searchData.options&&this.searchData.options.length>0) {
+    if (this.isSearch && this.searchData && this.searchData.options && this.searchData.options.length > 0) {
       //  console.log('%c tab-picker-created-this.searchData','color:green;',this.searchData);
       // this.initFuse(this.searchData.options);
       this.currentTab = this.searchData.name // select the tab corresponding to this pane
@@ -211,16 +213,16 @@ export default {
   },
 
   methods: {
-   search(query) {
-      console.log("%c testsearch", "color:green;", "testsearch");
-      this.searchResult[0].options = this.fuse.search(query);
-      console.log("%c searchResult", "color:green;", this.searchResult);
-   },
-   $_onInputChange(){
-      console.log('%c tab-picker-this.currentTab','color:green;',this.currentTab);
-      console.log('%c tab-picker-this.panes','color:green;',this.panes);
-      console.log('%c tab-picker-this.data','color:green;',this.data);
-   },
+    search(query) {
+      console.log('%c testsearch', 'color:green;', 'testsearch')
+      this.searchResult[0].options = this.fuse.search(query)
+      console.log('%c searchResult', 'color:green;', this.searchResult)
+    },
+    $_onInputChange() {
+      console.log('%c tab-picker-this.currentTab', 'color:green;', this.currentTab)
+      console.log('%c tab-picker-this.panes', 'color:green;', this.panes)
+      console.log('%c tab-picker-this.data', 'color:green;', this.data)
+    },
     // MARK: private events
     $_onPopupInput(val) {
       this.$emit('input', val)
@@ -275,65 +277,68 @@ export default {
       return this.selected
     },
     getSelectedOptions() {
-      if(this.isSearch&&this.searchText){
-         let sel = this.selected[0]
-         if (this.searchResult && this.searchResult.length) {
-            let options = [];
-            for (let i = 0; i < this.data.options.length; i++) {
-               const one = this.data.options[i];
-               if(one.value==sel.slice(0,2)){
-                  options.push(one);
-                  for (let m = 0; m < one.children.options.length; m++) {
-                     const two = one.children.options[m];
-                     if(two.value==sel.slice(0,4)){
-                        options.push(two);
-                        for (let n = 0; n < two.children.options.length; n++) {
-                           const thre = two.children.options[n];
-                           if(thre.value==sel){
-                              options.push(thre);
-                              return options;
-                           }
-                        }
-                     }   
+      if (this.isSearch && this.searchText) {
+        let sel = this.selected[0]
+        if (this.searchResult && this.searchResult.length) {
+          let options = []
+          for (let i = 0; i < this.data.options.length; i++) {
+            const one = this.data.options[i]
+            // eslint-disable-next-line
+            if (one.value == sel.slice(0, 2)) {
+              options.push(one)
+              for (let m = 0; m < one.children.options.length; m++) {
+                const two = one.children.options[m]
+                // eslint-disable-next-line
+                if (two.value == sel.slice(0, 4)) {
+                  options.push(two)
+                  for (let n = 0; n < two.children.options.length; n++) {
+                    const thre = two.children.options[n]
+                    // eslint-disable-next-line
+                    if (thre.value == sel) {
+                      options.push(thre)
+                      return options
+                    }
                   }
-               }
+                }
+              }
             }
-            return options;
-         } else {
-            return []
-         }
-      }else{
-         if (this.panes && this.panes.length) {
-            return this.panes.filter(pane => pane.value).map(pane => pane.selected)
-         } else {
-            return []
-         }
+          }
+          return options
+        } else {
+          return []
+        }
+      } else {
+        if (this.panes && this.panes.length) {
+          return this.panes.filter(pane => pane.value).map(pane => pane.selected)
+        } else {
+          return []
+        }
       }
     },
     hideTabPicker() {
       this.$emit('input', false)
     },
 
-    initFuse(list) {
-      this.fuse = new Fuse(list, {
-         shouldSort: true,
-         threshold: 0.4,
-         location: 0,
-         distance: 100,
-         maxPatternLength: 32,
-         minMatchCharLength: 1,
-         keys: [//需要获取的对象映射
-            {
-               name: "label",
-               weight: 0.7
-            }
-         ]
-      });
-   }
+    initFuse() {
+      // this.fuse = new Fuse(list, {
+      //   shouldSort: true,
+      //   threshold: 0.4,
+      //   location: 0,
+      //   distance: 100,
+      //   maxPatternLength: 32,
+      //   minMatchCharLength: 1,
+      //   keys: [
+      //     // 需要获取的对象映射
+      //     {
+      //       name: 'label',
+      //       weight: 0.7
+      //     }
+      //   ]
+      // })
+    },
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus">
 .n22-tab-picker

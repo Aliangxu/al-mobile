@@ -119,14 +119,14 @@ const rollupPluginFactory = async () =>  {
   }),
   ...(conditionHelper(isTest, [
     common({
-      exclude: ['components/_util/*.js'],
+      exclude: 'components/_util/*.js',
       namedExports: { '@vue/test-utils': ['mount', 'shallow'] },
     }),
     glob(),
   ])),
   ...(conditionHelper(isDev, [
     common({
-      include: 'node_modules/**',
+      include: ['node_modules/**', 'components/common/mescroll.js/mescroll.js', 'components/common/swiper/dist/js/swiper.js', 'components/scroll-table/assets/iscroll-probe.js'],
       // namedExports: { 'fastclick': ['FastClick'] },
     }),
   ])),

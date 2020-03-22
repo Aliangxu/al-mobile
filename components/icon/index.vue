@@ -3,22 +3,21 @@
     v-if="svg || isInnerSvg"
     class="n22-icon icon-svg"
     :class="[`n22-icon-${name}`, size]"
-    :style="{fill: color}"
+    :style="{ fill: color }"
     @click="$emit('click', $event)"
   >
-    <use :xlink:href="`#${name}`"/>
+    <use :xlink:href="`#${name}`" />
   </svg>
   <i
     v-else-if="name"
     class="n22-icon icon-font"
     :class="[`n22-icon-${name}`, name, size]"
-    :style="{color}"
+    :style="{ color }"
     @click="$emit('click', $event)"
   ></i>
 </template>
 
-<script>
-import loadSprite from './load-spirte'
+<script>import loadSprite from './load-spirte'
 import defaultSvg from './default-svg-list'
 
 export default {
@@ -53,8 +52,7 @@ export default {
     },
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus">
 .n22-icon
@@ -68,7 +66,7 @@ export default {
 
   // size
   &.icon-font
-    font-family  "Mand-Mobile-Icon" !important
+    font-family  "Al-Mobile-Icon" !important
     font-size 16px
     font-style normal
     font-weight normal
@@ -92,7 +90,7 @@ export default {
     &:before
       position relative
       z-index 2
-  
+
   &.icon-svg
     &.xss
       width icon-size-xxs
@@ -111,117 +109,91 @@ export default {
       vertical-height(icon-size-lg)
 
 // name
-.n22-icon-rectangle:before
-  content "\e900"
-.n22-icon-invisible:before
-  content "\e601"
-.n22-icon-visible:before
-  content "\e602"
+.n22-icon-view_off:before
+  content "\e639"
+.n22-icon-view:before
+  content "\e640"
+.n22-icon-wechat:before
+  content "\e642"
+.n22-icon-wechat_friends:before
+  content "\e641"
 .n22-icon-right:before
-  content "\e905"
+  content "\e61c"
 .n22-icon-wrong:before
-  content "\e906"
-.n22-icon-info:before
-  content "\e605"
-.n22-icon-service:before
-  content "\e606"
+  content "\e624"
 .n22-icon-edit:before
-  content "\e607"
-.n22-icon-refresh:before
-  content "\e901"
-.n22-icon-question:before
-  content "\e608"
+  content "\e629"
 .n22-icon-setting:before
-  content "\e609"
-.n22-icon-wait:before
-  content "\e902"
+  content "\e662"
 .n22-icon-check:before
-  content "\e904"
-.n22-icon-check-disabled:before
-  content "\e903"
+  content "\e619"
+.n22-icon-check_square:before
+  content "\e61a"
+.n22-icon-check_disabled:before
+  content "\e620"
 .n22-icon-checked:before, .n22-icon-success:before
-  content "\e908"
+  content "\e618"
+.n22-icon-checked_sauare:before, .n22-icon-success_square:before
+  content "\e61f"
 .n22-icon-clear:before, .n22-icon-fail:before
-  content "\e60e"
-.n22-icon-info-solid:before
-  content "\e907"
+  content "\e61e"
+.n22-icon-question_mark:before
+  content "\e632"
 .n22-icon-warn:before
-  content "\e60b"
-.n22-icon-security:before
-  content "\e60f"
-.n22-icon-rmb:before
-  content "\e610"
+  content "\e63c"
+.n22-icon-warning:before
+  content "\e631"
+.n22-icon-alipay:before
+  content "\e63f"
 .n22-icon-scan:before
-  content "\e611"
-.n22-icon-share:before
-  content "\e612"
+  content "\e635"
 .n22-icon-back:before
   content "\e613"
-.n22-icon-card-bag:before
+.n22-icon-add_pro:before
   content "\e614"
-.n22-icon-message:before
-  content "\e615"
-.n22-icon-order:before
-  content "\e616"
-.n22-icon-balance:before
-  content "\e617"
-.n22-icon-coupon:before
-  content "\e618"
-.n22-icon-sort:before
-  content "\e619"
-.n22-icon-address-book:before
-  content "\e61a"
-.n22-icon-mobile-phone:before
-  content "\e61b"
-.n22-icon-home:before
-  content "\e61c"
-.n22-icon-discovery:before
-  content "\e61d"
 .n22-icon-calendar:before
-  content "\e61e"
-.n22-icon-user:before
-  content "\e61f"
-.n22-icon-time:before
-  content "\e620"
-.n22-icon-search:before
-  content "\e621"
-.n22-icon-switch:before
+  content "\e615"
+.n22-icon-change:before
+  content "\e617"
+.n22-icon-email:before
+  content "\e61b"
+.n22-icon-correct:before
+  content "\e61c"
+.n22-icon-customer_service:before
   content "\e622"
-.n22-icon-camera:before
-  content "\e623"
-.n22-icon-clock:before
-  content "\e624"
-.n22-icon-profession:before
-  content "\e625"
-.n22-icon-delete:before
-  content "\e626"
-.n22-icon-id-card:before
-  content "\e627"
-.n22-icon-filter:before
-  content "\e628"
-.n22-icon-location:before
-  content "\e629"
-.n22-icon-authentication:before
-  content "\e62a"
-.n22-icon-motor-vehicle:before
-  content "\e62b"
-.n22-icon-phone:before
-  content "\e62c"
-.n22-icon-volumn:before
-  content "\e62d"
-.n22-icon-arrow-left:before
-  content "\e603"
-.n22-icon-arrow-right:before
-  content "\e630"
-.n22-icon-arrow-up:before
-  content "\e633"
-.n22-icon-arrow-down:before
-  content "\e634"
 .n22-icon-close:before
-  content "\e604"
+  content "\e624"
+.n22-icon-proccess:before
+  content "\e626"
+.n22-icon-camera:before
+  content "\e627"
+.n22-icon-mobile_phone:before
+  content "\e628"
+.n22-icon-share:before
+  content "\e62a"
+.n22-icon-search:before
+  content "\e62b"
+.n22-icon-message:before
+  content "\e62d"
+.n22-icon-volumn:before
+  content "\e63d"
+.n22-icon-triangle:before
+  content "\e62f"
+.n22-icon-delete:before
+  content "\e62e"
+.n22-icon-right_arrow:before
+  content "\e625"
+.n22-icon-qq:before
+  content "\e633"
+.n22-icon-calendar1:before
+  content "\e636"
+.n22-icon-star:before
+  content "\e637"
+.n22-icon-star_on:before
+  content "\e638"
 
 @font-face
-  font-family Mand-Mobile-Icon
+  font-family Al-Mobile-Icon
   font-style normal
   font-weight normal
   /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */

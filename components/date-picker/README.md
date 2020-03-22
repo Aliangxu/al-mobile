@@ -1,5 +1,6 @@
 ---
 title: DatePicker 时间选择器
+preview: https://qiaoxiyan.com/al-mobile/examples/#/date-picker
 ---
 
 选择日期或者时间，支持年/月/日/时/分和按照范围选择
@@ -7,7 +8,7 @@ title: DatePicker 时间选择器
 ### 引入
 
 ```javascript
-import { DatePicker } from '@/components'
+import { DatePicker } from 'al-mobile'
 
 Vue.component(DatePicker.name, DatePicker)
 ```

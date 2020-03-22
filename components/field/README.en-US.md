@@ -1,5 +1,6 @@
 ---
 title: Field
+preview: https://qiaoxiyan.com/al-mobile/examples/#/field
 ---
 
 Arrange vertically and display current contents, status and other allowable operations.
@@ -7,7 +8,7 @@ Arrange vertically and display current contents, status and other allowable oper
 ### Import
 
 ```javascript
-import { Field, FieldItem } from '@/compoments'
+import { Field, FieldItem } from 'al-mobile'
 
 Vue.component(Field.name, Field)
 Vue.component(FieldItem.name, FieldItem)

@@ -1,12 +1,12 @@
 ---
 title: Check 复选项
-preview: https://didi.github.io/mand-mobile/examples/#/check
+preview: https://qiaoxiyan.com/al-mobile/examples/#/check
 ---
 
 ### 引入
 
 ```javascript
-import { Check, CheckBox, CheckGroup, CheckList } from 'mand-mobile'
+import { Check, CheckBox, CheckGroup, CheckList } from 'al-mobile'
 
 Vue.component(Check.name, Check)
 Vue.component(CheckBox.name, CheckBox)

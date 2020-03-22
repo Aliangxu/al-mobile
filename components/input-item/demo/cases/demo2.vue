@@ -40,8 +40,7 @@
   </div>
 </template>
 
-<script>
-import {InputItem, Field} from 'al-mobile'
+<script>import {InputItem, Field} from 'al-mobile'
 
 export default {
   name: 'input-item-demo',
@@ -62,12 +61,11 @@ export default {
   },
   methods: {
     onInputKeydown(name, event) {
-      console.log(`[Mand Mobile InputItem keydown] ${event.keyCode}`)
+      console.log(`[Al Mobile InputItem keydown] ${event.keyCode}`)
     },
     onInputChange(name, value) {
-      console.log(`[Mand Mobile InputItem change] ${value}`)
+      console.log(`[Al Mobile InputItem change] ${value}`)
     },
   },
 }
-
-</script>
+</script>

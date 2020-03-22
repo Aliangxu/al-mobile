@@ -1,5 +1,6 @@
 ---
 title: Steps
+preview: https://qiaoxiyan.com/al-mobile/examples/#/steps
 ---
 
 A navigation bar helps users complete tasks through the process and displays the current step
@@ -7,7 +8,7 @@ A navigation bar helps users complete tasks through the process and displays the
 ### Import
 
 ```javascript
-import { Steps } from '@/components'
+import { Steps } from 'al-mobile'
 
 Vue.component(Steps.name, Steps)
 ```
@@ -46,7 +47,7 @@ Slot of step icon that has been completed,  generally used to customize the comp
 ```html
 <template slot="reached" slot-scope="{ index }">
   <!-- Custom icon if the index value is 1 -->
-  <md-icon name="checked" v-if="index === 1"></md-icon>
+  <n22-icon name="checked" v-if="index === 1"></n22-icon>
   <!-- Default step icon -->
   <div class="step-node-default" v-else></div>
 </template>

@@ -48,9 +48,9 @@ module.exports = {
         options: vueLoaderConfig
       },
       {
-        test: /\.js$/,
+        test: /\.js[x]$/,
         loader: 'babel-loader?cacheDirectory',
-        include: [resolve('theme'), mbConfig.output]
+        include: [resolve('theme'),resolve('../components'), mbConfig.output]
       },
       {
         test: /\.(png|jpe?g|gif)(\?.*)?$/,

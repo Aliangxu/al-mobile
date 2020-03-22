@@ -75,7 +75,7 @@ export function trimValue(value, gap = ' ') {
   return value
 }
 
-export function doPrecision(value, precision, isRoundUp, zeroText) {
+export function doPrecision(value, precision, isRoundUp) {
   const exponentialForm = Number(`${value}e${precision}`)
   const rounded = isRoundUp ? Math.round(exponentialForm) : Math.floor(exponentialForm)
   return Number(`${rounded}e-${precision}`).toFixed(precision)
