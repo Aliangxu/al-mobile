@@ -2,14 +2,14 @@
 .n22-button
   vertical-align middle
   &.theme-primary
-    background #f5f5f5
-    border 1px solid #f5f5f5
+    background radio-color-background-uncheck
+    border 1px solid radio-color-background-border-uncheck
     border-width 1px
     border-style solid
     &.checked
-      background-color color-primary
-      border 1px solid color-primary
-      color #fff !important
+      background-color radio-color-background-check
+      border 1px solid radio-color-background-border-check
+      color radio-color-font-check !important
   &.size-xs
     padding 0 10px
     font-size 12px
@@ -22,6 +22,8 @@
 
 
 .n22-radio
+  box-sizing border-box
+  text-align center
   min-width 55px
   height 20px
   line-height 10px
@@ -64,7 +66,7 @@
 .content-margin
   margin-left -10px
 
-.n22-radioItem-item
+.n22-radio-item-input
   &.is-error
     /deep/.n22-field-item-content
       hairline(bottom, input-item-color-error, 0, 4px)
@@ -85,20 +87,20 @@
       :data-vv-as="dataVvAs"
     > -->
     <n22-field-item
-      class="n22-radioItem-item"
       v-on="$listeners"
       v-bind="$attrs"
       align="left"
       :title="title"
       :is-show-required="
-        isShowRequired &&
-        vvalidateModal &&
-        vvalidateModal.indexOf('required') > -1
+        isShowRequired ||
+        (vvalidateModal &&
+        vvalidateModal.indexOf('required') > -1)
           ? true
           : false
       "
       :isLinefeed="isLinefeed"
       :isLine="isLine"
+      class="n22-radio-item-input"
       :class="[
         isInputError() ? 'is-error' : '',
         isLinefeed ? '' : 'n22_field_item_radio',
@@ -145,6 +147,9 @@
           </span>
         </a>
       </div>
+      <template slot="title">
+        <slot name="title"></slot>
+      </template>
       <template slot="left">
         <slot name="left"></slot>
       </template>

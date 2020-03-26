@@ -39,6 +39,7 @@
                   ? opacityStyle.textColor
                   : ''
               }"
+              size="lg"
               :name="leftTextIcon"
             ></n22-icon>
             <!-- <a> -->
@@ -166,7 +167,7 @@ export default {
     },
     zIndex: {
       type: Number,
-      default: 1
+      default: 5
     },
     headBottom: {
       type: Boolean,

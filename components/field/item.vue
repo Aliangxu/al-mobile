@@ -250,10 +250,12 @@ export default {
 }
 
 .n22-show-required-star {
-  font-size: 30px;
+  font-size: 14px;
   color: red;
   display: block;
-  height: 20px;
+  height: 12px;
+  margin-left: -12px;
+  padding-right: 4px;
 }
 
 .n22-field-item-brief {

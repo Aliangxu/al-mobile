@@ -62,37 +62,39 @@
             </swiper-slide>
           </swiper>
           <div class="not-swiper-div" :style="{ top: getSwiperTop }" v-else>
-            <mescroll-vue
-              v-show="0 == curIndex"
-              ref="'mescroll'+0"
-              :down="getMescrollDown(0, tabs[0])"
-              :up="getMescrollUp(0)"
-              @init="mescrollInit(0, arguments)"
-            >
-              <slot name="content"></slot>
-              <!-- 列表数据 -->
-              <slot
-                v-if="isMescrollLoadList"
-                :id="'dataList' + 0"
-                :list="tabs[0].list"
-                :swiperIndex="curIndex"
-              ></slot>
-              <slot v-else></slot>
-              <div v-if="!connection" class="mescroll-empty">
-                <img
-                  v-if="dealExceptionShow(emptyImg, 'label') == 'img'"
-                  class="empty-icon"
-                  :src="emptyImg"
-                />
-                <p
-                  v-if="dealExceptionShow(emptyImg, 'label') == 'p'"
-                  class="empty-tip"
-                >
-                  {{ dealExceptionShow(emptyImg, 'show') }}~
-                </p>
-                <p @click="refresh" class="empty-btn">刷新</p>
-              </div>
-            </mescroll-vue>
+            <div v-for="(tab, i) in tabs" :key="i" style="height:100%">
+              <mescroll-vue
+                v-show="i == curIndex"
+                :ref="'mescroll' + i"
+                :down="getMescrollDown(i, tab)"
+                  :up="getMescrollUp(i)"
+                  @init="mescrollInit(i, arguments)"
+              >
+                <slot name="content"></slot>
+                <!-- 列表数据 -->
+                <slot
+                  v-if="isMescrollLoadList"
+                  :id="'dataList' + i"
+                  :list="tabs[i].list"
+                  :swiperIndex="curIndex"
+                ></slot>
+                <slot v-else></slot>
+                <div v-if="!connection" class="mescroll-empty">
+                  <img
+                    v-if="dealExceptionShow(emptyImg, 'label') == 'img'"
+                    class="empty-icon"
+                    :src="emptyImg"
+                  />
+                  <p
+                    v-if="dealExceptionShow(emptyImg, 'label') == 'p'"
+                    class="empty-tip"
+                  >
+                    {{ dealExceptionShow(emptyImg, 'show') }}~
+                  </p>
+                  <p @click="refresh" class="empty-btn">刷新</p>
+                </div>
+              </mescroll-vue>
+            </div>
           </div>
         </slot>
       </template>
@@ -103,8 +105,8 @@
 <script>// 轮播组件: https://github.com/surmon-china/vue-awesome-swiper
 // import 'swiper/dist/css/swiper.css'
 // import { swiper, swiperSlide } from 'vue-awesome-swiper'
-import '../common/swiper/dist/css/swiper.css'
-import {swiper, swiperSlide} from '../common/swiper/swiper-vue'
+// import '../common/swiper/dist/css/swiper.css'
+// import {swiper, swiperSlide} from '../common/swiper/swiper-vue'
 // 引入mescroll的vue组件
 import MescrollVue from '../common/mescroll.js/mescroll.vue'
 
@@ -115,8 +117,8 @@ import {isEmptyObject, ui} from '../_util'
 export default {
   name: 'al-content', // 使用xx-xx-xx命名方式具体看操作文档
   components: {
-    swiper, // 轮播组件
-    swiperSlide, // 轮播组件
+    // swiper, // 轮播组件
+    // swiperSlide, // 轮播组件
     MescrollVue, // Mescroll组件
   },
   props: {
@@ -135,7 +137,7 @@ export default {
     needSwiper: {
       // 是否启用swiper
       type: Boolean,
-      default: true,
+      default: false,
     },
     upUse: {
       // 是否启用上拉下载

@@ -4,6 +4,7 @@
 import {transformCamelCase, warn} from './_util'
 import AllHead from './all-head'
 import Content from './content'
+import ContentList from './content-list'
 // import HomeHead from './home-head'
 import Foot from './foot'
 import ActionSheet from './action-sheet'
@@ -87,6 +88,7 @@ const version = /* @echo MAN_VERSION */ MAN_VERSION
 export const components = {
   AllHead,
   Content,
+  ContentList,
   // HomeHead,
   Foot,
   ActionSheet,
@@ -186,6 +188,7 @@ export {
   version,
   AllHead,
   Content,
+  ContentList,
   // HomeHead,
   Foot,
   ActionSheet,

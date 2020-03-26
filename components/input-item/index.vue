@@ -18,9 +18,9 @@
     v-on="$listeners"
     v-bind="$attrs"
     :is-show-required="
-      isShowRequired &&
-      vvalidateModal &&
-      vvalidateModal.indexOf('required') > -1
+      isShowRequired ||
+      (vvalidateModal &&
+      vvalidateModal.indexOf('required') > -1)
         ? true
         : false
     "

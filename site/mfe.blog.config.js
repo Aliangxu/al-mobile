@@ -305,25 +305,25 @@ module.exports = {
         title: '相关资源',
         link: [
           {
-            text: 'Mand Mobile',
-            src: 'https://github.com/didi/mand-mobile',
+            text: 'Al Mobile',
+            src: 'https://github.com/Aliangxu/al-mobile',
           },
           // {
           //   text: 'Mand Mobile RN',
           //   src: 'https://github.com/didi/mand-mobile-rn',
           // },
-          {
-            text: '脚手架模板',
-            src: 'https://github.com/mand-mobile/mand-mobile-template',
-          },
-          {
-            text: '调色板 <span>- 主题编辑工具</span>',
-            src: 'https://mand-mobile.github.io/palette'
-          },
-          {
-            text: '国内镜像 🇨🇳',
-            src: 'https://mand-mobile.gitee.io/docs/index.gitee.html#/zh-CN/home'
-          },
+          // {
+          //   text: '脚手架模板',
+          //   src: 'https://github.com/mand-mobile/mand-mobile-template',
+          // },
+          // {
+          //   text: '调色板 <span>- 主题编辑工具</span>',
+          //   src: 'https://mand-mobile.github.io/palette'
+          // },
+          // {
+          //   text: '国内镜像 🇨🇳',
+          //   src: 'https://mand-mobile.gitee.io/docs/index.gitee.html#/zh-CN/home'
+          // },
         ],
       },
       {
@@ -331,12 +331,12 @@ module.exports = {
         link: [
           {
             text: 'Organization',
-            src: 'https://github.com/mand-mobile'
+            src: 'https://github.com/Aliangxu/al-mobile'
           },
-          {
-            text: '码云',
-            src: 'https://gitee.com/mand-mobile/mand-mobile'
-          },
+          // {
+          //   text: '码云',
+          //   src: 'https://gitee.com/mand-mobile/mand-mobile'
+          // },
           // {
           //   text: '官方交流群',
           //   src: 'https://shang.qq.com/wpa/qunwpa?idkey=97670d381924f2d46c53960715577502285952dd12f67e5dc9727f554955a254'
@@ -403,25 +403,25 @@ module.exports = {
         title: 'Resources',
         link: [
           {
-            text: 'Mand Mobile',
-            src: 'https://github.com/didi/mand-mobile',
+            text: 'Al Mobile',
+            src: 'https://github.com/Aliangxu/al-mobile',
           },
           // {
           //   text: 'Mand Mobile RN',
           //   src: 'https://github.com/didi/mand-mobile-rn',
           // },
-          {
-            text: 'Template',
-            src: 'https://github.com/mand-mobile/mand-mobile-template',
-          },
-          {
-            text: 'Palette <span>- Theme Editing Tool</span>',
-            src: 'https://mand-mobile.github.io/palette'
-          },
-          {
-            text: 'China Mirror 🇨🇳',
-            src: 'https://mand-mobile.gitee.io/docs/index.gitee.html#/en-US/home'
-          },
+          // {
+          //   text: 'Template',
+          //   src: 'https://github.com/mand-mobile/mand-mobile-template',
+          // },
+          // {
+          //   text: 'Palette <span>- Theme Editing Tool</span>',
+          //   src: 'https://mand-mobile.github.io/palette'
+          // },
+          // {
+          //   text: 'China Mirror 🇨🇳',
+          //   src: 'https://mand-mobile.gitee.io/docs/index.gitee.html#/en-US/home'
+          // },
         ],
       },
       {
@@ -429,16 +429,16 @@ module.exports = {
         link: [
           {
             text: 'Organization',
-            src: 'https://github.com/mand-mobile'
+            src: 'https://github.com/Aliangxu/al-mobile'
           },
-          {
-            text: 'Gitee',
-            src: 'https://gitee.com/mand-mobile/mand-mobile'
-          },
-          {
-            text: 'Official Communication Group',
-            src: 'https://shang.qq.com/wpa/qunwpa?idkey=97670d381924f2d46c53960715577502285952dd12f67e5dc9727f554955a254'
-          }
+          // {
+          //   text: 'Gitee',
+          //   src: 'https://gitee.com/mand-mobile/mand-mobile'
+          // },
+          // {
+          //   text: 'Official Communication Group',
+          //   src: 'https://shang.qq.com/wpa/qunwpa?idkey=97670d381924f2d46c53960715577502285952dd12f67e5dc9727f554955a254'
+          // }
         ],
       },
       {

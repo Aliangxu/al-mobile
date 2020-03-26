@@ -21,9 +21,9 @@
         :arrow="itemObject ? (getIsShowArrow ? arrow : false) : arrow"
         :addon="pickerValue0"
         :is-show-required="
-          isShowRequired &&
-          vvalidateModal &&
-          vvalidateModal.indexOf('required') > -1
+          isShowRequired ||
+        (vvalidateModal &&
+        vvalidateModal.indexOf('required') > -1)
             ? true
             : false
         "
@@ -193,7 +193,7 @@ export default {
     arrow: {
       //输入或者下拉左边的图标
       type: String,
-      default: 'arrow-right',
+      default: 'right_arrow',
     },
     inputType: {
       //文本type类型
