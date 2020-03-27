@@ -95,6 +95,7 @@
         :min-date="minDate"
         :max-date="maxDate"
         :notSelectIdf="notSelectIdf"
+        @hide="$_hide"
         @onNotSelectFun="onNotSelectFun"
         @onPickerConfirm="onPickerConfirm"
         @onDatePickerChange="onDatePickerChange"
@@ -106,7 +107,8 @@
   </div>
 </template>
 
-<script>/* eslint-disable */
+<script>
+/* eslint-disable */
 //import { mapState, mapActions } from "vuex";//引入组件样例--★★此处为引入vuex推荐此方法引入vuex的各个方法属性使用
 import FieldItem from '../field-item'
 // import Picker from "../picker";
@@ -131,7 +133,16 @@ export default {
   props: {
     defaultValue: [String, Array, Boolean, Number],
     value: [String, Array, Boolean, Number], //v-modal值
-    itemObject: [String, Array, Object, Number], //v-modal对象
+    itemObject: {
+      type: [String, Array, Object, Number],
+      default: ()=>{
+        return {
+          name: "",
+          code: "",
+          type: ""
+        }
+      }
+    }, //该v-modal字段属性对象
     appendTo: {
       default: () => mdDocument.body,
     },
@@ -189,6 +200,10 @@ export default {
       //文本name
       type: String,
       default: '',
+    },
+    selectDefaultValue: {
+      //默认滑动选择列选中的值
+      type: [String,Number]
     },
     arrow: {
       //输入或者下拉左边的图标
@@ -257,11 +272,13 @@ export default {
     },
     getIsShowArrow() {
       this.isShowArrow = this.itemObject.fieldValueDes1
-      if (typeof this.isShowArrow === 'boolean') {
-        return !this.isShowArrow
-      } else {
-        if (this.isShowArrow != '') {
-          return !JSON.parse(this.isShowArrow)
+      if (this.isShowArrow) {
+        if (typeof this.isShowArrow === 'boolean') {
+          return !this.isShowArrow
+        } else {
+          if (this.isShowArrow != '') {
+            return !JSON.parse(this.isShowArrow)
+          }
         }
       }
       return true
@@ -273,7 +290,7 @@ export default {
       isHand: false,
       isPickerShow0: false,
       pickerValue0: this.ispickerValue || '',
-      selectValue: '',
+      selectValue: this.selectDefaultValue||'',
       pickerData: this.options.length && this.options[0].length ? this.options : [this.options],
       // minDate: new Date("1819/01/01"),
       // maxDate: new Date(),
@@ -290,7 +307,8 @@ export default {
       )
     },
     isPickerShowClick() {
-      if (this.disabled) return
+      if (this.disabled) return;
+      this.$emit("dropSelectClick","");
       if (!this.isAppendTo) {
         // console.log("%c dropselect-val", "color:green;", this.isPickerShow0);
         // console.log("%c pickerData", "color:green;", this.pickerData);
@@ -326,8 +344,16 @@ export default {
             console.log('%c value', 'color:green;', value)
             _this.onNotSelectFun(value)
           },
+          hide: value => {
+            console.log('%c hide', 'color:green;', value)
+            _this.$_hide(value)
+          },
         })
       }
+    },
+    $_hide(val) {
+      console.log('%c hide', 'color:green;', val)
+      this.$emit('hide', val)
     },
     onNotSelectFun(val) {
       this.$emit('onNotSelectFun', val)
@@ -345,12 +371,12 @@ export default {
       this.selectValue = val
       this.isHand = true
       this.$emit('input', val, this.itemObject)
-      // this.$emit("changeData", val, this.itemObject,"","",oldVal);
+      this.$emit("onPickerConfirm", this.itemObject, val,oldVal,this.isHand,"","");
     },
     onPickerConfirmZD(newval, oldval, index, isHandV) {
       // this.$emit("changeData", val, this.itemObject,1,oldval);//回显
       let isHand = JSON.parse(JSON.stringify(this.isHand))
-      this.$emit('changeData', newval, this.itemObject, '', '', oldval, isHand)
+      this.$emit('changeData', this.itemObject, newval, oldval, isHand, '', '')
       this.isHand = false
       let val = ''
       let res = ''
@@ -442,7 +468,7 @@ export default {
       this.pickerValue0 = val
       this.isHand = true
       this.$emit('input', val, this.itemObject)
-      this.$emit('changeData', val, this.itemObject, '', '', '', this.isHand)
+      this.$emit('onDatePickerConfirm', this.itemObject, val, '', this.isHand, '', '')// 2020-03-20防止日期重复两次changeData
     },
     onAddressPickerConfirm(columnsValue, value, options, text) {
       console.log('%c onAddressPickerConfirm', 'color:green;', value)
@@ -452,19 +478,20 @@ export default {
       val.indexOf('|') < 0 && (val = options[0].value + '|' + options[1].value + '|' + options[2].value)
       this.pickerValue0 = text || value
       this.$emit('input', val, this.itemObject)
-      this.$emit('changeData', val, this.itemObject, value)
+      // this.$emit('changeData', this.itemObject, val, '', false, value)
+      this.$emit('onAddressPickerConfirm', this.itemObject, val, '', false, value)
     },
     assignDefault(newval, type) {
       if (this.defaultValue) {
         this.selectValue = this.defaultValue
         this.$emit('input', this.defaultValue)
-        this.$emit('changeData', this.defaultValue, this.itemObject)
+        this.$emit('changeData', this.itemObject, this.defaultValue)
       } else {
         if (!!!newval && type === 2) {
           this.selectValue = ''
           this.pickerValue0 = this.ispickerValue
           this.$emit('input', '')
-          this.$emit('changeData', '', this.itemObject, '', '')
+          this.$emit('changeData', this.itemObject, '', '', false,'', '')
         }
       }
     },
@@ -497,7 +524,8 @@ export default {
     // }
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
 .n22-drop-select-field-item {

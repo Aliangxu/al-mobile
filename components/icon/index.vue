@@ -17,7 +17,8 @@
   ></i>
 </template>
 
-<script>import loadSprite from './load-spirte'
+<script>
+import loadSprite from './load-spirte'
 import defaultSvg from './default-svg-list'
 
 export default {
@@ -52,7 +53,8 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
 .n22-icon
@@ -167,8 +169,8 @@ export default {
   content "\e626"
 .n22-icon-camera:before
   content "\e627"
-.n22-icon-mobile_phone:before
-  content "\e628"
+.n22-icon-phone:before
+  content "\e60d"
 .n22-icon-share:before
   content "\e62a"
 .n22-icon-search:before
@@ -181,6 +183,8 @@ export default {
   content "\e62f"
 .n22-icon-delete:before
   content "\e62e"
+.n22-icon-card:before
+  content "\e65d"
 .n22-icon-right_arrow:before
   content "\e625"
 .n22-icon-qq:before

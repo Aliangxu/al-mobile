@@ -1,6 +1,6 @@
 {
   "name": "al-mobile",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "A Vue.js 2.0 Mobile UI Toolkit",
   "homepage": "https://github.com/Aliangxu/al-mobile.git",
   "main": "lib/al-mobile.umd.js",
@@ -42,7 +42,7 @@
     "build:variables": "node build/rollup/build-css-variables",
     "build:analysis": "cross-env NODE_ENV=production node build/webpack/build-mand-mobile --analysis",
     "lint": "eslint --ext .js,.vue components test/unit/specs test/e2e/specs",
-    "precommit": "lint-staged",
+    "precommitt": "lint-staged",
     "build:webpack": "rm -rf ./lib && npm run build:webpack:al-mobile && npm run build:webpack:components",
     "build:webpack:example": "cross-env NODE_ENV=production node build/webpack/build-example",
     "build:webpack:al-mobile": "cross-env NODE_ENV=production node build/webpack/build-mand-mobile",

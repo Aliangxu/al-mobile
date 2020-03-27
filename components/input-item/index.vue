@@ -19,8 +19,7 @@
     v-bind="$attrs"
     :is-show-required="
       isShowRequired ||
-      (vvalidateModal &&
-      vvalidateModal.indexOf('required') > -1)
+      (vvalidateModal && vvalidateModal.indexOf('required') > -1)
         ? true
         : false
     "
@@ -146,12 +145,17 @@
   </n22-field-item>
 </template>
 
-<script>import Icon from '../icon'
+<script>
+import Icon from '../icon'
 import FieldItem from '../field-item'
 import NumberKeyboard from '../number-keyboard'
-import {getCursorsPosition, setCursorsPosition} from './cursor'
-import {noop, randomId} from '../_util'
-import {formatValueByGapRule, formatValueByGapStep, trimValue} from '../_util/formate-value'
+import { getCursorsPosition, setCursorsPosition } from './cursor'
+import { noop, randomId } from '../_util'
+import {
+  formatValueByGapRule,
+  formatValueByGapStep,
+  trimValue
+} from '../_util/formate-value'
 
 export default {
   name: 'n22-input-item',
@@ -159,19 +163,19 @@ export default {
   components: {
     [Icon.name]: Icon,
     [FieldItem.name]: FieldItem,
-    [NumberKeyboard.name]: NumberKeyboard,
+    [NumberKeyboard.name]: NumberKeyboard
   },
 
   inject: {
     rootField: {
       from: 'rootField',
-      default: () => ({}),
-    },
+      default: () => ({})
+    }
   },
 
-  provide() {
+  provide () {
     return {
-      $validatora: this.$validator,
+      $validatora: this.$validator
     }
   },
 
@@ -179,89 +183,89 @@ export default {
     type: {
       // text, bankCard, password, phone,gatPhone, money, digit
       type: String,
-      default: 'text',
+      default: 'text'
     },
     name: {
       type: [String, Number],
-      default() {
+      default () {
         return randomId('input-item')
-      },
+      }
     },
     title: {
       type: String,
-      default: '',
+      default: ''
     },
     isShowRequired: {
       type: Boolean,
-      default: false,
+      default: false
     },
     brief: {
       type: String,
-      default: '',
+      default: ''
     },
     value: {
       type: [String, Number],
-      default: '',
+      default: ''
     },
     placeholder: {
       type: String,
-      default: '',
+      default: ''
     },
     maxlength: {
       type: [String, Number],
-      default: '',
+      default: ''
     },
     size: {
       // large, normal
       type: String,
-      default: 'normal',
+      default: 'normal'
     },
     align: {
       // left, center, right
       type: String,
-      default: 'left',
+      default: 'left'
     },
     error: {
       type: String,
-      default: '',
+      default: ''
     },
     readonly: {
       type: Boolean,
-      default: false,
+      default: false
     },
     disabled: {
       type: Boolean,
-      default: false,
+      default: false
     },
     solid: {
       type: Boolean,
-      default: false,
+      default: false
     },
     clearable: {
       type: Boolean,
-      default: false,
+      default: false
     },
     isVirtualKeyboard: {
       type: Boolean,
-      default: false,
+      default: false
     },
     virtualKeyboardDisorder: {
-      type: Boolean,
+      type: Boolean
     },
     virtualKeyboardOkText: {
-      type: String,
+      type: String
     },
     virtualKeyboardVm: {
       type: [Object, String],
-      default: null,
+      default: null
     },
     isTitleLatent: {
       type: Boolean,
-      default: false,
+      default: false
     },
     isFormative: {
       type: Boolean,
-      default() {
+      default () {
         const type = this.type
         return (
           type === 'bankCard' ||
@@ -271,84 +275,98 @@ export default {
           type === 'digit' ||
           type === 'realNum'
         )
-      },
+      }
     },
     isHighlight: {
       type: Boolean,
-      default: false,
+      default: false
     },
     isAmount: {
       type: Boolean,
-      default: false,
+      default: false
     },
     formation: {
       type: Function,
-      default: noop,
+      default: noop
     },
 
     // 2019-03-18新增
     isToNumber: {
       type: Boolean,
-      default: false,
+      default: false
     },
     vvalidateModal: {
       type: String,
-      default: '',
+      default: ''
     },
     dataVvAs: {
       type: String,
-      default: '',
+      default: ''
     },
     id: {
       type: String,
       default: () => {
         return 'defaultid'
-      },
+      }
     },
 
     // 2019-05-09新增
     defaultValue: [String, Number],
-    itemObject: [String, Array, Object, Number], // v-modal对象
+    itemObject: {
+      type: [String, Array, Object, Number],
+      default: () => {
+        return {
+          name: '',
+          code: '',
+          type: ''
+        }
+      }
+    }, //该v-modal字段属性对象
     // 2019-09-05新增input是否开启数值更改触发validatorCallBack 默认不开启
     isValidatorCallBack: {
       type: Boolean,
-      default: false,
+      default: false
     },
     isValidator: {
       type: Boolean,
-      default: true,
+      default: true
     },
     isOnlyErrorLine: {
       type: Boolean,
-      default: false,
+      default: false
     },
 
     precision: {
       type: Number,
-      default: 2,
-    },
+      default: 2
+    }
   },
 
-  data() {
+  data () {
     return {
       inputValue: '',
       inputBindValue: '',
       inputNumberKeyboard: '',
-      isInputFocus: false,
+      isInputFocus: false
     }
   },
 
   computed: {
-    inputType() {
+    inputType () {
       let inputType = this.type || 'text'
-      if (inputType === 'bankCard' || inputType === 'phone' || inputType === 'gatPhone' || inputType === 'digit') {
+      if (
+        inputType === 'bankCard' ||
+        inputType === 'phone' ||
+        inputType === 'gatPhone' ||
+        inputType === 'digit'
+      ) {
         inputType = 'tel'
       } else if (inputType === 'money') {
         inputType = 'text'
       }
       return inputType
     },
-    inputMaxLength() {
+    inputMaxLength () {
       if (this.type === 'phone') {
         return 11
       } else if (this.type === 'gatPhone') {
@@ -357,44 +375,59 @@ export default {
         return this.maxlength
       }
     },
-    inputPlaceholder() {
+    inputPlaceholder () {
       return this.isTitleLatent && this.isInputActive ? '' : this.placeholder
     },
-    isInputActive() {
+    isInputActive () {
       return !this.isInputEmpty || this.isInputFocus
     },
-    isInputEmpty() {
+    isInputEmpty () {
       return !this.inputValue.length
     },
-    isDisabled() {
+    isDisabled () {
       return this.rootField.disabled || this.disabled
     },
-    getIsValidator() {
-      return this.rootField.isValidator ? this.isValidator : this.rootField.isValidator
+    getIsValidator () {
+      return this.rootField.isValidator
+        ? this.isValidator
+        : this.rootField.isValidator
     },
-    getIsOnlyErrorLine() {
+    getIsOnlyErrorLine () {
       return this.rootField.isOnlyErrorLine || this.isOnlyErrorLine
-    },
+    }
   },
 
   watch: {
-    value(val, oldVal) {
+    value (val, oldVal) {
       // Filter out two-way binding
       !val && !oldVal && this.$emit('input', this.defaultValue)
       if (val !== this.$_trimValue(this.inputValue)) {
         this.inputValue = this.$_formateValue(this.$_subValue(val + '')).value
       }
     },
-    inputValue(val, oldval) {
-      val && val !== oldval && this.isValidatorCallBack && this.onvalidateAll(val, oldval)
+    inputValue (val, oldval) {
+      val &&
+        val !== oldval &&
+        this.isValidatorCallBack &&
+        this.onvalidateAll(val, oldval)
       this.inputBindValue = val
       val = this.isFormative ? this.$_trimValue(val) : val
       if (val !== this.value) {
         this.$emit('input', this.isToNumber ? Number(val) : val)
-        this.$emit('change', this.name, val, oldval, this.defaultValue, this.itemObject)
+        if (!this.itemObject.name) {
+          this.itemObject.name = this.name
+        }
+        this.$emit(
+          'change',
+          this.itemObject,
+          val,
+          oldval,
+          false,
+          this.defaultValue
+        )
       }
     },
-    isInputFocus(val) {
+    isInputFocus (val) {
       if (!this.isVirtualKeyboard || !this.inputNumberKeyboard) {
         return
       }
@@ -405,13 +438,15 @@ export default {
         this.inputNumberKeyboard.hide()
         this.$emit('blur', this.name)
       }
-    },
+    }
   },
-  created() {
+  created () {
     //  console.log('%c this.value','color:green;',this.value);
-    this.inputValue = this.$_formateValue(this.$_subValue(this.value + '')).value
+    this.inputValue = this.$_formateValue(
+      this.$_subValue(this.value + '')
+    ).value
   },
-  mounted() {
+  mounted () {
     !this.value && this.defaultValue && this.$emit('input', this.defaultValue)
     this.value && (this.inputBindValue = this.value)
     this.isVirtualKeyboard &&
@@ -419,7 +454,7 @@ export default {
         this.$_initNumberKeyBoard()
       })
   },
-  beforeDestroy() {
+  beforeDestroy () {
     const keyboard = this.inputNumberKeyboard
     if (keyboard && keyboard.$el) {
       document.body.removeChild(keyboard.$el)
@@ -428,26 +463,32 @@ export default {
 
   methods: {
     // validator callback
-    onvalidateAll(newval, oldval) {
+    onvalidateAll (newval, oldval) {
       const _this = this
       if (this.$validator) {
         this.$validator.validateAll().then(result => {
           console.log('%c n22-input-item-result', 'color:green;', result)
           if (result) {
-            _this.$emit('validatorCallBackFun', result, newval, oldval, this.itemObject)
+            _this.$emit(
+              'validatorCallBackFun',
+              result,
+              newval,
+              oldval,
+              this.itemObject
+            )
           }
         })
       }
     },
 
     // MARK: private methods
-    $_formateValue(curValue, curPos = 0) {
+    $_formateValue (curValue, curPos = 0) {
       const type = this.type
       const name = this.name
       const oldValue = this.inputValue
       const isAdd = oldValue.length > curValue.length ? -1 : 1
 
-      let formateValue = {value: curValue, range: curPos}
+      let formateValue = { value: curValue, range: curPos }
 
       // no format
       if (!this.isFormative || curValue === '') {
@@ -466,25 +507,42 @@ export default {
       switch (type) {
         case 'bankCard':
           curValue = this.$_subValue(trimValue(curValue.replace(/\D/g, '')))
-          formateValue = formatValueByGapStep(4, curValue, gap, 'left', curPos, isAdd, oldValue)
+          formateValue = formatValueByGapStep(
+            4,
+            curValue,
+            gap,
+            'left',
+            curPos,
+            isAdd,
+            oldValue
+          )
           break
         case 'phone':
           curValue = this.$_subValue(trimValue(curValue.replace(/\D/g, '')))
-          formateValue = formatValueByGapRule('3|4|4', curValue, gap, curPos, isAdd)
+          formateValue = formatValueByGapRule(
+            '3|4|4',
+            curValue,
+            gap,
+            curPos,
+            isAdd
+          )
           break
         case 'money':
           gap = ','
           curValue = this.$_subValue(trimValue(curValue.replace(/[^\d.]/g, '')))
-          this.isDisabled && (curValue = this.doPrecision(curValue, this.precision))
+          this.isDisabled &&
+            (curValue = this.doPrecision(curValue, this.precision))
           // curValue = curValue.replace(/\D/g, '')
           const dotPos = curValue.indexOf('.')
           // format if no dot or new add dot or insert befor dot
           const moneyCurValue1 = curValue.split('.')[0]
           const moneyCurValue2 = curValue.split('.')[1]
           let moneyCurDecimal = ~dotPos
-            ? `.${moneyCurValue2 && moneyCurValue2.length > this.precision
-                ? moneyCurValue2.slice(0, this.precision)
-                : moneyCurValue2}`
+            ? `.${
+                moneyCurValue2 && moneyCurValue2.length > this.precision
+                  ? moneyCurValue2.slice(0, this.precision)
+                  : moneyCurValue2
+              }`
             : ''
           formateValue = formatValueByGapStep(
             3,
@@ -493,7 +551,7 @@ export default {
             'right',
             curPos,
             isAdd,
-            oldValue.split('.')[0],
+            oldValue.split('.')[0]
           )
           //  console.log('%c formateValue.value + moneyCurDecimal','color:green;',moneyCurDecimal);
           //  console.log('%c formateValue.value + moneyCurDecimal','color:green;',formateValue.value);
@@ -509,11 +567,17 @@ export default {
           const numCurValue1 = curValue.split('.')[0]
           const numCurValue2 = curValue.split('.')[1]
           curValue = ~dotPosNum
-            ? `${numCurValue1}.${numCurValue2 && numCurValue2.length > this.precision
-                ? numCurValue2.slice(0, this.precision)
-                : numCurValue2}`
+            ? `${numCurValue1}.${
+                numCurValue2 && numCurValue2.length > this.precision
+                  ? numCurValue2.slice(0, this.precision)
+                  : numCurValue2
+              }`
             : curValue
-          console.log('%c formateValue.value + moneyCurDecimal', 'color:green;', curValue)
+          // console.log(
+          //   '%c formateValue.value + moneyCurDecimal',
+          //   'color:green;',
+          //   curValue
+          // )
           formateValue.value = curValue
           break
         /* istanbul ignore next */
@@ -523,33 +587,41 @@ export default {
 
       return formateValue
     },
-    doPrecision(value, precision, isRoundUp) {
+    doPrecision (value, precision, isRoundUp) {
       const exponentialForm = Number(`${value}e${precision}`)
-      const rounded = isRoundUp ? Math.round(exponentialForm) : Math.floor(exponentialForm)
+      const rounded = isRoundUp
+        ? Math.round(exponentialForm)
+        : Math.floor(exponentialForm)
       return Number(`${rounded}e-${precision}`).toFixed(precision)
     },
-    isInputError() {
+    isInputError () {
       // console.log('%c xxxxxxxxxxxxxxxxxxxxxxxerror','color:green;',this.errors.first(this.name));
       return (
         this.$slots.error ||
         this.error !== '' ||
-        (this.getIsValidator && this.vvalidateModal && this.name && (this.errors && this.errors.first(this.name)))
+        (this.getIsValidator &&
+          this.vvalidateModal &&
+          this.name &&
+          this.errors && this.errors.first(this.name))
       )
     },
-    isInputOnlyErrorLine() {
+    isInputOnlyErrorLine () {
       return (
         this.$slots.error ||
         this.error !== '' ||
-        (this.getIsOnlyErrorLine && this.vvalidateModal && this.name && (this.errors && this.errors.first(this.name)))
+        (this.getIsOnlyErrorLine &&
+          this.vvalidateModal &&
+          this.name &&
+          this.errors && this.errors.first(this.name))
       )
     },
-    isInputBrief() {
+    isInputBrief () {
       return this.$slots.brief || this.brief !== ''
     },
-    $_trimValue(val) {
+    $_trimValue (val) {
       return trimValue(val, '\\s|,')
     },
-    $_subValue(val) {
+    $_subValue (val) {
       const len = this.inputMaxLength
       if (len !== '') {
         return val.substring(0, len)
@@ -557,32 +629,33 @@ export default {
         return val
       }
     },
-    $_clearInput() {
+    $_clearInput () {
       this.inputValue = ''
       !this.isTitleLatent && this.focus()
     },
-    $_focusFakeInput() {
+    $_focusFakeInput () {
       this.isInputFocus = true
 
       setTimeout(() => {
         this.$_addBlurListener()
       }, 0)
     },
-    $_blurFakeInput() {
+    $_blurFakeInput () {
       this.isInputFocus = false
       this.$_removeBlurListener()
     },
-    $_addBlurListener() {
+    $_addBlurListener () {
       document.addEventListener('click', this.$_blurFakeInput, false)
     },
-    $_removeBlurListener() {
+    $_removeBlurListener () {
       document.removeEventListener('click', this.$_blurFakeInput, false)
     },
-    $_initNumberKeyBoard() {
+    $_initNumberKeyBoard () {
       let keyboard =
         (typeof this.virtualKeyboardVm === 'object'
           ? this.virtualKeyboardVm
-          : this.$vnode.context.$refs[this.virtualKeyboardVm]) || this.$refs['number-keyboard']
+          : this.$vnode.context.$refs[this.virtualKeyboardVm]) ||
+        this.$refs['number-keyboard']
 
       if (Array.isArray(keyboard)) {
         keyboard = keyboard[0]
@@ -596,10 +669,10 @@ export default {
     },
 
     // MARK: events handler
-    $_onInput(event) {
+    $_onInput (event) {
       const formateValue = this.$_formateValue(
         event.target.value,
-        this.isFormative ? getCursorsPosition(event.target) : 0,
+        this.isFormative ? getCursorsPosition(event.target) : 0
       )
 
       this.inputValue = formateValue.value
@@ -611,20 +684,20 @@ export default {
         })
       }
     },
-    $_onKeyup(event) {
+    $_onKeyup (event) {
       this.$emit('keyup', this.name, event)
       if (+event.keyCode === 13 || +event.keyCode === 108) {
         this.$emit('confirm', this.name, this.inputValue)
       }
     },
-    $_onKeydown(event) {
+    $_onKeydown (event) {
       this.$emit('keydown', this.name, event)
     },
-    $_onFocus() {
+    $_onFocus () {
       this.isInputFocus = true
       this.$emit('focus', this.name)
     },
-    $_onBlur() {
+    $_onBlur () {
       // 解决微信浏览器bug-微信打开网页键盘弹起后页面上滑，导致弹框里的按钮响应区域错位
       // if (!window.cordova) {
       //   setTimeout(function() {
@@ -636,7 +709,7 @@ export default {
         this.$emit('blur', this.name)
       }, 100)
     },
-    $_onFakeInputClick(event) {
+    $_onFakeInputClick (event) {
       if (this.isDisabled || this.readonly) {
         return
       }
@@ -647,25 +720,30 @@ export default {
         this.$_focusFakeInput(event)
       }
     },
-    $_onNumberKeyBoardEnter(val) {
-      if (this.inputMaxLength > 0 && this.$_trimValue(this.inputValue).length >= this.inputMaxLength) {
+    $_onNumberKeyBoardEnter (val) {
+      if (
+        this.inputMaxLength > 0 &&
+        this.$_trimValue(this.inputValue).length >= this.inputMaxLength
+      ) {
         return
       }
       this.inputValue = this.$_formateValue(this.inputValue + val).value
     },
-    $_onNumberKeyBoardDelete() {
+    $_onNumberKeyBoardDelete () {
       const inputValue = this.inputValue
       if (inputValue === '') {
         return
       }
-      this.inputValue = this.$_formateValue(inputValue.substring(0, inputValue.length - 1)).value
+      this.inputValue = this.$_formateValue(
+        inputValue.substring(0, inputValue.length - 1)
+      ).value
     },
-    $_onNumberKeyBoardConfirm() {
+    $_onNumberKeyBoardConfirm () {
       this.$emit('confirm', this.name, this.inputValue)
     },
 
     // MARK: public methods
-    focus() {
+    focus () {
       if (this.isVirtualKeyboard) {
         this.$_onFakeInputClick()
       } else {
@@ -675,7 +753,7 @@ export default {
         }, 200)
       }
     },
-    blur() {
+    blur () {
       if (this.isVirtualKeyboard) {
         this.$_blurFakeInput()
       } else {
@@ -683,12 +761,12 @@ export default {
         this.isInputFocus = false
       }
     },
-    getValue() {
+    getValue () {
       return this.inputValue
-    },
-  },
+    }
+  }
 }
-</script>
+</script>
 
 <style lang="stylus">
 .svg_icon

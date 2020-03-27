@@ -1,5 +1,5 @@
 <template>
-  <div class="n22-action-bar" :class="isShdow?'n22-action-bar-shadow':''">
+  <div class="n22-action-bar" :class="isShdow ? 'n22-action-bar-shadow' : ''">
     <div class="n22-action-bar-container">
       <slot name="footerContent">
         <div class="n22-action-bar-text" v-if="hasSlots">
@@ -10,21 +10,27 @@
             <n22-button
               class="n22-action-bar-button"
               :id="`action-bar-id-${index}`"
-              :type="(!!item.disabled || loading || !!disabled) ? 'disabled' : type"
-              :plain="(index !== coerceActions.length - 1)&&!loading"
+              :type="
+                !!item.disabled || loading || !!disabled ? 'disabled' : type
+              "
+              :plain="
+                index !== coerceActions.length - 1 &&
+                  !loading &&
+                  item.plain !== false
+              "
               :round="round"
               :key="index"
               @click="$_onBtnClick($event, item)"
             >
-            <n22-activity-indicator
-              v-if="loading"
-              class="n22-activity-indicator-css"
-              type="carousel"
-              :size="15"
-              color="#fff"
-              text-color="#fff"
-            ></n22-activity-indicator>
-            <span v-else>{{ item.text }}</span>
+              <n22-activity-indicator
+                v-if="loading"
+                class="n22-activity-indicator-css"
+                type="carousel"
+                :size="15"
+                color="#fff"
+                text-color="#fff"
+              ></n22-activity-indicator>
+              <span v-else>{{ item.text }}</span>
             </n22-button>
           </template>
         </div>
@@ -33,63 +39,64 @@
   </div>
 </template>
 
-<script>import Button from '../button'
+<script>
+import Button from '../button'
 import ActivityIndicator from '../activity-indicator'
-import {isEmptyObject} from '../_util'
+import { isEmptyObject } from '../_util'
 
 export default {
   name: 'n22-action-bar',
 
   components: {
     [Button.name]: Button,
-    [ActivityIndicator.name]: ActivityIndicator,
+    [ActivityIndicator.name]: ActivityIndicator
   },
 
   props: {
     actions: {
       type: Array,
-      default: [],
+      default: []
     },
     isShdow: {
       type: Boolean,
-      default: true,
+      default: true
     },
     disabled: {
       type: Boolean,
-      default: false,
+      default: false
     },
     loading: {
       type: [Boolean, String],
-      default: false,
+      default: false
     },
     type: {
       type: String,
-      default: 'primary', // default, primary, warning, disabled, link
+      default: 'primary' // default, primary, warning, disabled, link
     },
     round: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
 
   computed: {
-    coerceActions() {
+    coerceActions () {
       return this.actions.slice(0, 2)
     },
-    hasSlots() {
+    hasSlots () {
       return !isEmptyObject(this.$slots)
-    },
+    }
   },
 
   methods: {
     // MARK: events handler
-    $_onBtnClick(event, action) {
+    $_onBtnClick (event, action) {
       action.onClick && action.onClick(event, action)
       !this.loading && this.$emit('click', event, action)
-    },
-  },
+    }
+  }
 }
-</script>
+</script>
 
 <style lang="stylus">
 .n22-action-bar
@@ -103,7 +110,7 @@ export default {
   background color-bg-inverse
   clearfix()
 
-.n22-action-bar-shadow 
+.n22-action-bar-shadow
   -webkit-box-shadow 0 -4px 10px hsla(0,0%,60%,.1)
   box-shadow 0 -4px 10px hsla(0,0%,60%,.1)
 
@@ -111,7 +118,7 @@ export default {
   display flex
   flex 1
   padding-bottom constant(safe-area-inset-bottom)
-  
+
 .n22-action-bar-text
   display flex
   flex 1

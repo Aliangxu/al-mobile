@@ -174,7 +174,8 @@
   </div>
 </template>
 
-<script>/* eslint-disable */
+<script>
+/* eslint-disable */
 import FieldItem from '../field-item'
 import {doPrecision} from '../_util/formate-value'
 export default {
@@ -216,7 +217,16 @@ export default {
   },
   props: {
     value: [String, Array, Boolean, Number], // v-modal值
-    itemObject: [String, Array, Object, Number], // v-modal对象
+    itemObject: {
+      type: [String, Array, Object, Number],
+      default: ()=>{
+        return {
+          name: "",
+          code: "",
+          type: ""
+        }
+      }
+    }, //该v-modal字段属性对象
     disabled: {
       type: Boolean,
       default: false,
@@ -386,11 +396,12 @@ export default {
         //   newval + "=====" + oldval
         // );
         this.$emit('input', newval)
-        this.$emit('changeData', newval, this.itemObject, this.type, oldval)
+        this.$emit('changeData', this.itemObject, newval, oldval, false, this.type)
       } else {
         // console.log('%c newval-oldval','color:green;',`${newval}---${oldval}`);
       }
     },
   },
 }
-</script>
+
+</script>

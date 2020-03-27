@@ -1,11 +1,11 @@
-import {inBrowser} from './env'
+import { inBrowser } from './env'
 
 class Dom {
-  appendChild() {}
-  removeChild() {}
-  querySelector() {}
-  addEventListener() {}
-  removeEventListener() {}
+  appendChild () {}
+  removeChild () {}
+  querySelector () {}
+  addEventListener () {}
+  removeEventListener () {}
 }
 
 const dom = new Dom()
@@ -43,30 +43,38 @@ const ui = {
     window.screen.height === 896,
   screenWidth: document.documentElement.clientWidth,
   screenHeight: document.documentElement.clientHeight,
-  screenWidthR(num, fixed) {
+  screenWidthR (num, fixed) {
     const numR = document.documentElement.clientWidth * (num / 375)
     return parseFloat(numR.toFixed(fixed || 3))
   },
-  screenHeightR(num, fixed) {
+  screenHeightR (num, fixed) {
     const numR = document.documentElement.clientHeight * (num / 667)
     return parseFloat(numR.toFixed(fixed || 3))
   },
   dealPxToVw: px => {
     return px * 0.266
-  },
+  }
 }
 
 const uikz = {
   allHeadTopPx:
     ui.isIPhoneX || ui.isIPhoneXSMax || ui.isIPhoneXR
       ? 78
-      : window.navigator.platform === 'iPhone' && window.cordova ? 64 : 44,
+      : window.navigator.platform === 'iPhone' &&
+        (window.cordova ||
+          (window.globalConfig && window.globalConfig.platform === 'phoneWeb'))
+      ? 64
+      : 44,
   allHeadTopPxVideo:
     ui.isIPhoneX || ui.isIPhoneXSMax || ui.isIPhoneXR
       ? 0
-      : window.navigator.platform === 'iPhone' && window.cordova ? 20 : 0,
+      : window.navigator.platform === 'iPhone' &&
+        (window.cordova ||
+          (window.globalConfig && window.globalConfig.platform === 'phoneWeb'))
+      ? 20
+      : 0
 }
 
 Object.assign(ui, uikz)
 
-export {mdDocument, mdBody, dom, ui}
+export { mdDocument, mdBody, dom, ui }

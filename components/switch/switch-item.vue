@@ -68,7 +68,8 @@
   </div>
 </template>
 
-<script>/* eslint-disable */
+<script>
+/* eslint-disable */
 import FieldItem from '../field-item'
 export default {
   name: 'n22-switch-item',
@@ -77,6 +78,16 @@ export default {
   },
   props: {
     value: [String, Array, Boolean, Number], // v-modal值
+    itemObject: {
+      type: [String, Array, Object, Number],
+      default: ()=>{
+        return {
+          name: "",
+          code: "",
+          type: ""
+        }
+      }
+    }, //该v-modal字段属性对象
     disabled: {
       type: Boolean,
       default: false,
@@ -195,7 +206,7 @@ export default {
                 } else if (value === '') {
                   value = this.defaultValue || (options[1] && options[1].value) || ''
                   this.$emit('input', this.defaultValue || (options[1] && options[1].value) || '')
-                  this.$emit('change', 'default')
+                  this.$emit('changeData', this.itemObject, this.value, '', false, 'default')
                   this.isSelect = false
                 } else {
                   this.isSelect = true
@@ -267,7 +278,7 @@ export default {
         return
       }
       this.$emit('input', this.getIsSelect(this.value, this.options, 2))
-      this.$emit('change', event)
+      this.$emit('changeData', this.itemObject, this.value, '', true, event)
     },
     //监听v-modal
     getIsSelectChange(value, options) {
@@ -284,7 +295,8 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus" scoped>
 .n22-switch {
