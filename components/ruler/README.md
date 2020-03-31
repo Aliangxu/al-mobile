@@ -1,6 +1,6 @@
 ---
 title: Ruler 刻度尺
-preview: https://qiaoxiyan.com/al-mobile/examples/#/ruler
+preview: https://aliangxu.github.io/al-mobile/examples/#/ruler
 ---
 
 可滑动刻度尺<sup class="version-after">2.2.0+</sup>

@@ -1,6 +1,6 @@
 ---
 title: Tag 标签
-preview: https://qiaoxiyan.com/al-mobile/examples/#/tag
+preview: https://aliangxu.github.io/al-mobile/examples/#/tag
 ---
 
 用于表示区域的状态的标签

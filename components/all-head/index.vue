@@ -55,6 +55,7 @@
             ></span>
             <!-- </a> -->
           </slot>
+          <slot name="left-children"></slot>
         </div>
         <div
           :style="{
@@ -196,7 +197,10 @@ export default {
       default: '请输入关键字'
     },
     value: String,
-    backUrl: String
+    backUrl: {
+      type: String,
+      default: ''
+    }
   },
   computed: {
     // ...mapState(["common"]),

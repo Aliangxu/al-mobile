@@ -1,6 +1,6 @@
 ---
 title: Swiper
-preview: https://qiaoxiyan.com/al-mobile/examples/#/swiper
+preview: https://aliangxu.github.io/al-mobile/examples/#/swiper
 ---
 
 Carousel, used to cycle through a set of pictures or cards

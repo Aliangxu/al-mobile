@@ -1,6 +1,6 @@
 ---
 title: Toast
-preview: https://qiaoxiyan.com/al-mobile/examples/#/toast
+preview: https://aliangxu.github.io/al-mobile/examples/#/toast
 ---
 
 ### Import

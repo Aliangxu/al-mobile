@@ -1,6 +1,6 @@
 ---
 title: Amount
-preview: https://qiaoxiyan.com/al-mobile/examples/#/amount
+preview: https://aliangxu.github.io/al-mobile/examples/#/amount
 ---
 
 Financial figures, generally used for amounts, quantities, etc

@@ -1,6 +1,6 @@
 ---
 title: Captcha 验证码
-preview: https://qiaoxiyan.com/al-mobile/examples/#/captcha
+preview: https://aliangxu.github.io/al-mobile/examples/#/captcha
 ---
 
 验证码校验窗口

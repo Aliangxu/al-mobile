@@ -1,6 +1,6 @@
 ---
 title: Cashier 收银台
-preview: https://qiaoxiyan.com/al-mobile/examples/#/cashier
+preview: https://aliangxu.github.io/al-mobile/examples/#/cashier
 ---
 
 业务支付弹窗，支持支付渠道选择和支付验证码发送

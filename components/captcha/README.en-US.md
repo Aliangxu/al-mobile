@@ -1,6 +1,6 @@
 ---
 title: Captcha
-preview: https://qiaoxiyan.com/al-mobile/examples/#/captcha
+preview: https://aliangxu.github.io/al-mobile/examples/#/captcha
 ---
 SMS code confirming dialog
 

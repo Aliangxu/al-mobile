@@ -1,6 +1,6 @@
 ---
 title: Swiper 轮播
-preview: https://qiaoxiyan.com/al-mobile/examples/#/swiper
+preview: https://aliangxu.github.io/al-mobile/examples/#/swiper
 ---
 
 走马灯，用于一组图片或卡片轮播

@@ -1,6 +1,6 @@
 ---
 title: Switch
-preview: https://qiaoxiyan.com/al-mobile/examples/#/switch
+preview: https://aliangxu.github.io/al-mobile/examples/#/switch
 ---
 
 Switch between two status

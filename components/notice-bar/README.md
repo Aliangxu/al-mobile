@@ -1,6 +1,6 @@
 ---
 title: NoticeBar 通告栏
-preview: https://qiaoxiyan.com/al-mobile/examples/#/notice-bar
+preview: https://aliangxu.github.io/al-mobile/examples/#/notice-bar
 ---
 
 通常用于系统提醒、活动提醒等通知

@@ -1,6 +1,6 @@
 ---
 title: work Professional level 3 and above components
-preview: https://qiaoxiyan.com/al-mobile/examples/#/work
+preview: https://aliangxu.github.io/al-mobile/examples/#/work
 ---
 
 For showing the area status 

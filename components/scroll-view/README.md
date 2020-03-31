@@ -1,6 +1,6 @@
 ---
 title: ScrollView 滚动区域/下拉刷新
-preview: https://qiaoxiyan.com/al-mobile/examples/#/scroll-view
+preview: https://aliangxu.github.io/al-mobile/examples/#/scroll-view
 ---
 
 用于模拟原生的滚动区域，并支持下拉刷新和加载更多

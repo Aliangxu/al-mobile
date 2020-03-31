@@ -1,6 +1,6 @@
 ---
 title: CodeBox 验证码输入框
-preview: https://qiaoxiyan.com/al-mobile/examples/#/codebox
+preview: https://aliangxu.github.io/al-mobile/examples/#/codebox
 ---
 
 验证码输入框

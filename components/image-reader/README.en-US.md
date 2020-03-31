@@ -1,6 +1,6 @@
 ---
 title: ImageReader
-preview: https://qiaoxiyan.com/al-mobile/examples/#/image-reader
+preview: https://aliangxu.github.io/al-mobile/examples/#/image-reader
 ---
 
 For photo album reading or photos taking

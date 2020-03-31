@@ -1,6 +1,6 @@
 ---
 title: ContentLoader 骨架屏
-preview: https://qiaoxiyan.com/al-mobile/examples/#/content-loader
+preview: https://aliangxu.github.io/al-mobile/examples/#/content-loader
 ---
 
 --使用vue-content-loader组件库

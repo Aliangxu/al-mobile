@@ -1,6 +1,6 @@
 ---
 title: Progress
-preview: https://qiaoxiyan.com/al-mobile/examples/#/progress
+preview: https://aliangxu.github.io/al-mobile/examples/#/progress
 ---
 
 Progress circle, generally used to communicate data intuitively to users

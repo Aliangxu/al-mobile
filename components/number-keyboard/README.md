@@ -1,6 +1,6 @@
 ---
 title: NumberKeyboard 数字键盘
-preview: https://qiaoxiyan.com/al-mobile/examples/#/number-keyboard
+preview: https://aliangxu.github.io/al-mobile/examples/#/number-keyboard
 ---
 
 一般用于密码，验证码或支付金额输入等金融场景

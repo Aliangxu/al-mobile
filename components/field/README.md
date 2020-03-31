@@ -1,6 +1,6 @@
 ---
 title: Field 区域列表组合
-preview: https://qiaoxiyan.com/al-mobile/examples/#/field
+preview: https://aliangxu.github.io/al-mobile/examples/#/field
 ---
 
 区域列表垂直排列，显示当前的内容、状态和可进行的操作。

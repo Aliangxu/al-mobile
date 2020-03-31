@@ -1,6 +1,6 @@
 ---
 title: Tabs 标签页
-preview: https://qiaoxiyan.com/al-mobile/examples/#/tabs
+preview: https://aliangxu.github.io/al-mobile/examples/#/tabs
 ---
 
 用于创建包含内容区域的标签页

@@ -1,6 +1,6 @@
 ---
 title: Check
-preview: https://qiaoxiyan.com/al-mobile/examples/#/check
+preview: https://aliangxu.github.io/al-mobile/examples/#/check
 ---
 
 UI renderless check group component

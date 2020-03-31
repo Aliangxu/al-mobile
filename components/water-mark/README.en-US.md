@@ -1,6 +1,6 @@
 ---
 title: WaterMark
-preview: https://qiaoxiyan.com/al-mobile/examples/#/water-mark
+preview: https://aliangxu.github.io/al-mobile/examples/#/water-mark
 ---
 
 Container with watermark background

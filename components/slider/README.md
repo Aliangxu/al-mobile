@@ -1,6 +1,6 @@
 ---
 title: Slider 滑块
-preview: https://qiaoxiyan.com/al-mobile/examples/#/slider
+preview: https://aliangxu.github.io/al-mobile/examples/#/slider
 ---
 
 ### 引入

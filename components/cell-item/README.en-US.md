@@ -1,6 +1,6 @@
 ---
 title: CellItem
-preview: https://qiaoxiyan.com/al-mobile/examples/#/cell-item
+preview: https://aliangxu.github.io/al-mobile/examples/#/cell-item
 ---
 
 Arrange vertically and display current contents, status and other allowable operations.

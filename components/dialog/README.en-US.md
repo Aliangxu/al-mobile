@@ -1,6 +1,6 @@
 ---
 title: Dialog
-preview: https://qiaoxiyan.com/al-mobile/examples/#/dialog
+preview: https://aliangxu.github.io/al-mobile/examples/#/dialog
 ---
 
 A floating layer to get users' feedback or display information.

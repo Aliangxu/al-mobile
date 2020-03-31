@@ -1,6 +1,6 @@
 ---
 title: Dialog 模态窗
-preview: https://qiaoxiyan.com/al-mobile/examples/#/dialog
+preview: https://aliangxu.github.io/al-mobile/examples/#/dialog
 ---
 
 交互式模态窗口

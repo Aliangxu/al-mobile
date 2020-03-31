@@ -1,6 +1,6 @@
 ---
 title: TabBar
-preview: https://qiaoxiyan.com/al-mobile/examples/#/tab-bar
+preview: https://aliangxu.github.io/al-mobile/examples/#/tab-bar
 ---
 
 To create a tab bar without a content area

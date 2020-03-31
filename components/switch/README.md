@@ -1,6 +1,6 @@
 ---
 title: Switch 开关
-preview: https://qiaoxiyan.com/al-mobile/examples/#/switch
+preview: https://aliangxu.github.io/al-mobile/examples/#/switch
 ---
 
 开关按钮，用于表示开关状态/两种状态之间的切换

@@ -1,6 +1,6 @@
 ---
 title: TabPicker 多级联动选择器
-preview: https://qiaoxiyan.com/al-mobile/examples/#/tab-picker
+preview: https://aliangxu.github.io/al-mobile/examples/#/tab-picker
 ---
 
 底部级联选择的tab切换面板

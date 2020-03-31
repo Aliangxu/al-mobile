@@ -29,7 +29,8 @@
   </span>
 </template>
 
-<script>import {noop, inBrowser} from '../_util'
+<script>
+import {noop, inBrowser} from '../_util'
 import Animate from '../_util/animate'
 import {formatValueByGapStep} from '../_util/formate-value'
 import numberCapital from './number-capital'
@@ -224,45 +225,39 @@ export default {
     },
   },
 }
-</script>
 
-<style lang="stylus" scoped>
-.n22-amount{
+</script>
 
-}
-.n22-amount-num{
-  // color: #ffcf10;
-  // font-size: 33px;
-  // font-weight: 500;
-  // text-shadow: 1px 1px 1px #deb306;
-  color: #111a34;
-  text-shadow: 1px 1px 1px #5d594a;
-}
+<style lang="stylus">
+.n22-amount
+  .n22-amount-num
+    color #111a34
+    text-shadow 1px 1px 1px #5d594a
 
 
-.number-item {
-  transition: all 1s;
-  display: inline-block;
-}
-//+加
-.number-add-enter {
-  opacity: 0;
-  transform: translateY(20px);
-}
-.number-add-leave-to {
-  opacity: 0;
-  transform: translateY(-20px);
-}
-//-减
-.number-subtract-enter {
-  opacity: 0;
-  transform: translateY(-20px);
-}
-.number-subtract-leave-to {
-  opacity: 0;
-  transform: translateY(20px);
-}
-.number-add-leave-active, .number-subtract-leave-active {
-  position: absolute;
-}
+// .number-item {
+//   transition: all 1s;
+//   display: inline-block;
+// }
+// //+加
+// .number-add-enter {
+//   opacity: 0;
+//   transform: translateY(20px);
+// }
+// .number-add-leave-to {
+//   opacity: 0;
+//   transform: translateY(-20px);
+// }
+// //-减
+// .number-subtract-enter {
+//   opacity: 0;
+//   transform: translateY(-20px);
+// }
+// .number-subtract-leave-to {
+//   opacity: 0;
+//   transform: translateY(20px);
+// }
+// .number-add-leave-active, .number-subtract-leave-active {
+//   position: absolute;
+// }
 </style>

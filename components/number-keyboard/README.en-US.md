@@ -1,6 +1,6 @@
 ---
 title: NumberKeyboard
-preview: https://qiaoxiyan.com/al-mobile/examples/#/number-keyboard
+preview: https://aliangxu.github.io/al-mobile/examples/#/number-keyboard
 ---
 
 Generally used for financial scenarios such as password, verification code or payment amount input

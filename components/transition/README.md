@@ -1,6 +1,6 @@
 ---
 title: Transition 动画
-preview: https://qiaoxiyan.com/al-mobile/examples/#/transition
+preview: https://aliangxu.github.io/al-mobile/examples/#/transition
 ---
 
 复用动画切换组件

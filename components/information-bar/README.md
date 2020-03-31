@@ -1,6 +1,6 @@
 ---
 title: InformationBar 全局咨询导航
-preview: https://qiaoxiyan.com/al-mobile/examples/#/information-bar
+preview: https://aliangxu.github.io/al-mobile/examples/#/information-bar
 ---
 
 全局咨询导航

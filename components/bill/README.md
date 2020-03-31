@@ -1,6 +1,6 @@
 ---
 title: Bill 票据
-preview: https://qiaoxiyan.com/al-mobile/examples/#/bill
+preview: https://aliangxu.github.io/al-mobile/examples/#/bill
 ---
 
 电子账单或票据

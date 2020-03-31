@@ -1,6 +1,6 @@
 ---
 title: Agree
-preview: https://qiaoxiyan.com/al-mobile/examples/#/agree
+preview: https://aliangxu.github.io/al-mobile/examples/#/agree
 ---
 
 For toggling states

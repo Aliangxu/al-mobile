@@ -1,6 +1,6 @@
 ---
 title: Steps 步骤条
-preview: https://qiaoxiyan.com/al-mobile/examples/#/steps
+preview: https://aliangxu.github.io/al-mobile/examples/#/steps
 ---
 
 用于引导用户按照流程完成任务的导航条，显示当前所在步骤

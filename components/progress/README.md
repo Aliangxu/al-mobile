@@ -1,6 +1,6 @@
 ---
 title: Progress 进度
-preview: https://qiaoxiyan.com/al-mobile/examples/#/progress
+preview: https://aliangxu.github.io/al-mobile/examples/#/progress
 ---
 
 进度圆环，用于将数据直观地传达给用户

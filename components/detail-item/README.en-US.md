@@ -1,6 +1,6 @@
 ---
 title: DetailItem
-preview: https://qiaoxiyan.com/al-mobile/examples/#/detail-item
+preview: https://aliangxu.github.io/al-mobile/examples/#/detail-item
 ---
 
 Detail list usually used as bill details, inventory details and so on.

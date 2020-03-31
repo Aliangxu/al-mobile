@@ -1,6 +1,6 @@
 ---
 title: DatePicker
-preview: https://qiaoxiyan.com/al-mobile/examples/#/date-picker
+preview: https://aliangxu.github.io/al-mobile/examples/#/date-picker
 ---
 
 Date or time selecting, supports year/month/day/hour/minute and range selecting

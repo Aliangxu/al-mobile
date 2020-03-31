@@ -1,6 +1,6 @@
 ---
 title: CodeBox
-preview: https://qiaoxiyan.com/al-mobile/examples/#/codebox
+preview: https://aliangxu.github.io/al-mobile/examples/#/codebox
 ---
 
 ### Import

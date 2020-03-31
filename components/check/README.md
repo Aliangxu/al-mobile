@@ -1,6 +1,6 @@
 ---
 title: Check 复选项
-preview: https://qiaoxiyan.com/al-mobile/examples/#/check
+preview: https://aliangxu.github.io/al-mobile/examples/#/check
 ---
 
 ### 引入

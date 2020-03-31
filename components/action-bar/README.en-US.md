@@ -1,6 +1,6 @@
 ---
 title: ActionBar
-preview: https://qiaoxiyan.com/al-mobile/examples/#/action-bar
+preview: https://aliangxu.github.io/al-mobile/examples/#/action-bar
 ---
 
 Bottom sidebar with a number of texts or action buttons that can be used to present form information and submit buttons

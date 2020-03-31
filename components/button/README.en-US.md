@@ -1,6 +1,6 @@
 ---
 title: Button
-preview: https://qiaoxiyan.com/al-mobile/examples/#/button
+preview: https://aliangxu.github.io/al-mobile/examples/#/button
 ---
 
 Button components for configuring different button styles

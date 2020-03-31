@@ -1,6 +1,6 @@
 ---
 title: Cashier
-preview: https://qiaoxiyan.com/al-mobile/examples/#/cashier
+preview: https://aliangxu.github.io/al-mobile/examples/#/cashier
 ---
 
 Business payment pop-up window, supports payment channel selecting and payment verification code sending

@@ -1,6 +1,6 @@
 ---
 title: radio radio1两种样式的单选、多选
-preview: https://qiaoxiyan.com/al-mobile/examples/#/radio
+preview: https://aliangxu.github.io/al-mobile/examples/#/radio
 ---
 ### 引入
 

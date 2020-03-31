@@ -1,6 +1,6 @@
 ---
 title: Tag
-preview: https://qiaoxiyan.com/al-mobile/examples/#/tag
+preview: https://aliangxu.github.io/al-mobile/examples/#/tag
 ---
 
 For showing the area status 

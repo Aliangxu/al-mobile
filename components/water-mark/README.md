@@ -1,6 +1,6 @@
 ---
 title: WaterMark 水印
-preview: https://qiaoxiyan.com/al-mobile/examples/#/water-mark
+preview: https://aliangxu.github.io/al-mobile/examples/#/water-mark
 ---
 
 自带水印背景的容器

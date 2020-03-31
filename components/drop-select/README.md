@@ -1,6 +1,6 @@
 ---
 title: DropSelect下拉滑动选择组件
-preview: https://qiaoxiyan.com/al-mobile/examples/#/drop-select
+preview: https://aliangxu.github.io/al-mobile/examples/#/drop-select
 ---
 
 下拉滑动选择组件可进行的操作。

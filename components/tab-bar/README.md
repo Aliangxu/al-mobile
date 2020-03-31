@@ -1,6 +1,6 @@
 ---
 title: TabBar 标签栏
-preview: https://qiaoxiyan.com/al-mobile/examples/#/tab-bar
+preview: https://aliangxu.github.io/al-mobile/examples/#/tab-bar
 ---
 
 用于创建不含内容区域的标签栏

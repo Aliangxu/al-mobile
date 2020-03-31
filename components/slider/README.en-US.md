@@ -1,6 +1,6 @@
 ---
 title: Slider
-preview: https://qiaoxiyan.com/al-mobile/examples/#/slider
+preview: https://aliangxu.github.io/al-mobile/examples/#/slider
 ---
 
 ### Import

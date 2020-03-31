@@ -1,6 +1,6 @@
 ---
 title: TabPicker
-preview: https://qiaoxiyan.com/al-mobile/examples/#/tab-picker
+preview: https://aliangxu.github.io/al-mobile/examples/#/tab-picker
 ---
 
 Support cascaded selections in the footer

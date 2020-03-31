@@ -1,6 +1,6 @@
 ---
 title: Picker
-preview: https://qiaoxiyan.com/al-mobile/examples/#/picker
+preview: https://aliangxu.github.io/al-mobile/examples/#/picker
 ---
 
 Scrollable multi-column selector

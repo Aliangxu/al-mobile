@@ -1,6 +1,6 @@
 ---
 title: Tabs
-preview: https://qiaoxiyan.com/al-mobile/examples/#/tabs
+preview: https://aliangxu.github.io/al-mobile/examples/#/tabs
 ---
 
 To create a tab page with a content area

@@ -1,6 +1,6 @@
 ---
 title: DetailItem 清单项
-preview: https://qiaoxiyan.com/al-mobile/examples/#/detail-item
+preview: https://aliangxu.github.io/al-mobile/examples/#/detail-item
 ---
 
 清单列表用于展示一些列表信息，如账单。

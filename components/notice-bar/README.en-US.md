@@ -1,6 +1,6 @@
 ---
 title: NoticeBar
-preview: https://qiaoxiyan.com/al-mobile/examples/#/notice-bar
+preview: https://aliangxu.github.io/al-mobile/examples/#/notice-bar
 ---
 
 Mostly for system alerts, event reminders, etc

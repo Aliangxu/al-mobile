@@ -1,6 +1,6 @@
 ---
 title: ActivityIndicator 活动指示器
-preview: https://qiaoxiyan.com/al-mobile/examples/#/activity-indicator
+preview: https://aliangxu.github.io/al-mobile/examples/#/activity-indicator
 ---
 
 活动指示器，一般用于正在进行中的任务示意

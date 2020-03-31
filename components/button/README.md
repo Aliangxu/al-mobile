@@ -1,6 +1,6 @@
 ---
 title: Button 按钮
-preview: https://qiaoxiyan.com/al-mobile/examples/#/button
+preview: https://aliangxu.github.io/al-mobile/examples/#/button
 ---
 
 按钮组件，可配置多种不同的按钮样式

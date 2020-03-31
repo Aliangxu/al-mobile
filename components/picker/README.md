@@ -1,6 +1,6 @@
 ---
 title: Picker 选择器
-preview: https://qiaoxiyan.com/al-mobile/examples/#/picker
+preview: https://aliangxu.github.io/al-mobile/examples/#/picker
 ---
 
 滚动多列选择

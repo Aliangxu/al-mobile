@@ -1,6 +1,6 @@
 ---
 title: Bill
-preview: https://qiaoxiyan.com/al-mobile/examples/#/bill
+preview: https://aliangxu.github.io/al-mobile/examples/#/bill
 ---
 
 Electronic bill

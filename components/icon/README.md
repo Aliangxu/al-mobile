@@ -1,6 +1,6 @@
 ---
 title: Icon 图标
-preview: https://qiaoxiyan.com/al-mobile/examples/#/icon
+preview: https://aliangxu.github.io/al-mobile/examples/#/icon
 ---
 
 IconFont、SVG 图标

@@ -1,6 +1,6 @@
 ---
 title: Steps
-preview: https://qiaoxiyan.com/al-mobile/examples/#/steps
+preview: https://aliangxu.github.io/al-mobile/examples/#/steps
 ---
 
 A navigation bar helps users complete tasks through the process and displays the current step

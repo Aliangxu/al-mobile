@@ -1,6 +1,6 @@
 ---
 title: Field
-preview: https://qiaoxiyan.com/al-mobile/examples/#/drop-select
+preview: https://aliangxu.github.io/al-mobile/examples/#/drop-select
 ---
 
 Arrange vertically and display current contents, status and other allowable operations.

@@ -1,6 +1,6 @@
 ---
 title: Amount 金融数字
-preview: https://qiaoxiyan.com/al-mobile/examples/#/amount
+preview: https://aliangxu.github.io/al-mobile/examples/#/amount
 ---
 
 金融数字，一般用于金额，数量等

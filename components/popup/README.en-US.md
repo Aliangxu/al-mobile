@@ -1,6 +1,6 @@
 ---
 title: Popup
-preview: https://qiaoxiyan.com/al-mobile/examples/#/popup
+preview: https://aliangxu.github.io/al-mobile/examples/#/popup
 ---
 
 A customized content area slides out or pops up on the screen, triggered by other controls.

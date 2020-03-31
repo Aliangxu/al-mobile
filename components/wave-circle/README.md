@@ -1,6 +1,6 @@
 ---
 title: WaveCircle 全局波浪进度组件
-preview: https://qiaoxiyan.com/al-mobile/examples/#/wave-circle
+preview: https://aliangxu.github.io/al-mobile/examples/#/wave-circle
 ---
 
 用于表示分数等...
