@@ -23,6 +23,7 @@
         v-model="isPickerShow"
         position="bottom"
         :mask-closable="maskClosable"
+        :has-mask="hasMask"
         @beforeShow="$_onPickerBeforeShow"
         @show="$_onPickerShow"
         @hide="$_onPickerHide"

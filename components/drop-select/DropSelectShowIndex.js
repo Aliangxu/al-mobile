@@ -24,6 +24,7 @@ const generate = function({
   defaultDate,
   minDate,
   maxDate,
+  hasMask,
   btns,
 }) {
   const DropSelectShowConstructor = Vue.extend(DropSelectShow)
@@ -40,6 +41,7 @@ const generate = function({
       defaultDate,
       minDate,
       maxDate,
+      hasMask,
       btns,
     },
   }).$mount()
@@ -80,6 +82,7 @@ DropSelectShow.show = ({
   defaultDate,
   minDate,
   maxDate,
+  hasMask,
   onPickerConfirm = noop,
   onDatePickerChange = noop,
   onDatePickerConfirm = noop,
@@ -96,6 +99,7 @@ DropSelectShow.show = ({
     defaultDate,
     minDate,
     maxDate,
+    hasMask,
     btns: {
       onPickerConfirm: {
         handler: /* istanbul ignore next */ (index, value) => {

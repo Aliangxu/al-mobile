@@ -60,26 +60,6 @@
     </slot>
     <slot name="drop-select-picker">
       <!-- 启用下面的升级修复--此处暂时注释掉--等待后期未出现大的升级问题--再行删除 -->
-      <!-- <n22-picker
-        v-if="type=='single'"
-        ref="picker0"
-        :title="pickerTitle"
-        v-model="isPickerShow0"
-        :data="pickerData"
-        @confirm="onPickerConfirm(0)"
-      ></n22-picker>
-      <n22-date-picker
-        v-else-if="type=='date'"
-        ref="datePicker"
-        :title="pickerTitle"
-        v-model="isPickerShow0"
-        :default-date="defaultDate"
-        :min-date="minDate"
-        :max-date="maxDate"
-        @change="onDatePickerChange"
-        @confirm="onDatePickerConfirm"
-      ></n22-date-picker>-->
-
       <!-- 页面级别展示 -->
       <n22-drop-select-show
         v-if="!isAppendTo"
@@ -94,6 +74,7 @@
         :default-date="defaultDate"
         :min-date="minDate"
         :max-date="maxDate"
+        :has-mask="hasMask"
         :notSelectIdf="notSelectIdf"
         @hide="$_hide"
         @onNotSelectFun="onNotSelectFun"
@@ -162,6 +143,10 @@ export default {
     disabled: {
       type: Boolean,
       default: false,
+    },
+    hasMask: {
+      type: Boolean,
+      default: true,
     },
     pickerTitle: {
       type: String,
@@ -327,6 +312,7 @@ export default {
           defaultDate: this.defaultDate,
           minDate: this.minDate,
           maxDate: this.maxDate,
+          hasMask: this.hasMask,
           onPickerConfirm: (index, v) => {
             console.log('%c index', 'color:green;', index)
             _this.onPickerConfirm(index, v)

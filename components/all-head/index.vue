@@ -359,6 +359,10 @@ placeholderStyle("#search_query", line-height, 30px)
   vertical-align: middle;
 }
 
+.n22-hairline--bottom {
+  box-shadow: 0 8px 10px hsla(0,0%,60%,.1);  
+}
+
 .n22-nav-bar__arrow {
   min-width: 1em;
   font-size: 16px;
@@ -390,7 +394,7 @@ placeholderStyle("#search_query", line-height, 30px)
 
 .n22-nav-bar__left,
 .n22-nav-bar__right {
-  bottom: 0;
+  bottom: 2px;
   font-size: 14px;
   position: absolute;
 }
