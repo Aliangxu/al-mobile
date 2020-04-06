@@ -2,6 +2,7 @@
   <fieldset class="n22-field" :class="{'is-plain': plain, 'is-disabled': disabled}">
     <header @click="$emit('headerClick',$event)" :class="{'n22-field-header-bottom': headerbottom}" class="n22-field-header" v-if="title || brief || $slots.header || $slots.action">
       <div class="n22-field-heading">
+        <slot name="head_title_left"></slot>
         <legend v-if="title" :class="{'field-title-left-line':titleLeftLine}" class="n22-field-title" v-text="title"></legend>
         <p v-if="brief" class="n22-field-brief" v-text="brief"></p>
         <slot name="header"></slot>

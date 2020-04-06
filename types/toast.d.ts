@@ -1,4 +1,4 @@
-import { MandComponent } from './component'
+import { AlComponent } from './component'
 
 export type ToastOptions = {
   content: string
@@ -19,7 +19,7 @@ export interface Toast {
   failed(content: string, duration?: number, hasMask?: boolean, parentNode?: Element): void
   loading(content: string, duration?: number, hasMask?: boolean, parentNode?: Element): void
   hide(): void
-  component: MandComponent
+  component: AlComponent
 }
 
 declare module 'vue/types/vue' {

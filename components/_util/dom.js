@@ -61,16 +61,14 @@ const uikz = {
     ui.isIPhoneX || ui.isIPhoneXSMax || ui.isIPhoneXR
       ? 78
       : window.navigator.platform === 'iPhone' &&
-        (window.cordova ||
-          (window.globalConfig && window.globalConfig.platform === 'phoneWeb'))
+        (window.globalConfig && window.globalConfig.platform === 'phoneWeb')
       ? 64
       : 44,
   allHeadTopPxVideo:
     ui.isIPhoneX || ui.isIPhoneXSMax || ui.isIPhoneXR
       ? 0
       : window.navigator.platform === 'iPhone' &&
-        (window.cordova ||
-          (window.globalConfig && window.globalConfig.platform === 'phoneWeb'))
+        (window.globalConfig && window.globalConfig.platform === 'phoneWeb')
       ? 20
       : 0
 }

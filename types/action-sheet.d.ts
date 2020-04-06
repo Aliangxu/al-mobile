@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { MandComponent } from './component'
+import { AlComponent } from './component'
 
 export type ActionSheetItem = {
   value: string,
@@ -31,7 +31,7 @@ declare module 'vue/types/vue' {
   }
 }
 
-export class ActionSheet extends MandComponent {
+export class ActionSheet extends AlComponent {
   static create(options: ActionSheetCreateOptions): Vue
   static closeAll(): void
   static destroyAll(): void

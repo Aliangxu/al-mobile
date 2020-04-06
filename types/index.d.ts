@@ -1,4 +1,4 @@
-export * from './mand-mobile'
+export * from './al-mobile'
 
-import * as mandMobile from './mand-mobile'
-export default mandMobile
+import * as alMobile from './al-mobile'
+export default alMobile

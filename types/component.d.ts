@@ -1,5 +1,5 @@
 import Vue from 'vue'
 
-export class MandComponent extends Vue {
+export class AlComponent extends Vue {
   static name: string
 }

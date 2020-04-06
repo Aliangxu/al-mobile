@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { MandComponent } from './component'
+import { AlComponent } from './component'
 
 export type DialogOptions = {
   title?: string
@@ -41,7 +41,7 @@ declare module 'vue/types/vue' {
   }
 }
 
-export class Dialog extends MandComponent {
+export class Dialog extends AlComponent {
   static confirm(options: DialogConfirmOptions): Vue
   static alert(options: DialogAlertOptions): Vue
   static succeed(options: DialogSucceedOptions): Vue
