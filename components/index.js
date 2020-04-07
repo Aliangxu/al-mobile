@@ -66,6 +66,7 @@ import TabPicker from './tab-picker'
 import DetailItem from './detail-item'
 import Bill from './bill'
 import ContentLoader from './content-loader'
+import DropMenu from './drop-menu'
 
 // import Audio from './audio'
 // import Video from './video'
@@ -150,6 +151,7 @@ export const components = {
   DetailItem,
   Bill,
   ContentLoader,
+  DropMenu,
 
   // Audio,
   // Video,
@@ -250,6 +252,7 @@ export {
   DetailItem,
   Bill,
   ContentLoader,
+  DropMenu,
 
   // Audio,
   // Video,

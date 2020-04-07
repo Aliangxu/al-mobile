@@ -321,7 +321,7 @@ export default {
           type: ''
         }
       }
-    }, //该v-modal字段属性对象
+    }, // 该v-modal字段属性对象
     // 2019-09-05新增input是否开启数值更改触发validatorCallBack 默认不开启
     isValidatorCallBack: {
       type: Boolean,

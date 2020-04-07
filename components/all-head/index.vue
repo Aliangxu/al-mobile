@@ -1,19 +1,9 @@
 <template>
   <div :class="{ al_head: headBottom }" class="bar">
-    <!-- <van-nav-bar
-      :title="title"
-      :left-text="$t('edit.backBtn')"
-      :right-text="$t('edit.goBtn')"
-      left-arrow
-      :fixed=true
-      :z-index=zIndex
-      @click-left="onClickLeft"
-      @click-right="onClickRight"
-    />-->
     <slot>
       <div
-        class="n22-nav-bar n22-nav-bar--fixed"
-        :class="{ 'n22-hairline--bottom': hairline }"
+        class="n22-nav-bar"
+        :class="{ 'n22-hairline--bottom': hairline,'n22-nav-bar--fixed': fixed }"
         :style="style"
       >
         <div
@@ -24,13 +14,6 @@
           @click="leftText ? $emit('click-left') : onClickLeft()"
         >
           <slot name="left">
-            <!-- <icon
-            v-if="leftArrow"
-            class="n22-nav-bar__arrow"
-            name="arrow-left"
-            />-->
-            <!-- <i v-if="leftArrow" class="fa fa-angle-left"></i> -->
-
             <n22-icon
               v-if="leftTextIcon"
               class="back_icon"
@@ -53,7 +36,6 @@
               }"
               class="n22-nav-bar__text"
             ></span>
-            <!-- </a> -->
           </slot>
           <slot name="left-children"></slot>
         </div>

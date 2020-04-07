@@ -6,7 +6,8 @@
   </al-content>
 </template>
 
-<script>import Vue from 'vue'
+<script>
+import Vue from 'vue'
 import Content from './'
 import '../common/swiper/dist/css/swiper.css'
 import {swiper, swiperSlide} from '../common/swiper/swiper-vue'
@@ -18,4 +19,5 @@ export default {
     [Content.name]: Content, // content
   },
 }
-</script>
+
+</script>

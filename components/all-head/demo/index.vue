@@ -13,9 +13,6 @@
 import createDemoModule from '../../../examples/create-demo-module'
 import Demo0 from './cases/demo0'
 
-export default {...createDemoModule('action-sheet', [Demo0])}
+export default {...createDemoModule('all-head', [Demo0])}
 
 </script>
-
-<style lang="stylus">
-</style>

@@ -5,6 +5,18 @@
         "text": "基础",
         "list": [
             {
+                "name": "AllHead",
+                "path": "/all-head",
+                "icon": "all-head",
+                "text": "头部导航栏"
+            },
+            {
+                "name": "Content",
+                "path": "/content",
+                "icon": "content",
+                "text": "内容区"
+            },
+            {
                 "name": "ActionBar",
                 "path": "/action-bar",
                 "icon": "action-bar",

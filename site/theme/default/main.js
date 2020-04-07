@@ -1,6 +1,10 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
+import 'al-mobile/components/common/swiper/dist/css/swiper.css'
+import {swiper, swiperSlide} from 'al-mobile/components/common/swiper/swiper-vue'
+Vue.component(swiper.name, swiper)
+Vue.component(swiperSlide.name, swiperSlide)
 import App from './App'
 import router from './router'
 import VueClipboard from 'vue-clipboard2'

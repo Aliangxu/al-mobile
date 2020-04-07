@@ -62,13 +62,12 @@
             </swiper-slide>
           </swiper>
           <div class="not-swiper-div" :style="{ top: getSwiperTop }" v-else>
-            <div v-for="(tab, i) in tabs" :key="i" style="height:100%">
+            <div v-for="(tab, i) in tabs" :key="i" style="height:100%" v-show="i == curIndex">
               <mescroll-vue
-                v-show="i == curIndex"
                 :ref="'mescroll' + i"
                 :down="getMescrollDown(i, tab)"
-                  :up="getMescrollUp(i)"
-                  @init="mescrollInit(i, arguments)"
+                :up="getMescrollUp(i)"
+                @init="mescrollInit(i, arguments)"
               >
                 <slot name="content"></slot>
                 <!-- 列表数据 -->
@@ -102,7 +101,8 @@
   </div>
 </template>
 
-<script>// 轮播组件: https://github.com/surmon-china/vue-awesome-swiper
+<script>
+// 轮播组件: https://github.com/surmon-china/vue-awesome-swiper
 // import 'swiper/dist/css/swiper.css'
 // import { swiper, swiperSlide } from 'vue-awesome-swiper'
 // import '../common/swiper/dist/css/swiper.css'
@@ -225,7 +225,7 @@ export default {
     // ...mapState(["common"]), //引入vuex state样例>>>可通过this.common.userInfo获取vuex-state数据
     swiper() {
       // 轮播对象
-      return this.$refs.mySwiper.swiper
+      return this.$refs.mySwiper?this.$refs.mySwiper.swiper:{}
     },
     getSwiperTop() {
       // 内容区距离顶部距离
@@ -358,7 +358,7 @@ export default {
       let newTab = this.tabs[tabIndex] // 新转换的列表
       curTab.mescroll && curTab.mescroll.hideTopBtn() // 隐藏当前列表的回到顶部按钮
       this.curIndex = tabIndex // 切换菜单
-      this.swiper.slideTo(tabIndex)
+      this.swiper&&this.swiper.slideTo&&this.swiper.slideTo(tabIndex)
       // 菜单项居中动画
       // if (curTab.mescroll) {
       //   let tabsContent = this.$parent.$refs.listMenu.$refs.tabsContent;
@@ -522,12 +522,14 @@ export default {
       this.tabs && this.tabs[0] && this.tabs[0].mescroll && this.tabs[0].mescroll.lockDownScroll(val)
     },
     curIndex(val) {
+      console.log("%c content-curIndex","color:#00CD00", this.curIndex)
       this.connection = true
       this.$emit('input', val)
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus" scoped>
 /*列表--有数据*/
