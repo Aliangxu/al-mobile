@@ -68,6 +68,20 @@ emptyProp: {
     btnClick: this.btnClick//按钮回调方法
 }
 ```
+###### 注
+icon--当使用相对路径时使用import导入，下面的icon再直接使用
+```
+import emptyImage from "../../../_style/images/star24_on.png";
+...
+...
+...
+emptyProp: {
+    icon: emptyImage,//数据为空时的图片
+    tip: "暂无相关数据~", // 提示
+    btntext: "去报名 >", // 按钮,默认""
+    btnClick: this.btnClick//按钮回调方法
+}
+```
 
 
 

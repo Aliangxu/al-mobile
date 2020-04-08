@@ -1,6 +1,30 @@
 <template>
   <div class="n22-example-child n22-example-child-all-head n22-example-child-all-head-0">
     <al-all-head title="我的标题" :opacityStyle="opacityStyle">
+      <!-- 左侧插槽--可以重置返回的相关逻辑-例如更换左侧svg -->
+      <template slot="left">
+        <span @click="()=>{console.log('我是返回重置')}">
+          <n22-icon name="qq" size="lg"></n22-icon>
+        </span>
+      </template>
+      <template slot="left-children">
+        <span class="head-left-children">
+          <n22-icon name="qq" size="lg"></n22-icon>
+        </span>
+      </template>
+      <!-- 右侧插槽 -->
+      <template slot="right" class="head-right-children">
+        <span>
+          <n22-icon name="search" size="lg"></n22-icon>
+        </span>
+        <span>
+          <n22-icon name="volumn" size="lg"></n22-icon>
+        </span>
+        <span>
+          <n22-icon name="share" size="lg"></n22-icon>
+        </span>
+      </template>
+      <!-- 底部插槽 -->
       <div slot="head_bottom">
         <n22-tab-bar
           ref="listMenu"
@@ -29,7 +53,7 @@
 </template>
 
 <script>
-import { AllHead, ContentList, TabBar } from "al-mobile";
+import { AllHead, ContentList, TabBar, Icon } from "al-mobile";
 
 export default {
   name: "all-head-demo",
@@ -42,6 +66,7 @@ export default {
     [AllHead.name]: AllHead,
     [ContentList.name]: ContentList,
     [TabBar.name]: TabBar,
+    [Icon.name]: Icon,
   },
   data() {
     return {
@@ -100,12 +125,10 @@ export default {
 };
 </script>
 <style lang="stylus">
-.n22-example-child-all-head-0
-  height 400px
-  .n22-nav-bar--fixed
-    position relative
-  .n22-nav-bar
-    background-color #ffffff
-  .swiper-container
-    top 120px!important
+.head-left-children
+  position absolute
+  margin-left 20px
+.head-right-children
+  span
+    margin-left 10px
 </style>

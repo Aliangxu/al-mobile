@@ -879,6 +879,7 @@
       me.emptyDom = emptyWarp
       return (emptyWarp.style.display = 'block')
     }
+    console.log("%c xxxxxxxxppppppppppppppp","color:#00CD00",)
     if (emptyWarp) {
       me.removeEmpty() // 先移除,避免重复加入
       // 初始化无任何数据的空布局

@@ -53,6 +53,12 @@ export default {
           isListInit: false,
           isMescrollUp: true,
           upCallbackFun: "selectListByPage",
+          emptyProp: {
+            icon: "",
+            tip: "暂无相关数据~", // 提示
+            btntext: "去报名 >", // 按钮,默认""
+            btnClick: ()=>{}
+          }
         },
       ],
       //分页参数
@@ -61,17 +67,7 @@ export default {
         size: 10,
         time: null
       },
-      //假列表数据
-      dataList: []
     };
-  },
-  mounted(){
-    for (let i = 0; i < 100; i++) {
-      this.dataList.push({
-        name: "name"+i,
-        id: "id"+i,
-      })
-    }
   },
   methods: {
     selectListByPage(
@@ -82,18 +78,29 @@ export default {
       successCallback,
       errorCallback
     ) {
+      //==========↓↓↓↓↓↓此部分为给定模拟数据--真实情况将其删除
+      let dataList = [];
+      for (let i = 0; i < 100; i++) {
+        dataList.push({
+          name: "name"+i,
+          id: "id"+i,
+        })
+      }
+      //==========↑↑↑↑↑↑此部分为给定模拟数据--真实情况将其删除
       let _this = this;
       let req = {
       };
       console.log(req);
       setTimeout(() => {
-        if (true) {//成功回掉
-          //模拟返回数据分页处理
+        if (true) {//成功回掉--模拟true
           let listData = [];
+          //==========↓↓↓↓↓↓此部分为模拟返回数据分页处理--真实情况将其替换为接口成功返回取list逻辑
           for (var i = (pageNum - 1) * pageSize; i < pageNum * pageSize; i++) {
-            if (i >= this.dataList.length) break
-            listData.push(this.dataList[i])
+            if (i >= dataList.length) break
+            dataList[i].name.indexOf("Tab")<0&&(dataList[i].name = `Tab-${tabIndex}-${dataList[i].name}`)
+            listData.push(dataList[i])
           }
+          //==========↑↑↑↑↑↑此部分为模拟返回数据分页处理--真实情况将其替换为接口成功返回取list逻辑
           // 回调
           successCallback && successCallback(listData);
         } else {//失败回掉

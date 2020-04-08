@@ -31,11 +31,12 @@
                   v-show="!listAnm || i == curIndex"
                   :ref="'mescroll' + i"
                   :down="getMescrollDown(i, tab)"
-                  :up="getMescrollUp(i)"
+                  :up="getMescrollUp(i,'dataListSwiper')"
                   @init="mescrollInit(i, arguments)"
                 >
                   <slot name="content"></slot>
                   <!-- 列表数据 -->
+                  <div :id="`dataListSwiper${i}`"></div>
                   <slot
                     v-if="isMescrollLoadList"
                     :id="'dataList' + i"
@@ -66,7 +67,7 @@
               <mescroll-vue
                 :ref="'mescroll' + i"
                 :down="getMescrollDown(i, tab)"
-                :up="getMescrollUp(i)"
+                :up="getMescrollUp(i,'dataList')"
                 @init="mescrollInit(i, arguments)"
               >
                 <slot name="content"></slot>
@@ -293,8 +294,8 @@ export default {
       }
     },
     // mescroll上拉加载的配置
-    getMescrollUp(tabIndex) {
-      let emptyWarpId = 'dataList' + tabIndex
+    getMescrollUp(tabIndex,myemptyWarp) {
+      let emptyWarpId = myemptyWarp + tabIndex
       let empty = ''
       let htmlNodata = '<p class="upwarp-nodata">-- 我是有底线的 --</p>'
       // console.log('%c isEmptyObject','color:green;',isEmptyObject(this.emptyProp));

@@ -75,7 +75,8 @@
   </div>
 </template>
 
-<script>import Icon from '../icon'
+<script>
+import Icon from '../icon'
 import {isIOS, isAndroid} from '../_util'
 
 export default {
@@ -191,9 +192,10 @@ export default {
     },
   },
 }
-</script>
 
-<style lang="stylus" scoped>
+</script>
+
+<style lang="stylus">
 .n22-field-item {
   position: relative;
   .svg_icon {

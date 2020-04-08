@@ -135,7 +135,10 @@ export default {
   mounted () {},
   props: {
     title: String,
-    fixed: Boolean,
+    fixed: {
+      type: Boolean,
+      default: true
+    },
     leftText: String,
     leftTextIcon: {
       type: String,

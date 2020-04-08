@@ -911,7 +911,7 @@ export default {
   &.is-amount
     .n22-input-item-input,
     .n22-input-item-fake
-      padding-top 5px
+      // padding-top 5px
       font-family font-family-number
     &.large
       .n22-input-item-input,
@@ -924,8 +924,8 @@ export default {
       padding-bottom 15px
       font-size input-item-font-size-large
     .n22-input-item-input::-webkit-input-placeholder
-        font-size 60px
-        line-height 100px
+        font-size 30px
+        line-height 50px
 
   &.is-error
     .n22-field-item-content
