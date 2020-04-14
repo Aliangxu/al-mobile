@@ -2,7 +2,7 @@ export default {
   props: {
     icon: {
       type: String,
-      default: 'checked_circle',
+      default: 'checked',
     },
     iconInverse: {
       type: String,

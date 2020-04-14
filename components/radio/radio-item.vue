@@ -1,6 +1,15 @@
 <style lang="stylus" scoped>
 .n22-button
   vertical-align middle
+  &.theme-primary-plain
+    background radio-color-background-uncheck-plain
+    border 1px solid radio-color-background-border-uncheck
+    border-width 1px
+    border-style solid
+    &.checked
+      background-color radio-color-background-check-plain
+      border 1px solid radio-color-background-border-check-plain
+      color radio-color-font-check-plain !important
   &.theme-primary
     background radio-color-background-uncheck
     border 1px solid radio-color-background-border-uncheck
@@ -115,8 +124,8 @@
         <a
           v-for="(item, i) in options"
           :key="i"
-          class="n22-button n22-radio theme-primary size-xs shape-radius"
-          :class="dealIsCheck(currentValue, item) ? 'checked' : ''"
+          class="n22-button n22-radio size-xs shape-radius"
+          :class="[dealIsCheck(currentValue, item) ? 'checked' : '',plain?'theme-primary-plain':'theme-primary']"
         >
           <span>
             <input
@@ -228,6 +237,10 @@ export default {
       }
     }, //该v-modal字段属性对象
     disabled: {
+      type: Boolean,
+      default: false,
+    },
+    plain: {
       type: Boolean,
       default: false,
     },

@@ -308,6 +308,12 @@
                 "text": "输入框"
             },
             {
+                "name": "DropSelectItem",
+                "path": "/drop-select",
+                "icon": "drop-select",
+                "text": "统一表单滑动选择器"
+            },
+            {
                 "name": "NumberKeyboard",
                 "path": "/number-keyboard",
                 "icon": "number-keyboard",

@@ -57,12 +57,14 @@ Vue.component(CheckList.name, CheckList)
 |参数 | 说明 | 类型 | 默认值 |
 |----|-----|------|------|
 |name|需要选中的键值|String|-|
+|itemObject|补充对象|Object|-|
 
 ##### uncheck(name)
 
 |参数 | 说明 | 类型 | 默认值 |
 |----|-----|------|------|
 |name|需要去掉的键值|String|-|
+|itemObject|补充对象|Object|-|
 
 ##### toggle(name)
 

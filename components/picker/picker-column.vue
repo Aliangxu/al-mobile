@@ -58,9 +58,10 @@
   </div>
 </template>
 
-<script>import Scroller from '../_util/scroller'
+<script>
+import Scroller from '../_util/scroller'
 import {render} from '../_util/render'
-import {noop, getDpr, traverse, inArray, extend, warn} from '../_util'
+import {noop, getDpr, traverse, inArray, extend, warn, ui} from '../_util'
 
 const dpr = getDpr()
 const API_LIST = [
@@ -112,7 +113,7 @@ export default {
     },
     lineHeight: {
       type: Number,
-      default: 45,
+      default: ui.screenWidth>1400?20:ui.screenHeight/16,
     },
   },
 
@@ -484,7 +485,8 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
 .n22-picker-column
@@ -508,13 +510,13 @@ export default {
   &.top
     top 0
     // background -webkit-gradient(linear,left bottom,left top,from(hsla(0, 0%,100%,.2)),to(hsla(0,0%,100%,1)))
-    hairline(bottom, picker-border-color, 0, 3px)
+    hairline(bottom, picker-border-color, 0, 1px)
     // border-bottom solid 1px picker-border-color
   &.bottom
     bottom 0
     // bottom constant(safe-area-inset-bottom)
     // background -webkit-gradient(linear,left top,left bottom,from(hsla(0, 0%,100%,.2)),to(hsla(0,0%,100%,1)))
-    hairline(top, picker-border-color, 0, 3px)
+    hairline(top, picker-border-color, 0, 1px)
     // border-top solid 1px picker-border-color
 
 .n22-picker-column-hooks

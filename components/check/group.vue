@@ -39,14 +39,14 @@ export default {
       const index = this.value.indexOf(name)
       if (index === -1 && (this.max < 1 || this.value.length < this.max)) {
         this.$emit('input', this.value.concat(name))
-        this.$emit('change', this.value.concat(name),itemObject[0],itemObject[1],itemObject[2])
+        this.$emit('change', this.value.concat(name),itemObject)
       }
     },
     uncheck(name,itemObject) {
       const index = this.value.indexOf(name)
       if (index !== -1) {
         this.$emit('input', this.value.slice(0, index).concat(this.value.slice(index + 1)))
-        this.$emit('change', this.value.slice(0, index).concat(this.value.slice(index + 1)),itemObject[0],itemObject[1],itemObject[2])
+        this.$emit('change', this.value.slice(0, index).concat(this.value.slice(index + 1)),itemObject)
       }
     },
     toggle(name) {

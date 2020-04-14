@@ -45,7 +45,7 @@
   <n22-tab-picker
     id="drop-select-show"
     v-else-if="type === 'address'"
-    title="请选择"
+    :title="pickerTitle"
     :placeholder="titleText"
     :describe="titleText"
     :data="pickerDataShow"

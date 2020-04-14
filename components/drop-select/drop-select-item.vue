@@ -66,7 +66,7 @@
         align="left"
         ref="dropSelectShow"
         :type="type"
-        :title="pickerTitle"
+        :pickerTitle="pickerTitle"
         :selectValue="selectValue"
         v-model="isPickerShow0"
         :isAppendTo="isAppendTo"
@@ -128,7 +128,7 @@ export default {
       default: () => mdDocument.body,
     },
     isAppendTo: {
-      //是挂载dom显示还是内联显示--默认挂载dom显示
+      //是挂载dom显示还是内联显示--默认挂载内联显示
       type: Boolean,
       default: true,
     },
@@ -147,6 +147,10 @@ export default {
     hasMask: {
       type: Boolean,
       default: true,
+    },
+    isShowtextAlias: {
+      type: Boolean,
+      default: false,
     },
     pickerTitle: {
       type: String,
@@ -306,7 +310,7 @@ export default {
           appendTo: this.appendTo,
           type: this.type,
           selectValue: this.selectValue,
-          title: this.pickerTitle,
+          pickerTitle: this.pickerTitle,
           notSelectIdf: this.notSelectIdf,
           pickerData: this.pickerData,
           defaultDate: this.defaultDate,
@@ -436,6 +440,19 @@ export default {
             }
           }
         }
+      }else if (this.type == 'work') {
+        this.selectValue = newval
+        // if (newval && newval.indexOf('|') > -1) {
+        //   let arr = newval.split('|')
+          const pickerWorkData = this.pickerData[2]
+          for (let m = 0; m < pickerWorkData.length; m++) {
+            const ppm = pickerWorkData[m]
+            if (newval == ppm.value) {
+              this.pickerValue0 = this.isShowtextAlias?ppm.textAlias:ppm.text;
+              break
+            }
+          }
+        // }
       }
       const _this = this
       if (this.$validator) {
@@ -484,7 +501,7 @@ export default {
   },
   mounted() {
     console.log('%c DropSelectItem--mounted', 'color:green;', this.value)
-    this.value ? this.onPickerConfirmZD(this.value, 0) : this.assignDefault()
+    this.value ? this.onPickerConfirmZD(this.value, "", 0, false) : this.assignDefault()
   },
   watch: {
     value(newval, oldval) {

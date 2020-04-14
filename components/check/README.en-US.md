@@ -59,12 +59,14 @@ Check multiple checks. Combine with `Check` or `CheckBox`.
 | Arg | Description | Type | Default |
 |----|-----|------|------|
 |name|name will be selected|String|-|
+|itemObject|custom Object|Object|-|
 
 ##### uncheck(name)
 
 | Arg | Description | Type | Default |
 |----|-----|------|------|
 |name|name will be unselected|String|-|
+|itemObject|custom Object|Object|-|
 
 ##### toggle(name)
 
