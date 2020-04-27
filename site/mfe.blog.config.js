@@ -20,7 +20,7 @@ function generateDemos (name) {
 }
 
 function generateSource (lang = 'zh-CN') {
-  console.log(">>>>>>>>>>>>>>>>>>>");
+  console.log("开始处理components>>>>>>>>>>>>>>>>>>>");
   const menus = []
   components.forEach(category => {
     const list = category.list

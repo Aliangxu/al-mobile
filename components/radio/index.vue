@@ -51,7 +51,7 @@
         background-color: #4091fb;
         color: #fff;
         transform: scale(1);
-        border: none;
+        border: 1px solid #4091fb;
       }
       &:checked + .circle_error {
         background-color: rgb(255, 0, 0);
@@ -81,11 +81,12 @@
       vertical-align: middle;
 
       // float: left;
-      z-index: -1;
+      // z-index: -1;//2020-04-12
       margin-left: 20px;
       // display: inline-block;
       width: 28px;
       height: 28px;
+      border: 1px solid #c5cad5;
       background-color: #f2f2f6;
       border-radius: 100%;
       line-height: 28px;
@@ -201,11 +202,7 @@
                     "
                     v-model="currentValue"
                     type="checkbox"
-                    :disabled="
-                      disabled === false
-                        ? otherValue.disabled == 'disabled'
-                        : disabled
-                    "
+                    :disabled="dealDisabled"
                     :value="option.optionId || option"
                   />
                   <input
@@ -219,18 +216,13 @@
                     "
                     v-model="currentValue"
                     type="radio"
-                    :disabled="
-                      disabled === false
-                        ? otherValue.disabled == 'disabled'
-                        : disabled
-                    "
+                    :disabled="dealDisabled"
                     :value="option.optionId || option"
                   />
                   <span
                     class="input-box-circle"
                     :class="
                       dealTrueOrFalse(
-                        otherValue.topicAnswer,
                         option.optionId || option,
                         i,
                         'class'
@@ -240,13 +232,11 @@
                     <n22-icon
                       v-if="
                         dealTrueOrFalse(
-                          otherValue.topicAnswer,
                           option.optionId || option,
                           i,
                           'desc'
                         ) == 'correct' ||
                           dealTrueOrFalse(
-                            otherValue.topicAnswer,
                             option.optionId || option,
                             i,
                             'desc'
@@ -254,7 +244,6 @@
                       "
                       :name="
                         dealTrueOrFalse(
-                          otherValue.topicAnswer,
                           option.optionId || option,
                           i,
                           'desc'
@@ -263,7 +252,6 @@
                     ></n22-icon>
                     <span v-else>{{
                       dealTrueOrFalse(
-                        otherValue.topicAnswer,
                         option.optionId || option,
                         i,
                         'desc'
@@ -272,7 +260,7 @@
                   </span>
                   <span
                     class="desc_c"
-                    :class="{ 'input-box-text-disabled': otherValue.disabled }"
+                    :class="{ 'input-box-text-disabled': itemObject&&itemObject.disabled }"
                     >{{ option.optionDes || option }}</span
                   >
                 </template>
@@ -291,7 +279,8 @@
   </div>
 </template>
 
-<script>/* eslint-disable */
+<script>
+/* eslint-disable */
 import {constant} from '../_util'
 import Icon from '../icon'
 export default {
@@ -300,8 +289,12 @@ export default {
     [Icon.name]: Icon,
   },
   computed: {
+    dealDisabled() {
+      return this.disabled === false ? (this.itemObject&&this.itemObject.disabled == 'disabled') : this.disabled
+    },
     dealTrueOrFalse() {
-      return (value, opid, i, type) => {
+      return (opid, i, type) => {
+        let value = this.itemObject?this.itemObject.topicAnswer:''
         let show = {
           desc: this.selectOptionList[i],
           class: 'circle_select',
@@ -378,7 +371,7 @@ export default {
       default: true,
     },
     value: [String, Array, Boolean, Number], // v-modal
-    otherValue: Object, // item
+    itemObject: Object, // item
     selectOptionList: {
       // 选择显示的选项--默认A-Z
       type: Array,
@@ -395,7 +388,7 @@ export default {
   },
   methods: {
     // selectOptionShowFun(op){
-    //   this.otherValue.show = op
+    //   this.itemObject.show = op
     // }
     selectClick(i) {
       console.log('%c selectClick', 'color:green;', `${this.mode}-${i}`)
@@ -416,9 +409,10 @@ export default {
       if (newVal != oldVal) {
         console.log('%c radio-currentValue', 'color:green;', 'currentValue更改')
         this.$emit('input', newVal)
-        this.$emit('changeData', this.otherValue)
+        this.$emit('changeData', this.itemObject)
       }
     },
   },
 }
-</script>
+
+</script>

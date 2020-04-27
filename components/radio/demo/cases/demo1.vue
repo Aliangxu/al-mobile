@@ -10,7 +10,9 @@
   </div>
 </template>
 
-<script>import {Radio, Field, FieldItem} from 'al-mobile'
+<script>
+import { Field, FieldItem} from 'al-mobile'
+import Radio from 'al-mobile/components/radio/indexm'
 
 export default {
   name: 'radio-demo',
@@ -30,4 +32,5 @@ export default {
     }
   },
 }
-</script>
+
+</script>

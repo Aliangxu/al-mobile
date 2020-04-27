@@ -1,16 +1,18 @@
 <template>
-  <div class="md-example-child md-example-child-radio md-example-child-radio-3">
-    <!-- <md-radio-group v-model="favorites">
-      <md-radio name="watermelon" label="西瓜"/>
-      <md-radio name="apple" label="苹果" />
-      <md-radio name="banana" label="香蕉" />
-      <md-radio name="orange" label="橙子" />
-      <md-radio name="tomato" label="西红柿" disabled />
-    </md-radio-group> -->
+  <div class="n22-example-child n22-example-child-radio n22-example-child-radio-3">
+    <n22-radio-group v-model="favorites">
+      <n22-radio name="watermelon" label="西瓜"/>
+      <n22-radio name="apple" label="苹果" />
+      <n22-radio name="banana" label="香蕉" />
+      <n22-radio name="orange" label="橙子" />
+      <n22-radio name="tomato" label="西红柿" disabled />
+    </n22-radio-group>
   </div>
 </template>
 
-<script>// import {Radio, RadioGroup} from 'al-mobile'
+<script>
+import {RadioGroup} from 'al-mobile'
+import Radio from 'al-mobile/components/radio/indexm'
 
 export default {
   name: 'radio-demo',
@@ -20,8 +22,8 @@ export default {
   align: 'left',
   /* DELETE */
   components: {
-    // [Radio.name]: Radio,
-    // [RadioGroup.name]: RadioGroup,
+    [Radio.name]: Radio,
+    [RadioGroup.name]: RadioGroup,
   },
   data() {
     return {
@@ -29,4 +31,5 @@ export default {
     }
   },
 }
-</script>
+
+</script>

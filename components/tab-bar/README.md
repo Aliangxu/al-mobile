@@ -23,6 +23,8 @@ Vue.component(TabBar.name, TabBar)
 |----|-----|------|------|------|
 |v-model|双向绑定的标签对象`name`|String|-|-|
 |items|标签标题数组|Array<{name: String, label: String, disabled: Boolean}>|-|-|
+|valueKey|标签标题数组items中对应的key--可自定义|String|'name'|如果没有name也没有给定valueKey则为数组下标|
+|textKey|标签标题数组items中对应的text--可自定义|String|'label'|-|
 |has-ink|是否显示下划线|Boolean|`true`|-|
 |ink-length|下划线宽度|Number|`100`|该数值为下划线占标签按钮宽度的百分比，须在`0-100`之间|
 |immediate|初始化后立即就触发一次`change`事件|Boolean|`false`|-|

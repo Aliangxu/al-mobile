@@ -1,12 +1,13 @@
 <template>
-  <div class="md-example-child md-example-child-check md-example-child-check-4">
-    <!-- <md-radio-box name="day" v-model="pay" label="日缴" disabled />
-    <md-radio-box name="month" v-model="pay" label="月付" />
-    <md-radio-box name="season" v-model="pay" label="季度费" /> -->
+  <div class="n22-example-child n22-example-child-check n22-example-child-check-4">
+    <n22-radio-box name="day" v-model="pay" label="日缴" disabled />
+    <n22-radio-box name="month" v-model="pay" label="月付" />
+    <n22-radio-box name="season" v-model="pay" label="季度费" />
 	</div>
 </template>
 
-<script>// import {RadioBox} from 'mand-mobile'
+<script>
+import {RadioBox} from 'al-mobile'
 
 export default {
   name: 'radio-demo',
@@ -16,7 +17,7 @@ export default {
   align: 'left',
   /* DELETE */
   components: {
-    // [RadioBox.name]: RadioBox,
+    [RadioBox.name]: RadioBox,
   },
   data() {
     return {
@@ -24,4 +25,5 @@ export default {
     }
   },
 }
-</script>
+
+</script>

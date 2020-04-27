@@ -3,6 +3,16 @@ title: 更新日志
 toc: hidden
 ---
 
+### 0.0.23
+
+`2020-04-12`
+
+- Feat
+  - `TabBar`新增key、value自定义属性值
+- Fix
+  - `radio`修复
+  - `dom`修复dom距离
+
 ### 0.0.22
 
 `2020-04-04`

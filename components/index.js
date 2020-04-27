@@ -16,7 +16,9 @@ import Calendar from './calendar'
 import NoticeBar from './notice-bar'
 import InformationBar from './information-bar'
 import Radio from './radio'
+import RadioGroup from './radio-group'
 import RadioItem from './radio-item'
+import RadioBox from './radio-box'
 import RadioList from './radio-list'
 import Amount from './amount'
 import ListTabs from './list-tabs'
@@ -101,7 +103,9 @@ export const components = {
   NoticeBar,
   InformationBar,
   Radio,
+  RadioGroup,
   RadioItem,
+  RadioBox,
   RadioList,
   Amount,
   ListTabs,
@@ -202,7 +206,9 @@ export {
   NoticeBar,
   InformationBar,
   Radio,
+  RadioGroup,
   RadioItem,
+  RadioBox,
   RadioList,
   Amount,
   ListTabs,

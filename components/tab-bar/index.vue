@@ -16,11 +16,11 @@
           <a
             class="n22-tab-bar-item"
             :class="{
-              'is-active': currentName === (item.name || index),
+              'is-active': currentName === (item[valueKey] || index),
               'is-disabled': !!item.disabled
             }"
             v-for="(item, index) in items"
-            :key="item.name || index"
+            :key="item[valueKey] || index"
             ref="items"
             @click="$_onClick(item, index)"
           >
@@ -30,7 +30,7 @@
               :items="items"
               :index="index"
               :currentName="currentName"
-              >{{ item.label || item.name }}</slot
+              >{{ item[textKey] }}</slot
             >
           </a>
         </div>
@@ -59,7 +59,8 @@
   </nav>
 </template>
 
-<script>import ScrollView from '../scroll-view'
+<script>
+import ScrollView from '../scroll-view'
 import {ui} from '../_util'
 
 export default {
@@ -107,6 +108,16 @@ export default {
       type: String,
       default: '',
     },
+    valueKey: {
+      // 码表value对应的key--可自定义--默认就是value
+      type: String,
+      default: 'name',
+    },
+    textKey: {
+      // 码表text对应的key--可自定义--默认就是text
+      type: String,
+      default: 'label',
+    },
   },
 
   data() {
@@ -139,7 +150,7 @@ export default {
     },
     currentIndex() {
       for (let i = 0, len = this.items.length; i < len; i++) {
-        if (this.items[i].name === this.currentName) {
+        if (this.items[i][this.valueKey] === this.currentName) {
           return i
         }
       }
@@ -183,7 +194,7 @@ export default {
 
   created() {
     if (this.currentName === '' && this.items.length) {
-      this.currentName = this.items[0].name
+      this.currentName = this.items[0][this.valueKey]
       this.$emit('change', this.items[0], 0, 0)
     }
   },
@@ -221,8 +232,8 @@ export default {
         return
       }
       this.$emit('change', item, index, this.currentIndex)
-      this.currentName = item.name || index
-      this.$emit('input', item.name || index)
+      this.currentName = item[this.valueKey] || index
+      this.$emit('input', item[this.valueKey] || index)
     },
     // MARK: public methods
     reflow() {
@@ -274,7 +285,8 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus" scoped>
 .n22-tab-bar
@@ -312,7 +324,7 @@ export default {
   &.is-active
     color tab-active-color !important
   &.is-disabled
-    color tab-disabled-color
+    color tab-disabled-color !important
 
 .n22-tab-bar-ink
   position absolute

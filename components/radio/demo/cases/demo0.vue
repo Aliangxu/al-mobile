@@ -5,13 +5,14 @@
   </div>
 </template>
 
-<script>import {Radio} from 'al-mobile'
+<script>
+import Radio from 'al-mobile/components/radio/indexm'
 
 export default {
   name: 'radio-demo',
   /* DELETE */
-  title: '普通单选项',
-  titleEnUS: 'Normal radio',
+  title: '普通单选项 radio1',
+  titleEnUS: 'Normal radio1',
   /* DELETE */
   components: {
     [Radio.name]: Radio,
@@ -22,4 +23,5 @@ export default {
     }
   },
 }
-</script>
+
+</script>

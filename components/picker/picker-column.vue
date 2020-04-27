@@ -113,7 +113,7 @@ export default {
     },
     lineHeight: {
       type: Number,
-      default: ui.screenWidth>1400?20:ui.screenHeight/16,
+      default: 45,
     },
   },
 
@@ -510,13 +510,13 @@ export default {
   &.top
     top 0
     // background -webkit-gradient(linear,left bottom,left top,from(hsla(0, 0%,100%,.2)),to(hsla(0,0%,100%,1)))
-    hairline(bottom, picker-border-color, 0, 1px)
+    hairline(bottom, picker-border-color, 0, 2px)
     // border-bottom solid 1px picker-border-color
   &.bottom
     bottom 0
     // bottom constant(safe-area-inset-bottom)
     // background -webkit-gradient(linear,left top,left bottom,from(hsla(0, 0%,100%,.2)),to(hsla(0,0%,100%,1)))
-    hairline(top, picker-border-color, 0, 1px)
+    hairline(top, picker-border-color, 0, 2px)
     // border-top solid 1px picker-border-color
 
 .n22-picker-column-hooks

@@ -1,4 +1,4 @@
-import { inBrowser } from './env'
+import { inBrowser, isWechat } from './env'
 
 class Dom {
   appendChild () {}
@@ -61,14 +61,18 @@ const uikz = {
     ui.isIPhoneX || ui.isIPhoneXSMax || ui.isIPhoneXR
       ? 78
       : window.navigator.platform === 'iPhone' &&
-        (window.globalConfig && window.globalConfig.platform === 'phoneWeb')
+        window.ALIOSHEAD === 'phone' &&
+          (window.cordova || window.GDIJSBridge) &&
+        !isWechat
       ? 64
       : 44,
   allHeadTopPxVideo:
     ui.isIPhoneX || ui.isIPhoneXSMax || ui.isIPhoneXR
       ? 0
       : window.navigator.platform === 'iPhone' &&
-        (window.globalConfig && window.globalConfig.platform === 'phoneWeb')
+        window.ALIOSHEAD === 'phone' &&
+          (window.cordova || window.GDIJSBridge) &&
+        !isWechat
       ? 20
       : 0
 }
