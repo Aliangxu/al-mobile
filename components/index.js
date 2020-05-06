@@ -57,6 +57,7 @@ import Work from './work'
 import Toast from './toast'
 import ActivityIndicator from './activity-indicator'
 import NumberKeyboard from './number-keyboard'
+import Tip from './tip'
 import Textarea from './textarea'
 import TabBar from './tab-bar'
 import Tag from './tag'
@@ -144,6 +145,7 @@ export const components = {
   Toast,
   ActivityIndicator,
   NumberKeyboard,
+  Tip,
   Textarea,
   TabBar,
   Tag,
@@ -247,6 +249,7 @@ export {
   Toast,
   ActivityIndicator,
   NumberKeyboard,
+  Tip,
   Textarea,
   TabBar,
   Tag,

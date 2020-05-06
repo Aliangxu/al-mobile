@@ -3,6 +3,14 @@ title: 更新日志
 toc: hidden
 ---
 
+### 0.0.24
+
+`2020-05-06`
+
+- Fix
+  - `switch-item`修复没有options时，true跟false的boolearn值回显赋值问题（mounted赋值错误）
+  - `switch-item`修复changeData改变回掉事件中，第二个参数value值错误问题
+
 ### 0.0.23
 
 `2020-04-12`

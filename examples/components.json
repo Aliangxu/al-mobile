@@ -338,9 +338,9 @@
                 "text": "开关"
             },
             {
-                "name": "TextareaItem",
-                "path": "/textarea-item",
-                "icon": "textarea-item",
+                "name": "Textarea",
+                "path": "/textarea",
+                "icon": "textarea",
                 "text": "文本域"
             }
         ]

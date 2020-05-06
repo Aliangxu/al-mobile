@@ -1,7 +1,15 @@
 ---
-title: Change Log
+title: 更新日志
 toc: hidden
 ---
+
+### 0.0.24
+
+`2020-05-06`
+
+- Fix
+  - `switch-item`修复没有options时，true跟false的boolearn值回显赋值问题（mounted赋值错误）
+  - `switch-item`修复changeData改变回掉事件中，value值错误问题
 
 ### 0.0.23
 
@@ -11,6 +19,7 @@ toc: hidden
   - `TabBar`新增key、value自定义属性值
 - Fix
   - `radio`修复
+  - `dom`修复dom距离
 
 ### 0.0.22
 

@@ -238,7 +238,7 @@ export default {
 
   watch: {
     value(newVal, oldVal) {
-      if (newVal) {
+      if (newVal||newVal===false) {
         this.getIsSelectChange(newVal, this.options)
       }
     },
@@ -277,12 +277,15 @@ export default {
       if (this.disabled) {
         return
       }
-      this.$emit('input', this.getIsSelect(this.value, this.options, 2))
-      this.$emit('changeData', this.itemObject, this.value, '', true, event)
+      // this.$emit('input', this.getIsSelect(this.value, this.options, 2))
+      // this.$emit('changeData', this.itemObject, this.value, '', true, event)
+      const value = this.getIsSelect(this.value, this.options, 2)
+      this.$emit('input', value)
+      this.$emit('changeData', this.itemObject, value, '', true, event)
     },
     //监听v-modal
     getIsSelectChange(value, options) {
-      if (options) {
+      if (options&&options.length>0) {
         for (let a = 0; a < options.length; a++) {
           const op = options[a]
           if (op.value == value && a === 0) {
@@ -291,6 +294,8 @@ export default {
             this.isSelect = false
           }
         }
+      }else{
+        this.isSelect = !this.isSelect;
       }
     },
   },

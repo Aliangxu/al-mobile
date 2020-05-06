@@ -1,4 +1,3 @@
-vue
 <template>
   <div
     :style="{
@@ -36,7 +35,8 @@ vue
   </div>
 </template>
 
-<script>export default {
+<script>
+export default {
   name: 'n22-textarea',
   data() {
     return {
@@ -115,8 +115,9 @@ vue
     },
   },
 }
-</script>
-<style lang="stylus" scoped>
+
+</script>
+<style lang="stylus">
 .auto-textarea-wrapper {
     margin 10px;
     position: relative;
