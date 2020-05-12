@@ -3,7 +3,7 @@
     <h1 class="n22-cg-title">Al Mobile</h1>
     <h1 class="n22-cg-subtitle">面向金融场景的移动端Vue组件库</h1>
     <div class="n22-cg-logo">
-      <img src="http://qiaoxiyan.com/al/images/al.svg" alt="">
+      <img src="http://vue-mobile.gitee.io/static/image/al.svg" alt="">
     </div>
     <section
       v-for="(category, i) in components" :key="i"

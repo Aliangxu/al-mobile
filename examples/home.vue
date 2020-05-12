@@ -1,7 +1,7 @@
 <template>
   <div class="n22-home">
     <div class="n22-home-logo">
-      <img src="http://qiaoxiyan.com/al/images/al.svg" alt="">
+      <img src="http://vue-mobile.gitee.io/static/image/al.svg" alt="">
     </div>
     <div class="n22-home-name" data-in-effect="fadeInLeftBig">Al Mobile</div>
     <div class="n22-home-time">0%</div>

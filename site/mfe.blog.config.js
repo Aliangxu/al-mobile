@@ -52,8 +52,8 @@ module.exports = {
   title: 'Al Mobile',
   subtitle: '面向金融场景的Vue移动端UI组件库',
   subtitleEnUs: 'A mobile UI toolkit, based on Vue.js 2, designed for financial scenarios',
-  logo: 'http://qiaoxiyan.com/al/images/al.svg',
-  favicon: 'http://qiaoxiyan.com/al/images/al.svg',
+  logo: 'http://vue-mobile.gitee.io/static/image/al.svg',
+  favicon: 'http://vue-mobile.gitee.io/static/image/al.svg',
   source: [{
     name: 'zh-CN',
     text: '中文',

@@ -1,6 +1,6 @@
 {
   "name": "al-mobile",
-  "version": "0.0.23",
+  "version": "0.0.25",
   "description": "A Vue.js 2.0 Mobile UI Toolkit",
   "homepage": "https://github.com/Aliangxu/al-mobile.git",
   "main": "lib/al-mobile.umd.js",
@@ -30,7 +30,9 @@
     "create": "node build/component-init.js",
     "cz": "npx git-cz",
     "clean": "rm -rf ./lib && rm -rf ./lib-vw && rm -rf ./docs/examples",
+    "clean:window": "rd /s/q lib && rd /s/q lib-vw && rd /s/q docs/examples",
     "build": "npm run clean && npm run build:components && npm run build:al-mobile && npm run build:responsive",
+    "build:window": "npm run build:components && npm run build:al-mobile && npm run build:responsive",
     "build:site": "cd site && npm run generate && npm run build",
     "build:example": "cross-env NODE_ENV=production BUILD_TYPE=example node build/rollup/build-example.rollup",
     "build:al-mobile": "npm run build:al-mobile-esm && npm run build:al-mobile-variables",

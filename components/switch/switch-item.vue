@@ -295,7 +295,7 @@ export default {
           }
         }
       }else{
-        this.isSelect = !this.isSelect;
+        this.isSelect = this.value;
       }
     },
   },

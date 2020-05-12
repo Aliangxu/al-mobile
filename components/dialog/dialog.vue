@@ -29,7 +29,7 @@
             <img v-else :src="icon" alt=""> -->
             <n22-icon :name="icon" :svg="iconSvg"/>
           </div>
-          <h2 class="n22-dialog-title" v-if="title" v-text="title"></h2>
+          <h2 class="n22-dialog-title" v-if="title" v-html="title"></h2>
           <slot>
             <div class="n22-dialog-text" v-html="content"></div>
           </slot>
@@ -44,7 +44,7 @@
                 warning: !btn.disabled && !!btn.warning
               }"
               :key="index"
-              v-text="btn.text"
+              v-html="btn.text"
               @click="$_onClick(btn)"
               @touchmove.prevent
             ></a>
@@ -55,7 +55,8 @@
   </div>
 </template>
 
-<script>import Popup from '../popup'
+<script>
+import Popup from '../popup'
 import Icon from '../icon'
 import {mdDocument} from '../_util'
 
@@ -169,7 +170,8 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
 .n22-dialog

@@ -13,7 +13,7 @@
       @selectListByPage="selectListByPage"
     >
       <template #default="{list}">
-        <div class="my-item" v-for="item in list">
+        <div class="my-item" v-for="(item,i) in list" :key="i">
           {{item.name}}
         </div>
       </template>

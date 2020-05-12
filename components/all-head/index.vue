@@ -1,5 +1,5 @@
 <template>
-  <div :class="{ al_head: headBottom }" class="bar">
+  <div :class="{ al_head: headBottom }" class="al-all-head bar">
     <slot>
       <div
         class="n22-nav-bar"
@@ -274,6 +274,12 @@ export default {
 </script>
 
 <style lang="stylus">
+.al-all-head {
+  .n22-icon {
+    color: black;
+    vertical-align: middle;
+  }
+}
 .al-head-title-c {
 //   display:inline-block;
   width: 200px;
@@ -338,10 +344,6 @@ placeholderStyle("#search_query", line-height, 30px)
   vertical-align: -8px;
   width: 24px;
   height: 24px;
-}
-.n22-icon {
-  color: black;
-  vertical-align: middle;
 }
 
 .n22-hairline--bottom {

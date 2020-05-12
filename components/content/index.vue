@@ -295,6 +295,7 @@ export default {
     },
     // mescroll上拉加载的配置
     getMescrollUp(tabIndex,myemptyWarp) {
+      let isUse = true
       let emptyWarpId = myemptyWarp + tabIndex
       let empty = ''
       let htmlNodata = '<p class="upwarp-nodata">-- 我是有底线的 --</p>'
@@ -311,12 +312,16 @@ export default {
           // btnClick: this.btnClick
         }
       }
+      if (!this.tabs[tabIndex].isMescrollUp) {
+        isUse = false
+      }
       if (!isEmptyObject(this.tabs[tabIndex].htmlNodata)) {
         htmlNodata = this.tabs[tabIndex].htmlNodata
       }
       // console.log('%c empty','color:green;',empty);
       return {
         auto: false,
+        use: isUse,
         page: this.page,
         callback: this.upCallback, // 上拉回调,此处可简写; 相当于 callback: function (page) { upCallback(page); }
         onScroll: this.onScroll,

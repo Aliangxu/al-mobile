@@ -48,7 +48,7 @@ export default {
           mescroll: null,
           list: [],
           isListInit: false,
-          isMescrollUp: true,
+          isMescrollUp: false,
           upCallbackFun: "",
         },
       ],

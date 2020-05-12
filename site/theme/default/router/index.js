@@ -23,7 +23,8 @@ Routes.map((item, index) => {
   return item
 })
 
-const langCached = localStore('MAND_MOBILE_LANG') || 'en-US'
+// const langCached = localStore('AL_MOBILE_LANG') || 'zh-CN'
+const langCached = 'zh-CN'
 const routes = [
   ...Routes,
   {path: '/en-US/home', component: Home, meta: {noMenu: true}},

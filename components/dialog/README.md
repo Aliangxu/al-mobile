@@ -63,11 +63,14 @@ this.$dialog.alert({ content: '' }) // 全量引入
 ##### Dialog.confirm(props)
 静态方法创建确认模态窗口, 返回Dialog实例
 
+<sup class="version-after">0.0.25+</sup>
+下面的`title`,`content`可以使用vnode
+
 |属性 | 说明 | 类型 | 默认值|
 |-----|-----|-----|-----|
 | icon | 图标 | String | -|
-| title | 窗口标题 | String | -|
-| content | 正文内容 | String | -|
+| title | 窗口标题 | String\vnode | -|
+| content | 正文内容 | String\vnode | -|
 | cancelText | 底部取消按钮文字 | String | `取消`|
 | confirmText | 底部确认按钮文字 | String | `确认`|
 | cancelWarning | 点击取消按钮为警示操作 | Boolean | `false` |
@@ -81,8 +84,8 @@ this.$dialog.alert({ content: '' }) // 全量引入
 |属性 | 说明 | 类型 | 默认值|
 |-----|-----|-----|-----|
 | icon | 图标 | String | -|
-| title | 窗口标题 | String | -|
-| content | 正文内容 | String | -|
+| title | 窗口标题 | String\vnode | -|
+| content | 正文内容 | String\vnode | -|
 | confirmText | 底部确认按钮文字 | String | `确认`|
 | warning | 点击确认按钮为警示操作 | Boolean | `false` |
 | onConfirm | 点击确认按钮回调函数 | Function | -|
@@ -92,8 +95,8 @@ this.$dialog.alert({ content: '' }) // 全量引入
 
 |属性 | 说明 | 类型 | 默认值|
 |-----|-----|-----|-----|
-| title | 窗口标题 | String | -|
-| content | 正文内容 | String | -|
+| title | 窗口标题 | String\vnode | -|
+| content | 正文内容 | String\vnode | -|
 | confirmText | 底部确认按钮文字 | String | `确认`|
 | onConfirm | 点击确认按钮回调函数 | Function | -|
 | onCancel | 点击取消按钮回调函数 | Function | -|
@@ -103,8 +106,8 @@ this.$dialog.alert({ content: '' }) // 全量引入
 
 |属性 | 说明 | 类型 | 默认值|
 |-----|-----|-----|-----|
-| title | 窗口标题 | String | -|
-| content | 正文内容 | String | -|
+| title | 窗口标题 | String\vnode | -|
+| content | 正文内容 | String\vnode | -|
 | confirmText | 底部确认按钮文字 | String | `确认`|
 | onConfirm | 点击确认按钮回调函数 | Function | -|
 | onCancel | 点击取消按钮回调函数 | Function | -|

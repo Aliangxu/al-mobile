@@ -6,7 +6,8 @@
   </div>
 </template>
 
-<script>import SwiperAdd from 'al-mobile/components/swiper/swiper-add'
+<script>
+import SwiperAdd from 'al-mobile/components/swiper/swiper-add'
 
 export default {
   name: 'swiper-demo',
@@ -29,22 +30,22 @@ export default {
           color: '#4C47E7' || 'rgb(76, 71, 231,1)',
           bcLinearGradient: '#438BED' || 'rgb(68, 135, 237.0.6)',
           link: 'http://show.n22.com.cn:8889/cms/index.jhtml',
-          linkType: 'externalLink',
-          imgUrl: 'http://qiaoxiyan.com/al/images/al.svg',
+          linkType: 'appLink',
+          imgUrl: 'http://vue-mobile.gitee.io/static/image/al.svg',
         },
         {
           color: 'orange',
           bcLinearGradient: '#ecb349',
           link: '/trainAll',
           linkType: 'appLink',
-          imgUrl: 'http://qiaoxiyan.com/al/images/al.svg',
+          imgUrl: 'http://vue-mobile.gitee.io/static/image/al.svg',
         },
         {
           color: 'yellow',
           bcLinearGradient: '#f9f980',
           link: '/trainAll',
           linkType: 'appLink',
-          imgUrl: 'http://qiaoxiyan.com/al/images/al.svg',
+          imgUrl: 'http://vue-mobile.gitee.io/static/image/al.svg',
         },
       ],
     }
@@ -52,7 +53,8 @@ export default {
   mounted() {},
   methods: {},
 }
-</script>
+
+</script>
 <style lang="stylus">
 .swiper-add
   width: 375px;

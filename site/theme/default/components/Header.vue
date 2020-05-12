@@ -126,7 +126,7 @@ export default {
   },
 
   mounted () {
-    localStore('MAND_MOBILE_LANG', this.switchLang)
+    // localStore('AL_MOBILE_LANG', this.switchLang)
   },
 
   watch: {
@@ -141,7 +141,7 @@ export default {
   methods: {
     // changeLang () {
     //   const lang = this.lang === 'zh-CN' ? 'en-US' : 'zh-CN'
-    //   localStore('MAND_MOBILE_LANG', lang)
+    //   localStore('AL_MOBILE_LANG', lang)
     //   location.href = location.href.replace(this.lang, lang)
 
     //   if (~location.href.indexOf('home')) {
