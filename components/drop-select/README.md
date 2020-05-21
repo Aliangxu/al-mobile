@@ -39,6 +39,7 @@ Vue.component(DropSelectItem.name, DropSelectItem)
 | vvalidateModal | 校验规则对象 | String | - | 字符串，以|隔开 |
 | dataVvAs | 校验规则提示的字段名称 | String | - | 默认是取vvalidateModal所对应的的校验队则的对象的名称 |
 | btns | 操作按钮组 | Array<{text, handler, warning}> | `[]`|`warning` is used to identify the warning action|
+| levelArrayProp | 职业三级需要切割下标数组 | Array<Number> | `[2, 4, 6]`| - |
 
 #### 暂未开启的功能
 |属性 | 说明 | 类型 | 默认值|备注|
@@ -67,6 +68,14 @@ type为work时使用
 |----|-----|------|------|
 |val|当前的数据|Object|-|
 
+##### onPickerConfirm(itemObject, newval, oldval, isHand, type, key)
+type为默认sigle、work时使用
+滑动选择器关闭确认事件
+
+|参数 | 说明 | 类型 | 默认值|
+|----|-----|------|------|
+参数同changeData事件
+
 ##### onDatePickerConfirm(itemObject, newval, oldval, isHand, type, key)
 type为date时使用
 时间滑动选择器关闭确认事件
@@ -92,7 +101,7 @@ type为address时使用
 |newval|改变后的新值|-|-|-|
 |oldval|改变前的旧值|-|-|-|
 |isHand|是否手动触发的changeData事件|Object|-|用于区分时否为回显还是手动点击触发的change回掉|
-|type|扩充参数|-|-|之前的type移植到itemObject对象中type|
+|option|扩充参数--选项值对象|-|-|目前应用在type为work时返回work的选项值对象|
 |key|扩充参数|-|-|之前的key移植到itemObject对象中code|
 
 

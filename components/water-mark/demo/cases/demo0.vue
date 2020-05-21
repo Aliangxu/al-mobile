@@ -2,7 +2,7 @@
   <div class="n22-example-child n22-example-child-water-mark-0">
     <n22-water-mark
       class="text-container"
-      content="MAND MOBILE"
+      content="AL MOBILE"
       spacing="10vw"
     >
       <p class="text">
@@ -18,7 +18,8 @@
 	</div>
 </template>
 
-<script>import {WaterMark} from 'al-mobile'
+<script>
+import {WaterMark} from 'al-mobile'
 
 export default {
   name: 'water-mark-demo',
@@ -26,16 +27,17 @@ export default {
     [WaterMark.name]: WaterMark,
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
 .n22-example-child-water-mark-0
   .text-container
-    padding 32px
+    padding 16px
     background #FFF
   .text
-    margin-bottom 20px
+    margin-bottom 10px
     line-height 1.5
-    font-size 24px
+    font-size 12px
     text-indent 2em
 </style>

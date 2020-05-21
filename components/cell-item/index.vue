@@ -22,8 +22,9 @@
         <slot name="right">
           {{ addon }}
         </slot>
-        <!-- <svg-icon v-if="arrow" icon-class="arrow-right"></svg-icon> -->
-        <n22-icon v-if="arrow" name="arrow-right" size="md" />
+        <slot name="arrow">
+          <n22-icon v-if="arrow" name="right_arrow" size="md" />
+        </slot>
       </div>
     </div>
     <div class="n22-cell-item-children" v-if="$slots.children">
@@ -32,7 +33,8 @@
   </div>
 </template>
 
-<script>import Icon from '../icon'
+<script>
+import Icon from '../icon'
 
 export default {
   name: 'n22-cell-item',
@@ -76,7 +78,8 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
 .n22-cell-item

@@ -1,12 +1,11 @@
 <template>
   <div class="n22-example-child n22-example-child-action-bar n22-example-child-0">
-    <al-content>
-      <n22-action-bar :actions="data"></n22-action-bar>
-    </al-content>
+    <n22-action-bar :actions="data"></n22-action-bar>
   </div>
 </template>
 
-<script>import {Content, ActionBar, Toast} from 'al-mobile'
+<script>
+import {Content, ActionBar, Toast} from 'al-mobile'
 
 export default {
   name: 'action-bar-demo',
@@ -33,4 +32,5 @@ export default {
     },
   },
 }
-</script>
+
+</script>

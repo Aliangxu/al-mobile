@@ -34,7 +34,8 @@
 	</div>
 </template>
 
-<script>import '@examples/assets/images/bank-zs.svg'
+<script>
+import '@examples/assets/images/bank-zs.svg'
 import {Bill, DetailItem, Icon, Tag} from 'al-mobile'
 
 export default {
@@ -50,7 +51,8 @@ export default {
     [Tag.name]: Tag,
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
 .n22-example-child-bill-1
@@ -64,29 +66,29 @@ export default {
         content ''
         position absolute
         top 0
-        width 36px
-        height 36px
-        border-radius 18px
+        width 18px
+        height 18px
+        border-radius 9px
         background-color #F3F4F5
       &:before
-        left -46px
+        left -23px
       &:after
-        right -46px
+        right -23px
     .header-slot
-      padding 40px 0 20px 0
+      padding 20px 0 10px 0
       .title
         color #111A34
-        font-size 60px
+        font-size 30px
         font-family Songti SC
         line-height 1
       .desc
-        margin-top 16px
+        margin-top 8px
         color #858B9C
-        font-size 26px
+        font-size 13px
     .footer-slot
-      padding 32px 0
+      padding 16px 0
       color #858B9C
-      font-size 22px
+      font-size 11px
       line-height 1.5
       border-top solid 1px #E1E4EB
 </style>

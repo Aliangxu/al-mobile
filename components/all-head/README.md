@@ -59,7 +59,7 @@ Vue.component(Allhead.name, Allhead)
 ->一般用于tab-bar导航菜单，需要顶部固定
 
 ##### @click-left()
-左侧点击
+左侧点击，<sup class="version-after">0.0.25+</sup>如果传入了@click-left，则不触发this.back()方法
 
 ##### @click-right()
 右侧点击

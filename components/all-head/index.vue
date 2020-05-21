@@ -11,7 +11,7 @@
           :style="{
             color: opacityStyle.backgroundColor ? opacityStyle.textColor : ''
           }"
-          @click="leftText ? $emit('click-left') : onClickLeft()"
+          @click="onClickLeft()"
         >
           <slot name="left">
             <n22-icon
@@ -261,7 +261,11 @@ export default {
       this.$emit('keypress', event)
     },
     onClickLeft () {
-      this.back(this.backUrl)
+      if (this.$listeners && this.$listeners['click-left']) {
+        this.$emit('click-left')
+      } else {
+        this.back(this.backUrl)
+      }
     },
     searchFocus () {
       // this.SHOWSEARCH(true);

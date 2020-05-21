@@ -198,7 +198,9 @@ export default {
   computed: {
     dealIsCheck() {
       return (currentValue, item) => {
-        if (typeof currentValue == 'string' || typeof currentValue == 'number') {
+        if (typeof currentValue == 'boolean') {
+          return currentValue === (item.value || item[this.valueKey]);
+        } else if (typeof currentValue == 'string' || typeof currentValue == 'number') {
           if (!isNaN(parseFloat(currentValue)) && this.precision === 0) {
             // 判定为整数时，需要将返回的非整数数据修改为整数
             // console.log('%c n22-radio-item-dealIsCheck-1','color:green;',doPrecision(currentValue,this.precision));
@@ -351,8 +353,13 @@ export default {
     },
     dealValue(val) {
       let rval = ''
+      if (typeof val === 'boolean') {
+        return val;
+      }
       // 2019-10-25修复当传入值为number类型时判断出错问题--统一将number更改为string
-      val !== undefined && (val = val + '')
+      if (val!==undefined && typeof val === 'number') {
+        val = val + ''
+      }
 
       if (val) {
         if (this.type == 'radio' && typeof val == 'string') {

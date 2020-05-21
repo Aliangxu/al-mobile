@@ -15,9 +15,6 @@ Vue.component(Amount.name, Amount)
 
 ### 代码演示
 <!-- DEMO -->
-```
-<n22-amount :value="1234.125" :precision="2"></n22-amount>
-```
 
 ### API
 
@@ -32,7 +29,6 @@ Vue.component(Amount.name, Amount)
 |is-capital|数字是否转换为大写中文|Boolean|`false`|-|
 |transition|数字变化是否使用动画|Boolean|`false`|-|
 |duration|数字变化动画时长|Number|`1000`|单位`ms`|
-
 |init-num|数值-初始化数值|Number|`10000`|-|
 |zero-text|字符串-为零时需要显示的文字|String|``|-|
 |amountNumSty|是否加载n22-amount-num样式|Boolean|`false`|-|

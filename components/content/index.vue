@@ -135,6 +135,10 @@ export default {
       type: Boolean,
       default: true,
     },
+    isAutoMescrollDown: {
+      type: Boolean,
+      default: true,
+    },
     needSwiper: {
       // 是否启用swiper
       type: Boolean,
@@ -221,6 +225,12 @@ export default {
         return ''
       },
     },
+    htmlNodata: {
+      type: String,
+      default: () => {
+        return ''
+      },
+    },
   },
   computed: {
     // ...mapState(["common"]), //引入vuex state样例>>>可通过this.common.userInfo获取vuex-state数据
@@ -275,7 +285,7 @@ export default {
     // ...mapMutations(["ISROUTERALIVE"]),
     // 多mescroll的配置,需通过方法获取,保证每个配置是单例
     getMescrollDown(tabIndex, tab) {
-      let isAuto = tabIndex === 0 // 第一个mescroll传入true,列表自动加载
+      let isAuto = this.isAutoMescrollDown && (tabIndex === 0) // isAutoMescrollDown为true时第一个mescroll传入true,列表自动加载
       // 加载时间配置
       // let dataTime = ""
       // if(window.utils.cache.get("dataTimeAll")){
@@ -317,6 +327,8 @@ export default {
       }
       if (!isEmptyObject(this.tabs[tabIndex].htmlNodata)) {
         htmlNodata = this.tabs[tabIndex].htmlNodata
+      }else if(!isEmptyObject(this.htmlNodata)){
+        htmlNodata = this.htmlNodata
       }
       // console.log('%c empty','color:green;',empty);
       return {

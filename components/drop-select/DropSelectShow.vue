@@ -37,6 +37,7 @@
     describe="请选择您的职业"
     v-model="isPickerShow"
     :notSelectIdf="notSelectIdf"
+    :levelArrayProp="levelArrayProp"
     :has-mask="hasMask"
     @notSelectFun="onNotSelectFun"
     @confirm="onPickerConfirm(0)"
@@ -134,6 +135,12 @@ export default {
     notSelectIdf: {
       type: String,
       default: '',
+    },
+    levelArrayProp: {
+      type: Array,
+      default: () => {
+        return []
+      },
     },
   },
   computed: {
@@ -254,7 +261,11 @@ export default {
       this.isPickerShow = false
     },
     $_onHide() {
-      this.$emit('hide')
+      if (!this.isAppendTo) {
+        this.$emit('hide')
+      } else {
+        this.btns.hide.handler.call()
+      }
     },
     onNotSelectFun(value) {
       if (!this.isAppendTo) {

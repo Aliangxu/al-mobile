@@ -76,6 +76,7 @@
         :max-date="maxDate"
         :has-mask="hasMask"
         :notSelectIdf="notSelectIdf"
+        :levelArrayProp="levelArrayProp"
         @hide="$_hide"
         @onNotSelectFun="onNotSelectFun"
         @onPickerConfirm="onPickerConfirm"
@@ -181,6 +182,12 @@ export default {
     },
     options: {
       type: [Array, Object],
+      default: () => {
+        return []
+      },
+    },
+    levelArrayProp: {
+      type: Array,
       default: () => {
         return []
       },
@@ -312,6 +319,7 @@ export default {
           selectValue: this.selectValue,
           pickerTitle: this.pickerTitle,
           notSelectIdf: this.notSelectIdf,
+          levelArrayProp: this.levelArrayProp,
           pickerData: this.pickerData,
           defaultDate: this.defaultDate,
           minDate: this.minDate,
@@ -361,7 +369,7 @@ export default {
       this.selectValue = val
       this.isHand = true
       this.$emit('input', val, this.itemObject)
-      this.$emit("onPickerConfirm", this.itemObject, val,oldVal,this.isHand,"","");
+      this.$emit("onPickerConfirm", this.itemObject, val,oldVal,this.isHand,values[0],"");
     },
     onPickerConfirmZD(newval, oldval, index, isHandV) {
       // this.$emit("changeData", val, this.itemObject,1,oldval);//回显

@@ -21,7 +21,7 @@
       <div class="popup-content">
         <div class="ctc_div_mask" style="z-index: 100;">
           <div ref="ctc_div_markcenctinput" class="ctc_div_markcenct">
-            <div v-if="isShowSearch" class="ctc_div_query">
+            <!-- <div v-if="isShowSearch" class="ctc_div_query">
               <img
                 class="prd_img_query"
                 src="/static/qijianwei/SearchGlyph.png"
@@ -36,6 +36,17 @@
                 @focus="focusInput"
                 @blur="blurInput"
               />
+            </div> -->
+            <div class="search">
+              <n22-input-item
+                v-model="oName"
+                placeholder="关键词搜索"
+                class="search_query search_query_icon"
+                style="position: relative; vertical-align: top;"
+                @change="queryName"
+                @focus="focusInput"
+                @blur="blurInput"
+              ></n22-input-item>
             </div>
             <div class="ctc_div_queryitem">
               <!-- work头部展示选择 -->
@@ -64,7 +75,7 @@
                 >
                   <div
                     class="ctc_div_queryitemall"
-                    :class="`ctc_div_queryitemall-child${index + 1}`"
+                    :class="[`ctc_div_queryitemall-child${index + 1}`,oName?'ctc_div_queryitemall_search':'']"
                     @click="selectClass(index, activei)"
                   >
                     <div
@@ -95,7 +106,9 @@
   </div>
 </template>
 
-<script>import Popup from '../popup'
+<script>
+import InputItem from '../input-item'
+import Popup from '../popup'
 import PopupTitleBar from '../popup/title-bar'
 import Toast from '../toast'
 import pickerLevelMixin from './mixins'
@@ -104,14 +117,19 @@ export default {
   name: 'n22-work',
   title: '职业选择组件',
   components: {
+    [InputItem.name]: InputItem,
     [Popup.name]: Popup,
     [PopupTitleBar.name]: PopupTitleBar,
     [Toast.name]: Toast,
   },
   mixins: [pickerLevelMixin],
   props: {
-    levelArrayProp: [2, 4],
-
+    levelArrayProp: {
+      type: Array,
+      default: () => {
+        return []
+      },
+    },
     disabled: {
       type: Boolean,
       default: false,
@@ -126,7 +144,7 @@ export default {
     },
     isShowSearch: {
       type: Boolean,
-      default: false,
+      default: true,
     },
     maxLevel: {
       type: Number,
@@ -151,7 +169,7 @@ export default {
       activei: 0,
       activeis: true,
       isPickerShow: false,
-      levelArray: this.levelArrayProp || [2, 4, 6],
+      levelArray: this.levelArrayProp.length > 0 ? this.levelArrayProp : [2, 4, 6],
       arrItemBig: '',
       arrItemSmall: '',
       arrItem: '',
@@ -240,12 +258,16 @@ export default {
     },
     selectClass(val, activei) {
       // eslint-disable-next-line
-      if (val != activei && this.activeis) {
-        console.log('%c 触发切换switch-activei', 'color:#00CD00', '当前点击' + val + '点击前' + this.activei)
-        const length = this.arrItemAll.length
-        // this.arrItemAll.splice(val+1,length-val-1);
-        this.selectArray.splice(val, length - val)
+      if (this.oName) {
         this.activei = val
+      } else {
+        if (val != activei && this.activeis) {
+          console.log('%c 触发切换switch-activei', 'color:#00CD00', '当前点击' + val + '点击前' + this.activei)
+          const length = this.arrItemAll.length
+          // this.arrItemAll.splice(val+1,length-val-1);
+          this.selectArray.splice(val, length - val)
+          this.activei = val
+        }
       }
     },
     dealData(val) {
@@ -272,7 +294,8 @@ export default {
         let canSelectCodeList = []
         if (index !== 0) {
           canSelectCodeList = dataCode.filter(item => {
-            return item.value.indexOf(val.substr(0, this.levelArray[index - 1])) === 0
+            const dealValue = val.substr(0, this.levelArray[index - 1])
+            return (item.value.indexOf(dealValue) === 0 && !item.twovalue) || (item.twovalue && item.twovalue.indexOf(dealValue) === 0)
           })
         } else {
           canSelectCodeList = dataCode
@@ -329,7 +352,7 @@ export default {
       this.arrItemAll.push(arrItemAll)
     },
     echoSelect(zy, mndex, index) {
-      if (zy.AccidentRiskLevel && zy.AccidentRiskLevel === this.notSelectIdf) {
+      if (zy.level && zy.level === this.notSelectIdf) {
         this.$emit('notSelectFun', zy)
         this.activeis = true
         return
@@ -345,7 +368,7 @@ export default {
       }
       let dataCode = this.workCodeData[index + 1]
       let canSelectCodeList = dataCode.filter(item => {
-        return item.value.indexOf(zy.value) === 0
+        return (item.value.indexOf(zy.value) === 0 && !item.twovalue) || (item.twovalue && item.twovalue.indexOf(zy.value) === 0)
       })
       console.log('%c 所选下一级数组-canSelectCodeList', 'color:green;', canSelectCodeList)
       this.$set(this.arrItemAll, index + 1, canSelectCodeList)
@@ -368,16 +391,15 @@ export default {
       this.isQueryName = false
     },
     queryName() {
+      debugger
       if (this.oName === '') {
-        this.echoSelect(this.selectBigItem.work.pid, this.selectBigItem.work.value, '', '', 'work', true)
+        this.$_initPicker()
       } else {
-        // var data = {
-        //   keyWord: this.oName,
-        //   orgCode: '000095'
-        // }
         if (true) {
-          this.activei = 3
-          this.arrItem = []
+          this.activei = 2
+          this.arrItemAll[2] = this.workCodeData[2].filter(item => {
+            return item.text.indexOf(this.oName) > -1 && !item.twovalue
+          })
         } else {
           this.arrItem = []
         }
@@ -385,8 +407,65 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 <style lang="stylus" scoped>
+.search {
+  background-color: #f5f5f5;
+  text-align: center;
+  padding: 12px;
+  height: 30px;
+  .search_query {
+    width: 351px;
+    height: 30px;
+    line-height: 30px;
+    box-sizing: border-box;
+    padding: 0 15px 0 30px;
+    border: 1px solid #e3e3e3;
+    color: #2c3e50;
+    outline: none;
+    border-radius: 13px;
+    font-size: 14px;
+    transition: border-color 0.2s ease;
+    vertical-align: middle !important;
+    ::v-deep.n22-field-item-content {
+      min-height: 28px;
+      .n22-field-item-control {
+        height: 28px;
+        .n22-input-item-input {
+          height: 28px;
+        }
+      }
+    }
+    &::-webkit-input-placeholder {
+      color: #bcbcbc;
+      font-size: 12px;
+      line-height: 28px;
+    }
+    &::-moz-placeholder {
+      /* Mozilla Firefox 19+ */
+      color: #bcbcbc;
+      font-size: 12px;
+      line-height: 28px;
+    }
+    &:-moz-placeholder {
+      /* Mozilla Firefox 4 to 18 */
+      color: #bcbcbc;
+      font-size: 12px;
+      line-height: 28px;
+    }
+    &:-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
+      color: #bcbcbc;
+      font-size: 12px;
+      line-height: 28px;
+    }
+  }
+  .search_query_icon {
+    background: #fff url(../_style/images/search.png) 10px 5px no-repeat;
+    background-size: 20px;
+  }
+}
 .crumb {
   // border-bottom: 1px solid #999;
 }
@@ -492,6 +571,12 @@ export default {
   margin-left: 100px;
   // width: 275px;
   z-index: 22;
+  .ctc_div_item {
+    padding-right: 10px;
+  }
+}
+.ctc_div_queryitemall_search {
+  margin-left: 0px !important;
 }
 
 .query-show {

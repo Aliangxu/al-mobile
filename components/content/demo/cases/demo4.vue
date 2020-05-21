@@ -27,9 +27,10 @@
       :isToTop="true"
       isMescrollLoadList
       :page="page"
+      htmlNodata="<p class='upwarp-nodata'>~~ 我是有底线的 ~~</p>"
       @selectListByPage="selectListByPage"
     >
-      <div class="my-item" v-for="item in tabs[curIndex].list">
+      <div class="my-item" v-for="(item, i) in tabs[curIndex].list" :key="i">
         {{item.name}}
       </div>
     </al-content-list>
@@ -259,6 +260,9 @@ export default {
     .n22-action-bar-button {
       margin 10px
     }
+  }
+  ::v-deep .my-test {
+   color red  
   }
 }
 </style>

@@ -3,15 +3,20 @@ title: 更新日志
 toc: hidden
 ---
 
+
 ### 0.0.25
 
 `2020-05-06`
 
 - Feat
   - `Dialog`属性`title`、`btn`，由v-text修改为v-html，因此0.0.25版本可以使用String或者vnode
+  - `Content`新增`isAutoMescrollDown`属性，控制mescroll是否在第一次进入时立刻触发一次下拉加载
+  - `Content`新增`htmlNoData`属性，控制mescroll上拉加载到最底部
+  - `head`组件优化click-left监听事件判断，如果传入了@click-left，则不触发this.back()方法。
 - Fix
   - `head`修复头部样式污染n22-icon样式问题
   - `switch-item`修复changeData改变回掉事件中，第二个参数value值错误问题
+  - `radio-item`修复value值为boolean类型时不选中问题
 
 ### 0.0.24
 

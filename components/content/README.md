@@ -20,11 +20,12 @@ Content跟ContentList区别在于ContentList引入swiper，如果想使用swiper
 ### API
 
 #### Content/ContentList Props
-|属性 | 说明 | 类型 | 默认值|备注|
+|属性 | 说明 | 类型 | 默认值| 备注 |
 |----|-----|------|------|------|
 | v-model | 引用传入v-model当前tab的下标 | Number | `0`| 当开启顶部菜单、多个菜单的时候有用 |
 | isTop | 是否启用返回顶部按钮 | Boolean | `true`|-|
 | isMescrollUp | 是否启用上拉加载进行分页 | Boolean |`true`|△△△△△△△2019-03-12弃用aliang--将此方法移植到tabs数组中|
+| isAutoMescrollDown <sup class="version-after">0.0.25+</sup>| 列表第一个tab是否首次触发一次自动加载 | Boolean |`true`|默认为true开启内置下拉加载刷新列表第一页数据|
 | isMescrollLoadList | 是否启用下拉时候进行页面重载 | Boolean |`false`|默认为false是开启页面重载而是不开启下拉加载刷新列表第一页数据（此时可以自定义下拉刷新的方法，即传入@upRefreshFun），如果为true则是不开启页面重载，开启内置下拉加载刷新列表第一页数据|
 | isMescrollDown | 是否启用下拉刷新 | Boolean | `false`|默认为false启用下拉刷新，如果为true则关闭下拉刷新|
 | secMenuIsShowP | 二级菜单是否显示隐藏| Boolean | `true` | 暂时存在bug不可用 |
@@ -36,6 +37,7 @@ Content跟ContentList区别在于ContentList引入swiper，如果想使用swiper
 | upCallbackFun | 查询数据列表回调的后台接口名称--即自定义分页查询需要掉用的方法 | Boolean |`true`|△△△△△△△2019-03-12弃用aliang--将此方法移植到tabs数组中|
 | upRefreshFun | 非列表数据级别的下拉刷新回调方法名称 | String | - |-|
 | backgroundColor | Swiper背景颜色 | String | - |-|
+| htmlNodata <sup class="version-after">0.0.25+</sup> | 上拉到最底部无数据时，显示的内容 | String、vnode | `<p class='upwarp-nodata'>-- 我是有底线的 --</p>` | 如果单独tabs对象设置了此参数，则以tabs中的为准 |
 | emptyProp | 数据为空的时候需要展示的图片、文本、按钮...对象 | Object | - |-|
 | needSwiper | 是否启用swiper | Boolean | `false` |-|
 
@@ -47,9 +49,12 @@ Content跟ContentList区别在于ContentList引入swiper，如果想使用swiper
     flag: "2",// 自定义添加标示
     upCallbackFun: "selectListByPage",
     isMescrollUp: true,
+    isLock: false,//是否关闭下拉，当listType不为1时可用
+    listType: "1",//当listType为1时，根据`isMescrollDown`值判定是否关闭下拉（如果有多个tab，isMescrollDown为true时则关闭所有tab的下拉），当listType不为1时，根据tab.isLock判定各自的tab是否关闭下拉
     mescroll: null,
     list: [],
     isListInit: false,
+    htmlNodata: "<p class="upwarp-nodata">-- 我是有底线的 --</p>",//底部无数据时显示内容，当没有此字段时，默认值为`<p class="upwarp-nodata">-- 我是有底线的 --</p>`
     emptyProp: {
         icon: "./static/images/common/not_data_img.png",
         tip: "暂无相关数据~", // 提示
