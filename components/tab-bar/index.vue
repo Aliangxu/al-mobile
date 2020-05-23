@@ -150,8 +150,12 @@ export default {
     },
     currentIndex() {
       for (let i = 0, len = this.items.length; i < len; i++) {
-        if (this.items[i][this.valueKey] === this.currentName) {
-          return i
+        if (this.items[i][this.valueKey]) {
+          if (this.items[i][this.valueKey] === this.currentName) {
+            return i
+          }
+        }else {
+          return this.currentName
         }
       }
     },

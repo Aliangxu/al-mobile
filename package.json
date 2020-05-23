@@ -1,6 +1,6 @@
 {
   "name": "al-mobile",
-  "version": "0.0.25",
+  "version": "0.0.27",
   "description": "A Vue.js 2.0 Mobile UI Toolkit",
   "homepage": "https://github.com/Aliangxu/al-mobile.git",
   "main": "lib/al-mobile.umd.js",
@@ -26,7 +26,7 @@
     "dev": "node build/webpack/dev-server",
     "dev:rollup": "node build/rollup/dev-server.rollup",
     "dev:site": "cd site && npm start",
-    "dev:bundle": "MAND_MOBILE=bundle node build/webpack/dev-server",
+    "dev:bundle": "AL_MOBILE=bundle node build/webpack/dev-server",
     "create": "node build/component-init.js",
     "cz": "npx git-cz",
     "clean": "rm -rf ./lib && rm -rf ./lib-vw && rm -rf ./docs/examples",

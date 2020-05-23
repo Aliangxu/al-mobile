@@ -391,7 +391,6 @@ export default {
       this.isQueryName = false
     },
     queryName() {
-      debugger
       if (this.oName === '') {
         this.$_initPicker()
       } else {
@@ -540,7 +539,7 @@ export default {
 
 .ctc_div_queryitemall {
   // width: 359px;
-  height: 463px;
+  height: 409px;
   width: 100%;
   overflow: scroll;
 }

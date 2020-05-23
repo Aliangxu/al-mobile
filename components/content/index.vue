@@ -72,14 +72,7 @@
               >
                 <slot name="content"></slot>
                 <!-- 列表数据 -->
-                <slot
-                  v-if="isMescrollLoadList"
-                  :id="'dataList' + i"
-                  :list="tabs[i].list"
-                  :swiperIndex="curIndex"
-                ></slot>
-                <slot v-else></slot>
-                <div v-if="!connection" class="mescroll-empty">
+                <div v-if="(!connection || errorMessage)" class="mescroll-empty">
                   <img
                     v-if="dealExceptionShow(emptyImg, 'label') == 'img'"
                     class="empty-icon"
@@ -93,6 +86,13 @@
                   </p>
                   <p @click="refresh" class="empty-btn">刷新</p>
                 </div>
+                <slot
+                  v-else-if="isMescrollLoadList"
+                  :id="'dataList' + i"
+                  :list="tabs[i].list"
+                  :swiperIndex="curIndex"
+                ></slot>
+                <slot v-else></slot>
               </mescroll-vue>
             </div>
           </div>
@@ -231,6 +231,12 @@ export default {
         return ''
       },
     },
+    errorMessage: {
+      type: String,
+      default: () => {
+        return ''
+      },
+    },
   },
   computed: {
     // ...mapState(["common"]), //引入vuex state样例>>>可通过this.common.userInfo获取vuex-state数据
@@ -255,6 +261,9 @@ export default {
     },
     dealExceptionShow() {
       return (val, is) => {
+        if (this.errorMessage) {
+          val = `p<>:${this.errorMessage}`
+        }
         let type = 'img'
         let show = val
         val && val.indexOf('<>') > -1 && (type = val.split('<>')[0]) && (show = val.split('<>:')[1])
