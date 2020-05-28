@@ -373,6 +373,8 @@ export default {
               this.itemObject && this.itemObject[`fieldValueDes${i}`] && rval.push(this.itemObject[`fieldValueDes${i}`])
             }
           }
+        } else if (this.type == 'checkbox' && typeof val == 'object') {
+          rval = val;
         }
       } else {
         if (this.isDefaultSelect && this.options && this.options[0]) {
