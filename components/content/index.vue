@@ -489,7 +489,7 @@ export default {
         error => {
           this.test = false
           console.log('%c errorcallback_content_error', 'color:green;', error)
-          if (page.num === 1) {
+          if (page.num === 1 && error) {
             this.tabs[mescroll.tabIndex].isListInit = false
             this.emptyImg = error ? error.img || 'p<>:系统异常！' : ''
             this.connection = false

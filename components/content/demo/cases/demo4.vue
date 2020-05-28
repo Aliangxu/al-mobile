@@ -193,7 +193,7 @@ export default {
       console.log("%c this.$refs.listSwiper","color:#00CD00",this.$refs.listSwiper)
       this.$refs.listSwiper.$children[0].changeTab && this.$refs.listSwiper.$children[0].changeTab(i);
       //触发下拉刷新
-      this.tabs[i].mescroll.triggerDownScroll();
+      // this.tabs[i].mescroll.triggerDownScroll();
     },
     selectListByPage(
       tabIndex,

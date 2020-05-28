@@ -58,13 +58,11 @@ const ui = {
 
 const uikz = {
   allHeadTopPx:
-    ui.isIPhoneX || ui.isIPhoneXSMax || ui.isIPhoneXR
-      ? 78
-      : window.navigator.platform === 'iPhone' &&
+      window.navigator.platform === 'iPhone' &&
         window.ALIOSHEAD === 'phone' &&
           (window.cordova || window.GDIJSBridge) &&
         !isWechat
-      ? 64
+      ? (ui.isIPhoneX || ui.isIPhoneXSMax || ui.isIPhoneXR ? 78 : 64)
       : 44,
   allHeadTopPxVideo:
     ui.isIPhoneX || ui.isIPhoneXSMax || ui.isIPhoneXR
