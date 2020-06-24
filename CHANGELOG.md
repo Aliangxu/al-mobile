@@ -4,13 +4,23 @@ toc: hidden
 ---
 
 
+### 0.0.29
+
+`2020-06-24`
+
+- feat
+  - `checkbox`组件增加Tag是否显示
+  - 水波组件增加内容展示
+- Fix
+  - 修复popup弹出ios上body滑动橡皮筋效果遮挡问题
+
 ### 0.0.28
 
 `2020-05-29`
 
 - Fix
   - `radio-item`修复`checkbox`情况下出入数组value时回显不显示问题
-
+  - 修复popup弹出ios上body滑动橡皮筋效果遮挡问题
 
 ### 0.0.27
 

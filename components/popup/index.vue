@@ -37,6 +37,7 @@
 <script>
 import Transition from '../transition'
 import popupMixin from './mixins'
+import {isIOS} from '../_util'
 
 export default {
   name: 'n22-popup',
@@ -51,6 +52,10 @@ export default {
     position: {
       type: String,
       default: 'center',
+    },
+    scrollClass: {
+      type: String,
+      default: 'n22-popup-content',
     },
     transition: {
       type: String,
@@ -105,6 +110,9 @@ export default {
       isPopupBoxShow: false,
       // transtion lock
       isAnimation: false,
+      isBind: true,
+      startY: 0,
+      endY: 0,
     }
   },
 
@@ -149,11 +157,45 @@ export default {
         this.$_onPopupTransitionEnd()
       }
 
+      this.$nextTick(()=>{
+        this.$_onScroll(true)
+      })
+
       this.preventScroll && this.$_preventScroll(true)
+    },
+    $_bodyScroll(e){
+      const boxer = this.$el.querySelector(`.${this.scrollClass}`)
+      if (!this.isBind || (this.endY < this.startY && (boxer.scrollTop >= boxer.scrollHeight - boxer.offsetHeight))) {
+        e.preventDefault() // 阻止默认的处理方式(阻止下拉滑动的效果)
+      }
+    },
+    $_onScroll(isBind) {
+      if (!isIOS)return;
+      this.isBind = isBind
+      const handler = isBind ? 'addEventListener' : 'removeEventListener'
+      const boxer = this.$el.querySelector(`.${this.scrollClass}`)
+      let _this = this
+      if (boxer) {
+        boxer[handler]('touchstart',function (boxerE) {
+          _this.startY = boxerE.touches[0].pageY;
+        });
+        boxer[handler]('touchmove', (boxerE)=>{
+          _this.endY = boxerE.touches[0].pageY;  //记录手指触摸的移动中的坐标
+          // console.log("boxer.scrolltop:"+boxer.scrollTop+" boxer.offsetTop:"+(boxer.scrollHeight-boxer.offsetHeight))
+          // console.log("%c startY","color:#00CD00",_this.startY)
+          // console.log("%c endY","color:#00CD00",_this.endY)
+          // passive 参数不能省略，用来兼容ios和android
+          document.body[handler]('touchmove', _this.$_bodyScroll, { passive: false })
+        }, false)
+        if (!isBind) {
+          document.body[handler]('touchmove', _this.$_bodyScroll, { passive: false })
+        }
+      }
     },
     $_hidePopupBox() {
       this.isAnimation = true
       this.isPopupBoxShow = false
+      this.$_onScroll(false)
       this.preventScroll && this.$_preventScroll(false)
       this.$emit('input', false)
       /* istanbul ignore if */
@@ -178,6 +220,7 @@ export default {
         preventScrollExclude && typeof preventScrollExclude === 'string'
           ? this.$el.querySelector(preventScrollExclude)
           : preventScrollExclude
+          console.log("%c excluder","color:#00CD00",excluder)
       excluder && excluder[handler]('touchmove', this.$_stopImmediatePropagation, false)
     },
     $_preventDefault(event) {
