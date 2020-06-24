@@ -9,7 +9,7 @@
   >
     <slot>{{label}}</slot>
     <n22-tag
-      v-if="isChecked"
+      v-if="isShowTag && isChecked"
       size="tiny"
       shape="quarter"
       type="fill"
@@ -35,6 +35,9 @@ export default {
       default: true,
     },
     value: {
+      default: false,
+    },
+    isShowTag: {
       default: false,
     },
     label: {

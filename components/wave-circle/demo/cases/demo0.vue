@@ -14,6 +14,7 @@
         v-model="num"
         :totalNum="totalNum"
         :boundary="boundary"
+        circle-title="当前考试得分"
         ref="waveCircle"
       ></n22-wave-circle>
     </div>
@@ -25,6 +26,7 @@
         :sizeC="sizeC"
         :totalNum="totalNum"
         :boundary="boundary"
+        circle-title="当前考试得分"
         isLoadCircle
         boundaryDownColor="red"
         ref="waveCircle"
@@ -34,7 +36,8 @@
   </div>
 </template>
 
-<script>import {WaveCircle} from 'al-mobile'
+<script>
+import {WaveCircle} from 'al-mobile'
 
 export default {
   name: 'wave-circle-demo',
@@ -71,7 +74,8 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 <style lang="stylus" scoped>
 .n22-example-child-wave-circle
   .title

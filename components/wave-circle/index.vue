@@ -12,7 +12,7 @@
           ></n22-amount>
         </div>
         <div class="circleTitleeclassd" :style="circleTitleestyled">
-          当前考试得分
+          {{circleTitle}}
         </div>
       </div>
       <div class="container">
@@ -43,7 +43,7 @@
               ></n22-amount>
             </div>
             <div class="circleTitleeclassd" :style="circleTitleestyled">
-              当前考试得分
+              {{circleTitle}}
             </div>
           </div>
         </span>
@@ -52,7 +52,8 @@
   </div>
 </template>
 
-<script>import Amount from '../amount'
+<script>
+import Amount from '../amount'
 import Progress from '../progress'
 import {ui, isType} from '../_util'
 
@@ -96,6 +97,10 @@ export default {
     boundaryDownColor: {
       type: String,
       default: '#FFFFFF',
+    },
+    circleTitle: {
+      type: String,
+      default: '',
     },
     boundary: {
       type: Number,
@@ -225,7 +230,8 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus" scoped>
 .n22_wave_circle {
