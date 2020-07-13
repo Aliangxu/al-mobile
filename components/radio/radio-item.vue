@@ -126,6 +126,7 @@
           :key="i"
           class="n22-button n22-radio size-xs shape-radius"
           :class="[dealIsCheck(currentValue, item) ? 'checked' : '',plain?'theme-primary-plain':'theme-primary']"
+          @click="$_onClick(item.value || item[valueKey])"
         >
           <span>
             <input
@@ -136,8 +137,6 @@
               :disabled="disabled"
               :data-vv-as="dataVvAs"
               class="n22-radio-input"
-              v-model="currentValue"
-              :value="item.value || item[valueKey]"
             />
             <input
               v-else
@@ -148,8 +147,6 @@
               v-validate="vvalidateModal"
               :data-vv-as="dataVvAs"
               class="n22-radio-input"
-              v-model="currentValue"
-              :value="item.value || item[valueKey]"
             />
             {{ item.text || item[textKey] }}
             <span v-if="item.tag" class="switch-prompt">{{ item.tag }}</span>
@@ -187,6 +184,7 @@
 /* eslint-disable */
 import FieldItem from '../field-item'
 import {doPrecision} from '../_util/formate-value'
+import { parse } from 'querystring'
 export default {
   name: 'n22-radio-item',
   inject: {
@@ -201,12 +199,12 @@ export default {
         if (typeof currentValue == 'boolean') {
           return currentValue === (item.value || item[this.valueKey]);
         } else if (typeof currentValue == 'string' || typeof currentValue == 'number') {
-          if (!isNaN(parseFloat(currentValue)) && this.precision === 0) {
-            // 判定为整数时，需要将返回的非整数数据修改为整数
-            // console.log('%c n22-radio-item-dealIsCheck-1','color:green;',doPrecision(currentValue,this.precision));
-            // console.log('%c n22-radio-item-dealIsCheck-2','color:green;',this.precision);
-            currentValue = doPrecision(currentValue, this.precision)
-          }
+          // if (!isNaN(parseFloat(currentValue)) && this.precision === 0) {
+          //   // 判定为整数时，需要将返回的非整数数据修改为整数
+          //   // console.log('%c n22-radio-item-dealIsCheck-1','color:green;',doPrecision(currentValue,this.precision));
+          //   // console.log('%c n22-radio-item-dealIsCheck-2','color:green;',this.precision);
+          //   currentValue = doPrecision(currentValue, this.precision)
+          // }
           return currentValue == (item.value || item[this.valueKey])
         } else if (typeof currentValue == 'object') {
           return currentValue.indexOf(item.value || item[this.valueKey]) > -1
@@ -343,6 +341,27 @@ export default {
     //  console.log(this.currentValue)
   },
   methods: {
+    $_onClick(value){
+      const oldval = JSON.parse(JSON.stringify(this.currentValue));
+      if (this.type === "checkbox") {
+        console.log('%c value','color:green;',value);
+        if (this.currentValue.indexOf(value)>-1) {
+          for (let i = 0; i < this.currentValue.length; i++) {
+            const val = this.currentValue[i];
+            if (val==value) {
+              this.currentValue.splice(i,1);
+              i--;
+            }
+          }
+        } else {
+          this.currentValue.push(value);
+        }
+      }else{
+        this.currentValue = value
+      }
+      this.$emit('input', this.currentValue)
+      this.$emit('changeData', this.itemObject, this.currentValue, oldval, false, this.type)
+    },
     isInputError() {
       // return this.vvalidateModal && this.name && this.errors.first(this.name);
       return (
@@ -405,24 +424,24 @@ export default {
       // newval&&newval!=oldval?(this.currentValue = newval):'';
     },
 
-    currentValue(newval, oldval) {
-      // console.log(
-      //   "%c currentValue",
-      //   "color:green;",
-      //   newval + "===值更改前==" + oldval
-      // );
-      if (newval != oldval) {
-        // console.log(
-        //   "%c currentValue",
-        //   "color:green;",
-        //   newval + "=====" + oldval
-        // );
-        this.$emit('input', newval)
-        this.$emit('changeData', this.itemObject, newval, oldval, false, this.type)
-      } else {
-        // console.log('%c newval-oldval','color:green;',`${newval}---${oldval}`);
-      }
-    },
+    // currentValue(newval, oldval) {
+    //   // console.log(
+    //   //   "%c currentValue",
+    //   //   "color:green;",
+    //   //   newval + "===值更改前==" + oldval
+    //   // );
+    //   if (newval != oldval) {
+    //     // console.log(
+    //     //   "%c currentValue",
+    //     //   "color:green;",
+    //     //   newval + "=====" + oldval
+    //     // );
+    //     this.$emit('input', newval)
+    //     this.$emit('changeData', this.itemObject, newval, oldval, false, this.type)
+    //   } else {
+    //     // console.log('%c newval-oldval','color:green;',`${newval}---${oldval}`);
+    //   }
+    // },
   },
 }
 

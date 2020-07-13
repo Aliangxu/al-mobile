@@ -180,6 +180,10 @@ export default {
       type: String,
       default: '请选择',
     },
+    cutMark: {
+      type: String,
+      default: '|',
+    },
     options: {
       type: [Array, Object],
       default: () => {
@@ -389,8 +393,8 @@ export default {
         this.selectValue = newval
       } else if (this.type == 'address') {
         this.selectValue = newval
-        if (newval && newval.indexOf('|') > -1) {
-          let arr = newval.split('|')
+        if (newval && newval.indexOf(this.cutMark) > -1) {
+          let arr = newval.split(this.cutMark)
           for (let index = 0; index < this.pickerData.length; index++) {
             const pickerData = this.pickerData[index]
             this.pickerValue0 = ''
@@ -402,11 +406,13 @@ export default {
                   const ppmi = ppm.children.options[mi]
                   if (arr[1] == ppmi.value) {
                     this.pickerValue0 += ppmi.label + ' '
-                    for (let mij = 0; mij < ppmi.children.options.length; mij++) {
-                      const ppmij = ppmi.children.options[mij]
-                      if (arr[2] == ppmij.value) {
-                        this.pickerValue0 += ppmij.label
-                        break
+                    if (ppmi.children && ppmi.children.options) {
+                      for (let mij = 0; mij < ppmi.children.options.length; mij++) {
+                        const ppmij = ppmi.children.options[mij]
+                        if (arr[2] == ppmij.value) {
+                          this.pickerValue0 += ppmij.label
+                          break
+                        }
                       }
                     }
                     break
@@ -420,8 +426,8 @@ export default {
       } else if (this.type == 'work1') {
         // this.$emit("changeData", newval, this.itemObject,"","",oldval);
         this.selectValue = newval
-        if (newval && newval.indexOf('|') > -1) {
-          let arr = newval.split('|')
+        if (newval && newval.indexOf(this.cutMark) > -1) {
+          let arr = newval.split(this.cutMark)
           for (let index = 0; index < this.pickerData.length; index++) {
             const pickerData = this.pickerData[index]
             this.pickerValue0 = ''
@@ -450,8 +456,8 @@ export default {
         }
       }else if (this.type == 'work') {
         this.selectValue = newval
-        // if (newval && newval.indexOf('|') > -1) {
-        //   let arr = newval.split('|')
+        // if (newval && newval.indexOf(this.cutMark) > -1) {
+        //   let arr = newval.split(this.cutMark)
           const pickerWorkData = this.pickerData[2]
           for (let m = 0; m < pickerWorkData.length; m++) {
             const ppm = pickerWorkData[m]
@@ -484,9 +490,15 @@ export default {
     onAddressPickerConfirm(columnsValue, value, options, text) {
       console.log('%c onAddressPickerConfirm', 'color:green;', value)
       let val = ''
-      val = value
+      // val = value
       let tex = ''
-      val.indexOf('|') < 0 && (val = options[0].value + '|' + options[1].value + '|' + options[2].value)
+      // val.indexOf(this.cutMark) < 0 && (val = options[0].value + this.cutMark + options[1].value + this.cutMark + options[2].value)
+      if (val.indexOf(this.cutMark) < 0) {
+        options.forEach((oval,index) => {
+          index!==0 && (val += this.cutMark)
+          val += oval.value
+        });
+      }
       this.pickerValue0 = text || value
       this.$emit('input', val, this.itemObject)
       // this.$emit('changeData', this.itemObject, val, '', false, value)
