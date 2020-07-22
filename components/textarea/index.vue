@@ -1,17 +1,17 @@
 <template>
   <div
     :style="{
-      fontSize: fontSize,
-      lineHeight: lineHeight,
-      height: fullHeight ? (rows ? '' : maxHeight) : 'auto'
+      fontSize: fontSizeVW,
+      lineHeight: lineHeightVW,
+      height: fullHeight ? (rows ? '' : maxHeightVW) : 'auto'
     }"
     class="auto-textarea-wrapper"
   >
     <pre
       :style="{
-        fontSize: fontSize,
-        lineHeight: lineHeight,
-        minHeight: fullHeight ? maxHeight : 'auto'
+        fontSize: fontSizeVW,
+        lineHeight: lineHeightVW,
+        minHeight: fullHeight ? maxHeightVW : 'auto'
       }"
       class="auto-textarea-block"
     ><br>{{temp_value}} </pre>
@@ -25,9 +25,9 @@
       v-model="temp_value"
       style="overflow: auto"
       :style="{
-        fontSize: fontSize,
-        lineHeight: lineHeight,
-        maxHeight: maxHeight
+        fontSize: fontSizeVW,
+        lineHeight: lineHeightVW,
+        maxHeight: maxHeightVW
       }"
       :class="{ 'no-border': !border, 'no-resize': !resize }"
       class="auto-textarea-input"
@@ -36,13 +36,15 @@
 </template>
 
 <script>
+import {ui} from '../_util'
 export default {
   name: 'n22-textarea',
   data() {
     return {
-      temp_value: (() => {
-        return this.value
-      })(),
+      fontSizeVW: ui.dealPxToVw(this.fontSize)+"vw",
+      lineHeightVW: ui.dealPxToVw(this.lineHeight)+"vw",
+      maxHeightVW: ui.dealPxToVw(this.maxHeight)+"vw",
+      temp_value: this.value,
       s_autofocus: (() => {
         if (this.autofocus) {
           return 'autofocus'
@@ -83,16 +85,16 @@ export default {
       default: null,
     },
     fontSize: {
-      type: String,
-      default: '14px',
+      type: Number,
+      default: 14,
     },
     lineHeight: {
-      type: String,
-      default: '20px',
+      type: Number,
+      default: 20,
     },
     maxHeight: {
-      type: String,
-      default: '160px',
+      type: Number,
+      default: 160,
     },
     rows: {
       type: Number,

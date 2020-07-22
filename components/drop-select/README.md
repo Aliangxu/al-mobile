@@ -28,6 +28,7 @@ Vue.component(DropSelectItem.name, DropSelectItem)
 | pickerTitle | 下拉弹出层的顶部title | String |`请选择`|-|
 | minDate | 当type为时间下拉时候需要的时间的最小值 | Date | `new Date("1819/01/01")`| - |
 | maxDate | 当type为时间下拉时候需要的时间的最大值 | Date | `new Date()` | - |
+| selectDefaultValue | type为single模式下弹出列表默认选中的行 | String、Number | 默认第一行 | - |
 | defaultDate | 当type为时间下拉时候需要的时间的默认选择的值 | Date | `new Date()` | - |
 | ispickerValue | 默认选择的值 | String, Number | - | 如果不提供启用默认选择方法选择默认的第一个值 |
 | options | 选择的下拉数组 | Array | [] | 必填 |
@@ -40,7 +41,7 @@ Vue.component(DropSelectItem.name, DropSelectItem)
 | dataVvAs | 校验规则提示的字段名称 | String | - | 默认是取vvalidateModal所对应的的校验队则的对象的名称 |
 | btns | 操作按钮组 | Array<{text, handler, warning}> | `[]`|`warning` is used to identify the warning action|
 | levelArrayProp | 职业三级需要切割下标数组 | Array<Number> | `[2, 4, 6]`| - |
-| cutMark | 地址三级需要连接的符号 | String | `|`| - |
+| cutMark | 地址三级需要连接的符号 | String |`英文的竖线`| - |
 
 #### 暂未开启的功能
 |属性 | 说明 | 类型 | 默认值|备注|

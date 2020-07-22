@@ -39,7 +39,8 @@
   </div>
 </template>
 
-<script>import Popup from '../popup'
+<script>
+import Popup from '../popup'
 import Icon from '../icon'
 import ToastContent from './toast-content.js'
 
@@ -146,7 +147,8 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
 .n22-toast {
@@ -209,6 +211,9 @@ export default {
   background-color: toast-fill;
   box-sizing: border-box;
   overflow: hidden;
+  .n22-icon{
+    padding-right: 10px;
+  }
 }
 
 .n22-toast-text {

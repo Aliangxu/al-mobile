@@ -24,6 +24,8 @@ Content跟ContentList区别在于ContentList引入swiper，如果想使用swiper
 |----|-----|------|------|------|
 | v-model | 引用传入v-model当前tab的下标 | Number | `0`| 当开启顶部菜单、多个菜单的时候有用 |
 | isTop | 是否启用返回顶部按钮 | Boolean | `true`|-|
+| isAutoTopMargin | 是否启用顶部默认给定的预留头部区域的距离 | Boolean | `true`|-|
+| isAutoHeight | 是否启用底部预留因为头部top以及给定的swiperTop导致的底部遮挡的高度 | Boolean | `true`|默认预留给定系统预定的top+传入的swiperTop高度|
 | isMescrollUp | 是否启用上拉加载进行分页 | Boolean |`true`|△△△△△△△2019-03-12弃用aliang--将此方法移植到tabs数组中|
 | isAutoMescrollDown <sup class="version-after">0.0.25+</sup>| 列表第一个tab是否首次触发一次自动加载 | Boolean |`true`|默认为true开启内置下拉加载刷新列表第一页数据|
 | isMescrollLoadList | 是否启用下拉时候进行页面重载 | Boolean |`false`|默认为false是开启页面重载而是不开启下拉加载刷新列表第一页数据（此时可以自定义下拉刷新的方法，即传入@upRefreshFun），如果为true则是不开启页面重载，开启内置下拉加载刷新列表第一页数据|

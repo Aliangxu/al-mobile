@@ -43,6 +43,7 @@ const ui = {
     window.screen.height === 896,
   screenWidth: document.documentElement.clientWidth,
   screenHeight: document.documentElement.clientHeight,
+  allScreenHeight: window.screen.height,
   screenWidthR (num, fixed) {
     const numR = document.documentElement.clientWidth * (num / 375)
     return parseFloat(numR.toFixed(fixed || 3))

@@ -62,7 +62,7 @@
               </transition>
             </swiper-slide>
           </swiper>
-          <div class="not-swiper-div" :style="{ top: getSwiperTop }" v-else>
+          <div class="not-swiper-div" :style="{ top: getSwiperTop, height: getSwiperHeight }" v-else>
             <div v-for="(tab, i) in tabs" :key="i" style="height:100%" v-show="i == curIndex">
               <mescroll-vue
                 :ref="'mescroll' + i"
@@ -132,6 +132,10 @@ export default {
       default: true,
     },
     isAutoTopMargin: {
+      type: Boolean,
+      default: true,
+    },
+    isAutoHeight: {
       type: Boolean,
       default: true,
     },
@@ -231,6 +235,12 @@ export default {
         return ''
       },
     },
+    topImg: {
+      type: String,
+      default: () => {
+        return 'http://vue-mobile.gitee.io/static/image/topImage.png'
+      },
+    },
     errorMessage: {
       type: String,
       default: () => {
@@ -244,15 +254,30 @@ export default {
       // 轮播对象
       return this.$refs.mySwiper?this.$refs.mySwiper.swiper:{}
     },
-    getSwiperTop() {
-      // 内容区距离顶部距离
+    dealSwiperTop() {
       let head = 0
       if (Array.isArray(this.swiperTop)) {
         head = this.swiperTop[this.curIndex] || 0
       } else {
         head = this.swiperTop || 0
       }
+      return head
+    },
+    getSwiperTop() {
+      // 内容区距离顶部距离
+      let head = this.dealSwiperTop;
       return ui.dealPxToVw(head + (this.isAutoTopMargin ? ui.allHeadTopPx : 0)) + 'vw'
+    },
+    getSwiperHeight() {
+      // 内容区距离顶部距离
+      let head = this.dealSwiperTop;
+      let height = 0
+      if (this.isAutoHeight) {
+        height = ui.dealPxToVw(ui.allScreenHeight - (head + (this.isAutoTopMargin ? ui.allHeadTopPx : 0))) + 'vw'
+      } else {
+        height = "100%"
+      }
+      return height
     },
     getSwiperBottom() {
       // 红线的位置
@@ -351,11 +376,14 @@ export default {
         htmlNodata: htmlNodata,
         toTop: {
           warpId: 'listswiper',
-          src: this.isTop ? '' : '',
+          src: this.isTop ? this.topImg : '',
           offset: 100,
-          warpClass: 'mescroll-totop-all',
-          showClass: 'mescroll-totop-all-fade-in',
-          hideClass: 'mescroll-totop-all-fade-out',
+          // warpClass: 'mescroll-totop-all',
+          // showClass: 'mescroll-totop-all-fade-in',
+          // hideClass: 'mescroll-totop-all-fade-out',
+          warpClass: 'mescroll-totop-all', // 按钮样式,参见mescroll.css
+          showClass: 'mescroll-fade-in', // 显示样式,参见mescroll.css
+          hideClass: 'mescroll-fade-out', // 隐藏样式,参见mescroll.css
         },
       }
     },
@@ -421,13 +449,13 @@ export default {
       this.connection = true
       mescroll.lockUpScroll(false)
       // 这里加载你想下拉刷新的数据, 比如刷新tab1的轮播数据
-      if (mescroll.tabIndex === 0) {
-        // loadSwiper();
-      } else if (mescroll.tabIndex === 1) {
-        // ....
-      } else if (mescroll.tabIndex === 2) {
-        // ....
-      }
+      // if (mescroll.tabIndex === 0) {
+      //   // loadSwiper();
+      // } else if (mescroll.tabIndex === 1) {
+      //   // ....
+      // } else if (mescroll.tabIndex === 2) {
+      //   // ....
+      // }
       console.log('%c 触发下拉刷新>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>', 'color:green;', mescroll)
       if (!this.isMescrollLoadList) {
         if (this.upRefreshFun) {
@@ -599,7 +627,8 @@ export default {
 }
 
 .not-swiper-div {
-  height: 100%;
+  //2020-07-16改为动态高度
+  // height: 100%;
   //2019-10-12新增
   width: 100%;
   position: absolute;
