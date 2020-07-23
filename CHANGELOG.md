@@ -11,6 +11,7 @@ toc: hidden
 - Feat
   - 新增`isAutoHeight`prop，用于修复Fix-1带来的历史页面可能因为自动修复带来的问题
   - 优化`textarea`组件，新增`textarea`组件文档
+  - 优化`dropSelectItem`组件`arrow`属性
 
 - Fix
   - 1、修复`content`组件因为顶部的`top`，导致不使用swiper的内容区域底部遮挡住上面`top`所产生的距离。

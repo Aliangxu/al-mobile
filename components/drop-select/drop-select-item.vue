@@ -18,7 +18,7 @@
         ]"
         class="n22-drop-select-field-item"
         :title="title"
-        :arrow="itemObject ? (getIsShowArrow ? arrow : false) : arrow"
+        :arrow="arrow===false?false:arrow"
         :addon="pickerValue0"
         :is-show-required="
           isShowRequired ||
@@ -35,7 +35,6 @@
         <template #right>
           <span
             class="n22-field-item-right-addon"
-            v-show="itemObject ? getIsShowArrow : true"
             >{{ pickerValue0 }}</span
           >
         </template>
@@ -207,7 +206,7 @@ export default {
     },
     arrow: {
       //输入或者下拉左边的图标
-      type: String,
+      type: [Boolean,String],
       default: 'right_arrow',
     },
     inputType: {
