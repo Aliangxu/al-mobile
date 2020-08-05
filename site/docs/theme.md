@@ -2,28 +2,28 @@
 title: 主题定制
 ---
 
-`Mand Mobile`默认提供了一套基于`滴滴的金融业务设计规范`的UI主题，同时还支持主题定制。用户可以对颜色、字体、元素尺寸等样式进行自由调整，从而满足在不同业务场景下的视觉需求。
+`Al Mobile`UI主题，同时还支持主题定制。用户可以对颜色、字体、元素尺寸等样式进行自由调整，从而满足在不同业务场景下的视觉需求。
 
-注意：**新项目**可通过[mand-mobile-template](https://github.com/mand-mobile/mand-mobile-template)初始化，问题`Need customize theme?`回复`Y`，即可集成主题定制的相关配置。**现有项目**集成请参考以下教程。
+注意：**新项目**可通过[a l-mobile-template](https://github.com/al-mobile/al-mobile-template)初始化，问题`Need customize theme?`回复`Y`，即可集成主题定制的相关配置。**现有项目**集成请参考以下教程。
 
 <p>
-  <img src="http://static.galileo.xiaojukeji.com/static/tms/other/mand-theme.jpg" width="800">
+  <img src="http://static.galileo.xiaojukeji.com/static/tms/other/al-theme.jpg" width="800">
 </p>
 
-<iframe src="https://codesandbox.io/embed/mand-mobile-custom-theme-ofbut?fontsize=12&module=%2Fsrc%2Fassets%2Ftheme.custom.styl" title="Mand Mobile Custom Theme" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+<iframe src="https://codesandbox.io/embed/al-mobile-custom-theme-ofbut?fontsize=12&module=%2Fsrc%2Fassets%2Ftheme.custom.styl" title="al Mobile Custom Theme" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
 
 ### 样式变量
 
-`Mand Mobile`样式基于<a href="http://stylus-lang.com/" target="_blank">Stylus</a>开发，可通过全局和组件的样式变量对主题样式进行调整
+`al Mobile`样式基于<a href="http://stylus-lang.com/" target="_blank">Stylus</a>开发，可通过全局和组件的样式变量对主题样式进行调整
 
-完整的变量列表可以查看内置样式变量<a href="https://github.com/didi/mand-mobile/blob/master/components/_style/mixin/theme.basic.styl" target="_blank">全局样式变量</a>、<a href="https://github.com/didi/mand-mobile/blob/master/components/_style/mixin/theme.components.styl" target="_blank">组件样式变量</a>
+完整的变量列表可以查看内置样式变量<a href="https://github.com/didi/al-mobile/blob/master/components/_style/mixin/theme.basic.styl" target="_blank">全局样式变量</a>、<a href="https://github.com/didi/al-mobile/blob/master/components/_style/mixin/theme.components.styl" target="_blank">组件样式变量</a>
 
 ### 变量覆盖
 
 可以通过引入**组件源码**(`components`目录下)，并覆盖`样式变量`的方式来实现主题定制
 
-* 首先，项目需要安装依赖，`babel-plugin-import stylus stylus-loader css-loader`，完整`rules`可参考[配置](https://github.com/didi/mand-mobile/blob/master/build/webpack/webpack.base.conf.js)
+* 首先，项目需要安装依赖，`babel-plugin-import stylus stylus-loader css-loader`，完整`rules`可参考[配置](https://github.com/didi/al-mobile/blob/master/build/webpack/webpack.base.conf.js)
 
 ```shell
 npm install --save-dev babel-plugin-import stylus stylus-loader css-loader
@@ -35,7 +35,7 @@ npm install --save-dev babel-plugin-import stylus stylus-loader css-loader
 // .babelrc or babel-loader/ts-loader option
 {
     "plugins": [
-        ["import", {"libraryName": "mand-mobile", "libraryDirectory": "components"}],
+        ["import", {"libraryName": "al-mobile", "libraryDirectory": "components"}],
     ]
 }
 ```
@@ -43,9 +43,9 @@ npm install --save-dev babel-plugin-import stylus stylus-loader css-loader
 * 创建自定义主题文件，如`theme.custom.styl`
 
 ```stylus
-@import '~mand-mobile/components/_style/mixin/util'
-@import '~mand-mobile/components/_style/mixin/theme.components'
-@import '~mand-mobile/components/_style/mixin/theme.basic'
+@import '~al-mobile/components/_style/mixin/util'
+@import '~al-mobile/components/_style/mixin/theme.components'
+@import '~al-mobile/components/_style/mixin/theme.basic'
 
 // 安装并引入css拓展nib(可选)
 @import '~nib/lib/nib/vendor'
@@ -55,18 +55,18 @@ npm install --save-dev babel-plugin-import stylus stylus-loader css-loader
 color-primary = #1AAD19
 ```
 
-* 引入`mand-mobile`全局样式（可在项目入口或全局样式中），例如：
+* 引入`al-mobile`全局样式（可在项目入口或全局样式中），例如：
 
 main.js
 
 ```js
-import 'mand-mobile/components/_style/global'
+import 'al-mobile/components/_style/global'
 ```
 
 或者 global.styl
 
 ```stylus
-@import '~mand-mobile/components/_style/global'
+@import '~al-mobile/components/_style/global'
 ```
 
 * 配置`webpack`，引入主题文件`theme.custom.styl`
@@ -83,7 +83,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: /node_modules\/mand-mobile/
+        include: /node_modules\/al-mobile/
       },
       {
         test: /\.styl$/,
@@ -100,7 +100,7 @@ module.exports = {
       {
         test: /\.(png|jpe?g|gif)(\?.*)?$/,
         loader: 'url-loader',
-        include: /node_modules\/mand-mobile/
+        include: /node_modules\/al-mobile/
       },
       // ...
     ]

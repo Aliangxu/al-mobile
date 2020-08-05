@@ -102,7 +102,7 @@ export default {
       logo: window.mbConfig.logo,
       versionTableShow: false,
       versionData: [{
-        text: 'v1.x',
+        text: 'v0.x',
         path: ''
       }],
       langSwitchPath: ''

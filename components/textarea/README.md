@@ -23,6 +23,7 @@ Vue.component(Textarea.name, Textarea)
 |autofocus|是否自动获取焦点|Boolearn|`false`|-|
 |value|v-modal|String|-|-|
 |placeholder|可描述输入字段预期值的提示信息|String|-|-|
+|disabled|是否禁用|Boolearn|`false`|-|
 |border|`textarea`标签默认的border|Boolearn|`false`|默认不展示textarea的border,可用于自定义覆盖border的样式|
 |resize|是否可自由放大缩小文本域|Boolearn|`false`|-|
 |onchange|change回掉方法|Function|`null`|-|

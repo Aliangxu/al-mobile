@@ -22,6 +22,7 @@
       @keyup="change"
       spellcheck="false"
       :placeholder="placeholder"
+      :disabled="disabled"
       v-model="temp_value"
       style="overflow: auto"
       :style="{
@@ -71,6 +72,10 @@ export default {
     placeholder: {
       type: String,
       default: '',
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
     },
     border: {
       type: Boolean,

@@ -24,6 +24,7 @@ Vue.component(DropSelectItem.name, DropSelectItem)
 | append-to | 组件的挂载节点 | HTMLElement | `document.body`| eg:this.$el |
 | is-append-to | 是挂载dom显示还是内联显示--内联显示 | Boolean | `true`| - |
 | v-modal | 绑定下拉菜单filed-input的value值 | String, Number | - | - |
+| disabled | 是否禁用 | Boolean | `false` | - |
 | fieldItemTitle | filed-input的title | String | -|-|
 | arrow | 右侧icon图标 | Boolean、String | `right_arrow` | 默认右箭头，如果传入`false`则为不显示右侧的icon图标|
 | pickerTitle | 下拉弹出层的顶部title | String |`请选择`|-|

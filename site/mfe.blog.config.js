@@ -153,15 +153,17 @@ module.exports = {
           text: '字体',
           markdown: resolve('site/docs/design/vision/font.md'),
         }],
-      }, {
-        name: 'other',
-        text: '其它',
-        menu: [{
-          name: 'resource',
-          text: '资源',
-          markdown: resolve('site/docs/design/other/resource.md'),
-        }],
-      }]
+      }, 
+      // {
+      //   name: 'other',
+      //   text: '其它',
+      //   menu: [{
+      //     name: 'resource',
+      //     text: '资源',
+      //     markdown: resolve('site/docs/design/other/resource.md'),
+      //   }],
+      // }
+      ]
     },
     // {
     //   name: 'palette',
