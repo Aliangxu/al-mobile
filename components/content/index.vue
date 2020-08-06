@@ -273,7 +273,8 @@ export default {
       let head = this.dealSwiperTop;
       let height = 0
       if (this.isAutoHeight) {
-        height = ui.dealPxToVw(ui.allScreenHeight - (head + (this.isAutoTopMargin ? ui.allHeadTopPx : 0))) + 'vw'
+        // height = ui.dealPxToVw(ui.allScreenHeight - (head + (this.isAutoTopMargin ? ui.allHeadTopPx : 0))) + 'vw'
+        height = ui.allScreenHeight - (head + (this.isAutoTopMargin ? ui.allHeadTopPx : 0)) + 'px'
       } else {
         height = "100%"
       }
