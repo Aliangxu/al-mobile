@@ -54,8 +54,13 @@ Vue.component(DropSelectItem.name, DropSelectItem)
 
 #### drop-select-item Methods
 
-##### dropSelectClick('')
+##### dropSelectClick(callBack)
 点击弹出滑动选择器前触发的事件
+|参数 | 说明 | 类型 | 默认值|
+|----|-----|------|------|
+|callBack|回掉方法|Function(isShow)|isShow默认为true|
+
+callBack回掉方法告知组件回掉的isShow参数，可直接callBack(false)，用来点击阻断弹出选择框弹出，自定义提示功能。
 
 ##### hide(val)
 滑动选择器隐藏事件

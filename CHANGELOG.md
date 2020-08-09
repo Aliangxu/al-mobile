@@ -4,6 +4,16 @@ toc: hidden
 ---
 
 
+### 0.0.35-未发版
+
+`2020-08-07`
+
+- Feat
+  - 1、新增`drop-select-item`组件点击可阻断方法。
+
+- Fix
+  - 1、修复`drop-select-item`组件`pickerTitle`属性失效问题。
+
 ### 0.0.34
 
 `2020-07-16`

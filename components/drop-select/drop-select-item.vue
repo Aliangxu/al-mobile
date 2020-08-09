@@ -305,9 +305,7 @@ export default {
         (this.getIsValidator && this.vvalidateModal && this.name && this.errors && this.errors.first(this.name))
       )
     },
-    isPickerShowClick() {
-      if (this.disabled) return;
-      this.$emit("dropSelectClick","");
+    dealShow(){
       if (!this.isAppendTo) {
         // console.log("%c dropselect-val", "color:green;", this.isPickerShow0);
         // console.log("%c pickerData", "color:green;", this.pickerData);
@@ -350,6 +348,18 @@ export default {
             _this.$_hide(value)
           },
         })
+      }
+    },
+    isPickerShowClick() {
+      if (this.disabled) return;
+      if (this.$listeners.dropSelectClick) {
+        this.$emit("dropSelectClick",(isShow=true)=>{
+          if (isShow) {
+            this.dealShow();
+          }
+        });
+      }else{
+        this.dealShow();
       }
     },
     $_hide(val) {
