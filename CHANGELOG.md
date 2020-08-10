@@ -9,11 +9,12 @@ toc: hidden
 `2020-08-07`
 
 - Feat
-  - 1、新增`drop-select-item`组件点击可阻断方法。
+  - 1、新增`drop-select-item`组件点击可阻断方法
 
 - Fix
   - 1、修复`drop-select-item`组件`pickerTitle`属性失效问题。
   - 2、`al-content`组件返回顶部按钮`mescroll-totop-all`样式`z-index`调整为`999`,解决返回顶部按钮遮挡弹出窗等`popup`弹出层
+  - 3、新增`dataListId`表数据标签`id`,修复当存在两个列表页面跳转时，因为默认的id相同，可能会导致，一个页面的接口请求因为延迟，当跳转到另一个页面，数据错误渲染在另一个页面，此时就需要设置两个页面不同的`dataListId`参数，防止此问题发生
 
 ### 0.0.34
 

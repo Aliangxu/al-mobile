@@ -32,6 +32,7 @@ Content跟ContentList区别在于ContentList引入swiper，如果想使用swiper
 | isMescrollDown | 是否启用下拉刷新 | Boolean | `false`|默认为false启用下拉刷新，如果为true则关闭下拉刷新|
 | secMenuIsShowP | 二级菜单是否显示隐藏| Boolean | `true` | 暂时存在bug不可用 |
 | listAnm | 列表数据动画 | String | - |eg: `n22-base-slide-left`|
+| dataListId | 列表数据标签`id` | String | `dataList` |eg: `login-list`,当存在两个列表页面跳转时，因为默认的id相同，可能会导致，一个页面的接口请求因为延迟，当跳转到另一个页面，数据错误渲染在另一个页面，此时就需要设置两个页面不同的`dataListId`参数，防止此问题。|
 | swiperTop | content距离顶部距离 | Array、Number | `[]\1`|多个列表tab即多个swiperTop,如果多个列表距离顶部相同，则可以传入一个Number|
 | swiperBottom | swiper距离底部距离 | Array | `[]`|多个列表tab即多个swiperBottom|
 | page | 分页对象 | Object | `{num: 1,size: 10,time: null}`|-|

@@ -31,7 +31,7 @@
                   v-show="!listAnm || i == curIndex"
                   :ref="'mescroll' + i"
                   :down="getMescrollDown(i, tab)"
-                  :up="getMescrollUp(i,'dataListSwiper')"
+                  :up="getMescrollUp(i,1)"
                   @init="mescrollInit(i, arguments)"
                 >
                   <slot name="content"></slot>
@@ -39,7 +39,7 @@
                   <div :id="`dataListSwiper${i}`"></div>
                   <slot
                     v-if="isMescrollLoadList"
-                    :id="'dataList' + i"
+                    :id="`${dataListId+i}`"
                     :list="tabs[i].list"
                     :swiperIndex="curIndex"
                   ></slot>
@@ -67,7 +67,7 @@
               <mescroll-vue
                 :ref="'mescroll' + i"
                 :down="getMescrollDown(i, tab)"
-                :up="getMescrollUp(i,'dataList')"
+                :up="getMescrollUp(i,2)"
                 @init="mescrollInit(i, arguments)"
               >
                 <slot name="content"></slot>
@@ -88,7 +88,7 @@
                 </div>
                 <slot
                   v-else-if="isMescrollLoadList"
-                  :id="'dataList' + i"
+                  :id="`${dataListId+i}`"
                   :list="tabs[i].list"
                   :swiperIndex="curIndex"
                 ></slot>
@@ -172,6 +172,10 @@ export default {
     listAnm: {
       type: String,
       default: '',
+    },
+    dataListId: {
+      type: String,
+      default: 'dataList',
     },
     swiperTop: {
       type: [Number, Array],
@@ -340,8 +344,9 @@ export default {
     },
     // mescroll上拉加载的配置
     getMescrollUp(tabIndex,myemptyWarp) {
+      const emptyWarp = myemptyWarp===1?`${this.dataListId}-swiper`:this.dataListId
       let isUse = true
-      let emptyWarpId = myemptyWarp + tabIndex
+      let emptyWarpId = emptyWarp + tabIndex
       let empty = ''
       let htmlNodata = '<p class="upwarp-nodata">-- 我是有底线的 --</p>'
       // console.log('%c isEmptyObject','color:green;',isEmptyObject(this.emptyProp));
@@ -608,7 +613,7 @@ export default {
 
 .listswiper /deep/ .mescroll-totop-all {
   box-sizing: border-box;
-  z-index: 999;
+  z-index: 2901;
   position: fixed;
   bottom: 65px;
   width: 50px;
