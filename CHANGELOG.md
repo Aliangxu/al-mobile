@@ -13,6 +13,7 @@ toc: hidden
 
 - Fix
   - 1、修复`drop-select-item`组件`pickerTitle`属性失效问题。
+  - 2、`al-content`组件返回顶部按钮`mescroll-totop-all`样式`z-index`调整为`999`,解决返回顶部按钮遮挡弹出窗等`popup`弹出层
 
 ### 0.0.34
 
