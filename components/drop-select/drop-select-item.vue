@@ -353,11 +353,14 @@ export default {
     isPickerShowClick() {
       if (this.disabled) return;
       if (this.$listeners.dropSelectClick) {
+        let index = 1;
         this.$emit("dropSelectClick",(isShow=true)=>{
+          index++;
           if (isShow) {
             this.dealShow();
           }
         });
+        index===1 && this.dealShow();
       }else{
         this.dealShow();
       }
