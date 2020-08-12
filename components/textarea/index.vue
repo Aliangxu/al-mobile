@@ -42,9 +42,9 @@ export default {
   name: 'n22-textarea',
   data() {
     return {
-      fontSizeVW: ui.dealPxToVw(this.fontSize)+"vw",
-      lineHeightVW: ui.dealPxToVw(this.lineHeight)+"vw",
-      maxHeightVW: ui.dealPxToVw(this.maxHeight)+"vw",
+      fontSizeVW: ui.dealPxToVw(this.fontSize,true),
+      lineHeightVW: ui.dealPxToVw(this.lineHeight,true),
+      maxHeightVW: ui.dealPxToVw(this.maxHeight,true),
       temp_value: this.value,
       s_autofocus: (() => {
         if (this.autofocus) {

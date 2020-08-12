@@ -1,6 +1,11 @@
 <template>
   <div class="n22-example-child n22-example-child-textarea n22-example-child-textarea-0">
-    <n22-textarea></n22-textarea>
+    <n22-textarea
+      :border="true"
+      :maxHeight="188"
+      class="my-textarea"
+      placeholder="请具体描述其他问题"
+    ></n22-textarea>
   </div>
 </template>
 
@@ -8,14 +13,13 @@
 import {Textarea} from 'al-mobile'
 
 export default {
-  name: 'tips-demo',
+  name: 'textarea-demo',
   /* DELETE */
-  title: '上方',
-  titleEnUS: 'Top',
+  title: '文本域',
+  titleEnUS: 'textarea',
   /* DELETE */
   components: {
-    [Tip.name]: Tip,
-    [Button.name]: Button,
+    [Textarea.name]: Textarea,
   },
 }
 

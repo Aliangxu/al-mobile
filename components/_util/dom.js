@@ -52,8 +52,16 @@ const ui = {
     const numR = document.documentElement.clientHeight * (num / 667)
     return parseFloat(numR.toFixed(fixed || 3))
   },
-  dealPxToVw: px => {
-    return px * 0.266
+  dealPxToVw: (px, autoUnit = false) => {
+    if (autoUnit) {
+      if (document.documentElement.clientWidth > 1500) {
+        return px * 0.266 + 'px'
+      } else {
+        return px * 0.266 + 'vw'
+      }
+    } else {
+      return px * 0.266
+    }
   }
 }
 

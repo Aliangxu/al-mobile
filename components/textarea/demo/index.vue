@@ -14,7 +14,7 @@
 import createDemoModule from '../../../examples/create-demo-module'
 import Demo0 from './cases/demo0'
 
-export default {...createDemoModule('tip', [Demo0])}
+export default {...createDemoModule('textarea', [Demo0])}
 
 </script>
 
