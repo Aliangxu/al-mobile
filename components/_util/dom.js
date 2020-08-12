@@ -43,7 +43,7 @@ const ui = {
     window.screen.height === 896,
   screenWidth: document.documentElement.clientWidth,
   screenHeight: document.documentElement.clientHeight,
-  allScreenHeight: window.screen.height,
+  allScreenHeight: document.documentElement.clientHeight,
   screenWidthR (num, fixed) {
     const numR = document.documentElement.clientWidth * (num / 375)
     return parseFloat(numR.toFixed(fixed || 3))
@@ -63,8 +63,8 @@ const uikz = {
         window.ALIOSHEAD === 'phone' &&
           (window.cordova || window.GDIJSBridge) &&
         !isWechat
-      ? (ui.isIPhoneX || ui.isIPhoneXSMax || ui.isIPhoneXR ? 78 : 64)
-      : 44,
+        ? (ui.isIPhoneX || ui.isIPhoneXSMax || ui.isIPhoneXR ? 78 : 64)
+        : 44,
   allHeadTopPxVideo:
     ui.isIPhoneX || ui.isIPhoneXSMax || ui.isIPhoneXR
       ? 0
@@ -72,8 +72,8 @@ const uikz = {
         window.ALIOSHEAD === 'phone' &&
           (window.cordova || window.GDIJSBridge) &&
         !isWechat
-      ? 20
-      : 0
+        ? 20
+        : 0
 }
 
 Object.assign(ui, uikz)
