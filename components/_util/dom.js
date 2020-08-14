@@ -55,7 +55,7 @@ const ui = {
   dealPxToVw: (px, autoUnit = false) => {
     if (autoUnit) {
       if (document.documentElement.clientWidth > 1500) {
-        return px * 0.266 + 'px'
+        return px + 'px'
       } else {
         return px * 0.266 + 'vw'
       }

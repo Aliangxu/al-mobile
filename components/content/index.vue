@@ -36,7 +36,7 @@
                 >
                   <slot name="content"></slot>
                   <!-- 列表数据 -->
-                  <div :id="`dataListSwiper${i}`"></div>
+                  <div :id="`dataList-swiper${i}`"></div>
                   <slot
                     v-if="isMescrollLoadList"
                     :id="`${dataListId+i}`"
