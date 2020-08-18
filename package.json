@@ -1,6 +1,6 @@
 {
   "name": "al-mobile",
-  "version": "0.0.34",
+  "version": "0.0.35",
   "description": "A Vue.js 2.0 Mobile UI Toolkit",
   "homepage": "https://github.com/Aliangxu/al-mobile.git",
   "main": "lib/al-mobile.umd.js",
