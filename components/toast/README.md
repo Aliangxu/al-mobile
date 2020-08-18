@@ -36,6 +36,7 @@ Vue.component(Toast.component.name, Toast.component) // 组件引入
 | duration | 显示多少毫秒后自动消失, 若为`0`则一直显示 | Number | `3000` | - |
 | position | 展示位置 | String | `center` | `top/center/bottom` |
 | hasMask | 是否显示透明遮罩, 以此防止用户点击 | Boolean | `false` | - |
+| isAutoTop | 是否流出顶部导航栏遮罩层, 以此防止一直loading时，用户无法点击页面回退关闭 | Boolean | `false` | - |
 | parentNode | 组件挂载节点 | HTMLElement | `document.body`|- |
 
 ##### Toast.info(content, duration, hasMask, parentNode)

@@ -13,6 +13,7 @@ toc: hidden
   - 2、新增`icon`组件`icon`、`iconImg`属性，可以传入gif等的图片
   - 3、新增`toast`组件`loading`方法`iconImg`属性，可以传入gif等的图片
   - 4、调整`toast`组件加载loading位置由左右布局改为上下布局
+  - 4、调整`toast`组件`isAutoTop`属性，用于设置，是否在loding的时候，留出顶部的导航栏，以便loading卡死页面可以操作页面关闭等。
 
 - Fix
   - 1、修复`drop-select-item`组件`pickerTitle`属性失效问题。

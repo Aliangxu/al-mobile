@@ -6,7 +6,7 @@
       @hide="$_onHide"
       :hasMask="hasMask"
       :maskClosable="false"
-      :style="{ top: getTop }"
+      :style="{ top: isAutoTop ? getTop : '' }"
     >
       <div class="n22-toast-content" v-if="$slots.default">
         <slot></slot>
@@ -116,6 +116,10 @@ export default {
       default: 'center',
     },
     hasMask: {
+      type: Boolean,
+      default: false,
+    },
+    isAutoTop: {
       type: Boolean,
       default: false,
     },
