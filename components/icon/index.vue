@@ -8,6 +8,13 @@
   >
     <use :xlink:href="`#${name}`" />
   </svg>
+  <img
+    v-else-if="img"
+    class="n22-icon icon-img"
+    :src="name"
+    :style="{ color }"
+    @click="$emit('click', $event)"
+  ></img>
   <i
     v-else-if="name"
     class="n22-icon icon-font"
@@ -41,6 +48,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    img: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   mounted() {
@@ -66,6 +77,9 @@ export default {
   // align-items center
   // justify-content center
 
+  &.icon-img
+    height 50px
+
   // size
   &.icon-font
     font-family  "Al-Mobile-Icon" !important
@@ -89,6 +103,8 @@ export default {
       font-size icon-size-md
     &.lg
       font-size icon-size-lg
+    &.llg
+      font-size icon-size-llg
     &:before
       position relative
       z-index 2
@@ -109,6 +125,9 @@ export default {
     &.lg
       width icon-size-lg
       vertical-height(icon-size-lg)
+    &.llg
+      width icon-size-llg
+      vertical-height(icon-size-llg)
 
 // name
 .n22-icon-view_off:before

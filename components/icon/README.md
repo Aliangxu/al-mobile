@@ -26,7 +26,7 @@ Vue.component(Icon.name, Icon)
 |属性 | 说明 | 类型 | 默认值| 备注|
 |----|-----|------|------|------|
 |name|图标名称|String|-|-|
-|size|图标大小|String|`md`|`xs`, `sm`, `md`, `lg`|
+|size|图标大小|String|`md`|`xs`, `sm`, `md`, `lg`, `llg`|
 |color|图标颜色|String|`currentColor`|-|
 |svg|使用svg图标|Boolean|`false`|-|
 

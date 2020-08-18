@@ -6,12 +6,13 @@
       @hide="$_onHide"
       :hasMask="hasMask"
       :maskClosable="false"
+      :style="{ top: getTop }"
     >
       <div class="n22-toast-content" v-if="$slots.default">
         <slot></slot>
       </div>
       <div class="n22-toast-content" v-else>
-        <n22-icon v-if="icon" :name="icon" size="lg" :svg="iconSvg" />
+        <n22-icon v-if="icon" :name="icon" size="llg" :svg="iconSvg" :img="iconImg"/>
 
         <!-- <div v-if="icon" class="svg_class">
           <svg-icon :icon-class="icon"></svg-icon>
@@ -40,12 +41,19 @@
 </template>
 
 <script>
+import {ui} from '../_util'
 import Popup from '../popup'
 import Icon from '../icon'
 import ToastContent from './toast-content.js'
 
 export default {
   name: 'n22-toast',
+  computed: {
+    // ...mapState(["common"]), //引入vuex state样例>>>可通过this.common.userInfo获取vuex-state数据
+    getTop() {
+      return ui.dealPxToVw(ui.allHeadTopPx, true)
+    }
+  },
 
   components: {
     [Popup.name]: Popup,
@@ -85,6 +93,10 @@ export default {
     icon: {
       type: String,
       default: '',
+    },
+    iconImg: {
+      type: Boolean,
+      default: false,
     },
     iconSvg: {
       type: Boolean,
@@ -198,22 +210,20 @@ export default {
 }
 
 .n22-toast-content {
-  display: inline-flex;
+  text-align: center;
+  // display: inline-flex;
   align-items: center;
   max-width: 300px;
   min-width: 80px;
   padding: toast-padding;
   border-radius: toast-radius;
   font-size: toast-font-size;
-  text-align: left;
+  // text-align: left;
   line-height: 1.42857142;
   color: toast-color;
   background-color: toast-fill;
   box-sizing: border-box;
   overflow: hidden;
-  .n22-icon{
-    padding-right: 10px;
-  }
 }
 
 .n22-toast-text {

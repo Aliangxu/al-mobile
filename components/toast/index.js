@@ -11,6 +11,7 @@ const Toast = function({
   content = '',
   icon = '',
   maxTextNum = 40,
+  iconImg = false,
   iconSvg = false,
   duration = 3000,
   position = 'center',
@@ -26,6 +27,7 @@ const Toast = function({
         content,
         maxTextNum,
         icon,
+        iconImg,
         iconSvg,
         duration,
         position,
@@ -41,6 +43,7 @@ const Toast = function({
   vm.content = content
   vm.maxTextNum = maxTextNum
   vm.icon = icon
+  vm.iconImg = iconImg
   vm.iconSvg = iconSvg
   vm.duration = duration
   vm.position = position
@@ -131,12 +134,14 @@ Toast.failed = (content = '', maxTextNum, duration = 3000, hasMask = false, pare
  * @param {number=} [duration=0]
  * @param {boolean=} [hasMask=false]
  * @param {node=} [parentNode=document.body]
+ * @param {string} iconImg
  * @returns {Toast}
  */
-Toast.loading = (content = '', maxTextNum, duration = 0, hasMask = true, parentNode = document.body) => {
+Toast.loading = (content = '', maxTextNum, duration = 0, hasMask = true, parentNode = document.body, iconImg) => {
   return Toast({
-    icon: 'spinner',
-    iconSvg: true,
+    icon: iconImg || 'spinner',
+    iconSvg: iconImg?false:true,
+    iconImg: iconImg?true:false,
     maxTextNum,
     content,
     duration,
