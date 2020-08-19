@@ -4,6 +4,14 @@
     :class="{large: !!describe}"
     @touchmove="$_preventScroll"
   >
+    <!-- reset -->
+    <div
+      class="title-bar-left-reset title-bar-reset n22-popup-cancel"
+      v-if="resetText"
+      v-html="resetText"
+      @click="$emit('reset')"
+    ></div>
+
     <!-- Cancel -->
     <div
       class="title-bar-left n22-popup-cancel"
@@ -126,6 +134,13 @@ export default {
     font-size popup-title-bar-font-size-button
     font-weight popup-title-bar-font-weight-button
     box-sizing border-box
+  .title-bar-reset
+    position absolute
+    width 10%
+    max-height popup-title-bar-height
+    font-size popup-title-bar-font-size-button
+    font-weight popup-title-bar-font-weight-button
+    box-sizing border-box
   .title-bar-title
     width 100%
     padding 0 20%
@@ -143,4 +158,7 @@ export default {
   .title-bar-right
     right 0
     color popup-title-bar-color-button-right
+  .title-bar-left-reset
+    left 20%
+    color color-text-reset
 </style>

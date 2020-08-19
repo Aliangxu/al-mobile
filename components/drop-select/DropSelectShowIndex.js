@@ -27,6 +27,7 @@ const generate = function({
   minDate,
   maxDate,
   hasMask,
+  resetText,
   btns,
 }) {
   const DropSelectShowConstructor = Vue.extend(DropSelectShow)
@@ -46,6 +47,7 @@ const generate = function({
       minDate,
       maxDate,
       hasMask,
+      resetText,
       btns,
     },
   }).$mount()
@@ -89,8 +91,10 @@ DropSelectShow.show = ({
   minDate,
   maxDate,
   hasMask,
+  resetText,
   onPickerConfirm = noop,
   onDatePickerChange = noop,
+  onPickerReset = noop,
   onDatePickerConfirm = noop,
   onAddressPickerConfirm = noop,
   onNotSelectFun = noop,
@@ -109,6 +113,7 @@ DropSelectShow.show = ({
     minDate,
     maxDate,
     hasMask,
+    resetText,
     btns: {
       onPickerConfirm: {
         handler: /* istanbul ignore next */ (index, value) => {
@@ -123,6 +128,13 @@ DropSelectShow.show = ({
           console.log('%c columnIndex, itemIndex, value', 'color:green;', `${columnIndex}, ${itemIndex}, ${value}`)
           if (onDatePickerChange(columnIndex, itemIndex, value) !== false) {
             // vm.close()
+          }
+        },
+      },
+      onPickerReset: {
+        handler: /* istanbul ignore next */ (columnsValue) => {
+          if (onPickerReset(columnsValue) !== false) {
+            vm.close()
           }
         },
       },

@@ -74,10 +74,12 @@
         :min-date="minDate"
         :max-date="maxDate"
         :has-mask="hasMask"
+        :reset-text="resetText"
         :notSelectIdf="notSelectIdf"
         :levelArrayProp="levelArrayProp"
         @hide="$_hide"
         @onNotSelectFun="onNotSelectFun"
+        @onPickerReset="onPickerReset"
         @onPickerConfirm="onPickerConfirm"
         @onDatePickerChange="onDatePickerChange"
         @onDatePickerConfirm="onDatePickerConfirm"
@@ -147,6 +149,10 @@ export default {
     hasMask: {
       type: Boolean,
       default: true,
+    },
+    resetText: {
+      type: String,
+      default: "",
     },
     isShowtextAlias: {
       type: Boolean,
@@ -326,12 +332,16 @@ export default {
           minDate: this.minDate,
           maxDate: this.maxDate,
           hasMask: this.hasMask,
+          resetText: this.resetText,
           onPickerConfirm: (index, v) => {
             console.log('%c index', 'color:green;', index)
             _this.onPickerConfirm(index, v)
           },
           onDatePickerChange: (columnIndex, itemIndex, value) => {
             _this.onDatePickerChange(columnIndex, itemIndex, value)
+          },
+          onPickerReset: (columnsValue, value) => {
+            _this.onPickerReset(columnsValue, value)
           },
           onDatePickerConfirm: (columnsValue, value) => {
             _this.onDatePickerConfirm(columnsValue, value)
@@ -490,6 +500,10 @@ export default {
       }
     },
     onDatePickerChange(columnIndex, itemIndex, value) {},
+    onPickerReset(columnsValue) {
+      //    console.log("%c onPickerReset", "color:green;", value);
+      this.$emit('onPickerReset', columnsValue)// 2020-03-20防止日期重复两次changeData
+    },
     onDatePickerConfirm(columnsValue, value) {
       //    console.log("%c onDatePickerConfirm", "color:green;", value);
       let val = ''

@@ -8,7 +8,9 @@
     :data="pickerDataShow"
     :default-value="dealDefaultValue"
     :has-mask="hasMask"
+    :reset-text="resetText"
     @confirm="onPickerConfirm(0)"
+    @reset="onPickerReset"
     @hide="$_onHide"
     >{{ selectValue }}</n22-picker
   >
@@ -22,7 +24,9 @@
     :min-date="minDate"
     :max-date="maxDate"
     :has-mask="hasMask"
+    :reset-text="resetText"
     @change="onDatePickerChange"
+    @reset="onPickerReset"
     @confirm="onDatePickerConfirm"
     @hide="$_onHide"
   ></n22-date-picker>
@@ -100,6 +104,10 @@ export default {
     pickerTitle: {
       type: String,
       default: '请选择',
+    },
+    resetText: {
+      type: String,
+      default: '',
     },
     minDate: {
       type: Date,
@@ -306,6 +314,16 @@ export default {
       } else {
         this.btns.onAddressPickerConfirm.handler.call(this, 0, address, options)
         // this.btns.onGetAddress.handler.call(this, 0, options);
+      }
+    },
+    onPickerReset(columnsValue){
+      if (!this.isAppendTo) {
+        this.$emit('onPickerReset', columnsValue)
+      } else {
+        this.btns.onPickerReset.handler.call(
+          this,
+          columnsValue,
+        )
       }
     },
     onDatePickerConfirm(columnsValue) {

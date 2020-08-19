@@ -8,6 +8,10 @@ export default {
       type: String,
       default: '',
     },
+    resetText: {
+      type: String,
+      default: '',
+    },
     okText: {
       type: String,
       default: '',

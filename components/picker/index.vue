@@ -34,7 +34,9 @@
           :title="title"
           :describe="describe"
           :ok-text="okText"
+          :reset-text="resetText"
           :cancel-text="cancelText"
+          @reset="$_onPickerReset"
           @confirm="$_onPickerConfirm"
           @cancel="$_onPickerCancel"
         ></n22-popup-title-bar>
@@ -250,6 +252,11 @@ export default {
     },
     $_getDefaultValue() {
       return this.oldActivedIndexs ? [] : this.defaultValue
+    },
+    $_onPickerReset() {
+      const column = this.column
+      const columnValues = column.getColumnValues()
+      this.$emit('reset', columnValues)
     },
     $_onPickerConfirm() {
       const column = this.column

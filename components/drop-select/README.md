@@ -44,6 +44,7 @@ Vue.component(DropSelectItem.name, DropSelectItem)
 | btns | 操作按钮组 | Array<{text, handler, warning}> | `[]`|`warning` is used to identify the warning action|
 | levelArrayProp | 职业三级需要切割下标数组 | Array<Number> | `[2, 4, 6]`| - |
 | cutMark | 地址三级需要连接的符号 | String |`英文的竖线`| - |
+| resetText | 重置文案 | String | - | - |
 
 #### 暂未开启的功能
 |属性 | 说明 | 类型 | 默认值|备注|
@@ -113,6 +114,8 @@ type为address时使用
 |option|扩充参数--选项值对象|-|-|目前应用在type为work时返回work的选项值对象|
 |key|扩充参数|-|-|之前的key移植到itemObject对象中code|
 
+##### onPickerReset(columnsValue)
+重置事件
 
 ### 附录
 

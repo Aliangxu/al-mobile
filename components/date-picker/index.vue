@@ -10,12 +10,14 @@
       :title="title"
       :describe="describe"
       :ok-text="okText"
+      :reset-text="resetText"
       :cancel-text="cancelText"
       :is-view="isView"
       :mask-closable="maskClosable"
       @initialed="$emit('initialed')"
       @change="$_onPickerChange"
       @confirm="$_onPickerConfirm"
+      @reset="$_onPickerReset"
       @cancel="$_onPickerCancel"
       @show="$_onPickerShow"
       @hide="$_onPickerHide"
@@ -529,6 +531,9 @@ export default {
       if (columnIndex < this.columnData.length - 1) {
         this.$_initColumnData(columnIndex + 1)
       }
+    },
+    $_onPickerReset (columnsValue) {
+      this.$emit('reset', columnsValue)
     },
     $_onPickerConfirm (columnsValue) {
       this.$emit('confirm', columnsValue)

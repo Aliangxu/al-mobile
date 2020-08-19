@@ -11,6 +11,9 @@ export default {
     okText: {
       default: '确认',
     },
+    resetText: {
+      default: '',
+    },
     cancelText: {
       default: '取消',
     },

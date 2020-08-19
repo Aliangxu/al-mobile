@@ -34,6 +34,7 @@ Vue.component(PopupTitleBar.name, PopupTitleBar)
 |title|标题|String|-|-|
 |describe|描述|String|-|-|
 |ok-text|确认按钮文案|String|-|为空则没有确认按钮|
+|reset-text|选择器重置文案|String|-|为空则没有重置按钮| 
 |cancel-text|取消按钮文案|String|-|为空则没有取消按钮|
 |large-radius <sup class="version-after">2.4.0+</sup>|大圆角模式|Boolean|`false`|-|
 |only-close <sup class="version-after">2.4.0+</sup>|只有右侧关闭按钮|Boolean|`false`|-|

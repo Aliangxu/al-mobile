@@ -35,6 +35,7 @@ Vue.component(DatePicker.name, DatePicker)
 |title|选择器标题|String|-|-|
 |describe|选择器描述|String|-|-|
 |ok-text|选择器确认文案|String|`确认`|-| 
+|reset-text|选择器重置文案|String|-|-| 
 |cancel-text|选择器取消文案|String|`取消`|-| 
 |mask-closable|点击蒙层是否可关闭弹出层|Boolean|`true`|-|
 
