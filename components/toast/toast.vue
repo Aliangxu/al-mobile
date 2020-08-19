@@ -198,8 +198,8 @@ export default {
     .n22-popup .n22-popup-box {
       position: absolute;
       bottom: 50px;
-      // left: 50%;
-      // transform: translateX(-50%);
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
 
@@ -207,8 +207,8 @@ export default {
     .n22-popup .n22-popup-box {
       position: absolute;
       top: 50px;
-      // left: 50%;
-      // transform: translateX(-50%);
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
 }
