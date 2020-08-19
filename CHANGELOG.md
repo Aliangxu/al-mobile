@@ -21,6 +21,7 @@ toc: hidden
   - 3、新增`dataListId`表数据标签`id`,修复当存在两个列表页面跳转时，因为默认的id相同，可能会导致，一个页面的接口请求因为延迟，当跳转到另一个页面，数据错误渲染在另一个页面，此时就需要设置两个页面不同的`dataListId`参数，防止此问题发生
   - 4、dom.js `allScreenHeight`属性值由视窗高度更改为网页高度
   - 5、dom.js `dealPxToVw`属性增增加`autoUnit`值，默认为`false`不拼接单位。当给定`autoUnit`-`false`并且视窗宽度大于1500时候（即类似pc端），给定`px`单位，不做vw的转换
+  - 6、修复`toast`-`top`-`bottom`时候的部分ios系统布未局中显示兼容性问题
 
 ### 0.0.34
 
