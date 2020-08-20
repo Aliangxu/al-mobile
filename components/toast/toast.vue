@@ -90,6 +90,10 @@ export default {
       type: Boolean,
       default: true,
     },
+    iconOrImgPosition: {
+      type: String,
+      default: 'left',
+    },
     icon: {
       type: String,
       default: '',
@@ -215,19 +219,24 @@ export default {
 
 .n22-toast-content {
   text-align: center;
-  // display: inline-flex;
   align-items: center;
   max-width: 300px;
   min-width: 80px;
   padding: toast-padding;
   border-radius: toast-radius;
   font-size: toast-font-size;
-  // text-align: left;
   line-height: 1.42857142;
   color: toast-color;
   background-color: toast-fill;
   box-sizing: border-box;
   overflow: hidden;
+  &.loading{
+    display: inline-flex;
+    text-align: left;
+    .n22-icon{
+      padding-right: 10px;
+    }
+  }
 }
 
 .n22-toast-text {

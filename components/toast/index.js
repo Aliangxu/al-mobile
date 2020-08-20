@@ -18,6 +18,7 @@ const Toast = function({
   hasMask = false,
   isAutoTop = false,
   parentNode = document.body,
+  iconOrImgPosition = 'left',
 }) {
   let vm = Toast._instance
 
@@ -34,6 +35,7 @@ const Toast = function({
         position,
         hasMask,
         isAutoTop,
+        iconOrImgPosition,
       },
     }).$mount()
   }
@@ -51,6 +53,7 @@ const Toast = function({
   vm.position = position
   vm.hasMask = hasMask
   vm.isAutoTop = isAutoTop
+  vm.iconOrImgPosition = iconOrImgPosition
   // vm.visible = true
   // vm.fire()
   vm.show()
@@ -140,17 +143,18 @@ Toast.failed = (content = '', maxTextNum, duration = 3000, hasMask = false, pare
  * @param {string} iconImg
  * @returns {Toast}
  */
-Toast.loading = (content = '', maxTextNum, duration = 0, hasMask = true, parentNode = document.body, iconImg, isAutoTop) => {
+Toast.loading = (content = '', maxTextNum, duration = 0, hasMask = true, parentNode = document.body, iconImg, isAutoTop, iconOrImgPosition = 'top') => {
   return Toast({
     icon: iconImg || 'spinner',
     iconSvg: !iconImg,
-    iconImg: !!iconImg,
     maxTextNum,
     content,
     duration,
     hasMask,
-    isAutoTop,
     parentNode,
+    iconImg: !!iconImg,
+    isAutoTop,
+    iconOrImgPosition,
   })
 }
 
