@@ -274,11 +274,12 @@ export default {
     },
     getSwiperHeight() {
       // 内容区距离顶部距离
-      let head = this.dealSwiperTop;
+      let head = ui.dealPxToVw(this.dealSwiperTop + (this.isAutoTopMargin ? ui.allHeadTopPx : 0))*(ui.screenWidth/100);
+      // console.log('%c >>>>>>>>>>>>>>>>>>>>>>>>>head','color:green;',head);
       let height = 0
       if (this.isAutoHeight) {
         // height = ui.dealPxToVw(ui.allScreenHeight - (head + (this.isAutoTopMargin ? ui.allHeadTopPx : 0))) + 'vw'
-        height = ui.allScreenHeight - (head + (this.isAutoTopMargin ? ui.allHeadTopPx : 0)) + 'px'
+        height = ui.allScreenHeight - head + 'px'
       } else {
         height = "100%"
       }
