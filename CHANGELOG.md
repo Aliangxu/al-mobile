@@ -9,6 +9,7 @@ toc: hidden
 `2020-08-26`
 
 - Feat
+  - 1、新增`textarea`组件`maxLength`属性
 
 - Fix
   - 1、修复`content`组件滑动内容区高度兼容性问题，通过`vw`跟手机实际宽度`px`换算真实的`px`(`0.0.34`版本`Fix-1`的继续修复)。

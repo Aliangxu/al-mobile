@@ -11,12 +11,14 @@
       :style="{
         fontSize: fontSizeVW,
         lineHeight: lineHeightVW,
-        minHeight: fullHeight ? maxHeightVW : 'auto'
+        minHeight: fullHeight ? maxHeightVW : 'auto',
+        maxHeight: fullHeight ? maxHeightVW : 'auto'
       }"
       class="auto-textarea-block"
     ><br>{{temp_value}} </pre>
     <textarea
       ref="vTextarea"
+      :maxlength="maxLength"
       :row="rows"
       :autofocus="s_autofocus"
       @keyup="change"
@@ -100,6 +102,10 @@ export default {
     maxHeight: {
       type: Number,
       default: 160,
+    },
+    maxLength: {
+      type: [String, Number],
+      default: '',
     },
     rows: {
       type: Number,
