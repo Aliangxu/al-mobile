@@ -97,7 +97,7 @@ export default {
   font-family: Al-Mobile-Icon;
   font-style: normal;
   font-weight: 400;
-  src: url(~mand-mobile/components/icon/iconfont.woff) format("woff"),url(~mand-mobile/components/icon/iconfont.woff) format("truetype")
+  src: url(~al-mobile/components/icon/iconfont.woff) format("woff"),url(~al-mobile/components/icon/iconfont.woff) format("truetype")
 }
 ``` 
 
