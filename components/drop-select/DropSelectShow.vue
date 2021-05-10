@@ -264,6 +264,7 @@ export default {
       if (!this.isAppendTo) {
         this.$emit('hide')
       } else {
+        this.$emit('hide')
         this.btns.hide.handler.call()
       }
     },
