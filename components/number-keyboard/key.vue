@@ -19,7 +19,8 @@
   </li>
 </template>
 
-<script>export default {
+<script>
+export default {
   name: 'n22-number-key',
 
   props: {
@@ -59,4 +60,5 @@
     },
   },
 }
-</script>
+
+</script>

@@ -3,6 +3,7 @@
     <n22-button @click="isKeyBoardShow = !isKeyBoardShow">{{ isKeyBoardShow ? '收起键盘' : '唤起键盘' }}</n22-button>
     <n22-number-keyboard
       v-model="isKeyBoardShow"
+      keyboardDescription="安全输入"
       type="simple"
       @enter="onNumberEnter"
       @delete="onNumberDelete"

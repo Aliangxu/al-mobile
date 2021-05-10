@@ -35,6 +35,7 @@
           :type="type"
           :disorder="disorder"
           :ok-text="okText"
+          :keyboardDescription="keyboardDescription"
           :is-view="isView"
           :hide-dot="hideDot"
           :text-render="textRender"
@@ -86,6 +87,10 @@ export default {
     },
     okText: {
       type: String,
+    },
+    keyboardDescription: {
+      type: String,
+      default: ""
     },
     textRender: {
       type: Function,

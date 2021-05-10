@@ -1,64 +1,72 @@
 <template>
-  <div class="n22-number-keyboard-container" :class="type">
-    <div class="keyboard-number">
-      <ul class="keyboard-number-list">
-        <n22-number-key
-          class="keyboard-number-item"
-          v-for="n in 9"
-          :key="n-1"
-          :value="keyNumberList[n-1]"
-          @press="$_onNumberKeyClick"
-        ></n22-number-key>
-        <template v-if="type === 'professional'">
+  <div>
+    <div v-if="keyboardDescription" class="n22-number-keyboard-description">
+      <div class="description-cancel">{{false?"取消":""}}</div>
+      <div>{{keyboardDescription}}</div>
+      <div class="description-finish" @click="$_onSlideDoneClick">完成</div>
+    </div>
+    <div class="n22-number-keyboard-container" :class="type">
+      <div class="keyboard-number">
+        <ul class="keyboard-number-list">
           <n22-number-key
             class="keyboard-number-item"
-            v-if="!hideDot"
-            :value="dotText"
+            v-for="n in 9"
+            :key="n-1"
+            :value="keyNumberList[n-1]"
             @press="$_onNumberKeyClick"
           ></n22-number-key>
+          <template v-if="type === 'professional'">
+            <n22-number-key
+              class="keyboard-number-item"
+              v-if="!hideDot"
+              :value="dotText"
+              @press="$_onNumberKeyClick"
+            ></n22-number-key>
+            <n22-number-key
+              class="keyboard-number-item"
+              :class="{'large-item': hideDot}"
+              :value="keyNumberList[9]"
+              @press="$_onNumberKeyClick"
+            ></n22-number-key>
+            <li class="keyboard-number-item" v-if="isView"></li>
+            <n22-number-key
+              v-else
+              class="keyboard-number-item slidedown"
+              no-touch
+              no-prevent
+              @press="$_onSlideDoneClick"
+            ></n22-number-key>
+          </template>
+          <template v-else>
+            <li v-if="simple === 'simpleABC'" class="keyboard-number-item no-bg">ABC</li>
+            <li v-else="" class="keyboard-number-item no-bg">ABC</li>
+            <n22-number-key
+              class="keyboard-number-item"
+              :value="keyNumberList[9]"
+              @press="$_onNumberKeyClick"
+            ></n22-number-key>
+            <n22-number-key
+              class="keyboard-number-item no-bg delete"
+              @press="$_onDeleteClick"
+            ></n22-number-key>
+          </template>
+        </ul>
+      </div>
+      <div class="keyboard-operate" v-if="type === 'professional'">
+        <ul class="keyboard-operate-list">
           <n22-number-key
-            class="keyboard-number-item"
-            :class="{'large-item': hideDot}"
-            :value="keyNumberList[9]"
-            @press="$_onNumberKeyClick"
-          ></n22-number-key>
-          <li class="keyboard-number-item" v-if="isView"></li>
-          <n22-number-key
-            v-else
-            class="keyboard-number-item slidedown"
-            no-touch
-            no-prevent
-            @press="$_onSlideDoneClick"
-          ></n22-number-key>
-        </template>
-        <template v-else>
-          <li class="keyboard-number-item no-bg"></li>
-          <n22-number-key
-            class="keyboard-number-item"
-            :value="keyNumberList[9]"
-            @press="$_onNumberKeyClick"
-          ></n22-number-key>
-          <n22-number-key
-            class="keyboard-number-item no-bg delete"
+            class="keyboard-operate-item delete"
             @press="$_onDeleteClick"
           ></n22-number-key>
-        </template>
-      </ul>
-    </div>
-    <div class="keyboard-operate" v-if="type === 'professional'">
-      <ul class="keyboard-operate-list">
-        <n22-number-key
-          class="keyboard-operate-item delete"
-          @press="$_onDeleteClick"
-        ></n22-number-key>
-        <n22-number-key
-          class="keyboard-operate-item confirm"
-          :value="okText"
-          no-touch
-          no-prevent
-          @press="$_onConfirmeClick"
-        ></n22-number-key>
-      </ul>
+          <n22-number-key
+            class="keyboard-operate-item confirm"
+            :value="okText"
+            no-touch
+            no-prevent
+            @press="$_onConfirmeClick"
+          ></n22-number-key>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -91,6 +99,10 @@ export default {
     okText: {
       type: String,
       default: '确定',
+    },
+    keyboardDescription: {
+      type: String,
+      default: ""
     },
     isView: {
       type: Boolean,
@@ -148,6 +160,20 @@ export default {
 </script>
 
 <style lang="stylus">
+.n22-number-keyboard-description
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 15px;
+  text-align: center;
+  background-color: #ffffff;
+  .description-cancel
+    width 30px
+  .description-finish
+    color: color-primary
+    font-size 18px
 .n22-number-keyboard-container
   position relative
   -webkit-user-select none
