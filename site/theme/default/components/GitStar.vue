@@ -1,7 +1,7 @@
 <template>
   <div class="mfe-git-star">
     <a
-      href="https://github.com/didi/mand-mobile"
+      href="https://github.com/Aliangxu/al-mobile"
       target="_blank"
       class="mfe-git-star-button"
       :key="tmp"
@@ -33,18 +33,18 @@ export default {
     }
   },
   mounted () {
-    setTimeout(() => {
-      this.getNumber()
-    }, 500)
+    // setTimeout(() => {
+    //   this.getNumber()
+    // }, 500)
   },
   methods: {
-    getNumber () {
-      $.get('https://img.shields.io/github/stars/didi/mand-mobile.json', (data) => {
-        if (data) {
-          this.number = data.value
-        }
-      })
-    }
+    // getNumber () {
+    //   $.get('https://img.shields.io/github/stars/didi/mand-mobile.json', (data) => {
+    //     if (data) {
+    //       this.number = data.value
+    //     }
+    //   })
+    // }
   }
 }
 </script>

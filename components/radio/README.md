@@ -8,11 +8,15 @@ preview: https://aliangxu.github.io/al-mobile/examples/#/radio
 ### 引入
 
 ```javascript
+import Radio from 'al-mobile/components/radio/indexm'
+或者
 import { Radio, RadioItem } from 'al-mobile'
 
 Vue.component(Radio.name, Radio)
 Vue.component(RadioItem.name, RadioItem)
 ```
+#### 注
+radio单选情况下，使用了两种，下面例子1-6为`import Radio from 'al-mobile/components/radio/indexm'`，相关参数见下面`radio1`，例子7-12为`import { Radio, RadioItem } from 'al-mobile'`
 
 ### 代码演示
 <!-- DEMO -->
@@ -34,6 +38,7 @@ selectOptionList: {//选择显示的选项--默认A-Z
 |----|-----|------|------|------|
 |options|选择码表数组|Array|-|必填项检验|
 |type|input表单类型|String|'radio'|-|
+|inline|是否内联显示|Boolean|`false`|-|
 |mode|业务模式--默认选择模式--exam为考试模式|String|'select'|-|
 |checkIsTrueOrFalse|答题模式是否动态处理正确错误选项|Boolean|false|-|
 |isShow|是否显示选择项|Boolean|true|-|
@@ -96,7 +101,7 @@ Vue.component(RadioList.name, RadioList)
 
 ### radio1-API
 
-#### Radio Props
+#### Radio1 Props
 |属性 | 说明 | 类型 | 默认值 | 备注|
 |----|-----|------|------|------|
 |v-model|选中项的`name`|any|-|
@@ -174,6 +179,39 @@ Vue.component(RadioList.name, RadioList)
 |----|-----|------|
 |option|当前选中项的数据|Object:{text, value, disabled, ...}|
 |index|当前选中项的索引|Number|
+
+##### dropSelectClick(callBack)
+点击前触发的事件
+
+|参数 | 说明 | 类型 | 默认值|
+|----|-----|------|------|
+|value|点击的值|value|-|
+|callBack|回掉方法|Function(isShow)|isShow默认为true|
+
+callBack回掉方法告知组件回掉的isShow参数，可直接callBack(false)，用来点击阻断弹出选择框弹出，自定义提示功能。
+```
+<n22-field title="4、RadioItem单选镂空">
+  <n22-radio-item
+    v-model="checked4"
+    title="交费方式"
+    name="radio"
+    :options="jffsOptions"
+    @dropSelectClick="$_dropSelectClick"
+  >
+  </n22-radio-item>
+</n22-field>
+
+...
+
+$_dropSelectClick (value, callback){
+  if (value === "10") {
+    Toast.failed("不能选择10年交")
+    return callback(false);
+  }
+  return;
+}
+```
+
 
 #### Radio List Slots
 ```html

@@ -11,6 +11,7 @@
       <n22-field-item
         v-on="$listeners"
         v-bind="$attrs"
+        :name="name"
         :class="[
           isInputError() && getIsValidator ? 'is-error' : '',
           isDisabled ? 'is-disabled' : '',
@@ -33,15 +34,17 @@
           <slot name="left"></slot>
         </template>
         <template #right>
-          <span
-            class="n22-field-item-right-addon"
-            >{{ pickerValue0 }}</span
-          >
+          <slot name="right" :value="pickerValue0">
+            <span class="n22-field-item-right-addon">
+              {{ pickerValue0 }}
+            </span>
+          </slot>
         </template>
         <template #right-children>
           <slot name="right-children"></slot>
         </template>
         <template slot="children">
+          <slot name="children"></slot>
           <!-- 错误 -->
           <div
             v-if="isInputError() && !getIsOnlyErrorLine"
@@ -533,6 +536,9 @@ export default {
   },
   mounted() {
     console.log('%c DropSelectItem--mounted', 'color:green;', this.value)
+    if (!this.itemObject.name) {
+      this.itemObject.name = this.name
+    }
     this.value ? this.onPickerConfirmZD(this.value, "", 0, false) : this.assignDefault()
   },
   watch: {

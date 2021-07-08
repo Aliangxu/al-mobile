@@ -29,7 +29,8 @@ Vue.component(Textarea.name, Textarea)
 |onchange|change回掉方法|Function|`null`|-|
 |fontSize|字体大小|Number|`14`|-|
 |lineHeight|line-height|Number|`20`|-|
-|maxHeight|max-height|Number|`160`|-|
+|maxHeight|max-height|Number|`160`|最大显示高度，超出显示滚动条|
+|maxLength|max-length|Number、String|``|textarea maxlength属性|
 |rows|rows|Number|`1`|-|
 
 

@@ -11,7 +11,7 @@ import Radio from 'al-mobile/components/radio/indexm'
 export default {
   name: 'radio-demo',
   /* DELETE */
-  title: '普通单选项 radio1',
+  title: '1、普通单选项 radio1',
   titleEnUS: 'Normal radio1',
   /* DELETE */
   components: {

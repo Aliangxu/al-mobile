@@ -26,3 +26,4 @@ Vue.component(Slider.name, Slider)
 |step|the granularity the slider can step through|number|`1`|-|
 |range|dual thumb mode|Boolean|`false`|-|
 |format|slider will pass its value to <code>format</code>, and display its value in tooltip|Function|`(val) => {return val}`|-|
+|direction|slider direction|String|`horizontal`|`horizontal`,`vertical`|

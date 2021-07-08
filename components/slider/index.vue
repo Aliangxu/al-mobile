@@ -77,6 +77,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    direction: {
+      type: String,
+      default: "horizontal",
+    },
   },
 
   data() {
@@ -130,7 +134,7 @@ export default {
   },
 
   methods: {
-    $_updateValue(newVal) {
+    $_updateValue(newVal, e) {
       let newValues = []
 
       if (Array.isArray(newVal)) {
@@ -173,9 +177,9 @@ export default {
       this.values = newValues
 
       if (this.range) {
-        this.$emit('input', this.values)
+        this.$emit('input', this.values, e)
       } else {
-        this.$emit('input', this.values[0])
+        this.$emit('input', this.values[0], e)
       }
     },
     $_startLowerDrag(e) {
@@ -185,7 +189,7 @@ export default {
       e.preventDefault()
       e.stopPropagation()
       e = e.changedTouches ? e.changedTouches[0] : e
-      this.startDragMousePos = e.pageX
+      this.startDragMousePos = e[this.direction === "vertical" ? "pageY" : "pageX"]
       this.startVal = this.values[0]
       this.isDragingUpper = false
       this.isDragging = true
@@ -201,7 +205,7 @@ export default {
       e.preventDefault()
       e.stopPropagation()
       e = e.changedTouches ? e.changedTouches[0] : e
-      this.startDragMousePos = e.pageX
+      this.startDragMousePos = e[this.direction === "vertical" ? "pageY" : "pageX"]
       this.startVal = this.values[1]
       this.isDragingUpper = true
       this.isDragging = true
@@ -221,13 +225,13 @@ export default {
       }
       e = e.changedTouches ? e.changedTouches[0] : e
       window.requestAnimationFrame(() => {
-        let diff = (e.pageX - this.startDragMousePos) / this.$el.offsetWidth * (this.max - this.min)
+        let diff = (e[this.direction === "vertical" ? "pageY" : "pageX"] - this.startDragMousePos) / this.$el.offsetWidth * (this.max - this.min)
         let nextVal = this.startVal + diff
         if (this.isDragging) {
           if (this.isDragingUpper) {
-            this.$_updateValue([null, nextVal])
+            this.$_updateValue([null, nextVal], e)
           } else {
-            this.$_updateValue([nextVal, null])
+            this.$_updateValue([nextVal, null], e)
           }
         }
       })

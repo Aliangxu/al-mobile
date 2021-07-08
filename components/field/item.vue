@@ -29,7 +29,7 @@
         v-if="title"
       >
         <span v-text="title"></span>
-        <span class="svg_icon" v-if="mark" @click.stop="$emit('markFun')">
+        <span class="svg_icon" v-if="mark" @click.stop="$emit('markFun', title, name)">
           <!-- <svg-icon :icon-class="markSvg"></svg-icon> -->
           <slot name="markSvg">
             <n22-icon :name="markSvg"></n22-icon>
@@ -97,6 +97,10 @@ export default {
   },
 
   props: {
+    name: {
+      type: String,
+      default: '',
+    },
     title: {
       type: String,
       default: '',

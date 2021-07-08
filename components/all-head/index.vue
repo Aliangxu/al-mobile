@@ -6,7 +6,8 @@
         :class="{ 'n22-hairline--bottom': hairline,'n22-nav-bar--fixed': fixed }"
         :style="style"
       >
-        <div
+        <div class="n22-nav-bar__container">
+          <div
           class="n22-nav-bar__left"
           :style="{
             color: opacityStyle.backgroundColor ? opacityStyle.textColor : ''
@@ -103,6 +104,7 @@
               class="n22-nav-bar__text"
             ></span>
           </slot>
+        </div>
         </div>
         <slot name="head_bottom"></slot>
       </div>
@@ -204,6 +206,7 @@ export default {
       }
       // eslint-disable-next-line
       let o3 = $.extend({}, z, this.opacityStyle)
+      console.log("%c o3","color:#00CD00",o3)
       return o3
     }
   },
@@ -344,6 +347,10 @@ placeholderStyle("#search_query", line-height, 30px)
   line-height: 44px;
   background-color: color-primary;
 }
+.n22-nav-bar__container {
+  display: flex;
+  justify-content: space-between;
+}
 .back_icon {
   vertical-align: -8px;
   width: 24px;
@@ -385,17 +392,23 @@ placeholderStyle("#search_query", line-height, 30px)
 
 .n22-nav-bar__left,
 .n22-nav-bar__right {
-  bottom: 2px;
+  // bottom: 2px;
   font-size: 14px;
-  position: absolute;
+  // position: absolute;
+  span {
+    padding-right: 6px;
+  }
 }
 
 .n22-nav-bar__left {
-  left: 10px;
+  // left: 10px;
+  i {
+    padding-left: 6px;
+  }
 }
 
 .n22-nav-bar__right {
-  right: 15px;
+  // right: 15px;
 }
 
 .n22-nav-bar__text {

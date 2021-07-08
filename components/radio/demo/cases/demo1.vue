@@ -17,7 +17,7 @@ import Radio from 'al-mobile/components/radio/indexm'
 export default {
   name: 'radio-demo',
   /* DELETE */
-  title: '表单项内联',
+  title: '2、表单项内联',
   titleEnUS: 'With Field',
   align: 'left',
   /* DELETE */

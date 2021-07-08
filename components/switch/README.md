@@ -22,7 +22,8 @@ Vue.component(Switch.name, Switch)
 |属性 | 说明 | 类型 | 默认值|
 |----|-----|------|------|
 |v-model|打开或者关闭|Boolean|`false`|
-|disabled|是否禁用|Boolean|`false`|
+|active-color|开关打开时候颜色|String|``|
+|inactive-color|开关关闭时候颜色|String|``|
 
 #### Switch Events
 

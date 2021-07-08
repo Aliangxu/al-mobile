@@ -99,6 +99,7 @@
       v-on="$listeners"
       v-bind="$attrs"
       align="left"
+      :name="name"
       :title="title"
       :is-show-required="
         isShowRequired ||
@@ -342,6 +343,21 @@ export default {
   },
   methods: {
     $_onClick(value){
+      if (this.$listeners.dropSelectClick) {
+        let index = 1;
+        this.$emit("dropSelectClick",value, (isShow=true)=>{
+          index++;
+          if (isShow) {
+            this.dealShow(value);
+          }
+        });
+        index===1 && this.dealShow(value);
+      }else{
+        this.dealShow(value);
+      }
+    },
+    dealShow(value){
+      console.log('%c UYUUUUUUUUUU','color:green;',value);
       const oldval = JSON.parse(JSON.stringify(this.currentValue));
       if (this.type === "checkbox") {
         console.log('%c value','color:green;',value);

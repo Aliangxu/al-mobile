@@ -26,27 +26,27 @@ export default {
     }
   },
   mounted () {
-    setTimeout(() => {
-      this.getContributors()
-    }, 500)
+    // setTimeout(() => {
+    //   this.getContributors()
+    // }, 500)
   },
   methods: {
-    getContributors () {
-      const contributors = window.sessionStorage['MAND_MOBILE_CONTRIBUTORS']
+    // getContributors () {
+    //   const contributors = window.sessionStorage['MAND_MOBILE_CONTRIBUTORS']
 
-      if (contributors) {
-        try {
-          this.contributors = JSON.parse(contributors)
-        } catch (error) {}
-        return
-      }
-      $.get('https://api.github.com/repos/didi/mand-mobile/contributors', data => {
-        if (data) {
-          this.contributors = data
-          window.sessionStorage['MAND_MOBILE_CONTRIBUTORS'] = JSON.stringify(data)
-        }
-      })
-    }
+    //   if (contributors) {
+    //     try {
+    //       this.contributors = JSON.parse(contributors)
+    //     } catch (error) {}
+    //     return
+    //   }
+    //   $.get('https://api.github.com/repos/didi/mand-mobile/contributors', data => {
+    //     if (data) {
+    //       this.contributors = data
+    //       window.sessionStorage['MAND_MOBILE_CONTRIBUTORS'] = JSON.stringify(data)
+    //     }
+    //   })
+    // }
   }
 }
 </script>

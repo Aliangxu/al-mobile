@@ -2,6 +2,7 @@
   <n22-field-item
     ref="n22input"
     class="n22-input-item"
+    :name="name"
     :class="[
       isHighlight ? 'is-highlight' : '',
       isTitleLatent ? 'is-title-latent' : '',
@@ -76,6 +77,7 @@
     <template v-else>
       <div
         class="n22-input-item-fake"
+        :style="{'--rightW': rightW, '--leftW': leftW}"
         :class="{
           'is-focus': isInputFocus,
           disabled: isDisabled,
@@ -339,15 +341,22 @@ export default {
     precision: {
       type: Number,
       default: 2
+    },
+    isVirtualKeyboardMove: {
+      type: Boolean,
+      default: false
     }
   },
 
   data () {
     return {
+      rightW: '',
+      leftW: '',
       inputValue: '',
       inputBindValue: '',
       inputNumberKeyboard: '',
-      isInputFocus: false
+      isInputFocus: false,
+      numberKeyBoardNowIndex: 0
     }
   },
 
@@ -710,6 +719,24 @@ export default {
       }, 100)
     },
     $_onFakeInputClick (event) {
+      // TODO
+      if (this.isVirtualKeyboardMove) {
+        const singleStringWidth = 8;
+        const index  = Math.round(event.offsetX / singleStringWidth);
+        const len = this.inputValue.length;
+        console.log('%c <<<<<event.offsetX','color:green;', event.offsetX);
+        console.log('%c <<<<<index','color:green;', index);
+        console.log('%c <<<<<len','color:green;', len);
+        this.numberKeyBoardNowIndex = index;
+        this.rightW = (len - index) * singleStringWidth + "px";
+        if (len === 0) {
+          this.rightW = (len - index) * singleStringWidth - 2 + "px";
+        }
+        if (index > len) {
+          this.rightW = "";
+        }
+      }
+
       if (this.isDisabled || this.readonly) {
         return
       }
@@ -727,7 +754,21 @@ export default {
       ) {
         return
       }
-      this.inputValue = this.$_formateValue(this.inputValue + val).value
+      // TODO
+      if (this.isVirtualKeyboardMove) {
+        if (this.inputValue !=="" && this.inputValue !== undefined) {
+          const inputValue1 = this.inputValue.substring(0,this.numberKeyBoardNowIndex) || ""
+          const inputValue2 = this.inputValue.substring(this.numberKeyBoardNowIndex, this.inputValue.length) || ""
+          console.log('%c inputValue1','color:green;',inputValue1);
+          console.log('%c inputValue2','color:green;',inputValue2);
+          this.inputValue = this.$_formateValue(inputValue1 + val + inputValue2).value
+        } else {
+          this.inputValue = this.$_formateValue(this.inputValue + val).value
+        }
+        this.numberKeyBoardNowIndex++
+      } else {
+        this.inputValue = this.$_formateValue(this.inputValue + val).value
+      }
     },
     $_onNumberKeyBoardDelete () {
       const inputValue = this.inputValue
@@ -821,6 +862,7 @@ export default {
   word-ellipsis()
   cursor text
   &::after
+    right var(--rightW)
     position relative
     z-index 2
     display none

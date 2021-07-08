@@ -261,6 +261,7 @@ export default {
       if (this.oName) {
         this.activei = val
       } else {
+        // eslint-disable-next-line
         if (val != activei && this.activeis) {
           console.log('%c 触发切换switch-activei', 'color:#00CD00', '当前点击' + val + '点击前' + this.activei)
           const length = this.arrItemAll.length

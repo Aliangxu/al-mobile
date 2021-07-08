@@ -23,12 +23,13 @@
   </div>
 </template>
 
-<script>import {Field, RadioList} from 'al-mobile'
+<script>
+import {Field, RadioList} from 'al-mobile'
 
 export default {
   name: 'radio-demo',
   /* DELETE */
-  title: '列表模式',
+  title: '3、列表模式',
   titleEnUS: 'List Radio',
   align: 'right',
   /* DELETE */
@@ -83,7 +84,8 @@ export default {
     }
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus" scoped>
   .radio-field

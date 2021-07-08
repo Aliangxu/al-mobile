@@ -69,6 +69,7 @@ export default {
 #### FieldItem Props
 |属性 | 说明 | 类型 | 默认值|备注|
 |----|-----|------|------|------|
+|name|文本name|String|-|-|
 |title|标题|String|-|-|
 |is-show-required|是否展示必填的*|Boolean|`false`|默认不显示|
 |content|描述内容|String|-|-|
@@ -77,10 +78,17 @@ export default {
 |solid|是否固定标题宽度，超出会自动换行|Boolean|false|-|
 |is-line|是否有分割线|Boolean|true|-|
 |arrow|动作箭头标识|Boolean|false|-|
+|is-linefeed|是否禁用flex布局|Boolean|false|-|
+|fieldItemChildrenAlign|表单子类的位置|String|`right`|-|
+|mark|字段name后面的mark是否展示|Boolean|false|-|
+|markSvg|字段name后面的mark svg名字|String|`question_mark`|请查看icon部分|
+|titleBref|title的描述内容（标题下、下划线上）|String|-|-|
 
 #### FieldItem Events
 ##### @click(event)
 非禁用状态下的点击事件
+##### @markFun(title, name)
+mark点击事件
 
 #### FieldItem Slots
 

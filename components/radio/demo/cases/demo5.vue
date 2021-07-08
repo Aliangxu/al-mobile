@@ -15,7 +15,7 @@ import {RadioBox, RadioGroup} from 'al-mobile'
 export default {
   name: 'radio-demo',
   /* DELETE */
-  title: '单选框组',
+  title: '6、单选框组',
   titleEnUS: 'Radio box group',
   align: 'left',
   /* DELETE */

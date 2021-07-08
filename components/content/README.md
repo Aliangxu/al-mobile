@@ -26,7 +26,7 @@ Content跟ContentList区别在于ContentList引入swiper，如果想使用swiper
 | isTop | 是否启用返回顶部按钮 | Boolean | `true`|-|
 | isAutoTopMargin | 是否启用顶部默认给定的预留头部区域的距离 | Boolean | `true`|-|
 | isAutoHeight <sup class="version-after">0.0.34+</sup> | 是否启用底部预留因为头部top以及给定的swiperTop导致的底部遮挡的高度 | Boolean | `true`|默认预留给定系统预定的top+传入的swiperTop高度|
-| isMescrollUp | 是否启用上拉加载进行分页 | Boolean |`true`|△△△△△△△2019-03-12弃用aliang--将此方法移植到tabs数组中|
+| isMescrollUp | 是否启用上拉加载进行分页 | Boolean |`true`|将此方法移植到tabs数组的每个content实例中|
 | isAutoMescrollDown <sup class="version-after">0.0.25+</sup>| 列表第一个tab是否首次触发一次自动加载 | Boolean |`true`|默认为true开启内置下拉加载刷新列表第一页数据|
 | isMescrollLoadList | 是否启用下拉时候进行页面重载 | Boolean |`false`|默认为false是开启页面重载而是不开启下拉加载刷新列表第一页数据（此时可以自定义下拉刷新的方法，即传入@upRefreshFun），如果为true则是不开启页面重载，开启内置下拉加载刷新列表第一页数据|
 | isMescrollDown | 是否启用下拉刷新 | Boolean | `false`|默认为false启用下拉刷新，如果为true则关闭下拉刷新|
@@ -51,7 +51,7 @@ Content跟ContentList区别在于ContentList引入swiper，如果想使用swiper
     name: 0,// tab标示-多个对象的标示必须不一样
     flag: "2",// 自定义添加标示
     upCallbackFun: "selectListByPage",
-    isMescrollUp: true,
+    isMescrollUp: true,//是否开启上拉分页布局，此处在不做分页的时候最好也默认启用，虽然底部会多出一个div的高度，但是这样可以规避掉全面屏底部部分遮挡问题
     isLock: false,//是否关闭下拉，当listType不为1时可用
     listType: "1",//当listType为1时，根据`isMescrollDown`值判定是否关闭下拉（如果有多个tab，isMescrollDown为true时则关闭所有tab的下拉），当listType不为1时，根据tab.isLock判定各自的tab是否关闭下拉
     mescroll: null,
@@ -114,5 +114,12 @@ tabs参数中会注入当前下拉刷新等的mescroll组件
 
 #### Content Instance Events
 
-##### @handleScroll()
+##### @handleScroll(mescroll, y, isUp)
 mescroll的滑动触发事件
+|参数 | 说明 | 类型 | 默认值 | 备注 |
+|----|-----|------|------|------|
+| mescroll | mescroll对象 | Object | - | 包含所有的mescroll属性-可做更多扩展 |
+| y | y轴滚动距离 | Boolean | - | - |
+| isUp | 是否为上滑 | Boolean | - | - |
+
+⚠️注：此方法使用的时候最好结合截流函数（n22-lib工具库`n22-lib/lib/n22-lib-utils/throttle`）使用，因为触发会比较频繁.

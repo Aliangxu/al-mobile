@@ -14,7 +14,7 @@ const qrcodeTableView = {
       qrcodeTableShow: false
     }
   },
-  template: '<mfe-table v-model="qrcodeTableShow" style="width:160px;height:160px;top:65px;left:-10px;overflow:hidden;"><img src="//manhattan.didistatic.com/static/manhattan/mand-mobile/2.0/docs/mand-doc-home-qrcode.png" alt=""></mfe-table>'
+  template: '<mfe-table v-model="qrcodeTableShow" style="width:160px;height:160px;top:65px;left:-10px;overflow:hidden;"><img src="https://vue-mobile.gitee.io/static/image/al.svg" alt=""></mfe-table>'
 }
 
 export default {

@@ -465,10 +465,14 @@ export default {
       // }
       console.log('%c 触发下拉刷新>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>', 'color:green;', mescroll)
       if (!this.isMescrollLoadList) {
+        // todo add this.$listeners 后期 if (this.upRefreshFun) 可根据情况进行删除
         if (this.upRefreshFun) {
           this.$emit(this.upRefreshFun, this.tabs, mescroll)
         } else {
           // this.ISROUTERALIVE(!this.common.isRouterAlive);
+          if (this.$listeners && this.$listeners.upRefreshFun) {
+            this.$listeners.upRefreshFun(this.tabs, mescroll);
+          }
         }
         mescroll.endErr()
       } else {

@@ -18,7 +18,7 @@ Vue.component(DropSelectItem.name, DropSelectItem)
 
 ### API
 
-#### DropSelectItem Props
+#### DropSelectItem Props （因为DropSelectItem为DropSelect跟fieldItem的组合体，所以fieldItem的props不在下方解释，请移步）
 |属性 | 说明 | 类型 | 默认值|备注|
 |----|-----|------|------|------|
 | append-to | 组件的挂载节点 | HTMLElement | `document.body`| eg:this.$el |
@@ -56,6 +56,7 @@ Vue.component(DropSelectItem.name, DropSelectItem)
 
 ##### dropSelectClick(callBack)
 点击弹出滑动选择器前触发的事件
+
 |参数 | 说明 | 类型 | 默认值|
 |----|-----|------|------|
 |callBack|回掉方法|Function(isShow)|isShow默认为true|
@@ -106,7 +107,7 @@ type为address时使用
 
 |参数 | 说明 | 类型 | 默认值| 备注|
 |----|-----|------|------|------|
-|itemObjectal|组件传入的itemObject：{ name: "", code: "", type: "" }|Object|{ name: "", code: "", type: "" }|-|
+|itemObject|组件传入的itemObject：{ name: "", code: "", type: "" }|Object|{ name: "", code: "", type: "" }|此处如果不指定`itemObject`或者不指定`itemObject`的`name`字段，则`itemObject`会自动塞入组件的`name`属性|
 |newval|改变后的新值|-|-|-|
 |oldval|改变前的旧值|-|-|-|
 |isHand|是否手动触发的changeData事件|Object|-|用于区分时否为回显还是手动点击触发的change回掉|
@@ -177,5 +178,94 @@ type为address时使用
 ```
 * addressOptions数据源数据格式
 ```
-import data from 'al-mobile/components/tab-picker/demo/data'
+{
+  "name": "province",
+  "label": "请选择",
+  "options": [
+    {
+      "value": "pk",
+      "label": "北京市",
+      "children": {
+        "name": "block",
+        "label": "请选择",
+        "options": [
+          {
+            "value": "hd",
+            "label": "海淀区"
+          },
+          {
+            "value": "cp",
+            "label": "昌平区"
+          }
+        ]
+      }
+    },
+    {
+      "value": "sc",
+      "label": "四川省",
+      "children": {
+        "name": "city",
+        "label": "请选择",
+        "options": [
+          {
+            "value": "cd",
+            "label": "成都市",
+            "children": {
+              "name": "block",
+              "label": "请选择",
+              "options": [
+                {
+                  "value": "gx",
+                  "label": "高新区"
+                },
+                {
+                  "value": "qy",
+                  "label": "青羊区"
+                }
+              ]
+            }
+          },
+          {
+            "value": "my",
+            "label": "绵阳市",
+            "children": {
+              "name": "block",
+              "label": "请选择",
+              "options": [
+                {
+                  "value": "jn",
+                  "label": "金牛区"
+                }
+              ]
+            }
+          },
+          {
+            "value": "lz",
+            "label": "泸州市"
+          },
+          {
+            "value": "dy",
+            "label": "德阳市"
+          }
+        ]
+      }
+    }
+  ]
+}
 ```
+
+
+#### drop-select Slots
+
+##### left
+左侧插槽
+##### right
+右侧插槽
+
+##### right-children
+右侧插槽(如果存在右侧箭头，次插槽位于即箭头右侧)
+
+##### children 
+<sup class="version-after">0.0.37+</sup>
+底部插槽
+

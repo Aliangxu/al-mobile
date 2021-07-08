@@ -4,12 +4,24 @@ toc: hidden
 ---
 
 
-### 0.0.37-未发版
+### 0.0.38
 
 `2020-12-01`
 
 - Feat
+  - 1、新增`slider`组件`direction`,滑动方向
+- Fix
+### 0.0.37
 
+`2020-12-01`
+
+- Feat
+  - 1、优化`content`组件下拉回掉的方法，需要在传入`props`-`upRefreshFun`,此时不再需要, 直接`@upRefreshFun='...'`
+  - 2、`slider`组件的emit`input`返回增减`event`参数（可用于判定是手动更改value还是js自动更改value）
+  - 3、更改`head`组件布局形式
+  - 4、`field item`新增`markFun`回掉函数的两个`title`、`name`参数
+  - 5、`input item`新增`isVirtualKeyboardMove`是否开启移动光标功能
+  - 6、`radio`新增`inline`是否内联
 - Fix
   - 1、修复`drop-select`组件`this.$emit('hide')`，防止关闭弹出框时，dom不销毁。
 

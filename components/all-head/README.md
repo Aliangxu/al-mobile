@@ -66,4 +66,5 @@ Vue.component(Allhead.name, Allhead)
 
 
 # 注意
-上面的search功能可能还有问题，先阶段可以用内容title插槽自定义实现
+- 1.上面的search功能可能还有问题，先阶段可以用内容title插槽自定义实现
+- 2.`window.ALIOSHEAD = 'phone'`用来定义是否在苹果手机上预留出最顶部的bar(默认情况下不设置此项的话请开启原生的bar)

@@ -17,7 +17,7 @@ import Radio from 'al-mobile/components/radio/indexm'
 export default {
   name: 'radio-demo',
   /* DELETE */
-  title: '单选项组',
+  title: '4、单选项组',
   titleEnUS: 'Radio group',
   align: 'left',
   /* DELETE */

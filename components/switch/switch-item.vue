@@ -46,6 +46,7 @@
         <div
           class="n22-switch"
           :class="[disabled ? 'disabled' : '', isSelect ? 'active' : '']"
+          :style="showStyle"
           @click="$_onChange($event)"
         >
           <slot></slot>
@@ -174,9 +175,33 @@ export default {
       type: Boolean,
       default: false,
     },
+    activeColor: {
+      type: String,
+      default: "",
+    },
+    inactiveColor: {
+      type: String,
+      default: "",
+    },
   },
 
   computed: {
+    showStyle(){
+      if (this.isSelect) {
+        if (this.activeColor) {
+          return {
+            backgroundColor: this.activeColor,
+          }
+        }
+      } else {
+        if (this.inactiveColor) {
+          return {
+            backgroundColor: this.inactiveColor,
+          }
+        }
+      }
+      return "";
+    },
     getIsSelect() {
       return (value, options, type) => {
         if (options && options.length > 0) {
@@ -328,7 +353,7 @@ export default {
     width: 40px;
     height: 24px;
     border-radius: 12px;
-    background-color: switch-fill-inverse;
+    // background-color: switch-fill-inverse;
   }
 
   &::after {

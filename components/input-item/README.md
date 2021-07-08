@@ -26,12 +26,12 @@ Vue.component(InputItem.name, InputItem)
 #### InputItem Props
 |属性 | 说明 | 类型 | 默认值 | 备注|
 |----|-----|------|------|------|
-|type|表单类型，特殊类型自带文本格式化|String|`text`|`text(文本)`,`bankCard(银行卡号)`,`phone(手机号)`,<br/>`money(金额)`,`digit(数字)`,`password(密码)`,<br/>以及其他的标准`Html Input`类型|
+|type|表单类型，特殊类型自带文本格式化|String|`text`|`text(文本)`,`bankCard(银行卡号)`,`phone(手机号)`,<br/>`money(金额)`,`digit(数字)`,`password(密码)`,`realNum(小数数字，区别于money没有money的千分符)`,<br/>以及其他的标准`Html Input`类型|
 |name|表单名称|String|-|事件入参之一，可用于区分表单组件|
 |v-model|表单值|String|-|-|
 |title|表单左侧标题|String|-|可直接使用`slot left`代替|
 |is-show-required|是否展示必填的*|Boolean|`false`|默认不显示|
-|solid <sup class="version-after">2.2.1+</sup>|是否固定标题宽度，超出会自动换行|Boolean|`true`|-|
+|solid|是否固定标题宽度，超出会自动换行|Boolean|`true`|-|
 |placeholder|表单占位符|String|-|-|
 |brief|表单描述|String|-|-|
 |maxlength|表单最大字符数|String/Number|-|`phone`类型固定为11|
@@ -54,6 +54,7 @@ Vue.component(InputItem.name, InputItem)
 |isValidator|input是否显示validator检验的错误|-|Boolean|`true`|-|
 |isOnlyErrorLine|input是否validator只显示红线不显示描述|-|Boolean|`false`|-|
 |precision|input type为money或者realNum时显示或者允许的小数位数|-|Number|`2`|-|
+|isVirtualKeyboardMove<sup class="version-after">0.0.37+</sup>|input当开启虚拟键盘时候是否启用移动光标功能|-|Boolean|`false`|-|
 
 #### InputItem Slots
 
@@ -88,8 +89,17 @@ Vue.component(InputItem.name, InputItem)
 ##### @blur(name)
 表单失去焦点事件
 
-##### @change(name, value)
+##### @change({ name }, val, oldval, isHand, type, key)
 表单值变化事件
+
+|参数 | 说明 | 类型 | 默认值| 备注|
+|----|-----|------|------|------|
+|itemObject|组件传入的itemObject：{ name: "", code: "", type: "" }|Object|{ name: "", code: "", type: "" }|此处如果不指定`itemObject`或者不指定`itemObject`的`name`字段，则`itemObject`会自动塞入组件的`name`属性|
+|newval|改变后的新值|-|-|-|
+|oldval|改变前的旧值|-|-|-|
+|isHand|是否手动触发的changeData事件|Object|-|用于区分时否为回显还是手动点击触发的change回掉|
+|option|扩充参数--选项值对象|-|-|目前应用在type为work时返回work的选项值对象|
+|key|扩充参数|-|-|之前的key移植到itemObject对象中code|
 
 ##### @confirm(name, value)
 表单值确认事件， 仅使用金融数字键盘或组件在`form`元素内时有效

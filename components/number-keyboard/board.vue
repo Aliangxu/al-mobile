@@ -38,7 +38,7 @@
             ></n22-number-key>
           </template>
           <template v-else>
-            <li v-if="simple === 'simpleABC'" class="keyboard-number-item no-bg">ABC</li>
+            <li v-if="type === 'simpleABC'" class="keyboard-number-item no-bg">ABC</li>
             <li v-else="" class="keyboard-number-item no-bg">ABC</li>
             <n22-number-key
               class="keyboard-number-item"

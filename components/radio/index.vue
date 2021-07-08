@@ -2,6 +2,27 @@
 .radio-component {
   display: block;
   min-height: 50px;
+  &.is-inline {
+    display: inline-flex;
+    &:not(:last-child) {
+      margin-right: 40px
+    }
+    .radio-input {
+      position: absolute;
+      width: 100%;
+      opacity: 0;
+      height: 30px;
+    }
+  }
+  &.not-inline {
+    .radio-input {
+      position: absolute;
+      width: 800px;
+      opacity: 0;
+      margin-left: -100px;
+      height: 30px;
+    }
+  }
 
   > .radio-cell {
     min-height: inherit;
@@ -19,13 +40,6 @@
   }
 
   label > .input-box {
-    .radio-input {
-      position: absolute;
-      width: 800px;
-      opacity: 0;
-      margin-left: -100px;
-      height: 30px;
-    }
     .radio-inputok {
       position: absolute;
       width: 800px;
@@ -133,8 +147,12 @@
 </style>
 
 <template>
-  <div>
-    <a class="radio-component" v-for="(option, i) in options" :key="option.key">
+  <div class="n22-radio-x">
+    <a 
+      class="radio-component"
+      :class="{ 'is-inline': inline, 'not-inline': !inline }" 
+      v-for="(option, i) in options" 
+      :key="option.key">
       <div class="radio-cell" v-if="isShow">
         <div class="radio-cell-title">
           <label class="radio-label">
@@ -369,6 +387,10 @@ export default {
       // 是否显示选择项
       type: Boolean,
       default: true,
+    },
+    inline: {
+      type: Boolean,
+      default: false,
     },
     value: [String, Array, Boolean, Number], // v-modal
     itemObject: Object, // item
