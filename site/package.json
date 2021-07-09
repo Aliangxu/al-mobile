@@ -13,7 +13,7 @@
     "indices": "node ./build/bin/gen-indices --log"
   },
   "dependencies": {
-    "al-mobile": "0.0.38",
+    "al-mobile": "file:..",
     "fuse.js": "^3.4.5",
     "v-tooltip": "^2.0.0-rc.31",
     "vue-clipboard2": "^0.1.0",
