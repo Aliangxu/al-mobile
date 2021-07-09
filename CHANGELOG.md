@@ -4,6 +4,14 @@ toc: hidden
 ---
 
 
+### 0.0.39-未发版
+
+`2020-12-01`
+
+- Feat
+  - 1、新增`slider`组件`direction`,滑动方向
+- Fix
+  - 1、修复`radio`组件`input`-`width`太宽导致使用该组件如果不做宽度限制时候,会将页面撑开
 ### 0.0.38
 
 `2020-12-01`
@@ -17,7 +25,7 @@ toc: hidden
 
 - Feat
   - 1、优化`content`组件下拉回掉的方法，需要在传入`props`-`upRefreshFun`,此时不再需要, 直接`@upRefreshFun='...'`
-  - 2、`slider`组件的emit`input`返回增减`event`参数（可用于判定是手动更改value还是js自动更改value）
+  - 2、`slider`组件的emit`input`返回增加`event`参数（可用于判定是手动更改value还是js自动更改value）
   - 3、更改`head`组件布局形式
   - 4、`field item`新增`markFun`回掉函数的两个`title`、`name`参数
   - 5、`input item`新增`isVirtualKeyboardMove`是否开启移动光标功能

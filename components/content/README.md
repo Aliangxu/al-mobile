@@ -42,6 +42,7 @@ Content跟ContentList区别在于ContentList引入swiper，如果想使用swiper
 | backgroundColor | Swiper背景颜色 | String | - |-|
 | htmlNodata <sup class="version-after">0.0.25+</sup> | 上拉到最底部无数据时，显示的内容 | String、vnode | `<p class='upwarp-nodata'>-- 我是有底线的 --</p>` | 如果单独tabs对象设置了此参数，则以tabs中的为准 |
 | emptyProp | 数据为空的时候需要展示的图片、文本、按钮...对象 | Object | - |-|
+| topImg | 右下角返回顶部图片 | String | - |-|
 | needSwiper | 是否启用swiper | Boolean | `false` |-|
 
 ##### tabs样例

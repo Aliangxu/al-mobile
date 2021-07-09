@@ -206,7 +206,7 @@ export default {
       }
       // eslint-disable-next-line
       let o3 = $.extend({}, z, this.opacityStyle)
-      console.log("%c o3","color:#00CD00",o3)
+      // console.log("%c o3","color:#00CD00",o3)
       return o3
     }
   },

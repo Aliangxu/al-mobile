@@ -17,9 +17,9 @@
   &.not-inline {
     .radio-input {
       position: absolute;
-      width: 800px;
+      width: 100%;
       opacity: 0;
-      margin-left: -100px;
+      margin-left: -5px;
       height: 30px;
     }
   }
@@ -52,8 +52,8 @@
       width: 330px;
       height: 100px;
     }
-    // margin-left: 22px;
-    margin-top: 33px;
+    // margin-top: 33px;
+    display: block;
     .circle_error_not_select{
       background-color: rgb(255, 0, 0)!important;
       color: #fff!important;
