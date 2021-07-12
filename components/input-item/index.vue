@@ -862,6 +862,7 @@ export default {
   word-ellipsis()
   cursor text
   &::after
+    // 存在postcss打包警告,同时input输入在右侧时候没有处理 
     right var(--rightW)
     position relative
     z-index 2
